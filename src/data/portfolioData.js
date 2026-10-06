@@ -2,13 +2,13 @@ export const portfolioData = {
   personal: {
     name: "Abhishek Pal",
     role: "React Native Mobile Engineer",
-    subRole: "Core Focus: React Native • 3.5+ Years Exp • Maps, Fleet Mobility & WebViews",
+    subRole: "4–5 Production Apps Shipped • 25+ Store Releases • React Native 0.70 ➔ 0.8x",
     tagline: "Dedicated to building high-performance cross-platform Android & iOS applications with real-time GPS tracking, multi-app mobility ecosystems, and advanced WebView data bridges.",
-    bio: "React Native Mobile Engineer with 3.5+ years of production experience building and scaling high-performance cross-platform Android & iOS applications. My current primary focus is 100% dedicated to React Native mobile architecture — leading engineering for three-sided mobility ecosystems (Rider, Driver, and Kiosk Terminal), real-time GPS tracking, and fleet telemetry. Additionally, from Jan 2023 to May 2025, I engineered the Lazyeye platform working extensively as both a Web Developer and React Native Engineer, developing deep expertise in WebViews, bidirectional postMessage bridges, and high-frequency web-to-native data communication.",
+    bio: "React Native Mobile Engineer with 3.5+ years of production experience building, maintaining, and scaling cross-platform Android & iOS applications. I have built and published 4–5 distinct production applications on both the Google Play Store and Apple App Store, actively managing 5–6 release cycles per app (25+ total production updates). Experienced in upgrading and maintaining apps across major React Native versions (from RN 0.70 to RN 0.8x), resolving native Gradle, CocoaPods, and Target SDK requirements. Specializing in real-time GPS tracking, multi-app fleet ecosystems (Rider, Driver, Kiosk), and bidirectional WebView postMessage architectures.",
     email: "abhipal85350@gmail.com",
     phone: "+91-9870962636",
     location: "Agra, India (Open to Remote / Relocation)",
-    availability: "Available for Full-time Roles & Immediate Relocation / Remote",
+    availability: "Immediate / Flexible • Open to Full-time Remote & Relocation",
     resumeUrl: "./resume.html",
     socials: {
       linkedin: "https://linkedin.com/in/abhishek-pal-a5a497217",
@@ -17,10 +17,10 @@ export const portfolioData = {
   },
 
   stats: [
-    { label: "Production Experience", value: "3.5+ Yrs" },
-    { label: "Core Specialization", value: "React Native" },
-    { label: "Stores Deployed", value: "iOS & Android" },
-    { label: "WebView & Data Bridges", value: "Expert" },
+    { label: "Production Experience", value: "3.5+ Yrs", detail: "Android & iOS releases" },
+    { label: "Production Apps Shipped", value: "4–5 Apps", detail: "Google Play & App Store" },
+    { label: "Store Release Cycles", value: "25+ Updates", detail: "5–6 updates per app" },
+    { label: "Framework Upgrades", value: "RN 0.70 ➔ 0.8x", detail: "Gradle, Xcode & Hermes" },
   ],
 
   skills: {
