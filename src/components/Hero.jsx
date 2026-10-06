@@ -10,24 +10,26 @@ export default function Hero() {
     'engineer.ts': `const mobileEngineer = {
   name: "${portfolioData.personal.name}",
   role: "${portfolioData.personal.role}",
+  primaryFocus: "100% React Native Mobile Engineering",
   experience: "3.5+ Years Production Experience",
   platforms: ["Android (Gradle, .aab)", "iOS (Xcode, .ipa)"],
   specialization: [
-    "Real-time GPS Tracking & Telemetry",
-    "Interactive Maps & Driver Dispatch",
     "Three-Sided Mobility Ecosystems (Rider/Driver/Kiosk)",
+    "Real-time GPS Tracking, Polylines & Driver Dispatch",
+    "High-throughput WebViews & postMessage Data Communication",
+    "Web Development & Interactive Child Assessment Canvases",
     "FCM & APNs Background Push Systems",
-    "Sub-millisecond Offline Caching (MMKV / SQLite)"
+    "Sub-millisecond Offline Telemetry Caching (MMKV / SQLite)"
   ],
   storesDeployed: ["Google Play Store", "Apple App Store"],
-  currentFocus: "Leading Mobile Architecture for Fleet & Mobility"
+  currentRole: "Lead Mobile Architecture for Fleet & Mobility"
 };`,
     'mobilityStack.json': `{
-  "coreMobile": ["React Native", "TypeScript", "React Navigation"],
+  "coreFocus": "React Native (iOS & Android)",
+  "webAndHybrid": ["Web Development", "WebViews", "postMessage Bridge", "Telemetry Sync"],
   "mapsAndGPS": ["react-native-maps", "Google Maps Platform", "Geofencing", "Polyline Routes"],
   "notifications": ["FCM", "APNs", "Notifee", "Headless JS"],
-  "storageAndOffline": ["MMKV Storage", "SQLite", "Bidirectional WebView Bridge"],
-  "uiAndMotion": ["React Native Reanimated", "UI Kitten", "Arabic RTL Mirroring"],
+  "storageAndOffline": ["MMKV Storage", "SQLite", "Native PDF Downloads"],
   "releaseEng": ["Android Studio (Gradle)", "Xcode", "Play Console", "App Store Connect"]
 }`,
   };
