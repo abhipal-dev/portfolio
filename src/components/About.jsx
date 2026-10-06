@@ -1,35 +1,35 @@
 import React from 'react';
-import { Layout, Server, Database, Cloud, CheckCircle2, Award, Zap, Code } from 'lucide-react';
+import { Smartphone, MapPin, BellRing, Box, CheckCircle2, Award, Zap, Code } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function About() {
   const pillars = [
     {
-      icon: Layout,
-      title: 'Frontend Craftsmanship',
+      icon: Smartphone,
+      title: 'Multi-App Mobility Ecosystems',
       description:
-        'Crafting pixel-perfect, accessible, and fast client interfaces with React, modern CSS/Tailwind, and intuitive motion.',
+        'Architecting and synchronizing three-sided platforms — Rider on-demand booking, Driver active navigation, and walk-up Kiosk Terminal applications.',
       accent: 'from-blue-500/20 to-indigo-500/10 border-blue-500/30 text-blue-400',
     },
     {
-      icon: Server,
-      title: 'Backend Engineering',
+      icon: MapPin,
+      title: 'GPS Tracking, Maps & Telemetry',
       description:
-        'Building robust RESTful & GraphQL microservices, JWT authentication, and asynchronous task queues with Node.js & Express.',
+        'Building high-performance map architectures with react-native-maps, dynamic polyline route drawing, animated driver bearing rotation, and geofencing.',
       accent: 'from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-400',
     },
     {
-      icon: Database,
-      title: 'Database Architecture',
+      icon: BellRing,
+      title: 'Background Tasks & Notifications',
       description:
-        'Designing relational & NoSQL schemas in PostgreSQL and MongoDB with indexing, caching (Redis), and data integrity.',
+        'Configuring FCM, APNs, Notifee, and Headless JS for reliable trip alerts across foreground, background, and killed app states with deep navigation.',
       accent: 'from-purple-500/20 to-pink-500/10 border-purple-500/30 text-purple-400',
     },
     {
-      icon: Cloud,
-      title: 'DevOps & Deployment',
+      icon: Box,
+      title: 'Native Builds & Store Releases',
       description:
-        'Containerizing apps using Docker, automating testing with CI/CD workflows, and hosting static/serverless services reliably.',
+        'Configuring Android Gradle builds and iOS Xcode targets, generating signed release production artifacts (.aab / .ipa), and managing store submissions.',
       accent: 'from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-400',
     },
   ];
@@ -58,11 +58,11 @@ export default function About() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-            <Code className="w-3.5 h-3.5" />
-            <span>DISCOVER MY BACKGROUND</span>
+            <Smartphone className="w-3.5 h-3.5" />
+            <span>CROSS-PLATFORM MOBILE ENGINEERING</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Engineering Solutions From Concept To Cloud
+            Specialized in Mobility, Fleet & Real-Time Tracking
           </h2>
           <p className="text-slate-400 text-base leading-relaxed">
             {portfolioData.personal.bio}

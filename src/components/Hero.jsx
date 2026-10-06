@@ -1,27 +1,34 @@
 import React, { useState } from 'react';
-import { ArrowRight, Download, Terminal, Check, Copy, Sparkles, Send } from 'lucide-react';
+import { ArrowRight, Download, Terminal, Check, Copy, Sparkles, Send, Phone, MapPin, Smartphone } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
-  const [activeTab, setActiveTab] = useState('developer.ts');
+  const [activeTab, setActiveTab] = useState('engineer.ts');
 
   const codeSnippets = {
-    'developer.ts': `const developer = {
+    'engineer.ts': `const mobileEngineer = {
   name: "${portfolioData.personal.name}",
   role: "${portfolioData.personal.role}",
-  coreStack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Docker"],
-  passion: "Architecting resilient, performant full-stack systems",
-  status: "Available for new challenges",
-  solveProblem: (problem: ComplexIssue) => {
-    return cleanCode + optimizedArchitecture;
-  }
+  experience: "3.5+ Years Production Experience",
+  platforms: ["Android (Gradle, .aab)", "iOS (Xcode, .ipa)"],
+  specialization: [
+    "Real-time GPS Tracking & Telemetry",
+    "Interactive Maps & Driver Dispatch",
+    "Three-Sided Mobility Ecosystems (Rider/Driver/Kiosk)",
+    "FCM & APNs Background Push Systems",
+    "Sub-millisecond Offline Caching (MMKV / SQLite)"
+  ],
+  storesDeployed: ["Google Play Store", "Apple App Store"],
+  currentFocus: "Leading Mobile Architecture for Fleet & Mobility"
 };`,
-    'stack.json': `{
-  "frontend": ["React", "TypeScript", "TailwindCSS", "Next.js"],
-  "backend": ["Node.js", "Express", "REST", "GraphQL"],
-  "database": ["PostgreSQL", "MongoDB", "Redis"],
-  "devops": ["Docker", "Git", "CI/CD", "AWS"]
+    'mobilityStack.json': `{
+  "coreMobile": ["React Native", "TypeScript", "React Navigation"],
+  "mapsAndGPS": ["react-native-maps", "Google Maps Platform", "Geofencing", "Polyline Routes"],
+  "notifications": ["FCM", "APNs", "Notifee", "Headless JS"],
+  "storageAndOffline": ["MMKV Storage", "SQLite", "Bidirectional WebView Bridge"],
+  "uiAndMotion": ["React Native Reanimated", "UI Kitten", "Arabic RTL Mirroring"],
+  "releaseEng": ["Android Studio (Gradle)", "Xcode", "Play Console", "App Store Connect"]
 }`,
   };
 
@@ -49,7 +56,7 @@ export default function Hero() {
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-xs font-medium text-emerald-400 shadow-sm shadow-emerald-950/40">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Available for Full-Time Roles & Projects</span>
+              <span>3.5+ Years Exp • Open to Remote & Relocation Roles</span>
             </div>
 
             {/* Main Heading */}
@@ -57,15 +64,33 @@ export default function Hero() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
                 Hi, I'm <span className="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">{portfolioData.personal.name}</span>
               </h1>
-              <p className="text-xl sm:text-2xl font-semibold text-slate-300">
-                {portfolioData.personal.role}
+              <p className="text-xl sm:text-2xl font-semibold text-slate-300 flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                <span>{portfolioData.personal.role}</span>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-mono">
+                  Android & iOS
+                </span>
               </p>
             </div>
 
             {/* Subtitle / Bio */}
             <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-              {portfolioData.personal.tagline} Focused on shipping resilient APIs, lightning-fast interfaces, and scalable web architecture.
+              Specialized in <strong className="text-slate-200 font-semibold">Real-Time GPS Tracking</strong>, <strong className="text-slate-200 font-semibold">Interactive Map Architectures</strong>, background telemetry, geofencing, driver dispatch, and multi-app mobility platforms (Rider, Driver & Kiosk apps).
             </p>
+
+            {/* Location & Quick Contact Pills */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-400 font-mono">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800">
+                <MapPin className="w-3.5 h-3.5 text-indigo-400" />
+                {portfolioData.personal.location}
+              </span>
+              <a
+                href={`tel:${portfolioData.personal.phone}`}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                {portfolioData.personal.phone}
+              </a>
+            </div>
 
             {/* Action Buttons */}
             <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
@@ -73,7 +98,8 @@ export default function Hero() {
                 href="#projects"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-medium text-sm bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:brightness-110 active:scale-95 transition-all"
               >
-                <span>Explore Projects</span>
+                <Smartphone className="w-4 h-4" />
+                <span>View Production Apps</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -94,12 +120,20 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Quick Tech Stack Icons */}
-            <div className="pt-6 border-t border-slate-800/60 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            {/* Core Tech Stack Pills */}
+            <div className="pt-6 border-t border-slate-800/60 flex flex-wrap items-center justify-center lg:justify-start gap-2">
               <span className="text-xs uppercase font-mono tracking-wider text-slate-500 mr-2">
-                Core Stack:
+                Core Focus:
               </span>
-              {['React', 'TypeScript', 'Node.js', 'Tailwind', 'PostgreSQL', 'Docker'].map((tech) => (
+              {[
+                'React Native',
+                'Google Maps Platform',
+                'GPS Telemetry',
+                'FCM / APNs',
+                'MMKV & SQLite',
+                'Reanimated',
+                'Gradle & Xcode',
+              ].map((tech) => (
                 <span
                   key={tech}
                   className="px-2.5 py-1 text-xs font-mono rounded-md bg-slate-900 border border-slate-800 text-slate-300 hover:border-indigo-500/50 hover:text-indigo-300 transition-colors cursor-default"
@@ -125,24 +159,24 @@ export default function Hero() {
                 {/* Tabs */}
                 <div className="flex items-center gap-1.5 bg-slate-900/80 p-1 rounded-lg border border-slate-800/70 text-xs font-mono">
                   <button
-                    onClick={() => setActiveTab('developer.ts')}
+                    onClick={() => setActiveTab('engineer.ts')}
                     className={`px-2.5 py-1 rounded transition-colors ${
-                      activeTab === 'developer.ts'
+                      activeTab === 'engineer.ts'
                         ? 'bg-indigo-600 text-white font-medium shadow-sm'
                         : 'text-slate-400 hover:text-slate-200'
                     }`}
                   >
-                    developer.ts
+                    engineer.ts
                   </button>
                   <button
-                    onClick={() => setActiveTab('stack.json')}
+                    onClick={() => setActiveTab('mobilityStack.json')}
                     className={`px-2.5 py-1 rounded transition-colors ${
-                      activeTab === 'stack.json'
+                      activeTab === 'mobilityStack.json'
                         ? 'bg-indigo-600 text-white font-medium shadow-sm'
                         : 'text-slate-400 hover:text-slate-200'
                     }`}
                   >
-                    stack.json
+                    mobilityStack.json
                   </button>
                 </div>
 
@@ -162,7 +196,7 @@ export default function Hero() {
               </div>
 
               {/* Code Editor Body */}
-              <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed text-slate-300 overflow-x-auto min-h-[290px] bg-slate-950/40">
+              <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed text-slate-300 overflow-x-auto min-h-[310px] bg-slate-950/40">
                 <pre className="text-slate-300">
                   <code>{codeSnippets[activeTab]}</code>
                 </pre>
@@ -172,11 +206,11 @@ export default function Hero() {
               <div className="px-4 py-2.5 bg-slate-950/80 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
                 <div className="flex items-center gap-2">
                   <Terminal className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>Ready to compile & ship</span>
+                  <span>React Native • Production Ready</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-indigo-400">UTF-8</span>
-                  <span className="text-emerald-400">● 100% Tested</span>
+                  <span className="text-indigo-400">Android & iOS</span>
+                  <span className="text-emerald-400">● 100% Native Synced</span>
                 </div>
               </div>
             </div>
