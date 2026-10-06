@@ -69,14 +69,14 @@ export default function Navbar() {
             href="#"
             className="flex items-center gap-2.5 group cursor-pointer text-slate-100 hover:text-white transition-colors shrink-0"
           >
-            <div className={`w-9 h-9 rounded-xl ${currentTheme.button} flex items-center justify-center font-mono font-bold text-xs text-white shadow-md group-hover:scale-105 transition-transform shrink-0`}>
+            <div className={`w-9 h-9 rounded-xl ${currentTheme.logo || currentTheme.button} flex items-center justify-center font-mono font-black text-xs shadow-md group-hover:scale-105 transition-transform shrink-0`}>
               &lt;AP/&gt;
             </div>
             <div className="whitespace-nowrap shrink-0">
               <span className="font-extrabold text-base sm:text-lg tracking-tight text-white group-hover:text-slate-200 transition-all block whitespace-nowrap">
                 {portfolioData.personal.name}
               </span>
-              <span className="text-[10px] text-sky-400 font-mono block -mt-1 font-semibold whitespace-nowrap">
+              <span className={`text-[10px] ${currentTheme.accentText} font-mono block -mt-1 font-semibold whitespace-nowrap`}>
                 React Native Lead
               </span>
             </div>
