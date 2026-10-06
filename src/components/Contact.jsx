@@ -119,7 +119,7 @@ export default function Contact() {
           
           {/* Left Column: Direct Instant Launchers */}
           <div className="lg:col-span-5 space-y-5">
-            <div className="p-6 sm:p-8 rounded-2xl bg-[#0c111e] border border-slate-800 shadow-xl space-y-5">
+            <div className="p-4 sm:p-8 rounded-2xl bg-[#0c111e] border border-slate-800 shadow-xl space-y-5">
               
               <div>
                 <h3 className="text-xl font-bold text-white mb-1">
@@ -256,7 +256,7 @@ export default function Contact() {
 
           {/* Right Column: Pre-filled Email Composer Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-2xl bg-[#0c111e] border border-slate-800 shadow-xl space-y-5">
+            <div className="p-4 sm:p-8 rounded-2xl bg-[#0c111e] border border-slate-800 shadow-xl space-y-5">
               
               <div>
                 <h3 className="text-xl font-bold text-white mb-1">
@@ -268,13 +268,13 @@ export default function Contact() {
               </div>
 
               {/* Template Quick Selection Chips */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {templates.map((t) => (
                   <button
                     key={t.id}
                     type="button"
                     onClick={() => handleSelectTemplate(t)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
+                    className={`px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-xl text-xs font-medium transition-all ${
                       template === t.id
                         ? `${currentTheme.badge} font-bold scale-105 shadow-sm`
                         : 'bg-slate-950 text-slate-400 hover:text-slate-200 border border-slate-800'
@@ -341,12 +341,12 @@ export default function Contact() {
                 </div>
 
                 {/* Submit Actions */}
-                <div className="pt-2 flex flex-wrap items-center gap-3">
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <a
                     href={getGmailWebUri()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold ${currentTheme.button} shadow-lg active:scale-95 transition-all`}
+                    className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold ${currentTheme.button} shadow-lg active:scale-95 transition-all text-center`}
                   >
                     <Mail className="w-4 h-4" />
                     <span>Send via Gmail Web</span>
@@ -354,7 +354,7 @@ export default function Contact() {
 
                   <a
                     href={getMailtoUri()}
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold bg-slate-950 hover:bg-slate-900 text-slate-200 border border-slate-800 hover:border-slate-700 transition-all active:scale-95"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold bg-slate-950 hover:bg-slate-900 text-slate-200 border border-slate-800 hover:border-slate-700 transition-all active:scale-95 text-center"
                   >
                     <Send className="w-4 h-4 text-sky-400" />
                     <span>Send via Mail Client (mailto:)</span>

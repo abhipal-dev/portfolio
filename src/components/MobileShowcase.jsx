@@ -36,7 +36,7 @@ export default function MobileShowcase() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[360px]">
+    <div className="relative mx-auto w-full max-w-[315px] sm:max-w-[350px]">
       
       {/* Ambient Backlight (Sleek, Not Overwhelming) */}
       <div
@@ -44,7 +44,7 @@ export default function MobileShowcase() {
       />
 
       {/* Modern High-End Device Chassis */}
-      <div className="relative rounded-[3rem] bg-[#0c1019] border-[5px] border-slate-800 shadow-2xl shadow-black/80 overflow-hidden backdrop-blur-xl">
+      <div className="relative rounded-[2.5rem] sm:rounded-[3rem] bg-[#0c1019] border-[4px] sm:border-[5px] border-slate-800 shadow-2xl shadow-black/80 overflow-hidden backdrop-blur-xl">
         
         {/* iOS Dynamic Island & Status Bar */}
         <div className="relative bg-[#090d16] px-6 pt-3 pb-2 flex items-center justify-between text-[11px] font-mono text-slate-400 select-none border-b border-slate-800/60">
@@ -373,3 +373,4 @@ export default function MobileShowcase() {
     </div>
   );
 }
+

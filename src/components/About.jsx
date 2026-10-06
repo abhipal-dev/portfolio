@@ -49,19 +49,19 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Metric Stats Engineering Grid */}
-        <div className="mb-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div className="mb-14 sm:mb-20 grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
           {metrics.map((stat, idx) => (
             <div
               key={idx}
-              className="p-5 sm:p-6 rounded-2xl bg-[#0c111e]/80 border border-slate-800/90 backdrop-blur-sm text-center hover:border-slate-700 transition-all group"
+              className="p-3.5 sm:p-6 rounded-xl sm:rounded-2xl bg-[#0c111e]/80 border border-slate-800/90 backdrop-blur-sm text-center hover:border-slate-700 transition-all group"
             >
-              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight group-hover:text-sky-300 transition-colors">
+              <div className="text-xl sm:text-3xl font-extrabold text-white font-mono tracking-tight group-hover:text-sky-300 transition-colors">
                 {stat.value}
               </div>
               <div className="text-xs sm:text-sm font-semibold text-slate-300 mt-1">
                 {stat.label}
               </div>
-              <div className="text-[11px] font-mono text-slate-500 mt-0.5">
+              <div className="text-[10px] sm:text-[11px] font-mono text-slate-500 mt-0.5">
                 {stat.detail}
               </div>
             </div>

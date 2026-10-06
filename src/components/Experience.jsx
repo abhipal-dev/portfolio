@@ -29,32 +29,32 @@ export default function Experience() {
           {portfolioData.experience.map((exp, index) => (
             <div
               key={index}
-              className="p-6 sm:p-8 rounded-2xl bg-[#0c111e] border border-slate-800 hover:border-slate-700 transition-all duration-300 shadow-xl"
+              className="p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-[#0c111e] border border-slate-800 hover:border-slate-700 transition-all duration-300 shadow-xl"
             >
               {/* Header Badges */}
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2.5 mb-4">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-blue-500/10 text-sky-300 border border-blue-500/20 font-semibold flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-sky-400" />
+                  <span className="text-[11px] sm:text-xs font-mono px-2.5 py-1 rounded-full bg-blue-500/10 text-sky-300 border border-blue-500/20 font-semibold flex items-center gap-1.5">
+                    <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-sky-400" />
                     {exp.period}
                   </span>
                   {exp.focusBadge && (
-                    <span className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
+                    <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-medium px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
                       <Sparkles className="w-3 h-3 text-emerald-400" />
                       {exp.focusBadge}
                     </span>
                   )}
                 </div>
 
-                <span className="flex items-center gap-1 text-xs text-slate-400 font-mono">
-                  <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                <span className="flex items-center gap-1 text-[11px] sm:text-xs text-slate-400 font-mono">
+                  <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-500" />
                   {exp.location}
                 </span>
               </div>
 
               {/* Role Title & Company */}
               <div className="mb-4">
-                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight leading-snug">
                   {exp.role}
                 </h3>
                 <div className="text-sm font-semibold text-sky-400 mt-1 flex items-center gap-1.5">
