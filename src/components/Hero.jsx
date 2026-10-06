@@ -19,11 +19,26 @@ import MobileShowcase from './MobileShowcase';
 export default function Hero() {
   const { currentTheme } = useTheme();
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPitch, setCopiedPitch] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(portfolioData.personal.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const handleCopyPitch = () => {
+    const pitchText = `Abhishek Pal — Lead React Native Mobile Engineer (3.5+ Years Exp)
+• Production Track Record: 4–5 Apps Published on Google Play & Apple App Store + Dedicated Enterprise Kiosks & Fleet APKs.
+• Releases & Upgrades: 100+ continuous production updates and component enhancements across React Native 0.70 to 0.8x.
+• Core Specialties: Real-time GPS Maps, 3-sided mobility architectures (Rider/Driver/Kiosk), bidirectional WebView data bridges (postMessage), MMKV caching, FCM/APNs.
+• Availability: Immediate / Flexible • Open to Remote & Relocation
+• Portfolio: https://abhipal-dev.github.io/portfolio/
+• Contact: abhipal85350@gmail.com | +91-9870962636 | Agra, India`;
+
+    navigator.clipboard.writeText(pitchText);
+    setCopiedPitch(true);
+    setTimeout(() => setCopiedPitch(false), 2200);
   };
 
   return (
@@ -104,7 +119,7 @@ export default function Hero() {
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
+            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center lg:justify-start gap-3">
               <a
                 href="#projects"
                 className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm ${currentTheme.button} active:scale-95 transition-all shadow-lg text-center`}
@@ -116,11 +131,29 @@ export default function Hero() {
 
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-[#0c111e] hover:bg-[#121829] text-slate-200 border border-slate-700/80 hover:border-slate-600 shadow-md transition-all active:scale-95 text-center"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm bg-[#0c111e] hover:bg-[#121829] text-slate-200 border border-slate-700/80 hover:border-slate-600 shadow-md transition-all active:scale-95 text-center"
               >
                 <Mail className="w-4 h-4 text-sky-400" />
-                <span>Direct Mail (1-Click)</span>
+                <span>Direct Mail</span>
               </a>
+
+              <button
+                onClick={handleCopyPitch}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm bg-[#0c111e] hover:bg-[#121829] text-sky-300 hover:text-white border border-sky-500/30 hover:border-sky-500/50 shadow-md transition-all active:scale-95 text-center"
+                title="Copy candidate pitch for recruiter"
+              >
+                {copiedPitch ? (
+                  <>
+                    <Check className="w-4 h-4 text-emerald-400" />
+                    <span className="text-emerald-300 font-semibold">Copied for Recruiter!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4 text-sky-400" />
+                    <span>Copy for Recruiter</span>
+                  </>
+                )}
+              </button>
 
               <a
                 href={portfolioData.personal.resumeUrl}
