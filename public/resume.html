@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Pal - React Native Mobile Engineer Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #cbd5e1;
+      --bg-page: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text-main);
+      background: var(--bg-page);
+      line-height: 1.45;
+      font-size: 13px;
+    }
+
+    .no-print-bar {
+      background: #0f172a;
+      color: #fff;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .btn-print {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+
+    .btn-print:hover {
+      background: #2563eb;
+    }
+
+    .btn-back {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .btn-back:hover {
+      color: #fff;
+    }
+
+    .resume-wrapper {
+      max-width: 860px;
+      margin: 24px auto 40px auto;
+      background: #ffffff;
+      padding: 40px 48px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-radius: 8px;
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .header .subtitle {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 8px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      font-size: 11.5px;
+      color: #334155;
+    }
+
+    .contact-bar a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .sep {
+      color: #94a3b8;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0f172a;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+
+    p.summary {
+      font-size: 12px;
+      line-height: 1.55;
+      color: #334155;
+      text-align: justify;
+    }
+
+    /* Skills Grid */
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+
+    .skills-list strong {
+      color: #0f172a;
+    }
+
+    /* Experience & Projects */
+    .job, .project {
+      margin-bottom: 14px;
+    }
+
+    .job-header, .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .job-title, .project-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .company, .role-badge {
+      font-size: 12px;
+      font-weight: 600;
+      color: #1e40af;
+    }
+
+    .date, .location {
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .tech-stack-tag {
+      font-size: 11px;
+      font-style: italic;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    ul.bullets {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 4px;
+    }
+
+    ul.bullets li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 3.5px;
+      font-size: 11.5px;
+      line-height: 1.5;
+      color: #334155;
+    }
+
+    ul.bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    ul.bullets li strong {
+      color: #0f172a;
+    }
+
+    /* Education */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+
+    .edu-name {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .edu-inst {
+      color: #475569;
+      font-size: 11.5px;
+    }
+
+    /* Print Optimization */
+    @media print {
+      body {
+        background: #fff;
+        font-size: 11px;
+      }
+
+      .no-print-bar {
+        display: none;
+      }
+
+      .resume-wrapper {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        max-width: 100%;
+        border-radius: 0;
+      }
+
+      .page-break {
+        page-break-before: always;
+      }
+
+      a {
+        text-decoration: none;
+        color: #0f172a;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Print Bar (Hidden during printing) -->
+  <div class="no-print-bar">
+    <div>
+      <strong>Abhishek Pal — Updated Resume</strong>
+      <span style="opacity: 0.7; font-size: 12px; margin-left: 10px;">Includes GitHub (@abhipal-dev) & Portfolio link</span>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <a href="./" class="btn-back">← Back to Portfolio</a>
+      <button class="btn-print" onclick="window.print()">
+        🖨️ Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <div class="resume-wrapper">
+    <!-- Header -->
+    <header class="header">
+      <h1>Abhishek Pal</h1>
+      <div class="subtitle">React Native Mobile Engineer | 3.5+ Years | Maps, GPS, Fleet & Mobility Ecosystems</div>
+      <div class="contact-bar">
+        <span>Agra, India (Open to Remote / Relocation)</span>
+        <span class="sep">•</span>
+        <a href="mailto:abhipal85350@gmail.com">abhipal85350@gmail.com</a>
+        <span class="sep">•</span>
+        <a href="tel:+919870962636">+91-9870962636</a>
+        <span class="sep">•</span>
+        <a href="https://linkedin.com/in/abhishek-pal-a5a497217" target="_blank">linkedin.com/in/abhishek-pal-a5a497217</a>
+        <span class="sep">•</span>
+        <a href="https://github.com/abhipal-dev" target="_blank">github.com/abhipal-dev</a>
+        <span class="sep">•</span>
+        <a href="https://abhipal-dev.github.io/portfolio/" target="_blank">abhipal-dev.github.io/portfolio</a>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary">
+        React Native Mobile Engineer with <strong>3.5+ years of production experience</strong> building, maintaining, and scaling high-performance cross-platform Android and iOS applications. Currently focused on <strong>React Native mobile engineering</strong>, specialized in real-time GPS tracking, interactive map architectures, background location telemetry, geofencing, driver dispatch workflows, and push notification systems. Additionally experienced in <strong>Web Development and advanced WebViews</strong> with bidirectional data bridges (postMessage). Proven track record taking mobile features end-to-end — from technical requirement analysis and Figma UI translation through REST API integration to Play Store/App Store deployment and post-release support. Currently leading mobile engineering for a three-sided mobility platform comprising Rider, Driver, and Kiosk Terminal applications synchronized with central Web dispatch software.
+      </p>
+    </section>
+
+    <!-- Key Technical Skills -->
+    <section class="section">
+      <h2 class="section-title">Key Technical Skills</h2>
+      <div class="skills-list">
+        <div><strong>• Core Mobile & Multi-App Architectures:</strong> React Native, JavaScript (ES6+), TypeScript, React Navigation, Multi-App Ecosystems (Rider, Driver, Kiosk), React.js (Web Development)</div>
+        <div><strong>• Maps, GPS & Mobility (Core Specialization):</strong> React Native Maps, Google Maps Platform, Real-time GPS Tracking, Location Telemetry, Geofencing, Polyline Routes, ETA Calculation, Driver Dispatch & Proximity Matching, Walk-up Kiosk Workflows</div>
+        <div><strong>• WebViews & Data Bridges:</strong> WebView Integration, Bidirectional WebView-to-App Communication (postMessage bridge), High-frequency Telemetry Sync, Native File Downloads & Local Document Storage</div>
+        <div><strong>• Push Notifications & Background Processing:</strong> Firebase Cloud Messaging (FCM), APNs, Notifee, Headless JS, Background Task Handlers, Notification-driven Deep Navigation</div>
+        <div><strong>• Storage & Offline Architecture:</strong> MMKV Storage, SQLite, High-frequency Telemetry Caching, Offline Synchronization Strategies</div>
+        <div><strong>• UI, Animation & Localization:</strong> UI Kitten, React Native Paper, React Native Reanimated, Responsive Layouts, Dynamic Arabic/English RTL and LTR Mirroring</div>
+        <div><strong>• Backend & Integrations:</strong> RESTful APIs, Axios, Laravel/PHP APIs, MySQL, Redis, Web App Synchronization, Payment Gateways</div>
+        <div><strong>• Builds & Release Management:</strong> Android Studio (Gradle), Xcode, Google Play Console, Apple App Store Connect, Production Artifacts (.aab/.ipa), Git</div>
+      </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <!-- Experience 1: Current Focus -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Softcruise Technology Pvt. Ltd. | Agra, India</span>
+          <span class="date">May 2024 – Present</span>
+        </div>
+        <div class="company">Lead React Native Mobile Engineer (Core Focus)</div>
+        <ul class="bullets">
+          <li><strong>Three-Sided Platform Ownership:</strong> Lead end-to-end mobile engineering for production Android and iOS applications across fleet management, logistics, and multi-sided ride-hailing platforms (Rider, Driver, and Kiosk Terminal).</li>
+          <li><strong>Architecture & Modularity:</strong> Design clean, maintainable mobile architectures with reusable component hierarchies, centralized API service layers, and predictable state management.</li>
+          <li><strong>Store Releases & Compliance:</strong> Configure Android Gradle builds and iOS Xcode targets, generate signed release artifacts (.aab / .ipa), and manage submissions, testing tracks, and live releases on Google Play Store and Apple App Store.</li>
+          <li><strong>Code Reviews & Mentorship:</strong> Conduct regular peer code reviews, enforce coding standards, and mentor developers in debugging native crashes, state handling, and responsive styling.</li>
+        </ul>
+      </div>
+
+      <!-- Experience 2: Web & Mobile -->
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Softcruise Technology Pvt. Ltd. | Agra, India</span>
+          <span class="date">Jan 2023 – May 2025</span>
+        </div>
+        <div class="company">React Native & Web Developer (Lazyeye Healthcare Platform)</div>
+        <ul class="bullets">
+          <li><strong>Dual Web & Mobile Development:</strong> Engineered customized pediatric visual assessment platforms, working actively as both a Web Developer and React Native engineer.</li>
+          <li><strong>High-Frequency WebView Data Communication:</strong> Engineered secure bidirectional message bridges (postMessage & native event listeners) to exchange real-time exercise telemetry, canvas coordinates, and test scores between HTML5 web views and native React Native modules.</li>
+          <li><strong>Native File Handling & Storage:</strong> Built native download pipelines allowing doctors and parents to download clinical PDF assessment reports directly from WebViews to device storage for offline access.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Projects -->
+    <section class="section">
+      <h2 class="section-title">Key Projects</h2>
+
+      <!-- Project 1 -->
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">1. Driver, Rider & Kiosk Mobility Ecosystem (Three-Sided Ride-Hailing Platform & Web Portal)</span>
+          <span class="date">Mar 2024 – Present</span>
+        </div>
+        <div class="role-badge">Project Lead, React Native</div>
+        <div class="tech-stack-tag">Tech: React Native, React Native Maps, Reanimated, FCM, Notifee, Axios, Laravel, Kiosk Terminal, Web Dispatch, RTL</div>
+        <ul class="bullets">
+          <li><strong>Three-Sided Platform Architecture:</strong> Lead mobile development across Rider App (on-demand booking & tracking), Driver App (trip requests, active navigation, and telemetry), and Kiosk Terminal App (dedicated tablet/kiosk stations for walk-up bookings at hotels, malls, and airports) — all synchronized with central Web Dispatch & Fleet Management software.</li>
+          <li><strong>Kiosk Terminal Workflows:</strong> Engineered dedicated tablet kiosk app supporting rapid walk-up ride bookings, automated nearby driver matching, thermal/digital receipts, and kiosk session security.</li>
+          <li><strong>Interactive Map & Driver Tracking:</strong> Built real-time map interfaces using react-native-maps with smooth animated driver marker movement, bearing rotation, and dynamic polyline route drawing powered by Reanimated.</li>
+          <li><strong>Dispatch & Proximity Matching:</strong> Implemented real-time GPS dispatch matching incoming requests with eligible nearby drivers based on distance radius waves, vehicle category, and active status.</li>
+          <li><strong>Complete Ride Lifecycle:</strong> pickup/drop selection → fare calculation & estimate → dispatching → driver acceptance → driver arrival → start ride with OTP → in-transit navigation → ride completion & rating.</li>
+          <li><strong>Fare Engine & Promo Caps:</strong> Integrated multi-tier fare calculation (base, distance, time, wait, surge) and client-side promo code validation.</li>
+          <li><strong>Reliable Notifications & RTL:</strong> Configured FCM, APNs, and Notifee for high-priority trip alerts across foreground, background, and killed app states. Built dynamic English and Arabic multi-language support with comprehensive RTL and LTR mirroring.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">2. TrackingHAWK X3 — Enterprise Fleet Management & GPS Telemetry</span>
+          <span class="date">Jan 2023 – Present</span>
+        </div>
+        <div class="role-badge">React Native Developer</div>
+        <div class="tech-stack-tag">Tech: React Native, Google Maps, SQLite, MMKV, FCM, Background Handlers, Barcode Scanning</div>
+        <ul class="bullets">
+          <li><strong>Flagship App Ownership:</strong> Built and independently maintained enterprise fleet-tracking application for Android and iOS across multiple major production releases.</li>
+          <li><strong>Real-Time Vehicle Tracking:</strong> Engineered live GPS vehicle tracking on maps, displaying vehicle speed, ignition status, historical route playback, and geofence boundary crossing alerts.</li>
+          <li><strong>Offline Caching & Persistence:</strong> Implemented SQLite and MMKV for sub-millisecond local caching of telemetry, enabling rapid app launch and offline inspection of historical vehicle reports.</li>
+          <li><strong>Background Telemetry Alerts:</strong> Configured background notification handlers alerting fleet managers to speed violations, geofence breaches, and ignition changes when the app is minimized or closed.</li>
+          <li><strong>Asset Check-In Workflows:</strong> Integrated camera and hardware barcode/QR scanning modules for automated driver-vehicle pairing and physical inventory audits.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">3. Lazyeye — Customized Child Assessment & Progress Platform</span>
+          <span class="date">Jan 2023 – May 2025</span>
+        </div>
+        <div class="role-badge">React Native & Web Developer</div>
+        <div class="tech-stack-tag">Tech: React Native, WebViews, Bidirectional postMessage Bridge, Web Development, Native File Downloads</div>
+        <ul class="bullets">
+          <li><strong>Customized Child Workflows:</strong> Developed customized web canvas exercises and React Native mobile applications featuring interactive visual activities and clinical progress tracking.</li>
+          <li><strong>WebView-to-App Communication:</strong> Implemented WebView modules with a secure bidirectional message bridge (postMessage) to exchange real-time exercise telemetry and assessment scores between the web canvas and native application.</li>
+          <li><strong>Native File Downloads:</strong> Engineered file download workflows allowing doctors and guardians to download PDF clinical assessment reports directly from WebViews to device storage for offline access.</li>
+          <li><strong>Practitioner Summaries:</strong> Built user workflows for doctors and parents to review daily usage quotas, session logs, and configurable exercise parameters.</li>
+        </ul>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">4. Ingecom GPS & Japjee (Client Mobility & Inventory Applications)</span>
+          <span class="date">Jan 2024 – Present</span>
+        </div>
+        <div class="role-badge">React Native Developer</div>
+        <ul class="bullets">
+          <li><strong>Ingecom GPS:</strong> Customized and deployed white-labeled client instances of the fleet tracking platform for international clients, incorporating custom branding, reporting widgets, and payment integration.</li>
+          <li><strong>Japjee Inventory:</strong> Independently developed cross-platform inventory management mobile application with Role-Based Access Control (RBAC), real-time order tracking, and barcode scanning for warehouse workflows.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <div>
+          <span class="edu-name">Master of Computer Applications (MCA)</span>
+          <div class="edu-inst">Hindustan Institute of Management and Computer Science, Mathura</div>
+        </div>
+        <span class="date">2021 – 2023</span>
+      </div>
+      <div class="edu-item">
+        <div>
+          <span class="edu-name">Bachelor of Computer Applications (BCA)</span>
+          <div class="edu-inst">Uttam Institute of Technology and Management, Agra</div>
+        </div>
+        <span class="date">2018 – 2021</span>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

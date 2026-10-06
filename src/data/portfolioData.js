@@ -9,7 +9,7 @@ export const portfolioData = {
     phone: "+91-9870962636",
     location: "Agra, India (Open to Remote / Relocation)",
     availability: "Available for Full-time Roles & Immediate Relocation / Remote",
-    resumeUrl: "#", // Place your resume PDF in public/ or add a Google Drive link here
+    resumeUrl: "./resume.html",
     socials: {
       linkedin: "https://linkedin.com/in/abhishek-pal-a5a497217",
       github: "https://github.com/abhipal-dev",
