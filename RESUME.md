@@ -1,6 +1,6 @@
 # ABHISHEK PAL
-**React Native Mobile Engineer | 3.5+ Years | Maps, GPS, Fleet & Mobility Ecosystems**  
-Agra, India (Open to Remote / Relocation) • [abhipal85350@gmail.com](mailto:abhipal85350@gmail.com) • [+91-9870962636](tel:+919870962636)  
+**React Native Mobile Engineer | 3.5+ Years | 4–5 Apps on Each Store | 100+ Production Updates (RN 0.70 ➔ 0.8x)**  
+Agra, India (Open to Remote / Relocation) • Notice Period: **30 Days (Negotiable)** • [abhipal85350@gmail.com](mailto:abhipal85350@gmail.com) • [+91-9870962636](tel:+919870962636)  
 [linkedin.com/in/abhishek-pal-a5a497217](https://linkedin.com/in/abhishek-pal-a5a497217) • [github.com/abhipal-dev](https://github.com/abhipal-dev) • [abhipal-dev.github.io/portfolio](https://abhipal-dev.github.io/portfolio/)
 
 ---

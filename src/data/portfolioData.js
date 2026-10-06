@@ -8,7 +8,7 @@ export const portfolioData = {
     email: "abhipal85350@gmail.com",
     phone: "+91-9870962636",
     location: "Agra, India (Open to Remote / Relocation)",
-    availability: "Immediate / Flexible • Open to Full-time Remote & Relocation",
+    availability: "30 Days Notice Period (Negotiable) • Open to Full-time Remote & Relocation",
     resumeUrl: "./resume.html",
     socials: {
       linkedin: "https://linkedin.com/in/abhishek-pal-a5a497217",
