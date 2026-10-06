@@ -46,7 +46,7 @@ export default function Hero() {
             {/* Live Status Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0d1424] border border-slate-800 text-xs font-mono font-medium shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-slate-300">4–5 Apps Published • 100+ Production Updates • RN 0.70 ➔ 0.8x</span>
+              <span className="text-slate-300">4–5 Apps on Each Store • Enterprise & Kiosks • 100+ Production Updates</span>
             </div>
 
             {/* Main Headline */}
@@ -64,7 +64,7 @@ export default function Hero() {
 
             {/* Value Proposition Description */}
             <p className="text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Specialized in <strong className="text-white font-semibold">Real-Time GPS Tracking</strong>, <strong className="text-white font-semibold">Google Maps SDK</strong>, 3-sided fleet platforms (Rider, Driver, Kiosk), and advanced <strong className="text-white font-semibold">WebView bidirectional data bridges</strong>. Built and published 4–5 distinct production apps on <strong className="text-white font-semibold">Google Play & Apple App Store</strong> with 100+ continuous production updates, component scaling, and release cycles across React Native 0.70 to 0.8x.
+              Specialized in <strong className="text-white font-semibold">Real-Time GPS Tracking</strong>, <strong className="text-white font-semibold">Google Maps SDK</strong>, 3-sided fleet platforms (Rider, Driver, Kiosk), and advanced <strong className="text-white font-semibold">WebView bidirectional data bridges</strong>. Built and published 4–5 distinct production apps each on <strong className="text-white font-semibold">Google Play & Apple App Store</strong> alongside dedicated hardware kiosk terminals and private enterprise APKs, with 100+ continuous production updates and component scaling across React Native 0.70 to 0.8x.
             </p>
 
             {/* Quick Contact & Location Chips */}
