@@ -68,19 +68,17 @@ You have two simple options to deploy your portfolio:
 
 ### Option A: Automatic GitHub Actions (Recommended)
 
-1. Create a new repository on [GitHub](https://github.com/new) (e.g., `portfolio` or `<your-username>.github.io`).
+1. Create a new repository on [GitHub](https://github.com/new) (e.g., `portfolio` or `abhipal-dev.github.io`).
 2. Run these commands in your project folder:
    ```bash
-   git add .
-   git commit -m "Initial portfolio commit"
-   git remote add origin https://github.com/<YOUR-USERNAME>/<REPO-NAME>.git
+   git remote add origin https://github.com/abhipal-dev/portfolio.git
    git branch -M main
    git push -u origin main
    ```
 3. In your GitHub repository:
    - Go to **Settings** > **Pages** (on the left sidebar).
    - Under **Build and deployment** > **Source**, select **GitHub Actions**.
-4. That's it! The included `.github/workflows/deploy.yml` workflow will automatically build and publish your site to `https://<YOUR-USERNAME>.github.io/<REPO-NAME>/`.
+4. That's it! The included `.github/workflows/deploy.yml` workflow will automatically build and publish your site to `https://abhipal-dev.github.io/portfolio/`.
 
 ### Option B: 1-Command Deploy via `gh-pages`
 
