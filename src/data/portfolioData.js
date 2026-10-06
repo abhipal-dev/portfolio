@@ -2,9 +2,9 @@ export const portfolioData = {
   personal: {
     name: "Abhishek Pal",
     role: "React Native Mobile Engineer",
-    subRole: "3.5+ Years Experience • Maps, GPS, Fleet & Mobility Ecosystems",
-    tagline: "Building, maintaining, and scaling high-performance cross-platform Android and iOS applications with real-time GPS tracking and enterprise mobility architectures.",
-    bio: "React Native Mobile Engineer with 3.5+ years of production experience building and scaling high-performance cross-platform Android & iOS applications. Specialized in real-time GPS tracking, interactive map architectures, background location telemetry, geofencing, driver dispatch workflows, and push notification systems. Proven track record taking mobile apps end-to-end — from technical requirement analysis and Figma UI translation through REST API integration to Google Play Store and Apple App Store deployment.",
+    subRole: "Core Focus: React Native • 3.5+ Years Exp • Maps, Fleet Mobility & WebViews",
+    tagline: "Dedicated to building high-performance cross-platform Android & iOS applications with real-time GPS tracking, multi-app mobility ecosystems, and advanced WebView data bridges.",
+    bio: "React Native Mobile Engineer with 3.5+ years of production experience building and scaling high-performance cross-platform Android & iOS applications. My current primary focus is 100% dedicated to React Native mobile architecture — leading engineering for three-sided mobility ecosystems (Rider, Driver, and Kiosk Terminal), real-time GPS tracking, and fleet telemetry. Additionally, from Jan 2023 to May 2025, I engineered the Lazyeye platform working extensively as both a Web Developer and React Native Engineer, developing deep expertise in WebViews, bidirectional postMessage bridges, and high-frequency web-to-native data communication.",
     email: "abhipal85350@gmail.com",
     phone: "+91-9870962636",
     location: "Agra, India (Open to Remote / Relocation)",
@@ -17,19 +17,19 @@ export const portfolioData = {
   },
 
   stats: [
-    { label: "Years Experience", value: "3.5+" },
-    { label: "Production Apps", value: "6+" },
+    { label: "Production Experience", value: "3.5+ Yrs" },
+    { label: "Core Specialization", value: "React Native" },
     { label: "Stores Deployed", value: "iOS & Android" },
-    { label: "Code Quality & Uptime", value: "99.9%" },
+    { label: "WebView & Data Bridges", value: "Expert" },
   ],
 
   skills: {
     mobile: [
-      { name: "React Native", level: "Expert", icon: "Smartphone" },
+      { name: "React Native", level: "Expert (Core Focus)", icon: "Smartphone" },
       { name: "TypeScript", level: "Advanced", icon: "FileCode" },
       { name: "JavaScript (ES6+)", level: "Expert", icon: "Terminal" },
       { name: "React Navigation", level: "Advanced", icon: "Compass" },
-      { name: "React.js", level: "Advanced", icon: "Layers" },
+      { name: "React.js (Web Dev)", level: "Advanced", icon: "Layers" },
       { name: "Multi-App Architecture", level: "Advanced", icon: "Layers" },
     ],
     maps: [
@@ -39,6 +39,14 @@ export const portfolioData = {
       { name: "Location Telemetry", level: "Advanced", icon: "Radio" },
       { name: "Geofencing & Routes", level: "Advanced", icon: "Route" },
       { name: "Driver Dispatch Systems", level: "Advanced", icon: "Send" },
+    ],
+    webview: [
+      { name: "WebView Integration", level: "Expert", icon: "ExternalLink" },
+      { name: "postMessage Bridge", level: "Expert", icon: "Share2" },
+      { name: "Web-to-App Telemetry", level: "Expert", icon: "RefreshCw" },
+      { name: "Native File Downloads", level: "Advanced", icon: "FileText" },
+      { name: "Local Document Storage", level: "Advanced", icon: "Database" },
+      { name: "Web Canvas Sync", level: "Expert", icon: "Activity" },
     ],
     background: [
       { name: "Firebase (FCM)", level: "Advanced", icon: "Bell" },
@@ -51,16 +59,8 @@ export const portfolioData = {
     storage: [
       { name: "MMKV Storage", level: "Expert", icon: "Zap" },
       { name: "SQLite", level: "Advanced", icon: "Database" },
+      { name: "High-Freq Caching", level: "Advanced", icon: "RefreshCw" },
       { name: "Offline Sync Strategies", level: "Advanced", icon: "RefreshCw" },
-      { name: "WebViews & Bridges", level: "Advanced", icon: "ExternalLink" },
-      { name: "Native File Downloads", level: "Advanced", icon: "FileText" },
-      { name: "PostMessage Bridge", level: "Advanced", icon: "Share2" },
-    ],
-    ui: [
-      { name: "React Native Reanimated", level: "Advanced", icon: "Activity" },
-      { name: "UI Kitten & Paper", level: "Advanced", icon: "Palette" },
-      { name: "Arabic RTL & LTR", level: "Expert", icon: "Languages" },
-      { name: "Responsive Layouts", level: "Advanced", icon: "Layout" },
     ],
     devops: [
       { name: "Android Studio (Gradle)", level: "Advanced", icon: "Box" },
@@ -68,7 +68,7 @@ export const portfolioData = {
       { name: "Google Play Console", level: "Advanced", icon: "Cloud" },
       { name: "Apple App Store Connect", level: "Advanced", icon: "ShieldCheck" },
       { name: "RESTful APIs & Axios", level: "Expert", icon: "Network" },
-      { name: "Git & Version Control", level: "Advanced", icon: "GitBranch" },
+      { name: "Arabic RTL & LTR", level: "Expert", icon: "Languages" },
     ],
   },
 
@@ -107,6 +107,34 @@ export const portfolioData = {
       featured: true,
     },
     {
+      id: "lazyeye-platform",
+      title: "Lazyeye — Child Assessment & Progress Platform",
+      category: "Healthcare & WebViews",
+      tagline: "Pediatric visual assessment app with deep bidirectional WebView-to-native communication and full web development.",
+      period: "Jan 2023 – May 2025",
+      role: "React Native & Web Developer",
+      description:
+        "Engineered customized pediatric vision assessment applications, working extensively as both a Web Developer and React Native mobile engineer. Built interactive visual exercise canvases, complex web-to-app communication bridges, and clinical PDF report generation.",
+      highlights: [
+        "Bidirectional WebView Bridge & Data Communication: Built a secure, high-performance postMessage event bridge to exchange real-time exercise telemetry, canvas coordinates, and test scores between HTML5 web views and native React Native modules.",
+        "Web Development & Canvas Workflows: Designed and coded responsive web pages and interactive child assessment activities with rich animations and clinical progress scoring.",
+        "Native File Downloads & Document Storage: Engineered native file download workflows allowing doctors and parents to download clinical PDF assessment reports directly from WebViews to device storage for offline access.",
+        "Practitioner Summaries & Portals: Built responsive practitioner portals and dashboards for doctors and parents to review daily usage quotas, session logs, and configurable parameters.",
+      ],
+      technologies: [
+        "WebViews",
+        "postMessage Bridge",
+        "React Native",
+        "Web Development",
+        "JavaScript (ES6+)",
+        "PDF Downloads",
+        "REST APIs",
+      ],
+      github: "https://github.com",
+      demo: "https://linkedin.com/in/abhishek-pal-a5a497217",
+      featured: true,
+    },
+    {
       id: "trackinghawk-x3",
       title: "TrackingHAWK X3 — Enterprise Fleet Management",
       category: "GPS & Telemetry",
@@ -131,32 +159,6 @@ export const portfolioData = {
         "FCM",
         "Background Handlers",
         "Barcode Scanning",
-      ],
-      github: "https://github.com",
-      demo: "https://linkedin.com/in/abhishek-pal-a5a497217",
-      featured: true,
-    },
-    {
-      id: "lazyeye-platform",
-      title: "Lazyeye — Child Assessment & Progress Platform",
-      category: "Healthcare & WebViews",
-      tagline: "Pediatric visual assessment app with bidirectional WebView bridge and clinical reporting.",
-      period: "Jan 2023 – Jun 2023",
-      role: "React Native Developer",
-      description:
-        "Customized pediatric vision assessment application featuring interactive visual activities, clinical progress tracking, and secure web-to-native communication.",
-      highlights: [
-        "Customized Child Workflows: Designed engaging interactive visual exercises and clinical progress tracking specifically for children.",
-        "Bidirectional WebView Bridge: Implemented secure postMessage bridge exchanging exercise telemetry and assessment scores between the web canvas and native application in real-time.",
-        "Native File Downloads: Built native file download workflows allowing doctors and parents to download clinical PDF assessment reports directly to device storage.",
-        "Practitioner Summaries: Engineered dashboards for practitioners and parents to review daily usage quotas, session logs, and configurable parameters.",
-      ],
-      technologies: [
-        "React Native",
-        "WebViews",
-        "postMessage Bridge",
-        "Native File Downloads",
-        "REST APIs",
       ],
       github: "https://github.com",
       demo: "https://linkedin.com/in/abhishek-pal-a5a497217",
@@ -191,19 +193,37 @@ export const portfolioData = {
 
   experience: [
     {
-      period: "Jan 2023 – Present",
-      role: "React Native Developer",
+      period: "May 2024 – Present (Ongoing Focus)",
+      role: "Lead React Native Mobile Engineer (Core Focus)",
+      company: "Softcruise Technology Pvt. Ltd.",
+      location: "Agra, India (Open to Remote / Relocation)",
+      focusBadge: "Main Focus: 100% React Native Mobile Engineering",
+      description:
+        "Spearheading mobile architecture and end-to-end production development with 100% focus on React Native cross-platform applications across Android and iOS. Leading the engineering of three-sided mobility platforms (Rider, Driver, and Walk-up Kiosk Terminal) and enterprise fleet-tracking platforms.",
+      achievements: [
+        "Three-Sided Mobility Platform Leadership: Architected the complete synchronized mobility ecosystem consisting of Rider App, Driver App, and Kiosk Terminal application for counter/hotel bookings.",
+        "Real-Time GPS Tracking & Maps: Built high-performance map architectures with animated driver bearing rotation, distance radius proximity dispatch waves, and dynamic polyline drawing.",
+        "Background Telemetry & Notifications: Configured FCM, APNs, Notifee, and Headless JS to guarantee mission-critical trip dispatch alerts across foreground, background, and killed application states.",
+        "Native Store Release Engineering: Configured Android Gradle and iOS Xcode build targets, managed Google Play Store and Apple App Store signed releases (.aab/.ipa), testing tracks, and store guidelines compliance.",
+        "Code Quality & Team Mentorship: Conducted architecture reviews, enforced modular state handling patterns, and mentored developers on native debugging and performance optimizations.",
+      ],
+      skills: ["React Native", "Google Maps Platform", "GPS Telemetry", "FCM / APNs", "MMKV", "SQLite", "Reanimated", "Gradle", "Xcode"],
+    },
+    {
+      period: "Jan 2023 – May 2025",
+      role: "React Native & Web Developer (Lazyeye Platform)",
       company: "Softcruise Technology Pvt. Ltd.",
       location: "Agra, India",
+      focusBadge: "Dual Role: Web Development & Hybrid Mobile Engineering",
       description:
-        "Full-lifecycle development, architecture, store release management, and feature delivery across enterprise fleet management, logistics, and multi-sided ride-hailing applications.",
+        "Engineered customized pediatric visual assessment solutions, working actively as both a Web Developer and React Native mobile engineer. Deeply specialized in WebViews, bidirectional postMessage bridges, high-frequency web-to-app data communication, and native clinical document management.",
       achievements: [
-        "Full-Lifecycle Ownership: Develop, test, and maintain production React Native applications for Android and iOS across fleet management, logistics, and multi-sided ride-hailing platforms.",
-        "Architecture & Modularity: Designed clean, maintainable mobile architectures with reusable component hierarchies, centralized API service layers, and predictable state management.",
-        "Cross-Functional Delivery: Collaborated with backend engineers, web platform developers, and UI/UX designers to define API payloads and optimize user workflows.",
-        "Store Releases & Compliance: Configured Android Gradle builds and iOS Xcode targets, generated signed release artifacts (.aab/.ipa), and managed live releases on Google Play Store and Apple App Store.",
-        "Code Reviews & Mentorship: Conducted regular peer code reviews, enforced coding standards, and mentored junior developers in debugging native crashes, state handling, and responsive styling.",
+        "High-Frequency WebView Data Communication: Engineered secure bidirectional message bridges (postMessage & native event listeners) to exchange real-time exercise telemetry, canvas coordinates, and test scores between web layers and native React Native modules.",
+        "Full Web Development & Interactive Canvases: Coded responsive web interfaces, interactive visual exercise canvases, and clinical dashboards for doctors and parents to review daily usage quotas and session logs.",
+        "Native File Downloads & Document Storage: Built robust download pipelines enabling doctors and parents to download clinical PDF assessment reports directly from WebViews into device storage for offline access.",
+        "Hybrid State Synchronization: Handled reliable synchronization between HTML5 canvas state, local MMKV/SQLite caches, and centralized RESTful APIs.",
       ],
+      skills: ["WebViews", "postMessage Bridge", "Web Development", "React Native", "JavaScript (ES6+)", "PDF Downloads", "REST APIs"],
     },
   ],
 

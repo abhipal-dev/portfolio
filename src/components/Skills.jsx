@@ -71,24 +71,24 @@ export default function Skills() {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
-    { id: 'all', label: 'All Mobile Skills' },
-    { id: 'mobile', label: 'Core Mobile & Multi-App' },
+    { id: 'all', label: 'All Skills' },
+    { id: 'mobile', label: 'React Native (Core Focus)' },
+    { id: 'webview', label: 'WebViews & Data Bridges' },
     { id: 'maps', label: 'Maps, GPS & Telemetry' },
     { id: 'background', label: 'Push & Background' },
-    { id: 'storage', label: 'Storage & WebViews' },
-    { id: 'ui', label: 'UI, Motion & RTL' },
+    { id: 'storage', label: 'Storage & Caching' },
     { id: 'devops', label: 'Builds & Store Release' },
   ];
 
   const getSkillsToDisplay = () => {
     if (activeCategory === 'all') {
       return [
-        ...portfolioData.skills.mobile.map((s) => ({ ...s, cat: 'Core Mobile' })),
-        ...portfolioData.skills.maps.map((s) => ({ ...s, cat: 'Maps & GPS' })),
-        ...portfolioData.skills.background.map((s) => ({ ...s, cat: 'Push & Background' })),
-        ...portfolioData.skills.storage.map((s) => ({ ...s, cat: 'Storage & Offline' })),
-        ...portfolioData.skills.ui.map((s) => ({ ...s, cat: 'UI & RTL' })),
-        ...portfolioData.skills.devops.map((s) => ({ ...s, cat: 'Builds & Releases' })),
+        ...(portfolioData.skills.mobile || []).map((s) => ({ ...s, cat: 'Core Mobile' })),
+        ...(portfolioData.skills.webview || []).map((s) => ({ ...s, cat: 'WebViews & Bridges' })),
+        ...(portfolioData.skills.maps || []).map((s) => ({ ...s, cat: 'Maps & GPS' })),
+        ...(portfolioData.skills.background || []).map((s) => ({ ...s, cat: 'Push & Background' })),
+        ...(portfolioData.skills.storage || []).map((s) => ({ ...s, cat: 'Storage & Offline' })),
+        ...(portfolioData.skills.devops || []).map((s) => ({ ...s, cat: 'Builds & Releases' })),
       ];
     }
     return (portfolioData.skills[activeCategory] || []).map((s) => ({

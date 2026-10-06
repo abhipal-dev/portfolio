@@ -1,15 +1,22 @@
 import React from 'react';
-import { Smartphone, MapPin, BellRing, Box, CheckCircle2, Award, Zap, Code } from 'lucide-react';
+import { Smartphone, MapPin, Share2, Box, CheckCircle2, Award, Zap, Code } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function About() {
   const pillars = [
     {
       icon: Smartphone,
-      title: 'Multi-App Mobility Ecosystems',
+      title: 'React Native Mobility Platforms (Core Focus)',
       description:
-        'Architecting and synchronizing three-sided platforms — Rider on-demand booking, Driver active navigation, and walk-up Kiosk Terminal applications.',
+        'Architecting and synchronizing three-sided ecosystems — Rider on-demand booking, Driver active navigation, and walk-up Kiosk Terminal applications.',
       accent: 'from-blue-500/20 to-indigo-500/10 border-blue-500/30 text-blue-400',
+    },
+    {
+      icon: Share2,
+      title: 'Deep WebView & Data Communication',
+      description:
+        'Extensive expertise building bidirectional postMessage bridges to stream real-time telemetry, canvas coordinates, and test scores between web layers and native apps.',
+      accent: 'from-purple-500/20 to-pink-500/10 border-purple-500/30 text-purple-400',
     },
     {
       icon: MapPin,
@@ -19,17 +26,10 @@ export default function About() {
       accent: 'from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-400',
     },
     {
-      icon: BellRing,
-      title: 'Background Tasks & Notifications',
-      description:
-        'Configuring FCM, APNs, Notifee, and Headless JS for reliable trip alerts across foreground, background, and killed app states with deep navigation.',
-      accent: 'from-purple-500/20 to-pink-500/10 border-purple-500/30 text-purple-400',
-    },
-    {
       icon: Box,
       title: 'Native Builds & Store Releases',
       description:
-        'Configuring Android Gradle builds and iOS Xcode targets, generating signed release production artifacts (.aab / .ipa), and managing store submissions.',
+        'Configuring Android Gradle builds and iOS Xcode targets, generating signed release production artifacts (.aab / .ipa), and managing Play Store & App Store deployments.',
       accent: 'from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-400',
     },
   ];
@@ -59,10 +59,10 @@ export default function About() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
             <Smartphone className="w-3.5 h-3.5" />
-            <span>CROSS-PLATFORM MOBILE ENGINEERING</span>
+            <span>CROSS-PLATFORM MOBILE & HYBRID WEB ENGINEERING</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Specialized in Mobility, Fleet & Real-Time Tracking
+            Specialized in Mobility, Fleet & High-Speed Data Bridges
           </h2>
           <p className="text-slate-400 text-base leading-relaxed">
             {portfolioData.personal.bio}
