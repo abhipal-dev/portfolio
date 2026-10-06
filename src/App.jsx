@@ -3,6 +3,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import StoreLifecycle from './components/StoreLifecycle';
 import ArchitectureDeepDive from './components/ArchitectureDeepDive';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -21,6 +22,7 @@ export default function App() {
         <main className="relative z-10">
           <Hero />
           <About />
+          <StoreLifecycle />
           <ArchitectureDeepDive />
           <Skills />
           <Projects />

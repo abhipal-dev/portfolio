@@ -8,9 +8,9 @@ export default function About() {
 
   const metrics = [
     { label: 'Production Mobile Exp', value: '3.5+ Yrs', detail: 'Cross-platform Android & iOS' },
-    { label: 'Core Specialization', value: 'React Native', detail: 'Maps, Telemetry & Multi-App' },
-    { label: 'Stores Deployed', value: 'Android & iOS', detail: 'Google Play & App Store releases' },
-    { label: 'WebView & MMKV Speed', value: '< 1 ms', detail: 'Zero-latency sync telemetry' },
+    { label: 'Apps Built & Published', value: '4–5 Apps', detail: 'Google Play & Apple App Store' },
+    { label: 'Store Release Cycles', value: '25+ Updates', detail: '5–6 release updates per app' },
+    { label: 'Version Upgrades', value: 'RN 0.70 ➔ 0.8x', detail: 'Gradle, Xcode & Hermes migrations' },
   ];
 
   const pillars = [
@@ -37,9 +37,9 @@ export default function About() {
     },
     {
       icon: Box,
-      title: 'Native Builds & Store Releases',
+      title: 'Store Releases & Lifecycle Engineering',
       description:
-        'Configuring Android Gradle builds and iOS Xcode targets, generating signed release production artifacts (.aab / .ipa), managing Play Store & App Store deployments, and Arabic RTL layout mirroring.',
+        'Built and published 4–5 distinct production apps on Google Play and Apple App Store. Handled 25+ release update cycles and migrated apps across major React Native versions (RN 0.70 to 0.8x) with Gradle, CocoaPods, and targetSdkVersion compliance.',
       accent: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
     },
   ];
