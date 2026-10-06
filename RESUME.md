@@ -80,3 +80,4 @@ React Native Mobile Engineer with **3.5+ years of production experience** buildi
   Hindustan Institute of Management and Computer Science, Mathura
 - **Bachelor of Computer Applications (BCA)** | *2018 – 2021*  
   Uttam Institute of Technology and Management, Agra
+

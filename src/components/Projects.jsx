@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { ExternalLink, Sparkles, FolderGit2, ArrowUpRight, Eye, Calendar, UserCheck } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { portfolioData } from '../data/portfolioData';
+import { useTheme } from '../context/ThemeContext';
 import ProjectModal from './ProjectModal';
 
 export default function Projects() {
+  const { currentTheme } = useTheme();
   const [filter, setFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -22,7 +24,7 @@ export default function Projects() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium ${currentTheme.badge}`}>
               <FolderGit2 className="w-3.5 h-3.5" />
               <span>PRODUCTION MOBILE APPLICATIONS</span>
             </div>
@@ -40,9 +42,9 @@ export default function Projects() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                   filter === cat
-                    ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
+                    ? `${currentTheme.button} shadow-md`
                     : 'bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800'
                 }`}
               >
