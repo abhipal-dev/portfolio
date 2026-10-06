@@ -1,38 +1,46 @@
 import React from 'react';
-import { Smartphone, MapPin, Share2, Box, CheckCircle2, Award, Zap, Code } from 'lucide-react';
+import { Smartphone, MapPin, Share2, Box, CheckCircle2, Award, Zap, Code, ShieldCheck } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
 
 export default function About() {
   const { currentTheme } = useTheme();
+
+  const metrics = [
+    { label: 'Production Mobile Exp', value: '3.5+ Yrs', detail: 'Cross-platform Android & iOS' },
+    { label: 'Core Specialization', value: 'React Native', detail: 'Maps, Telemetry & Multi-App' },
+    { label: 'Stores Deployed', value: 'Android & iOS', detail: 'Google Play & App Store releases' },
+    { label: 'WebView & MMKV Speed', value: '< 1 ms', detail: 'Zero-latency sync telemetry' },
+  ];
+
   const pillars = [
     {
       icon: Smartphone,
-      title: 'React Native Mobility Platforms (Core Focus)',
+      title: 'Three-Sided Mobility Platforms (Core Focus)',
       description:
-        'Architecting and synchronizing three-sided ecosystems — Rider on-demand booking, Driver active navigation, and walk-up Kiosk Terminal applications.',
-      accent: 'from-blue-500/20 to-indigo-500/10 border-blue-500/30 text-blue-400',
+        'Architecting and synchronizing complete mobility ecosystems — Rider on-demand booking, Driver active navigation, and walk-up Kiosk Terminal applications tied to centralized dispatch.',
+      accent: 'text-sky-400 bg-sky-500/10 border-sky-500/20',
     },
     {
       icon: Share2,
-      title: 'Deep WebView & Data Communication',
+      title: 'Deep WebView & postMessage Bridges',
       description:
-        'Extensive expertise building bidirectional postMessage bridges to stream real-time telemetry, canvas coordinates, and test scores between web layers and native apps.',
-      accent: 'from-purple-500/20 to-pink-500/10 border-purple-500/30 text-purple-400',
+        'Extensive expertise building bidirectional event bridges to exchange real-time exercise telemetry, canvas coordinates, and test scores between HTML5 web views and native React Native modules.',
+      accent: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
     },
     {
       icon: MapPin,
       title: 'GPS Tracking, Maps & Telemetry',
       description:
-        'Building high-performance map architectures with react-native-maps, dynamic polyline route drawing, animated driver bearing rotation, and geofencing.',
-      accent: 'from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-400',
+        'Building high-performance map architectures with react-native-maps, dynamic polyline route drawing, animated driver bearing rotation, proximity dispatch, and geofencing.',
+      accent: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
     },
     {
       icon: Box,
       title: 'Native Builds & Store Releases',
       description:
-        'Configuring Android Gradle builds and iOS Xcode targets, generating signed release production artifacts (.aab / .ipa), and managing Play Store & App Store deployments.',
-      accent: 'from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-400',
+        'Configuring Android Gradle builds and iOS Xcode targets, generating signed release production artifacts (.aab / .ipa), managing Play Store & App Store deployments, and Arabic RTL layout mirroring.',
+      accent: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
     },
   ];
 
@@ -40,18 +48,21 @@ export default function About() {
     <section id="about" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Metric Stats Banner */}
+        {/* Metric Stats Engineering Grid */}
         <div className="mb-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          {portfolioData.stats.map((stat, idx) => (
+          {metrics.map((stat, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm text-center hover:border-slate-700 transition-colors"
+              className="p-5 sm:p-6 rounded-2xl bg-[#0c111e]/80 border border-slate-800/90 backdrop-blur-sm text-center hover:border-slate-700 transition-all group"
             >
-              <div className={`text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${currentTheme.primary} font-mono`}>
+              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight group-hover:text-sky-300 transition-colors">
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm font-medium text-slate-400 mt-1">
+              <div className="text-xs sm:text-sm font-semibold text-slate-300 mt-1">
                 {stat.label}
+              </div>
+              <div className="text-[11px] font-mono text-slate-500 mt-0.5">
+                {stat.detail}
               </div>
             </div>
           ))}
@@ -66,7 +77,7 @@ export default function About() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Specialized in Mobility, Fleet & High-Speed Data Bridges
           </h2>
-          <p className="text-slate-400 text-base leading-relaxed">
+          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
             {portfolioData.personal.bio}
           </p>
         </div>
@@ -78,19 +89,19 @@ export default function About() {
             return (
               <div
                 key={index}
-                className="group relative p-6 sm:p-8 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/80 transition-all duration-300"
+                className="group relative p-6 sm:p-8 rounded-2xl bg-[#0c111e]/70 border border-slate-800/80 hover:border-slate-700 hover:bg-[#0c111e] transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   <div
-                    className={`p-3 rounded-xl bg-gradient-to-br ${pillar.accent} border flex-shrink-0 group-hover:scale-110 transition-transform`}
+                    className={`p-3 rounded-xl border flex-shrink-0 group-hover:scale-105 transition-transform ${pillar.accent}`}
                   >
-                    <Icon className="w-6 h-6" />
+                    <Icon className="w-5 h-5" />
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-lg font-bold text-slate-100 group-hover:text-white transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-sm text-slate-400 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
                       {pillar.description}
                     </p>
                   </div>

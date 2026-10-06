@@ -3,6 +3,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import ArchitectureDeepDive from './components/ArchitectureDeepDive';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
@@ -12,7 +13,7 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-[#050811] text-slate-100 selection:bg-emerald-500 selection:text-slate-950 font-sans transition-colors duration-500">
+      <div className="min-h-screen bg-[#070a12] text-slate-100 selection:bg-blue-600 selection:text-white font-sans transition-colors duration-500">
         {/* Top Navbar */}
         <Navbar />
 
@@ -20,6 +21,7 @@ export default function App() {
         <main className="relative z-10">
           <Hero />
           <About />
+          <ArchitectureDeepDive />
           <Skills />
           <Projects />
           <Experience />

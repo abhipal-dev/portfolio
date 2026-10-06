@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ExternalLink, Sparkles, FolderGit2, ArrowUpRight, Eye, Calendar, UserCheck } from 'lucide-react';
-import { GithubIcon } from './SocialIcons';
+import { ExternalLink, Sparkles, FolderGit2, ArrowUpRight, Eye, Calendar, UserCheck, Smartphone, MapPin, Share2 } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import { portfolioData } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
 import ProjectModal from './ProjectModal';
@@ -45,7 +45,7 @@ export default function Projects() {
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                   filter === cat
                     ? `${currentTheme.button} shadow-md`
-                    : 'bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800'
+                    : 'bg-[#0c111e] text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800'
                 }`}
               >
                 {cat}
@@ -59,15 +59,12 @@ export default function Projects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group relative flex flex-col justify-between rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/90 transition-all duration-300 overflow-hidden shadow-lg shadow-black/20"
+              className="group relative flex flex-col justify-between rounded-2xl bg-[#0c111e]/80 border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden shadow-lg"
             >
-              {/* Card Header Top Accent */}
-              <div className="h-1.5 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-60 group-hover:opacity-100 transition-opacity" />
-
               <div className="p-6 sm:p-7 flex-1 flex flex-col">
                 {/* Meta Header */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                  <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-800 text-indigo-400 border border-slate-700/60">
+                  <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/10 text-sky-400 border border-blue-500/20 font-medium">
                     {project.category}
                   </span>
                   
@@ -77,64 +74,65 @@ export default function Projects() {
                       {project.period}
                     </span>
                     {project.featured && (
-                      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-amber-400">
-                        <Sparkles className="w-3 h-3" /> Production
+                      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-400 font-mono">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Production
                       </span>
                     )}
                   </div>
                 </div>
 
-                {/* Role badge if available */}
+                {/* Role badge */}
                 {project.role && (
-                  <div className="mb-2 text-xs font-semibold text-emerald-400 flex items-center gap-1">
+                  <div className="mb-2 text-xs font-semibold text-emerald-400 flex items-center gap-1 font-mono">
                     <UserCheck className="w-3.5 h-3.5" />
                     <span>{project.role}</span>
                   </div>
                 )}
 
                 {/* Title & Tagline */}
-                <h3 className="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+                <h3 className="text-xl font-bold text-white group-hover:text-sky-300 transition-colors">
                   {project.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-400 line-clamp-3 leading-relaxed">
+                <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
                   {project.tagline}
                 </p>
 
-                {/* Key Highlight Bullets Preview */}
-                <ul className="mt-4 space-y-1.5 text-xs text-slate-300/90 border-t border-slate-800/60 pt-3">
-                  {project.highlights.slice(0, 2).map((item, idx) => (
-                    <li key={idx} className="line-clamp-2">
-                      • {item}
+                {/* Key Technical Highlights Preview */}
+                <ul className="mt-4 space-y-2 text-xs text-slate-300 border-t border-slate-800/80 pt-3">
+                  {project.highlights.slice(0, 3).map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-sky-400 font-mono flex-shrink-0 mt-0.5">▹</span>
+                      <span className="leading-relaxed line-clamp-2">{item}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Tech Pills */}
                 <div className="mt-5 flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/80">
-                  {project.technologies.slice(0, 5).map((tech) => (
+                  {project.technologies.slice(0, 6).map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-0.5 text-[11px] font-mono rounded bg-slate-800/80 text-slate-300 border border-slate-700/50"
+                      className="px-2 py-0.5 text-[11px] font-mono rounded bg-slate-800/80 text-slate-300 border border-slate-700/60"
                     >
                       {tech}
                     </span>
                   ))}
-                  {project.technologies.length > 5 && (
+                  {project.technologies.length > 6 && (
                     <span className="px-1.5 py-0.5 text-[10px] font-mono rounded bg-slate-800/40 text-slate-400">
-                      +{project.technologies.length - 5} more
+                      +{project.technologies.length - 6} more
                     </span>
                   )}
                 </div>
               </div>
 
               {/* Card Footer Actions */}
-              <div className="px-6 py-4 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between">
+              <div className="px-6 py-4 bg-[#080c14] border-t border-slate-800 flex items-center justify-between">
                 <button
                   onClick={() => setSelectedProject(project)}
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white transition-colors"
                 >
-                  <Eye className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>View Case Study & Highlights</span>
+                  <Eye className="w-3.5 h-3.5 text-sky-400" />
+                  <span>View Full Architecture Case Study</span>
                 </button>
 
                 <div className="flex items-center gap-2">
@@ -142,11 +140,11 @@ export default function Projects() {
                     href={portfolioData.personal.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${project.title} LinkedIn Details`}
+                    aria-label={`${project.title} Details`}
                     className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-                    title="View Project Details"
+                    title="View Project on LinkedIn"
                   >
-                    <ArrowUpRight className="w-4 h-4 text-indigo-400" />
+                    <ArrowUpRight className="w-4 h-4 text-sky-400" />
                   </a>
                 </div>
               </div>

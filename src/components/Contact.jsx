@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, Check, Copy, MessageSquare, Phone, Sparkles, AlertCircle, ExternalLink, ArrowUpRight } from 'lucide-react';
+import {
+  Mail,
+  MapPin,
+  Send,
+  Check,
+  Copy,
+  MessageSquare,
+  Phone,
+  Sparkles,
+  ExternalLink,
+  ArrowUpRight,
+  MessageCircle,
+} from 'lucide-react';
 import { LinkedinIcon, GithubIcon } from './SocialIcons';
 import { portfolioData } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
@@ -12,8 +24,8 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: 'React Native Mobile Engineer Opportunity',
-    message: '',
+    subject: 'React Native Mobile Engineer Opportunity — Abhishek Pal',
+    message: `Hi Abhishek,\n\nI reviewed your portfolio and production work in React Native, real-time GPS telemetry, and mobility ecosystems. We would love to discuss a mobile engineering opportunity with you.\n\nBest regards,\n[Your Name]`,
   });
 
   const templates = [
@@ -21,7 +33,7 @@ export default function Contact() {
       id: 'job',
       label: '💼 Full-Time Role',
       subject: 'React Native Mobile Engineer Opportunity — Abhishek Pal',
-      body: `Hi Abhishek,\n\nI reviewed your portfolio and production work in React Native, GPS telemetry, and mobility ecosystems. We would love to discuss a mobile engineering opportunity with you.\n\nBest regards,\n[Your Name]`,
+      body: `Hi Abhishek,\n\nI reviewed your portfolio and production work in React Native, real-time GPS telemetry, and mobility ecosystems. We would love to discuss a mobile engineering opportunity with you.\n\nBest regards,\n[Your Name]`,
     },
     {
       id: 'consulting',
@@ -31,9 +43,9 @@ export default function Contact() {
     },
     {
       id: 'sayhi',
-      label: '☕ Say Hello / Tech Chat',
+      label: '☕ Connect & Tech Chat',
       subject: 'Connecting from your portfolio — Abhishek Pal',
-      body: `Hi Abhishek,\n\nGreat work on your React Native mobility and WebView platforms! Just reaching out to connect.\n\nBest regards,\n[Your Name]`,
+      body: `Hi Abhishek,\n\nGreat work on your React Native mobility and WebView platforms! Reaching out to connect.\n\nBest regards,\n[Your Name]`,
     },
   ];
 
@@ -86,7 +98,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 relative bg-slate-950/80">
+    <section id="contact" className="py-24 relative bg-[#090d16]/80 border-t border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -99,22 +111,22 @@ export default function Contact() {
             Let's Start A Conversation
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            Open directly in Gmail, launch your default mail client with <code className="text-emerald-400 font-mono">mailto</code>, or give me a quick call.
+            No contact form friction. Launch directly in Gmail, trigger your native mail app via <code className="text-sky-400 font-mono">mailto:</code>, or call directly.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column: Direct Action Launchers */}
+          {/* Left Column: Direct Instant Launchers */}
           <div className="lg:col-span-5 space-y-5">
-            <div className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-5">
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#0c111e] border border-slate-800 shadow-xl space-y-5">
               
               <div>
-                <h3 className="text-xl font-bold text-white mb-1.5">
+                <h3 className="text-xl font-bold text-white mb-1">
                   Direct Communication Channels
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Available for full-time React Native positions, remote engineering, and relocation.
+                  Available for full-time React Native positions, remote mobile engineering, and immediate relocation.
                 </p>
               </div>
 
@@ -140,10 +152,10 @@ export default function Contact() {
               {/* Direct Mailto Native Client Button */}
               <a
                 href={getMailtoUri()}
-                className="w-full p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 flex items-center justify-between text-slate-200 transition-colors group"
+                className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-slate-700 flex items-center justify-between text-slate-200 transition-colors group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                  <div className="p-2 rounded-lg bg-blue-500/10 text-sky-400 border border-blue-500/20">
                     <Send className="w-4 h-4" />
                   </div>
                   <div className="text-left">
@@ -155,10 +167,10 @@ export default function Contact() {
               </a>
 
               {/* 1-Click Copy Email Pill */}
-              <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800/80 flex items-center justify-between gap-3">
+              <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-center justify-between gap-3">
                 <div className="min-w-0">
-                  <div className="text-[10px] text-slate-400 font-mono">Personal Email Address:</div>
-                  <div className="text-xs sm:text-sm font-semibold text-slate-200 truncate">
+                  <div className="text-[10px] text-slate-400 font-mono">Personal Email:</div>
+                  <div className="text-xs sm:text-sm font-semibold text-slate-200 truncate font-mono">
                     {portfolioData.personal.email}
                   </div>
                 </div>
@@ -182,7 +194,7 @@ export default function Contact() {
               </div>
 
               {/* Direct Phone / WhatsApp Card */}
-              <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800/80 flex items-center justify-between gap-3">
+              <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex-shrink-0">
                     <Phone className="w-4 h-4" />
@@ -191,29 +203,30 @@ export default function Contact() {
                     <div className="text-[10px] text-slate-400 font-mono">Phone / WhatsApp:</div>
                     <a
                       href={`tel:${portfolioData.personal.phone}`}
-                      className="text-xs sm:text-sm font-semibold text-slate-200 hover:text-emerald-400 truncate block transition-colors"
+                      className="text-xs sm:text-sm font-semibold text-slate-200 hover:text-emerald-400 truncate block transition-colors font-mono"
                     >
                       {portfolioData.personal.phone}
                     </a>
                   </div>
                 </div>
 
-                <button
-                  onClick={handleCopyPhone}
-                  className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 flex-shrink-0"
-                >
-                  {copiedPhone ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-emerald-400">Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5" />
-                      <span>Copy</span>
-                    </>
-                  )}
-                </button>
+                <div className="flex items-center gap-1.5 flex-shrink-0">
+                  <a
+                    href="https://wa.me/919870962636"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 transition-colors"
+                    title="Chat on WhatsApp"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                  </a>
+                  <button
+                    onClick={handleCopyPhone}
+                    className="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-300 hover:text-white transition-colors"
+                  >
+                    {copiedPhone ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                  </button>
+                </div>
               </div>
 
               {/* Social Links Bar */}
@@ -222,7 +235,7 @@ export default function Contact() {
                   href={portfolioData.personal.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-slate-400 hover:text-blue-400 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-slate-400 hover:text-sky-400 transition-colors"
                 >
                   <LinkedinIcon className="w-4 h-4" />
                   <span>LinkedIn Profile</span>
@@ -243,14 +256,14 @@ export default function Contact() {
 
           {/* Right Column: Pre-filled Email Composer Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-5">
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#0c111e] border border-slate-800 shadow-xl space-y-5">
               
               <div>
                 <h3 className="text-xl font-bold text-white mb-1">
-                  Compose Email with 1-Click Templates
+                  1-Click Pre-filled Email Composer
                 </h3>
                 <p className="text-xs text-slate-400">
-                  Select a template below to auto-fill your message, or customize your own text:
+                  Select a template to prefill the email, review it, and send directly via your preferred platform:
                 </p>
               </div>
 
@@ -264,7 +277,7 @@ export default function Contact() {
                     className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
                       template === t.id
                         ? `${currentTheme.badge} font-bold scale-105 shadow-sm`
-                        : 'bg-slate-950/80 text-slate-400 hover:text-slate-200 border border-slate-800'
+                        : 'bg-slate-950 text-slate-400 hover:text-slate-200 border border-slate-800'
                     }`}
                   >
                     {t.label}
@@ -283,7 +296,7 @@ export default function Contact() {
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-xs transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 text-xs transition-colors"
                     />
                   </div>
 
@@ -296,7 +309,7 @@ export default function Contact() {
                       placeholder="jane@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-xs transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 text-xs transition-colors"
                     />
                   </div>
                 </div>
@@ -310,7 +323,7 @@ export default function Contact() {
                     required
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-xs transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 text-xs transition-colors"
                   />
                 </div>
 
@@ -323,7 +336,7 @@ export default function Contact() {
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-xs transition-colors resize-none leading-relaxed font-mono"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 text-xs transition-colors resize-none leading-relaxed font-mono"
                   />
                 </div>
 
@@ -341,9 +354,9 @@ export default function Contact() {
 
                   <a
                     href={getMailtoUri()}
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold bg-slate-950/80 hover:bg-slate-900 text-slate-200 border border-slate-700/80 hover:border-slate-600 transition-all active:scale-95"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold bg-slate-950 hover:bg-slate-900 text-slate-200 border border-slate-800 hover:border-slate-700 transition-all active:scale-95"
                   >
-                    <Send className="w-4 h-4 text-emerald-400" />
+                    <Send className="w-4 h-4 text-sky-400" />
                     <span>Send via Mail Client (mailto:)</span>
                   </a>
                 </div>
