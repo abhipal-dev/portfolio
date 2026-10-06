@@ -21,7 +21,7 @@ export default function StoreLifecycle() {
 
   const handleCopyPitch = () => {
     const pitchText = `Abhishek Pal — Senior React Native Mobile Engineer (3.5+ Years Exp)
-• Production Record: 4–5 published apps on Google Play & App Store, 25+ store release cycles.
+• Production Record: 4–5 published apps on Google Play & App Store, 100+ production updates & releases.
 • Upgrades & Tooling: Maintained & upgraded apps from React Native 0.70 to 0.8x (Gradle, Xcode, Hermes, Target SDK 34/35).
 • Core Specialties: Real-time GPS Maps, 3-Sided Fleet Mobility (Rider/Driver/Kiosk), Bidirectional WebView bridges, MMKV caching.
 • Availability: Immediate / Flexible • Open to Remote & Relocation
@@ -60,14 +60,14 @@ export default function StoreLifecycle() {
     },
     {
       title: 'Framework Upgrades (RN 0.70 ➔ 0.8x)',
-      badge: '5–6 Updates per App',
+      badge: '100+ Updates Managed',
       color: 'border-purple-500/30 bg-purple-950/20 text-purple-400',
       icon: RefreshCw,
       points: [
         'Upgraded 4–5 production apps across major React Native releases (RN 0.70 up to RN 0.8x).',
         'Updated Android Gradle Plugin (AGP), Java 17 toolchain, and CocoaPods build targets.',
         'Migrated and stabilized apps on the Hermes JavaScript engine for sub-second launch times.',
-        'Maintained a 99.8%+ crash-free session rate across 25+ combined store release cycles.',
+        'Maintained a 99.8%+ crash-free session rate across 100+ production component & store updates.',
       ],
     },
   ];
@@ -91,7 +91,7 @@ export default function StoreLifecycle() {
                 Senior Mobile Engineer with Proven Store Track Record
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                4–5 live production apps built & deployed on Google Play & Apple App Store. 25+ total release updates managed across React Native 0.70 to 0.8x. Available for immediate joining, remote engineering, or relocation.
+                4–5 live production apps built & deployed on Google Play & Apple App Store. 100+ production updates, component scaling, and feature releases managed across React Native 0.70 to 0.8x. Available for immediate joining, remote engineering, or relocation.
               </p>
             </div>
 
@@ -128,8 +128,8 @@ export default function StoreLifecycle() {
               <div className="text-base sm:text-lg font-bold text-white font-mono mt-0.5">4–5 Live Apps</div>
             </div>
             <div>
-              <div className="text-[10px] font-mono text-slate-400 uppercase">Store Releases</div>
-              <div className="text-base sm:text-lg font-bold text-sky-400 font-mono mt-0.5">25+ Release Cycles</div>
+              <div className="text-[10px] font-mono text-slate-400 uppercase">Production Updates</div>
+              <div className="text-base sm:text-lg font-bold text-sky-400 font-mono mt-0.5">100+ Updates</div>
             </div>
             <div>
               <div className="text-[10px] font-mono text-slate-400 uppercase">Version Span</div>

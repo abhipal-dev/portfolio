@@ -9,7 +9,7 @@ export default function About() {
   const metrics = [
     { label: 'Production Mobile Exp', value: '3.5+ Yrs', detail: 'Cross-platform Android & iOS' },
     { label: 'Apps Built & Published', value: '4–5 Apps', detail: 'Google Play & Apple App Store' },
-    { label: 'Store Release Cycles', value: '25+ Updates', detail: '5–6 release updates per app' },
+    { label: 'Production Updates', value: '100+ Releases', detail: 'Features, scaling & store updates' },
     { label: 'Version Upgrades', value: 'RN 0.70 ➔ 0.8x', detail: 'Gradle, Xcode & Hermes migrations' },
   ];
 
@@ -39,7 +39,7 @@ export default function About() {
       icon: Box,
       title: 'Store Releases & Lifecycle Engineering',
       description:
-        'Built and published 4–5 distinct production apps on Google Play and Apple App Store. Handled 25+ release update cycles and migrated apps across major React Native versions (RN 0.70 to 0.8x) with Gradle, CocoaPods, and targetSdkVersion compliance.',
+        'Built and published 4–5 distinct production apps on Google Play and Apple App Store. Delivered 100+ production updates, component enhancements, and migrated apps across major React Native versions (RN 0.70 to 0.8x) with Gradle, CocoaPods, and targetSdkVersion compliance.',
       accent: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
     },
   ];
