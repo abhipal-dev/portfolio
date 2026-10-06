@@ -11,14 +11,14 @@ export default function ProjectModal({ project, onClose }) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl bg-[#0c111e] border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl text-slate-100 max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-3xl bg-[#0c111e] border border-slate-700/80 rounded-2xl p-4 sm:p-8 shadow-2xl text-slate-100 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-5 right-5 p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
@@ -46,7 +46,7 @@ export default function ProjectModal({ project, onClose }) {
             )}
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">{project.title}</h3>
+          <h3 className="text-xl sm:text-3xl font-bold text-white tracking-tight leading-snug">{project.title}</h3>
           <p className="text-sm sm:text-base font-medium text-slate-300">{project.tagline}</p>
         </div>
 

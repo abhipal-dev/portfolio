@@ -51,10 +51,10 @@ export default function Hero() {
 
             {/* Main Headline */}
             <div className="space-y-3">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
                 Hi, I'm <span className={`bg-gradient-to-r ${currentTheme.primary} bg-clip-text text-transparent`}>{portfolioData.personal.name}</span>
               </h1>
-              <p className="text-xl sm:text-2xl font-bold text-slate-200 flex flex-wrap items-center justify-center lg:justify-start gap-2">
+              <p className="text-lg sm:text-2xl font-bold text-slate-200 flex flex-wrap items-center justify-center lg:justify-start gap-2">
                 <span>{portfolioData.personal.role}</span>
                 <span className="text-xs px-2.5 py-0.5 rounded-md font-mono bg-blue-500/10 text-sky-400 border border-blue-500/20 font-semibold">
                   3.5+ Years Exp
@@ -63,12 +63,12 @@ export default function Hero() {
             </div>
 
             {/* Value Proposition Description */}
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            <p className="text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
               Specialized in <strong className="text-white font-semibold">Real-Time GPS Tracking</strong>, <strong className="text-white font-semibold">Google Maps SDK</strong>, multi-app mobility platforms (Rider, Driver, and Kiosk Terminal), and advanced <strong className="text-white font-semibold">WebView bidirectional postMessage data bridges</strong>. Deployed production applications across Android (Gradle) and iOS (Xcode).
             </p>
 
             {/* Quick Contact & Location Chips */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs font-mono">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs font-mono">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0c111e] border border-slate-800 text-slate-300">
                 <MapPin className="w-3.5 h-3.5 text-sky-400" />
                 {portfolioData.personal.location}
@@ -77,19 +77,19 @@ export default function Hero() {
               {/* 1-Click Copy Email Chip */}
               <button
                 onClick={handleCopyEmail}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0c111e] border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0c111e] border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-colors max-w-full"
                 title="Click to copy email"
               >
                 {copiedEmail ? (
                   <>
                     <Check className="w-3.5 h-3.5 text-emerald-400" />
-                    <span className="text-emerald-400">Copied Email!</span>
+                    <span className="text-emerald-400 font-semibold">Copied Email!</span>
                   </>
                 ) : (
                   <>
-                    <Mail className="w-3.5 h-3.5 text-sky-400" />
-                    <span>{portfolioData.personal.email}</span>
-                    <Copy className="w-3 h-3 text-slate-500 ml-0.5" />
+                    <Mail className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
+                    <span className="truncate">{portfolioData.personal.email}</span>
+                    <Copy className="w-3 h-3 text-slate-500 ml-0.5 flex-shrink-0" />
                   </>
                 )}
               </button>
@@ -98,16 +98,16 @@ export default function Hero() {
                 href={`tel:${portfolioData.personal.phone}`}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0c111e] border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-emerald-400" />
-                {portfolioData.personal.phone}
+                <Phone className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                <span>{portfolioData.personal.phone}</span>
               </a>
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
               <a
                 href="#projects"
-                className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm ${currentTheme.button} active:scale-95 transition-all shadow-lg`}
+                className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm ${currentTheme.button} active:scale-95 transition-all shadow-lg text-center`}
               >
                 <Smartphone className="w-4 h-4" />
                 <span>Explore Mobile Apps</span>
@@ -116,7 +116,7 @@ export default function Hero() {
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-[#0c111e] hover:bg-[#121829] text-slate-200 border border-slate-700/80 hover:border-slate-600 shadow-md transition-all active:scale-95"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-[#0c111e] hover:bg-[#121829] text-slate-200 border border-slate-700/80 hover:border-slate-600 shadow-md transition-all active:scale-95 text-center"
               >
                 <Mail className="w-4 h-4 text-sky-400" />
                 <span>Direct Mail (1-Click)</span>
@@ -124,7 +124,7 @@ export default function Hero() {
 
               <a
                 href={portfolioData.personal.resumeUrl}
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-medium text-sm bg-slate-950 hover:bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-medium text-sm bg-slate-950 hover:bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800 transition-all text-center"
               >
                 <Download className="w-4 h-4" />
                 <span>Resume (PDF)</span>

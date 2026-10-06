@@ -61,7 +61,7 @@ export default function Projects() {
               key={project.id}
               className="group relative flex flex-col justify-between rounded-2xl bg-[#0c111e]/80 border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden shadow-lg"
             >
-              <div className="p-6 sm:p-7 flex-1 flex flex-col">
+              <div className="p-4 sm:p-7 flex-1 flex flex-col">
                 {/* Meta Header */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                   <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/10 text-sky-400 border border-blue-500/20 font-medium">
@@ -126,13 +126,13 @@ export default function Projects() {
               </div>
 
               {/* Card Footer Actions */}
-              <div className="px-6 py-4 bg-[#080c14] border-t border-slate-800 flex items-center justify-between">
+              <div className="px-4 py-3 sm:px-6 sm:py-4 bg-[#080c14] border-t border-slate-800 flex items-center justify-between">
                 <button
                   onClick={() => setSelectedProject(project)}
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white transition-colors"
                 >
                   <Eye className="w-3.5 h-3.5 text-sky-400" />
-                  <span>View Full Architecture Case Study</span>
+                  <span><span className="hidden sm:inline">View Full </span>Case Study</span>
                 </button>
 
                 <div className="flex items-center gap-2">
