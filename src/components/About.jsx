@@ -1,8 +1,10 @@
 import React from 'react';
 import { Smartphone, MapPin, Share2, Box, CheckCircle2, Award, Zap, Code } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { useTheme } from '../context/ThemeContext';
 
 export default function About() {
+  const { currentTheme } = useTheme();
   const pillars = [
     {
       icon: Smartphone,
@@ -43,9 +45,9 @@ export default function About() {
           {portfolioData.stats.map((stat, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm text-center hover:border-indigo-500/40 transition-colors"
+              className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm text-center hover:border-slate-700 transition-colors"
             >
-              <div className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 font-mono">
+              <div className={`text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${currentTheme.primary} font-mono`}>
                 {stat.value}
               </div>
               <div className="text-xs sm:text-sm font-medium text-slate-400 mt-1">
@@ -57,7 +59,7 @@ export default function About() {
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+          <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium ${currentTheme.badge}`}>
             <Smartphone className="w-3.5 h-3.5" />
             <span>CROSS-PLATFORM MOBILE & HYBRID WEB ENGINEERING</span>
           </div>

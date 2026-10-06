@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,22 +11,24 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-indigo-500 selection:text-white">
-      {/* Top Navbar */}
-      <Navbar />
+    <ThemeProvider>
+      <div className="min-h-screen bg-[#050811] text-slate-100 selection:bg-emerald-500 selection:text-slate-950 font-sans transition-colors duration-500">
+        {/* Top Navbar */}
+        <Navbar />
 
-      {/* Main Content Sections */}
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
+        {/* Main Content Sections */}
+        <main className="relative z-10">
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Contact />
+        </main>
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        {/* Footer */}
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
