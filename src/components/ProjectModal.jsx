@@ -11,7 +11,7 @@ export default function ProjectModal({ project, onClose }) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl bg-slate-900 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl text-slate-100 max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-3xl bg-[#0c111e] border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl text-slate-100 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -26,7 +26,7 @@ export default function ProjectModal({ project, onClose }) {
         {/* Modal Header */}
         <div className="space-y-3 pr-8">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-500/10 text-sky-400 border border-blue-500/20">
               <Layers className="w-3.5 h-3.5" />
               <span>{project.category}</span>
             </span>
@@ -52,7 +52,7 @@ export default function ProjectModal({ project, onClose }) {
 
         {/* Full Description & Highlights */}
         <div className="mt-6 space-y-5 text-sm text-slate-300 leading-relaxed border-t border-slate-800/80 pt-5">
-          <p className="text-slate-300/90 leading-relaxed">{project.description}</p>
+          <p className="text-slate-300 leading-relaxed">{project.description}</p>
 
           <div>
             <h4 className="text-xs uppercase font-mono tracking-wider text-slate-400 mb-3 font-semibold flex items-center gap-1.5">
@@ -76,7 +76,7 @@ export default function ProjectModal({ project, onClose }) {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 text-xs font-mono rounded-md bg-slate-800 border border-slate-700 text-indigo-300"
+                  className="px-2.5 py-1 text-xs font-mono rounded-md bg-slate-800 border border-slate-700 text-sky-300"
                 >
                   {tech}
                 </span>
@@ -97,7 +97,7 @@ export default function ProjectModal({ project, onClose }) {
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-medium bg-gradient-to-r from-indigo-600 to-purple-600 hover:brightness-110 text-white transition-all shadow-md shadow-indigo-600/30"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-medium bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white transition-all shadow-md shadow-blue-600/30"
           >
             <LinkedinIcon className="w-4 h-4" />
             Connect on LinkedIn

@@ -34,7 +34,6 @@ import {
 import { portfolioData } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
 
-// Map icon strings to Lucide components
 const iconMap = {
   Smartphone,
   FileCode,
@@ -73,13 +72,13 @@ export default function Skills() {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
-    { id: 'all', label: 'All Skills' },
-    { id: 'mobile', label: 'React Native (Core Focus)' },
-    { id: 'webview', label: 'WebViews & Data Bridges' },
-    { id: 'maps', label: 'Maps, GPS & Telemetry' },
+    { id: 'all', label: 'All Stack' },
+    { id: 'mobile', label: 'React Native Core' },
+    { id: 'webview', label: 'WebViews & Bridges' },
+    { id: 'maps', label: 'Maps & Telemetry' },
     { id: 'background', label: 'Push & Background' },
     { id: 'storage', label: 'Storage & Caching' },
-    { id: 'devops', label: 'Builds & Store Release' },
+    { id: 'devops', label: 'Builds & Stores' },
   ];
 
   const getSkillsToDisplay = () => {
@@ -102,7 +101,7 @@ export default function Skills() {
   const displayedSkills = getSkillsToDisplay();
 
   return (
-    <section id="skills" className="py-24 relative bg-slate-950/50">
+    <section id="skills" className="py-24 relative bg-[#090d16]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -115,7 +114,7 @@ export default function Skills() {
             Mobile Tech Stack & Core Competencies
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            Specialized frameworks, map APIs, telemetry caching, and release tooling powering production Android and iOS apps.
+            Specialized frameworks, map SDKs, telemetry caching, and release tooling powering production Android and iOS applications.
           </p>
         </div>
 
@@ -127,8 +126,8 @@ export default function Skills() {
               onClick={() => setActiveCategory(cat.id)}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                 activeCategory === cat.id
-                  ? `${currentTheme.button} scale-105 shadow-md`
-                  : 'bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800/80'
+                  ? `${currentTheme.button} shadow-md`
+                  : 'bg-[#0c111e] text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800'
               }`}
             >
               {cat.label}
@@ -137,22 +136,22 @@ export default function Skills() {
         </div>
 
         {/* Skills Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5">
           {displayedSkills.map((skill, index) => {
             const IconComponent = iconMap[skill.icon] || Smartphone;
             return (
               <div
                 key={index}
-                className="group relative p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 hover:bg-slate-900 transition-all duration-200 flex flex-col items-center text-center gap-3 hover:-translate-y-1 shadow-sm"
+                className="group relative p-4 rounded-xl bg-[#0c111e]/90 border border-slate-800 hover:border-slate-700 transition-all duration-200 flex flex-col items-center text-center gap-2.5 shadow-sm"
               >
-                <div className={`p-3 rounded-lg bg-slate-800/80 ${currentTheme.accentText} group-hover:scale-110 transition-all`}>
-                  <IconComponent className="w-5 h-5" />
+                <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-sky-400 group-hover:text-white group-hover:scale-105 transition-all">
+                  <IconComponent className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-200 group-hover:text-white">
+                  <h3 className="text-xs sm:text-sm font-semibold text-slate-200 group-hover:text-white line-clamp-1">
                     {skill.name}
                   </h3>
-                  <div className="mt-1 flex items-center justify-center gap-1 text-[11px] text-slate-400 font-mono">
+                  <div className="mt-1 flex items-center justify-center gap-1 text-[10px] text-slate-400 font-mono">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                     <span>{skill.level}</span>
                   </div>

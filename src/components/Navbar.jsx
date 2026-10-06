@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, Sparkles } from 'lucide-react';
+import { Menu, X, FileText, Sparkles, Smartphone } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import { portfolioData } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
@@ -19,6 +19,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'About', href: '#about' },
+    { name: 'Architecture', href: '#architecture' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
@@ -29,7 +30,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/30 py-3.5'
+          ? 'bg-[#090d16]/95 backdrop-blur-md border-b border-slate-800/80 shadow-xl shadow-black/40 py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -41,26 +42,26 @@ export default function Navbar() {
             href="#"
             className="flex items-center gap-2.5 group cursor-pointer text-slate-100 hover:text-white transition-colors"
           >
-            <div className={`w-9 h-9 rounded-xl bg-gradient-to-tr ${currentTheme.primary} flex items-center justify-center font-mono font-bold text-sm text-slate-950 shadow-md group-hover:scale-105 transition-transform`}>
-              &lt;/&gt;
+            <div className={`w-9 h-9 rounded-xl ${currentTheme.button} flex items-center justify-center font-mono font-bold text-xs text-white shadow-md group-hover:scale-105 transition-transform`}>
+              &lt;AP/&gt;
             </div>
             <div>
-              <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-slate-200 transition-all">
+              <span className="font-extrabold text-base sm:text-lg tracking-tight text-white group-hover:text-slate-200 transition-all">
                 {portfolioData.personal.name}
               </span>
-              <span className={`text-[11px] ${currentTheme.accentText} font-mono block -mt-1 font-semibold`}>
-                .mobile
+              <span className="text-[10px] text-sky-400 font-mono block -mt-1 font-semibold">
+                React Native Lead
               </span>
             </div>
           </a>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-900/80 p-1.5 rounded-full border border-slate-800 backdrop-blur-md">
+          <nav className="hidden lg:flex items-center gap-1 bg-[#0c111e]/80 p-1.5 rounded-full border border-slate-800 backdrop-blur-md">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-full transition-all duration-200"
+                className="px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-full transition-all duration-200 font-mono"
               >
                 {link.name}
               </a>
@@ -70,7 +71,7 @@ export default function Navbar() {
           {/* Actions: Theme Switcher & Links */}
           <div className="hidden md:flex items-center gap-3">
             {/* Theme Selector Pills */}
-            <div className="flex items-center gap-1 bg-slate-900/90 p-1 rounded-full border border-slate-800" title="Switch Color Theme">
+            <div className="flex items-center gap-1 bg-[#0c111e] p-1 rounded-full border border-slate-800" title="Switch Color Palette">
               {Object.values(themes).map((t) => (
                 <button
                   key={t.id}
@@ -83,7 +84,7 @@ export default function Navbar() {
                   title={`Switch to ${t.name}`}
                 >
                   <span>{t.icon}</span>
-                  <span className="text-[10px] hidden lg:inline">{t.name.split(' ')[0]}</span>
+                  <span className="text-[10px] hidden xl:inline">{t.name.split(' ')[0]}</span>
                 </button>
               ))}
             </div>
@@ -93,18 +94,18 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
-              className="p-2 text-slate-400 hover:text-white hover:bg-slate-800/80 rounded-xl transition-colors border border-transparent hover:border-slate-700/60"
+              className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition-colors border border-transparent hover:border-slate-700"
             >
-              <GithubIcon className="w-5 h-5" />
+              <GithubIcon className="w-4 h-4" />
             </a>
             <a
               href={portfolioData.personal.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
-              className="p-2 text-slate-400 hover:text-white hover:bg-slate-800/80 rounded-xl transition-colors border border-transparent hover:border-slate-700/60"
+              className="p-2 text-slate-400 hover:text-sky-400 hover:bg-slate-800 rounded-xl transition-colors border border-transparent hover:border-slate-700"
             >
-              <LinkedinIcon className="w-5 h-5" />
+              <LinkedinIcon className="w-4 h-4" />
             </a>
             
             <a
@@ -117,7 +118,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Hamburger */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2">
             {/* Mobile Theme Toggle */}
             <button
               onClick={() => {
@@ -125,7 +126,7 @@ export default function Navbar() {
                 const nextIdx = (keys.indexOf(themeId) + 1) % keys.length;
                 setThemeId(keys[nextIdx]);
               }}
-              className="p-2 text-xs font-mono rounded-lg bg-slate-900 border border-slate-800 text-slate-300"
+              className="p-2 text-xs font-mono rounded-lg bg-[#0c111e] border border-slate-800 text-slate-300"
               title="Toggle Theme"
             >
               {currentTheme.icon}
@@ -145,22 +146,22 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="md:hidden px-4 pt-3 pb-6 bg-slate-950/98 border-b border-slate-800/90 backdrop-blur-2xl animate-in slide-in-from-top-2">
+        <div className="lg:hidden px-4 pt-3 pb-6 bg-[#090d16] border-b border-slate-800 backdrop-blur-2xl animate-in slide-in-from-top-2">
           <nav className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-2.5 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-colors"
+                className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-colors"
               >
                 {link.name}
               </a>
             ))}
             
             {/* Mobile Theme Bar */}
-            <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between">
-              <span className="text-xs font-mono text-slate-400">Color Palette:</span>
+            <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-400">Palette:</span>
               <div className="flex gap-2">
                 {Object.values(themes).map((t) => (
                   <button
@@ -176,7 +177,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+            <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <a
                   href={portfolioData.personal.socials.github}
@@ -190,7 +191,7 @@ export default function Navbar() {
                   href={portfolioData.personal.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg"
+                  className="p-2 text-slate-400 hover:text-sky-400 hover:bg-slate-800 rounded-lg"
                 >
                   <LinkedinIcon className="w-5 h-5" />
                 </a>
