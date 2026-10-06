@@ -32,7 +32,7 @@ export default function Hero() {
 • Production Track Record: 4–5 Apps Published on Google Play & Apple App Store + Dedicated Enterprise Kiosks & Fleet APKs.
 • Releases & Upgrades: 100+ continuous production updates and component enhancements across React Native 0.70 to 0.8x.
 • Core Specialties: Real-time GPS Maps, 3-sided mobility architectures (Rider/Driver/Kiosk), bidirectional WebView data bridges (postMessage), MMKV caching, FCM/APNs.
-• Availability: Immediate / Flexible • Open to Remote & Relocation
+• Notice Period: 30 Days (Negotiable) • Open to Remote & Relocation
 • Portfolio: https://abhipal-dev.github.io/portfolio/
 • Contact: abhipal85350@gmail.com | +91-9870962636 | Agra, India`;
 

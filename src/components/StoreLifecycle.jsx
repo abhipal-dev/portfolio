@@ -24,7 +24,7 @@ export default function StoreLifecycle() {
 • Production Track Record: 4–5 Apps Published on Google Play & Apple App Store + Dedicated Enterprise Kiosks & Fleet APKs.
 • Releases & Upgrades: 100+ continuous production updates and component enhancements across React Native 0.70 to 0.8x.
 • Core Specialties: Real-time GPS Maps, 3-sided mobility architectures (Rider/Driver/Kiosk), bidirectional WebView data bridges (postMessage), MMKV caching, FCM/APNs.
-• Availability: Immediate / Flexible • Open to Remote & Relocation
+• Notice Period: 30 Days (Negotiable) • Open to Remote & Relocation
 • Portfolio: https://abhipal-dev.github.io/portfolio/
 • Contact: abhipal85350@gmail.com | +91-9870962636 | Agra, India`;
 
@@ -207,7 +207,7 @@ export default function StoreLifecycle() {
                 <div>• <strong className="text-white">Releases & Upgrades:</strong> 100+ continuous production updates across React Native 0.70 to 0.8x.</div>
                 <div>• <strong className="text-white">Core Specialties:</strong> Real-time GPS Maps, 3-sided mobility architectures, bidirectional WebView postMessage, MMKV caching, FCM/APNs.</div>
                 <div className="text-slate-400 pt-1 text-[10px]">
-                  • Contact: abhipal85350@gmail.com | +91-9870962636 | Agra, India (Open to Remote / Relocation)
+                  • Contact: abhipal85350@gmail.com | +91-9870962636 | Agra, India (30 Days Notice • Open to Relocation)
                 </div>
               </div>
             </div>
