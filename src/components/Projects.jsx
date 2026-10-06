@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Sparkles, FolderGit2, ArrowUpRight, Eye } from 'lucide-react';
+import { ExternalLink, Sparkles, FolderGit2, ArrowUpRight, Eye, Calendar, UserCheck } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { portfolioData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
@@ -8,7 +8,7 @@ export default function Projects() {
   const [filter, setFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
+  const categories = ['All', 'Mobility & Fleet', 'GPS & Telemetry', 'Healthcare & WebViews'];
 
   const filteredProjects =
     filter === 'All'
@@ -24,13 +24,13 @@ export default function Projects() {
           <div className="space-y-3">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
               <FolderGit2 className="w-3.5 h-3.5" />
-              <span>FEATURED WORK</span>
+              <span>PRODUCTION MOBILE APPLICATIONS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Selected Projects & Case Studies
+              Featured Mobility & Fleet Systems
             </h2>
             <p className="text-slate-400 text-sm sm:text-base max-w-xl">
-              Real-world full-stack web applications, APIs, and scalable user experiences.
+              Production React Native apps powering real-time ride-hailing, vehicle telemetry tracking, and enterprise mobile workflows.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
@@ -64,16 +64,31 @@ export default function Projects() {
 
               <div className="p-6 sm:p-7 flex-1 flex flex-col">
                 {/* Meta Header */}
-                <div className="flex items-center justify-between gap-2 mb-3">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                   <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-800 text-indigo-400 border border-slate-700/60">
                     {project.category}
                   </span>
-                  {project.featured && (
-                    <span className="inline-flex items-center gap-1 text-[11px] font-medium text-amber-400">
-                      <Sparkles className="w-3 h-3" /> Featured
+                  
+                  <div className="flex items-center gap-3 text-xs text-slate-400 font-mono">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3 text-slate-500" />
+                      {project.period}
                     </span>
-                  )}
+                    {project.featured && (
+                      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-amber-400">
+                        <Sparkles className="w-3 h-3" /> Production
+                      </span>
+                    )}
+                  </div>
                 </div>
+
+                {/* Role badge if available */}
+                {project.role && (
+                  <div className="mb-2 text-xs font-semibold text-emerald-400 flex items-center gap-1">
+                    <UserCheck className="w-3.5 h-3.5" />
+                    <span>{project.role}</span>
+                  </div>
+                )}
 
                 {/* Title & Tagline */}
                 <h3 className="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
@@ -83,9 +98,18 @@ export default function Projects() {
                   {project.tagline}
                 </p>
 
+                {/* Key Highlight Bullets Preview */}
+                <ul className="mt-4 space-y-1.5 text-xs text-slate-300/90 border-t border-slate-800/60 pt-3">
+                  {project.highlights.slice(0, 2).map((item, idx) => (
+                    <li key={idx} className="line-clamp-2">
+                      • {item}
+                    </li>
+                  ))}
+                </ul>
+
                 {/* Tech Pills */}
-                <div className="mt-6 flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/80">
-                  {project.technologies.slice(0, 4).map((tech) => (
+                <div className="mt-5 flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/80">
+                  {project.technologies.slice(0, 5).map((tech) => (
                     <span
                       key={tech}
                       className="px-2 py-0.5 text-[11px] font-mono rounded bg-slate-800/80 text-slate-300 border border-slate-700/50"
@@ -93,9 +117,9 @@ export default function Projects() {
                       {tech}
                     </span>
                   ))}
-                  {project.technologies.length > 4 && (
+                  {project.technologies.length > 5 && (
                     <span className="px-1.5 py-0.5 text-[10px] font-mono rounded bg-slate-800/40 text-slate-400">
-                      +{project.technologies.length - 4} more
+                      +{project.technologies.length - 5} more
                     </span>
                   )}
                 </div>
@@ -108,27 +132,17 @@ export default function Projects() {
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white transition-colors"
                 >
                   <Eye className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>Quick Details</span>
+                  <span>View Case Study & Highlights</span>
                 </button>
 
                 <div className="flex items-center gap-2">
                   <a
-                    href={project.github}
+                    href={portfolioData.personal.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${project.title} GitHub repository`}
+                    aria-label={`${project.title} LinkedIn Details`}
                     className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-                    title="View GitHub Repository"
-                  >
-                    <GithubIcon className="w-4 h-4" />
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${project.title} Live Demo`}
-                    className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-                    title="Live Demo Preview"
+                    title="View Project Details"
                   >
                     <ArrowUpRight className="w-4 h-4 text-indigo-400" />
                   </a>

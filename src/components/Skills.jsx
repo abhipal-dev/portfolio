@@ -1,66 +1,94 @@
 import React, { useState } from 'react';
 import {
-  Code2,
+  Smartphone,
   FileCode,
-  Layers,
-  Palette,
   Terminal,
-  Layout,
-  Database,
-  Server,
+  Compass,
+  Layers,
+  Map,
+  MapPin,
+  Navigation,
+  Radio,
+  Route,
+  Send,
+  Bell,
+  BellRing,
+  Sparkles,
   Cpu,
-  Network,
-  ShieldCheck,
   Zap,
-  Cloud,
-  GitBranch,
+  Database,
+  RefreshCw,
+  ExternalLink,
+  FileText,
+  Share2,
+  Activity,
+  Palette,
+  Languages,
+  Layout,
   Box,
-  Workflow,
-  CloudLightning,
-  CheckCircle,
+  Cloud,
+  ShieldCheck,
+  Network,
+  GitBranch,
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 // Map icon strings to Lucide components
 const iconMap = {
-  Code2,
+  Smartphone,
   FileCode,
-  Layers,
-  Palette,
   Terminal,
-  Layout,
-  Database,
-  Server,
+  Compass,
+  Layers,
+  Map,
+  MapPin,
+  Navigation,
+  Radio,
+  Route,
+  Send,
+  Bell,
+  BellRing,
+  Sparkles,
   Cpu,
-  Network,
-  ShieldCheck,
   Zap,
-  Cloud,
-  GitBranch,
+  Database,
+  RefreshCw,
+  ExternalLink,
+  FileText,
+  Share2,
+  Activity,
+  Palette,
+  Languages,
+  Layout,
   Box,
-  Workflow,
-  CloudLightning,
-  CheckCircle,
+  Cloud,
+  ShieldCheck,
+  Network,
+  GitBranch,
 };
 
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
-    { id: 'all', label: 'All Technologies' },
-    { id: 'frontend', label: 'Frontend' },
-    { id: 'backend', label: 'Backend' },
-    { id: 'database', label: 'Database & Cloud' },
-    { id: 'devops', label: 'DevOps & Tools' },
+    { id: 'all', label: 'All Mobile Skills' },
+    { id: 'mobile', label: 'Core Mobile & Multi-App' },
+    { id: 'maps', label: 'Maps, GPS & Telemetry' },
+    { id: 'background', label: 'Push & Background' },
+    { id: 'storage', label: 'Storage & WebViews' },
+    { id: 'ui', label: 'UI, Motion & RTL' },
+    { id: 'devops', label: 'Builds & Store Release' },
   ];
 
   const getSkillsToDisplay = () => {
     if (activeCategory === 'all') {
       return [
-        ...portfolioData.skills.frontend.map((s) => ({ ...s, cat: 'Frontend' })),
-        ...portfolioData.skills.backend.map((s) => ({ ...s, cat: 'Backend' })),
-        ...portfolioData.skills.database.map((s) => ({ ...s, cat: 'Database' })),
-        ...portfolioData.skills.devops.map((s) => ({ ...s, cat: 'DevOps' })),
+        ...portfolioData.skills.mobile.map((s) => ({ ...s, cat: 'Core Mobile' })),
+        ...portfolioData.skills.maps.map((s) => ({ ...s, cat: 'Maps & GPS' })),
+        ...portfolioData.skills.background.map((s) => ({ ...s, cat: 'Push & Background' })),
+        ...portfolioData.skills.storage.map((s) => ({ ...s, cat: 'Storage & Offline' })),
+        ...portfolioData.skills.ui.map((s) => ({ ...s, cat: 'UI & RTL' })),
+        ...portfolioData.skills.devops.map((s) => ({ ...s, cat: 'Builds & Releases' })),
       ];
     }
     return (portfolioData.skills[activeCategory] || []).map((s) => ({
@@ -79,13 +107,13 @@ export default function Skills() {
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">
             <Cpu className="w-3.5 h-3.5" />
-            <span>TECHNICAL CAPABILITIES</span>
+            <span>TECHNICAL EXPERTISE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            My Tech Stack & Toolkit
+            Mobile Tech Stack & Core Competencies
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            Modern technologies, libraries, and frameworks I use to build scalable web applications.
+            Specialized frameworks, map APIs, telemetry caching, and release tooling powering production Android and iOS apps.
           </p>
         </div>
 
@@ -109,7 +137,7 @@ export default function Skills() {
         {/* Skills Cards Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {displayedSkills.map((skill, index) => {
-            const IconComponent = iconMap[skill.icon] || Code2;
+            const IconComponent = iconMap[skill.icon] || Smartphone;
             return (
               <div
                 key={index}
