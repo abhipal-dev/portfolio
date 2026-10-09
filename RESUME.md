@@ -60,13 +60,14 @@ React Native Mobile Engineer with **3.5+ years of production experience** buildi
 - **Background Telemetry Alerts:** Configured background notification handlers alerting fleet managers to speed violations, geofence breaches, and ignition changes when the app is minimized or closed.
 - **Asset Check-In Workflows:** Integrated camera and hardware barcode/QR scanning modules for automated driver-vehicle pairing and physical inventory audits.
 
-### 3. Lazyeye — Customized Child Assessment & Progress Platform
-*React Native & Web Developer | Jan 2023 – May 2025*  
-*(Tech: React Native, WebViews, Bidirectional postMessage Bridge, Web Development, Native File Downloads)*
-- **Customized Child Workflows:** Developed customized web canvas exercises and React Native mobile applications featuring interactive visual activities and clinical progress tracking.
-- **WebView-to-App Communication:** Implemented WebView modules with a secure bidirectional message bridge (`postMessage`) to exchange real-time exercise telemetry and assessment scores between the web canvas and native application.
+### 3. Lazyeye — Digital Dichoptic Vision Therapy & Clinical Assessment Platform
+*React Native & Full-Stack Web Developer | Jan 2023 – May 2025*  
+*(Tech: React Native, Laravel 8, React.js, MySQL/SQLite, WebViews, postMessage Bridge, Native File Downloads)*  
+*Live Application: [https://lazyeye.onrender.com](https://lazyeye.onrender.com) (Doctor Test Login: `dr_sarah` / `doctor123` | Admin: `admin` / `admin123`)*
+- **Live Clinical Platform:** Engineered full-stack amblyopia rehabilitation platform with dichoptic HTML5 canvas games (Tetris, Snake, Flappy Bird) with red-cyan anaglyph color filtering and role-based access control.
+- **Role Scoping & Clinical Heatmaps:** Implemented multi-tier data scoping for Doctors, Admins, and Patients, featuring an interactive 84-day (12-week) daily therapy compliance heatmap with instant session drill-down.
+- **WebView-to-App Telemetry:** Implemented WebView modules with a secure bidirectional message bridge (`postMessage`) to exchange real-time exercise telemetry and assessment scores between the web canvas and native mobile application.
 - **Native File Downloads:** Engineered file download workflows allowing doctors and guardians to download PDF clinical assessment reports directly from WebViews to device storage for offline access.
-- **Practitioner Summaries:** Built user workflows for doctors and parents to review daily usage quotas, session logs, and configurable exercise parameters.
 
 ### 4. Ingecom GPS & Japjee (Client Mobility & Inventory Applications)
 *React Native Developer | Jan 2024 – Present*
