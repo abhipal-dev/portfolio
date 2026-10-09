@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Sparkles, FolderGit2, ArrowUpRight, Eye, Calendar, UserCheck, Smartphone, MapPin, Share2 } from 'lucide-react';
+import { ExternalLink, Sparkles, FolderGit2, ArrowUpRight, Eye, Calendar, UserCheck, Smartphone, MapPin, Share2, KeyRound } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import { portfolioData } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
@@ -59,21 +59,33 @@ export default function Projects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group relative flex flex-col justify-between rounded-2xl bg-[#0c111e]/80 border border-slate-800 hover:border-slate-700 transition-all duration-300 overflow-hidden shadow-lg"
+              className={`group relative flex flex-col justify-between rounded-2xl transition-all duration-300 overflow-hidden shadow-lg ${
+                project.highlighted
+                  ? 'bg-gradient-to-b from-[#0e1628] via-[#0c111e] to-[#0c111e] border-2 border-sky-500/50 hover:border-sky-400 shadow-sky-950/50 ring-1 ring-sky-500/20'
+                  : 'bg-[#0c111e]/80 border border-slate-800 hover:border-slate-700'
+              }`}
             >
               <div className="p-4 sm:p-7 flex-1 flex flex-col">
                 {/* Meta Header */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                  <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/10 text-sky-400 border border-blue-500/20 font-medium">
-                    {project.category}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-500/10 text-sky-400 border border-blue-500/20 font-medium">
+                      {project.category}
+                    </span>
+                    {project.isLive && (
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-sky-500/20 text-sky-300 border border-sky-400/40 shadow-sm animate-pulse">
+                        <Sparkles className="w-3 h-3 text-sky-400" />
+                        <span>LIVE FULL-STACK DEMO</span>
+                      </span>
+                    )}
+                  </div>
                   
                   <div className="flex items-center gap-3 text-xs text-slate-400 font-mono">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3 h-3 text-slate-500" />
                       {project.period}
                     </span>
-                    {project.featured && (
+                    {project.featured && !project.isLive && (
                       <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-400 font-mono">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Production
                       </span>
@@ -107,6 +119,39 @@ export default function Projects() {
                   ))}
                 </ul>
 
+                {/* Interactive Test Credentials Banner (If available) */}
+                {project.testCredentials && (
+                  <div className="mt-4 p-3 rounded-xl bg-[#070d1a] border border-sky-500/30 text-xs">
+                    <div className="flex items-center justify-between text-[11px] font-mono text-sky-300 mb-2 font-semibold">
+                      <span className="flex items-center gap-1.5">
+                        <KeyRound className="w-3.5 h-3.5 text-sky-400" />
+                        <span>Interactive Test Credentials:</span>
+                      </span>
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[10px] text-sky-400 hover:text-sky-200 underline font-semibold"
+                        >
+                          <span>Open Live App</span>
+                          <ExternalLink className="w-2.5 h-2.5" />
+                        </a>
+                      )}
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 font-mono text-[10.5px]">
+                      <div className="px-2 py-1 rounded bg-[#0b1224] border border-slate-800 text-slate-300 flex items-center justify-between">
+                        <span><strong className="text-sky-400">Doctor:</strong> dr_sarah</span>
+                        <span className="text-slate-400">doctor123</span>
+                      </div>
+                      <div className="px-2 py-1 rounded bg-[#0b1224] border border-slate-800 text-slate-300 flex items-center justify-between">
+                        <span><strong className="text-emerald-400">Admin:</strong> admin</span>
+                        <span className="text-slate-400">admin123</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Tech Pills */}
                 <div className="mt-5 flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/80">
                   {project.technologies.slice(0, 6).map((tech) => (
@@ -136,6 +181,19 @@ export default function Projects() {
                 </button>
 
                 <div className="flex items-center gap-2">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-500/20 hover:bg-sky-500 text-sky-300 hover:text-white border border-sky-500/40 transition-all shadow-sm"
+                      title="Launch Live Application"
+                    >
+                      <span>Live App</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+
                   <a
                     href={portfolioData.personal.socials.linkedin}
                     target="_blank"

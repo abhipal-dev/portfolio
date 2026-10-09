@@ -93,7 +93,7 @@ const onWebViewMessage = (event) => {
 
 <WebView
   ref={webViewRef}
-  source={{ uri: 'https://lazyeye.app/vision-test' }}
+  source={{ uri: 'https://lazyeye.onrender.com/user' }}
   onMessage={onWebViewMessage}
 />`,
     },
