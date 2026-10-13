@@ -3,7 +3,6 @@ import {
   ExternalLink,
   Eye,
   ArrowUpRight,
-  Smartphone,
   Code2,
   Bell,
   Database,
@@ -176,21 +175,23 @@ export default function Projects() {
 
                 {/* Action Toolbar */}
                 <div className="pt-2 flex flex-wrap items-center gap-3">
-                  <a
-                    href="#hero"
-                    className={`inline-flex items-center gap-1.5 px-4 py-2 rounded text-xs font-mono font-bold tracking-wider ${currentTheme.button} transition-all`}
-                  >
-                    <span>TEST IN DEVICE WORKBENCH</span>
-                    <Smartphone className="w-3.5 h-3.5" />
-                  </a>
-
                   <button
                     onClick={() => setSelectedProject(flagshipProject)}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded text-xs font-mono border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-200 transition-colors"
+                    className={`inline-flex items-center gap-1.5 px-4 py-2 rounded text-xs font-mono font-bold tracking-wider ${currentTheme.button} transition-all`}
                   >
                     <Eye className="w-3.5 h-3.5" />
-                    <span>FULL CASE STUDY SPECS</span>
+                    <span>VIEW COMPLETE CASE STUDY SPECS</span>
                   </button>
+
+                  <a
+                    href={portfolioData.personal.socials.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded text-xs font-mono border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-300 hover:text-white transition-colors"
+                  >
+                    <span>CONNECT ON LINKEDIN</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
                 </div>
               </div>
 

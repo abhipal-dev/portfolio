@@ -37,7 +37,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 border-b border-zinc-800/80">
+    <section id="hero" className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
