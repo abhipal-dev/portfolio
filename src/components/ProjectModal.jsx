@@ -3,7 +3,7 @@ import { X, ExternalLink, KeyRound, Copy, Check } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { useTheme } from '../context/ThemeContext';
 
-export default function ProjectModal({ project, onClose }) {
+export default function ProjectModal({ project, onClose, displayTitle }) {
   const { currentTheme } = useTheme();
   const [copiedKey, setCopiedKey] = useState(null);
 
@@ -63,7 +63,7 @@ export default function ProjectModal({ project, onClose }) {
           </div>
 
           <h3 className="text-2xl sm:text-3xl font-bold text-zinc-100 tracking-tight leading-snug">
-            {project.title}
+            {displayTitle || project.title}
           </h3>
           <p className="text-sm font-medium text-zinc-300">{project.tagline}</p>
         </div>

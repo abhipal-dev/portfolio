@@ -8,7 +8,7 @@ export default function About() {
       tag: 'REACT-NATIVE-MAPS // ZERO_RE_RENDER_TELEMETRY',
       title: '60 FPS Map Telemetry Without React Tree Re-renders',
       description:
-        'In high-frequency mobility apps (TaxiMuscat), driver coordinates stream at 1–5 Hz. Binding raw GPS ticks to React state causes constant component re-renders that stall the JS thread. I decouple location streaming into mutable refs and drive camera positioning imperatively via animateCamera with bearing interpolation.',
+        'In high-frequency mobility and fleet dispatch applications, driver coordinates stream at 1–5 Hz. Binding raw GPS ticks to React state causes constant component re-renders that stall the JS thread. I decouple location streaming into mutable refs and drive camera positioning imperatively via animateCamera with bearing interpolation.',
       detail: 'Measured: Steady 60fps gesture handling during continuous route polyline streaming.',
     },
     {

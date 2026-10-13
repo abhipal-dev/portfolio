@@ -1,10 +1,18 @@
+// CONFIGURATION TOGGLE
+// Set to `true` to reveal proprietary client/company brand names (TaxiMuscat, TrackingHAWK, Ingecom).
+// Set to `false` (default) for clean, professional descriptive titles.
+export const CONFIG = {
+  revealCompanyProjectNames: false,
+};
+
 export const portfolioData = {
   personal: {
     name: "Abhishek Pal",
-    role: "React Native Mobile Engineer",
-    subRole: "4–5 Apps on Each Store • Enterprise & Kiosks • 100+ Production Updates • React Native 0.70 ➔ 0.8x",
-    tagline: "Dedicated to building high-performance cross-platform Android & iOS applications with real-time GPS tracking, multi-app mobility ecosystems, and advanced WebView data bridges.",
-    bio: "React Native Mobile Engineer with 3.5+ years of production experience building, maintaining, and scaling cross-platform Android & iOS applications. I have built and published 4–5 distinct production applications on both the Google Play Store and Apple App Store, as well as purpose-built enterprise tablet kiosks and internal fleet APKs, delivering 100+ continuous production updates and component enhancements. Experienced in upgrading and maintaining apps across major React Native versions (from RN 0.70 to RN 0.8x), resolving native Gradle, CocoaPods, and Target SDK requirements. Specializing in real-time GPS tracking, multi-app fleet ecosystems (Rider, Driver, Kiosk), and bidirectional WebView postMessage architectures.",
+    role: "Lead React Native Mobile Engineer",
+    company: "Softcruise Technologies",
+    subRole: "Real-Time Maps • Fleet Telemetry • High-Priority FCM • MMKV Data Architecture",
+    tagline: "Dedicated to building high-reliability cross-platform mobility systems: real-time GPS maps, three-sided fleet dispatch, background FCM notification pipelines, and low-latency data caching.",
+    bio: "Lead React Native Mobile Engineer at Softcruise Technologies with 3.5+ years of production experience building, maintaining, and scaling cross-platform Android & iOS applications. Specialized in real-time Google Maps telemetry, background location streaming, three-sided mobility platforms (Rider, Driver, Kiosk), high-priority Firebase Cloud Messaging (FCM), and low-latency local data handling with MMKV and SQLite. Shipped 4–5 distinct production applications each on Google Play and App Store with 100+ continuous releases across React Native 0.70 to 0.8x.",
     email: "abhipal85350@gmail.com",
     phone: "+91-9870962636",
     location: "Agra, India (Open to Remote / Relocation)",
@@ -75,8 +83,12 @@ export const portfolioData = {
   projects: [
     {
       id: "ride-hailing-ecosystem",
-      title: "Three-Sided Ride-Hailing & Kiosk Ecosystem",
+      title: "Three-Sided On-Demand Ride-Hailing & Kiosk Suite",
+      anonymousTitle: "Three-Sided On-Demand Ride-Hailing & Kiosk Suite",
+      companyTitle: "TaxiMuscat — Three-Sided Ride-Hailing & Kiosk Suite",
       category: "Mobility & Fleet",
+      clientBadge: "Commercial Production • Softcruise Technologies",
+      isCommercial: true,
       tagline: "Rider App, Driver App, and Walk-up Kiosk Terminal synchronized with central Web Dispatch.",
       period: "Mar 2024 – Present",
       role: "Project Lead, React Native",
@@ -105,11 +117,50 @@ export const portfolioData = {
       github: "https://github.com/abhipal-dev",
       demo: "https://linkedin.com/in/abhishek-pal-a5a497217",
       featured: true,
+      isFlagship: true,
+    },
+    {
+      id: "trackinghawk-x3",
+      title: "Enterprise Fleet Telemetry & Real-Time Tracking System",
+      anonymousTitle: "Enterprise Fleet Telemetry & Real-Time Tracking System",
+      companyTitle: "TrackingHAWK X3 — Enterprise Fleet Management",
+      category: "GPS & Telemetry",
+      clientBadge: "Commercial Fleet GPS • Softcruise Technologies",
+      isCommercial: true,
+      tagline: "Enterprise GPS vehicle tracking, live telemetry, and geofence alerting system.",
+      period: "Jan 2023 – Present",
+      role: "React Native Developer",
+      description:
+        "Flagship enterprise fleet management and vehicle tracking application for Android and iOS, built and maintained across multiple major production releases.",
+      highlights: [
+        "Flagship App Ownership: Built and independently maintained the enterprise fleet tracking application for Android and iOS across multiple major releases.",
+        "Real-Time Vehicle Tracking: Live GPS vehicle tracking on maps displaying vehicle speed, ignition on/off status, historical route playback, and geofence boundary crossing alerts.",
+        "Offline Caching & Persistence: Implemented SQLite and MMKV for sub-millisecond local telemetry caching, enabling instant app launch and offline inspection of historical trips.",
+        "Background Telemetry Alerts: Configured background notification handlers alerting fleet managers to speed violations, geofence breaches, and ignition changes when the app is minimized or closed.",
+        "Asset Check-In Workflows: Integrated camera barcode/QR scanning modules for automated driver-vehicle pairing and physical inventory audits.",
+        "In-App Document Handling: Integrated customized WebViews with local caching for viewing reports and manifests in low-connectivity areas.",
+      ],
+      technologies: [
+        "React Native",
+        "Google Maps",
+        "SQLite",
+        "MMKV",
+        "FCM",
+        "Background Handlers",
+        "Barcode Scanning",
+      ],
+      github: "https://github.com/abhipal-dev",
+      demo: "https://linkedin.com/in/abhishek-pal-a5a497217",
+      featured: true,
     },
     {
       id: "lazyeye-platform",
       title: "LazyEye — Dichoptic Vision Therapy & Clinical Assessment Mobile Platform",
+      anonymousTitle: "LazyEye — Dichoptic Vision Therapy & Clinical Assessment Mobile Platform",
+      companyTitle: "LazyEye — Dichoptic Vision Therapy & Clinical Assessment Mobile Platform",
       category: "Healthcare & WebViews",
+      clientBadge: "Independent Open-Source • Live Demo",
+      isCommercial: false,
       tagline: "Cross-platform React Native 0.87.1 mobile application & full-stack clinical platform with 11 dichoptic vision engines, MMKV storage, and tactile floating bottom tabs.",
       period: "Jan 2023 – Present",
       role: "Lead React Native & Full-Stack Developer",
@@ -119,7 +170,7 @@ export const portfolioData = {
       highlighted: true,
       featuredBadge: "⚡ BARE RN 0.87.1 + LIVE CLOUD PLATFORM",
       description:
-        "Medical digital therapeutics (DTx) cross-platform mobile application and full-stack clinical web portal engineered for pediatric and adult Amblyopia (lazy eye) neuro-visual rehabilitation. Built on Bare React Native 0.87.1 targeting Android API 37 (Android 15+) and iOS, featuring 11 responsive HTML5 Canvas vision engines with touch gesture pass-through, red-cyan anaglyph calibration, dual offline/live engine modes, zero-latency MMKV synchronous storage, a tactile TaxiMuscat-inspired floating bottom tab bar, authentic clinical datasets, and an interactive 84-day therapy heatmap.",
+        "Medical digital therapeutics (DTx) cross-platform mobile application and full-stack clinical web portal engineered for pediatric and adult Amblyopia (lazy eye) neuro-visual rehabilitation. Built on Bare React Native 0.87.1 targeting Android API 37 (Android 15+) and iOS, featuring 11 responsive HTML5 Canvas vision engines with touch gesture pass-through, red-cyan anaglyph calibration, dual offline/live engine modes, zero-latency MMKV synchronous storage, a tactile floating bottom tab bar, authentic clinical datasets, and an interactive 84-day therapy heatmap.",
       testCredentials: [
         {
           role: "Vision Patient",
@@ -176,39 +227,13 @@ export const portfolioData = {
       featured: true,
     },
     {
-      id: "trackinghawk-x3",
-      title: "TrackingHAWK X3 — Enterprise Fleet Management",
-      category: "GPS & Telemetry",
-      tagline: "Enterprise GPS vehicle tracking, live telemetry, and geofence alerting system.",
-      period: "Jan 2023 – Present",
-      role: "React Native Developer",
-      description:
-        "Flagship enterprise fleet management and vehicle tracking application for Android and iOS, built and maintained across multiple major production releases.",
-      highlights: [
-        "Flagship App Ownership: Built and independently maintained the enterprise fleet tracking application for Android and iOS across multiple major releases.",
-        "Real-Time Vehicle Tracking: Live GPS vehicle tracking on maps displaying vehicle speed, ignition on/off status, historical route playback, and geofence boundary crossing alerts.",
-        "Offline Caching & Persistence: Implemented SQLite and MMKV for sub-millisecond local telemetry caching, enabling instant app launch and offline inspection of historical trips.",
-        "Background Telemetry Alerts: Configured background notification handlers alerting fleet managers to speed violations, geofence breaches, and ignition changes when the app is minimized or closed.",
-        "Asset Check-In Workflows: Integrated camera barcode/QR scanning modules for automated driver-vehicle pairing and physical inventory audits.",
-        "In-App Document Handling: Integrated customized WebViews with local caching for viewing reports and manifests in low-connectivity areas.",
-      ],
-      technologies: [
-        "React Native",
-        "Google Maps",
-        "SQLite",
-        "MMKV",
-        "FCM",
-        "Background Handlers",
-        "Barcode Scanning",
-      ],
-      github: "https://github.com/abhipal-dev",
-      demo: "https://linkedin.com/in/abhishek-pal-a5a497217",
-      featured: true,
-    },
-    {
       id: "ingecom-japjee",
-      title: "Ingecom GPS & Japjee Inventory Platform",
+      title: "White-Labeled International Fleet & Barcode Inventory Platform",
+      anonymousTitle: "White-Labeled International Fleet & Barcode Inventory Platform",
+      companyTitle: "Ingecom GPS & Japjee Inventory Platform",
       category: "Client Mobility & Inventory",
+      clientBadge: "Commercial Deployment • Softcruise Technologies",
+      isCommercial: true,
       tagline: "White-labeled international fleet instances & cross-platform inventory management.",
       period: "Jan 2024 – Present",
       role: "React Native Developer",
@@ -236,7 +261,7 @@ export const portfolioData = {
     {
       period: "May 2024 – Present (Ongoing Focus)",
       role: "Lead React Native Mobile Engineer (Core Focus)",
-      company: "Softcruise Technology Pvt. Ltd.",
+      company: "Softcruise Technologies",
       location: "Agra, India (Open to Remote / Relocation)",
       focusBadge: "Main Focus: 100% React Native Mobile Engineering",
       description:
@@ -252,8 +277,8 @@ export const portfolioData = {
     },
     {
       period: "Jan 2023 – May 2025",
-      role: "React Native & Web Developer (Lazyeye Platform)",
-      company: "Softcruise Technology Pvt. Ltd.",
+      role: "React Native & Web Developer",
+      company: "Softcruise Technologies",
       location: "Agra, India",
       focusBadge: "Dual Role: Web Development & Hybrid Mobile Engineering",
       description:
