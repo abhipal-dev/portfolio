@@ -31,32 +31,71 @@
     }
 
     .no-print-bar {
-      background: #0f172a;
+      background: #0b1120;
       color: #fff;
-      padding: 10px 24px;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      gap: 12px;
+    }
+
+    .bar-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .bar-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f8fafc;
+      white-space: nowrap;
+    }
+
+    .bar-badge {
+      font-size: 11px;
+      color: #94a3b8;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 2px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .bar-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .btn-print, .btn-download, .btn-back {
+      white-space: nowrap !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      cursor: pointer;
     }
 
     .btn-print {
       background: #2563eb;
       color: white;
       border: none;
-      padding: 7px 16px;
-      font-size: 12px;
-      font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      transition: background 0.2s;
+      padding: 7px 14px;
     }
 
     .btn-print:hover {
@@ -67,16 +106,7 @@
       background: #059669;
       color: white;
       border: none;
-      padding: 7px 16px;
-      font-size: 12px;
-      font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      transition: background 0.2s;
+      padding: 7px 14px;
     }
 
     .btn-download:hover {
@@ -85,12 +115,14 @@
 
     .btn-back {
       color: #cbd5e1;
-      text-decoration: none;
-      font-size: 12px;
+      padding: 7px 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
     .btn-back:hover {
       color: #fff;
+      background: rgba(255,255,255,0.12);
     }
 
     /* Resume Document Wrapper (Calibrated for A4) */
@@ -284,11 +316,165 @@
       margin: 8mm 13mm 8mm 13mm;
     }
 
+    /* Responsive styles for screens (eliminates collapsed buttons & oversized 15mm padding) */
+    @media screen and (max-width: 768px) {
+      body {
+        background: #0f172a;
+      }
+
+      .no-print-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 10px 14px;
+      }
+
+      .bar-info {
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .bar-actions {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+      }
+
+      .btn-back {
+        flex: 0 0 auto;
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      .btn-download {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      .btn-print {
+        flex: 0 0 auto;
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      /* Compact, responsive padding replacing bloated 15mm (57px) margins */
+      .resume-wrapper {
+        margin: 12px auto 30px auto;
+        padding: 18px 14px;
+        border-radius: 12px;
+        width: calc(100% - 16px);
+        max-width: calc(100% - 16px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      }
+
+      .header h1 {
+        font-size: 16pt;
+        letter-spacing: 0.3px;
+      }
+
+      .header .subtitle {
+        font-size: 9pt;
+      }
+
+      .job-header, .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1px;
+      }
+
+      .date, .location {
+        font-size: 8pt;
+      }
+
+      p.summary, .skills-list, ul.bullets li, .edu-item {
+        font-size: 8.5pt;
+        line-height: 1.34;
+      }
+
+      /* On mobile screens, don't show artificial empty gap for print page breaks */
+      .page-break {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .no-print-bar {
+        padding: 8px 10px;
+        gap: 6px;
+      }
+
+      .bar-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+
+      .bar-title {
+        font-size: 12px;
+      }
+
+      .bar-badge {
+        font-size: 9.5px;
+        padding: 1px 6px;
+      }
+
+      .bar-actions {
+        gap: 6px;
+      }
+
+      .btn-back {
+        padding: 7px 10px;
+        font-size: 11px;
+      }
+
+      .btn-download {
+        padding: 7px 10px;
+        font-size: 11px;
+      }
+
+      .btn-print {
+        padding: 7px 10px;
+        font-size: 11px;
+      }
+
+      /* Ultra-clean padding for phones */
+      .resume-wrapper {
+        margin: 8px auto 20px auto;
+        padding: 14px 10px;
+        border-radius: 8px;
+        width: calc(100% - 10px);
+        max-width: calc(100% - 10px);
+      }
+
+      .header h1 {
+        font-size: 14pt;
+      }
+
+      .header .subtitle {
+        font-size: 8.5pt;
+      }
+
+      .section-title {
+        font-size: 9pt;
+      }
+
+      ul.bullets li {
+        padding-left: 10px;
+        text-align: left;
+      }
+
+      ul.bullets li::before {
+        left: 0;
+      }
+    }
+
     @media print {
       body {
-        background: #ffffff;
-        color: #000000;
-        font-size: 8.4pt;
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 8.4pt !important;
       }
 
       .no-print-bar {
@@ -301,6 +487,7 @@
         box-shadow: none !important;
         max-width: 100% !important;
         width: 100% !important;
+        border-radius: 0 !important;
       }
 
       a {
@@ -308,9 +495,18 @@
         color: #1d4ed8;
       }
 
+      .job-header, .project-header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: baseline !important;
+      }
+
       .page-break {
+        display: block !important;
         page-break-before: always !important;
         break-before: page !important;
+        height: 0 !important;
       }
     }
   </style>
@@ -319,12 +515,12 @@
 
   <!-- Top Sticky Navigation & Download Bar -->
   <div class="no-print-bar">
-    <div>
-      <strong>Abhishek Pal — Official Resume</strong>
-      <span style="opacity: 0.75; font-size: 12px; margin-left: 10px;">Exact 2-Page Executive A4 Format • Updated Notice Period (30 Days)</span>
+    <div class="bar-info">
+      <div class="bar-title">Abhishek Pal — Official Resume</div>
+      <div class="bar-badge">Executive 2-Page A4 • 30 Days Notice</div>
     </div>
-    <div style="display: flex; gap: 10px; align-items: center;">
-      <a href="./" class="btn-back">← Back to Portfolio</a>
+    <div class="bar-actions">
+      <a href="./" class="btn-back">← Portfolio</a>
       <a href="./Abhishek_Pal_Resume.pdf" download="Abhishek_Pal_Resume.pdf" class="btn-download">
         📥 Download PDF
       </a>
@@ -453,17 +649,19 @@
       <!-- Project 3 -->
       <div class="project">
         <div class="project-header">
-          <span class="project-title">3. Lazyeye — Digital Dichoptic Vision Therapy & Clinical Assessment Platform</span>
+          <span class="project-title">3. LazyEye — Digital Dichoptic Vision Therapy & Clinical Assessment Mobile Platform</span>
         </div>
-        <div class="role-badge">React Native & Full-Stack Developer | Jan 2023 – May 2025 <span class="tech-stack-tag">(Tech: React Native, Laravel 8, React.js, WebViews, postMessage, MySQL/SQLite)</span></div>
+        <div class="role-badge">React Native Mobile Engineer & Full-Stack Developer | Jan 2023 – Present <span class="tech-stack-tag">(Tech: Bare React Native 0.87.1 CLI, React 19, MMKV Storage, HTML5 Canvas WebViews, postMessage, Laravel API, Android API 37)</span></div>
         <div style="font-size: 11px; margin-top: 4px; color: #0284c7; font-family: monospace;">
-          Live Platform: <a href="https://lazyeye.onrender.com" target="_blank" style="color: #0284c7; text-decoration: underline;">https://lazyeye.onrender.com</a> | Test: Doctor (<code>dr_sarah</code> / <code>doctor123</code>), Admin (<code>admin</code> / <code>admin123</code>)
+          Live Platform: <a href="https://lazyeye.onrender.com" target="_blank" style="color: #0284c7; text-decoration: underline;">https://lazyeye.onrender.com</a> | Test: Doctor (<code>dr_sarah</code> / <code>doctor123</code>), Patient (<code>abhicoder</code> / <code>4567</code>), Admin (<code>admin</code> / <code>admin123</code>)
         </div>
         <ul class="bullets">
-          <li><strong>Live Clinical Platform:</strong> Engineered full-stack amblyopia rehabilitation platform with dichoptic HTML5 canvas games (Tetris, Snake, Flappy Bird) with red-cyan anaglyph color filtering and role-based access control.</li>
-          <li><strong>Role Scoping & Clinical Heatmaps:</strong> Implemented multi-tier data scoping for Doctors, Admins, and Patients, featuring an interactive 84-day (12-week) daily therapy compliance heatmap with instant session drill-down.</li>
-          <li><strong>WebView-to-App Telemetry:</strong> Implemented WebView modules with a secure bidirectional message bridge (postMessage) to exchange real-time exercise telemetry and assessment scores between the web canvas and native application.</li>
-          <li><strong>Native File Downloads:</strong> Engineered file download workflows allowing doctors and guardians to download PDF clinical assessment reports directly from WebViews to device storage for offline access.</li>
+          <li><strong>Production React Native 0.87.1 App:</strong> Engineered cross-platform mobile application targeting modern Android API 37 (Android 15+) and iOS, resolving AGP 9.2 / Gradle 9.4 native toolchain requirements with React 19.</li>
+          <li><strong>11 Clinical Vision Engines & Gestures:</strong> Built 11 responsive HTML5 canvas vision engines (Tetris, Snake, Menja 3D, Bubble Shooter, Ping-Pong, Maze, etc.) with touch gesture pass-through, edge-to-edge safe area scaling, and red-cyan anaglyph calibration.</li>
+          <li><strong>Dual Engine & MMKV Storage:</strong> Built instant switcher between offline local HTML5 canvas engines and live Render cloud portal, backed by a zero-latency synchronous MMKV storage layer (<code>mmkvStorage</code>) and reactive settings handler.</li>
+          <li><strong>Custom Animated Bottom Tab Bar:</strong> Designed tactile floating bottom tab bar with liquid sliding pill indicators, Apple-like spring physics (<code>Animated.spring</code>), touch jelly squish, and active jewel micro-dots.</li>
+          <li><strong>Real SQLite Data & 84-Day Heatmap:</strong> Integrated authentic database records (13 real users, 593 gameplay sessions), dynamic daily dosage calculation, streak counter, and an interactive 84-day (12-week) therapy compliance heatmap.</li>
+          <li><strong>Bidirectional WebView Telemetry & PDF Reports:</strong> Implemented secure <code>postMessage</code> bridge for real-time exercise score sync and native download pipeline for clinical PDF assessment reports.</li>
         </ul>
       </div>
 

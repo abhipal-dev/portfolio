@@ -16,6 +16,11 @@ import {
   ArrowRight,
   Sparkles,
   Zap,
+  Eye,
+  Gamepad2,
+  Play,
+  Activity,
+  Award,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -25,6 +30,9 @@ export default function MobileShowcase() {
   const [driverAccepted, setDriverAccepted] = useState(false);
   const [speed, setSpeed] = useState(48);
   const [livePings, setLivePings] = useState(24);
+  const [lazyEyeEngineMode, setLazyEyeEngineMode] = useState('offline'); // 'offline' | 'live'
+  const [lazyEyeScore, setLazyEyeScore] = useState(127);
+  const [sessionStarted, setSessionStarted] = useState(false);
 
   // Subtle telemetry jitter for realistic live feel
   useEffect(() => {
@@ -57,7 +65,7 @@ export default function MobileShowcase() {
               {activeTab === 'rider' && 'Rider GPS Active'}
               {activeTab === 'driver' && 'Driver Telemetry'}
               {activeTab === 'kiosk' && 'Terminal Mode'}
-              {activeTab === 'bridge' && 'postMessage Bridge'}
+              {activeTab === 'lazyeye' && 'LazyEye Mobile • RN 0.87.1'}
             </span>
           </div>
 
@@ -273,47 +281,121 @@ export default function MobileShowcase() {
             </div>
           )}
 
-          {/* TAB 4: WEBVIEW POSTMESSAGE BRIDGE (LAZYEYE) */}
-          {activeTab === 'bridge' && (
-            <div className="flex-1 p-3 flex flex-col justify-between animate-in fade-in duration-200 font-mono text-[10.5px]">
-              <div className="p-2.5 rounded-xl bg-[#0c111e] border border-slate-800 text-slate-300">
-                <div className="text-sky-400 font-bold text-xs flex items-center justify-between">
-                  <span>WebView postMessage Bridge</span>
-                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    Sync Latency: &lt;1ms
+          {/* TAB 4: LAZYEYE MOBILE DIGITAL THERAPEUTICS PREVIEW */}
+          {activeTab === 'lazyeye' && (
+            <div className="flex-1 p-3 flex flex-col justify-between animate-in fade-in duration-200 text-slate-100 select-none">
+              {/* App Top Bar */}
+              <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-5 h-5 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center relative overflow-hidden">
+                    <span className="w-2 h-4 bg-rose-500 rounded-l-full" />
+                    <span className="w-2 h-4 bg-sky-500 rounded-r-full" />
+                  </div>
+                  <div>
+                    <div className="text-[11px] font-bold text-white leading-none">LazyEye Therapy</div>
+                    <div className="text-[8.5px] text-sky-400 font-mono mt-0.5">Vision Patient • Abhishek</div>
+                  </div>
+                </div>
+
+                {/* Dual Engine Switcher Button */}
+                <button
+                  onClick={() => setLazyEyeEngineMode((m) => (m === 'offline' ? 'live' : 'offline'))}
+                  className={`px-2 py-0.5 rounded-full text-[8.5px] font-mono font-bold transition-all border ${
+                    lazyEyeEngineMode === 'offline'
+                      ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                      : 'bg-sky-500/15 text-sky-300 border-sky-400/30'
+                  }`}
+                  title="Toggle between offline local HTML5 canvas engines and live Render web portal"
+                >
+                  {lazyEyeEngineMode === 'offline' ? '⚡ OFFLINE ENGINE' : '● LIVE CLOUD'}
+                </button>
+              </div>
+
+              {/* Patient Banner & Streak */}
+              <div className="flex items-center justify-between my-1.5 p-2 rounded-xl bg-[#0c111e] border border-slate-800/80">
+                <div className="flex items-center gap-2">
+                  <div className="relative">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center font-bold text-xs text-white shadow-sm">
+                      AP
+                    </div>
+                    <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-400 ring-1 ring-black" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-white">Abhishek Pal</div>
+                    <div className="text-[9px] text-slate-400 font-mono">Active Clinical Rx</div>
+                  </div>
+                </div>
+
+                <div className="px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] font-bold font-mono flex items-center gap-1">
+                  <span>🔥</span>
+                  <span>4d streak</span>
+                </div>
+              </div>
+
+              {/* Daily Regimen Card (Real SQLite Metrics) */}
+              <div className="p-2.5 rounded-xl bg-gradient-to-b from-[#0c1324] to-[#070b16] border border-sky-500/30 shadow-md space-y-2">
+                <div className="flex items-center justify-between text-[10px]">
+                  <span className="font-mono text-slate-400 font-bold tracking-wider">TODAY'S REGIMEN</span>
+                  <span className="font-mono text-sky-400 font-bold">25 / 25 mins (100%)</span>
+                </div>
+
+                <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-sky-500 to-blue-500 rounded-full w-full" />
+                </div>
+
+                {/* 3 Real Metrics */}
+                <div className="grid grid-cols-3 gap-1 pt-1 border-t border-slate-800/60 text-center font-mono">
+                  <div>
+                    <div className="text-xs font-bold text-white">20</div>
+                    <div className="text-[8px] text-slate-400">Sessions</div>
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-emerald-400">395m</div>
+                    <div className="text-[8px] text-slate-400">Total Time</div>
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-sky-400">{lazyEyeScore}</div>
+                    <div className="text-[8px] text-slate-400">High Score</div>
+                  </div>
+                </div>
+
+                {/* Primary Action Button */}
+                <button
+                  onClick={() => {
+                    setSessionStarted(true);
+                    setLazyEyeScore((s) => s + 5);
+                    setTimeout(() => setSessionStarted(false), 1800);
+                  }}
+                  className="w-full py-1.5 px-2 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-[10.5px] flex items-center justify-center gap-1.5 shadow-md shadow-sky-500/20 active:scale-95 transition-all"
+                >
+                  <Play className="w-3 h-3 fill-current" />
+                  <span>
+                    {sessionStarted ? '✓ +5 Pts! Telemetry Recorded' : 'Start Session • Snake Macular'}
                   </span>
-                </div>
-                <div className="text-[9.5px] text-slate-400 mt-0.5">
-                  Bidirectional Event Channel (Lazyeye Platform)
-                </div>
+                </button>
               </div>
 
-              {/* Event Stream Terminal Output */}
-              <div className="flex-1 my-2 p-2.5 rounded-xl bg-[#050811] border border-slate-800/90 overflow-y-auto space-y-1.5 text-[10px]">
-                <div className="text-sky-400">&gt; [Web Canvas ➔ React Native]</div>
-                <div className="pl-2 text-slate-300">
-                  postMessage(&#123; type: "EXERCISE_SCORE", score: 98, eye: "OD" &#125;)
+              {/* Anaglyph Lens Status & Clinical Evidence Card */}
+              <div className="p-2 rounded-lg bg-[#0c111e] border border-slate-800/80 flex items-center justify-between text-[9px] font-mono">
+                <div className="flex items-center gap-1.5 text-slate-300">
+                  <span className="w-2 h-2 rounded-full bg-rose-500" />
+                  <span>OS Red</span>
+                  <span className="text-slate-600">•</span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  <span>OD Green</span>
                 </div>
-
-                <div className="text-emerald-400">&gt; [React Native Bridge Handler]</div>
-                <div className="pl-2 text-slate-300">
-                  onMessage: payload validated with SHA-256 token
-                </div>
-
-                <div className="text-purple-400">&gt; [MMKV Native Persistence]</div>
-                <div className="pl-2 text-slate-300">
-                  Wrote 14.8kb telemetry blob in 0.2ms
-                </div>
-
-                <div className="text-amber-400">&gt; [Clinical PDF Pipeline]</div>
-                <div className="pl-2 text-slate-300">
-                  RNFS.downloadFile() ➔ Saved to device storage
-                </div>
+                <span className="text-sky-400 font-semibold">NEI-NIH 2.4x Study</span>
               </div>
 
-              <div className="p-2 rounded-lg bg-[#0c111e] text-[9.5px] text-slate-400 text-center border border-slate-800 flex items-center justify-center gap-1.5">
-                <Shield className="w-3 h-3 text-emerald-400" />
-                <span>Zero Data Loss • Strict Cross-Origin Validation</span>
+              {/* TaxiMuscat-Style Floating Bottom Tab Bar Preview */}
+              <div className="p-1 rounded-2xl bg-[#0e1628] border border-slate-700/80 shadow-lg flex items-center justify-around text-[9px] font-mono">
+                <div className="px-2.5 py-1 rounded-xl bg-sky-500/20 text-sky-300 font-bold border border-sky-400/40 flex flex-col items-center">
+                  <span>Overview</span>
+                  <span className="w-1 h-1 rounded-full bg-sky-400 mt-0.5" />
+                </div>
+                <div className="px-2 py-1 text-slate-400">Games (11)</div>
+                <div className="px-2 py-1 text-slate-400">84d Map</div>
+                <div className="px-2 py-1 text-slate-400">Profile</div>
               </div>
             </div>
           )}
@@ -351,14 +433,15 @@ export default function MobileShowcase() {
               Kiosk
             </button>
             <button
-              onClick={() => setActiveTab('bridge')}
-              className={`py-1.5 px-1 rounded-lg text-[10px] font-mono transition-all text-center ${
-                activeTab === 'bridge'
+              onClick={() => setActiveTab('lazyeye')}
+              className={`py-1.5 px-1 rounded-lg text-[10px] font-mono transition-all text-center flex items-center justify-center gap-1 ${
+                activeTab === 'lazyeye'
                   ? 'bg-blue-600/20 text-sky-300 font-bold border border-blue-500/40 shadow-sm'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Bridge
+              <Eye className="w-2.5 h-2.5 text-sky-400" />
+              <span>LazyEye</span>
             </button>
           </div>
 

@@ -60,14 +60,16 @@ React Native Mobile Engineer with **3.5+ years of production experience** buildi
 - **Background Telemetry Alerts:** Configured background notification handlers alerting fleet managers to speed violations, geofence breaches, and ignition changes when the app is minimized or closed.
 - **Asset Check-In Workflows:** Integrated camera and hardware barcode/QR scanning modules for automated driver-vehicle pairing and physical inventory audits.
 
-### 3. Lazyeye — Digital Dichoptic Vision Therapy & Clinical Assessment Platform
-*React Native & Full-Stack Web Developer | Jan 2023 – May 2025*  
-*(Tech: React Native, Laravel 8, React.js, MySQL/SQLite, WebViews, postMessage Bridge, Native File Downloads)*  
-*Live Application: [https://lazyeye.onrender.com](https://lazyeye.onrender.com) (Doctor Test Login: `dr_sarah` / `doctor123` | Admin: `admin` / `admin123`)*
-- **Live Clinical Platform:** Engineered full-stack amblyopia rehabilitation platform with dichoptic HTML5 canvas games (Tetris, Snake, Flappy Bird) with red-cyan anaglyph color filtering and role-based access control.
-- **Role Scoping & Clinical Heatmaps:** Implemented multi-tier data scoping for Doctors, Admins, and Patients, featuring an interactive 84-day (12-week) daily therapy compliance heatmap with instant session drill-down.
-- **WebView-to-App Telemetry:** Implemented WebView modules with a secure bidirectional message bridge (`postMessage`) to exchange real-time exercise telemetry and assessment scores between the web canvas and native mobile application.
-- **Native File Downloads:** Engineered file download workflows allowing doctors and guardians to download PDF clinical assessment reports directly from WebViews to device storage for offline access.
+### 3. LazyEye — Digital Dichoptic Vision Therapy & Clinical Assessment Mobile Platform
+*React Native Mobile Engineer & Full-Stack Developer | Jan 2023 – Present*  
+*(Tech: Bare React Native 0.87.1 CLI, React 19, MMKV Storage, HTML5 Canvas WebViews, postMessage Bridge, Laravel 8 API, SQLite/MySQL, Android API 37)*  
+*Live Platform: [https://lazyeye.onrender.com](https://lazyeye.onrender.com) (Doctor: `dr_sarah` / `doctor123` | Patient: `abhicoder` / `4567` | Admin: `admin` / `admin123`)*
+- **Production React Native 0.87.1 Architecture:** Engineered cross-platform mobile application targeting modern Android API 37 (Android 15+) and iOS, resolving AGP 9.2 / Gradle 9.4 native toolchain requirements and React 19 compatibility.
+- **11 Clinical Dichoptic Vision Therapy Engines:** Built responsive HTML5 canvas vision engines (Tetris, Snake, Menja 3D, Bubble Shooter, Ping-Pong, Maze, etc.) with red-cyan anaglyph color filtering, edge-to-edge safe area scaling, and touch gesture pass-through.
+- **Dual-Engine Mode & MMKV Settings Handler:** Implemented an instant toggle between offline local HTML5 engines and cloud-hosted Render web portal, backed by a zero-latency synchronous MMKV storage layer (`mmkvStorage`) and reactive settings handler.
+- **Tactile Floating Bottom Navigation Bar:** Designed a custom floating bottom tab bar with liquid sliding pill indicators, Apple-like spring physics (`Animated.spring`, damping 18, stiffness 220), 2D squash/stretch, touch jelly squish, and active jewel micro-dots.
+- **Real Clinical Dataset & Dynamic Metrics:** Integrated authentic SQLite database records (13 real users, 593 gameplay records, doctor consultations), dynamically computing daily dosage compliance, streak counters, and an interactive 84-day (12-week) therapy adherence heatmap.
+- **Bidirectional WebView Telemetry & PDF Reports:** Built a high-frequency `postMessage` event bridge for real-time exercise score sync and native download pipelines for clinical PDF reports to local storage.
 
 ### 4. Ingecom GPS & Japjee (Client Mobility & Inventory Applications)
 *React Native Developer | Jan 2024 – Present*
