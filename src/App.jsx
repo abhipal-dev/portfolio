@@ -14,18 +14,18 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-[#070a12] text-slate-100 selection:bg-blue-600 selection:text-white font-sans transition-colors duration-500">
-        {/* Top Navbar */}
+      <div className="min-h-screen bg-[#080a0f] text-zinc-100 selection:bg-zinc-700 selection:text-white font-sans transition-colors duration-200">
+        {/* Top Architectural Navbar */}
         <Navbar />
 
-        {/* Main Content Sections */}
+        {/* Main Content Flow: Projects Front and Center */}
         <main className="relative z-10">
           <Hero />
-          <About />
-          <StoreLifecycle />
-          <ArchitectureDeepDive />
-          <Skills />
           <Projects />
+          <About />
+          <ArchitectureDeepDive />
+          <StoreLifecycle />
+          <Skills />
           <Experience />
           <Contact />
         </main>

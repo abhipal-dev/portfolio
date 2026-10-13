@@ -1,114 +1,86 @@
 import React from 'react';
-import { Smartphone, MapPin, Share2, Box, CheckCircle2, Award, Zap, Code, ShieldCheck } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
-import { useTheme } from '../context/ThemeContext';
 
 export default function About() {
-  const { currentTheme } = useTheme();
 
-  const metrics = [
-    { label: 'Production Mobile Exp', value: '3.5+ Yrs', detail: 'Cross-platform Android & iOS' },
-    { label: 'Apps Published', value: '4–5 Each', detail: 'Google Play & Apple App Store' },
-    { label: 'Enterprise & Kiosks', value: 'Private APKs', detail: 'Lock-task tablets & fleet tools' },
-    { label: 'Production Updates', value: '100+ Releases', detail: 'RN 0.70 ➔ 0.8x migrations' },
-  ];
-
-  const pillars = [
+  const principles = [
     {
-      icon: Smartphone,
-      title: 'Three-Sided Mobility Platforms (Core Focus)',
+      num: '01',
+      tag: 'REACT-NATIVE-MAPS // ZERO_RE_RENDER_TELEMETRY',
+      title: '60 FPS Map Telemetry Without React Tree Re-renders',
       description:
-        'Architecting and synchronizing complete mobility ecosystems — Rider on-demand booking, Driver active navigation, and walk-up Kiosk Terminal applications tied to centralized dispatch.',
-      accent: 'text-sky-400 bg-sky-500/10 border-sky-500/20',
+        'In high-frequency mobility apps (TaxiMuscat), driver coordinates stream at 1–5 Hz. Binding raw GPS ticks to React state causes constant component re-renders that stall the JS thread. I decouple location streaming into mutable refs and drive camera positioning imperatively via animateCamera with bearing interpolation.',
+      detail: 'Measured: Steady 60fps gesture handling during continuous route polyline streaming.',
     },
     {
-      icon: Share2,
-      title: 'Deep WebView & postMessage Bridges',
+      num: '02',
+      tag: 'MMKV_JSI // ZERO_OVERHEAD_PERSISTENCE',
+      title: 'Synchronous MMKV Persistence Over Async Bridge Jitter',
       description:
-        'Extensive expertise building bidirectional event bridges to exchange real-time exercise telemetry, canvas coordinates, and test scores between HTML5 web views and native React Native modules.',
-      accent: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+        'AsyncStorage introduces serial asynchronous bridge round-trips that introduce screen flicker and race conditions during initial app mount. In LazyEye Mobile, I implemented synchronous MMKV with zero-overhead JSI bindings, enabling instant preference hydration, offline tokens, and clinical settings on the very first frame.',
+      detail: 'Zero bridge serialization penalty • 30x faster read/write throughput than AsyncStorage.',
     },
     {
-      icon: MapPin,
-      title: 'GPS Tracking, Maps & Telemetry',
+      num: '03',
+      tag: 'WEBVIEW_BRIDGE // VALIDATED_POSTMESSAGE_RPC',
+      title: 'Bidirectional WebView RPC Bridges for Clinical Engines',
       description:
-        'Building high-performance map architectures with react-native-maps, dynamic polyline route drawing, animated driver bearing rotation, proximity dispatch, and geofencing.',
-      accent: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+        'For complex digital therapeutics requiring HTML5 Canvas physics, I architect typed postMessage bridges with sequence IDs, response acknowledgments, and timeout guards. Native sensors stream calibrated chromatic filter coefficients to the web canvas, and score events pipe back to native state reliably.',
+      detail: 'Zero frame drop across 11 playable dichoptic clinical game engines.',
     },
     {
-      icon: Box,
-      title: 'Store Releases & Lifecycle Engineering',
+      num: '04',
+      tag: 'STORE_DISCIPLINE // ZERO_CRASH_UPGRADE_LIFECYCLE',
+      title: 'Production Store Hygiene & Long-Term Upgrade Discipline',
       description:
-        'Built and published 4–5 distinct production apps each on Google Play and Apple App Store, alongside dedicated hardware kiosk terminals and enterprise APKs. Delivered 100+ production updates and migrated apps across major React Native versions (RN 0.70 to 0.8x).',
-      accent: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
+        'Having upgraded production codebases from React Native 0.70 through to 0.87.1, I navigate major native toolchain breaking changes — Gradle 9.4/AGP 9.2, Android Target SDK 35 edge-to-edge enforcements, Hermes memory profiling, CocoaPods linkage issues, and ProGuard/R8 byte-code stripping for lean APK binaries.',
+      detail: '4–5 apps published on each store • 100+ production updates deployed.',
     },
   ];
 
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-20 sm:py-28 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Metric Stats Engineering Grid */}
-        <div className="mb-14 sm:mb-20 grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
-          {metrics.map((stat, idx) => (
-            <div
-              key={idx}
-              className="p-3.5 sm:p-6 rounded-xl sm:rounded-2xl bg-[#0c111e]/80 border border-slate-800/90 backdrop-blur-sm text-center hover:border-slate-700 transition-all group"
-            >
-              <div className="text-xl sm:text-3xl font-extrabold text-white font-mono tracking-tight group-hover:text-sky-300 transition-colors">
-                {stat.value}
-              </div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-300 mt-1">
-                {stat.label}
-              </div>
-              <div className="text-[10px] sm:text-[11px] font-mono text-slate-500 mt-0.5">
-                {stat.detail}
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium ${currentTheme.badge}`}>
-            <Smartphone className="w-3.5 h-3.5" />
-            <span>CROSS-PLATFORM MOBILE & HYBRID WEB ENGINEERING</span>
+        <div className="max-w-3xl mb-16 space-y-3">
+          <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
+            <span className="text-zinc-500">02 //</span>
+            <span>SYSTEMS PHILOSOPHY</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Specialized in Mobility, Fleet & High-Speed Data Bridges
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-100">
+            How I Engineer Mobile Software
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            {portfolioData.personal.bio}
+          <p className="text-sm sm:text-base text-zinc-300 leading-relaxed pt-1">
+            Mobile applications run in inherently hostile environments — spotty 3G/LTE edge networks, aggressive OS battery terminators, device thermal throttling, and disparate hardware screens. My work is focused on building resilient, deterministic architectures that respect device hardware and never leave users stranded.
           </p>
         </div>
 
-        {/* 4 Core Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {pillars.map((pillar, index) => {
-            const Icon = pillar.icon;
-            return (
-              <div
-                key={index}
-                className="group relative p-6 sm:p-8 rounded-2xl bg-[#0c111e]/70 border border-slate-800/80 hover:border-slate-700 hover:bg-[#0c111e] transition-all duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div
-                    className={`p-3 rounded-xl border flex-shrink-0 group-hover:scale-105 transition-transform ${pillar.accent}`}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-bold text-slate-100 group-hover:text-white transition-colors">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                      {pillar.description}
-                    </p>
-                  </div>
+        {/* 4 Architectural Principles (Structured Editorial List) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {principles.map((p) => (
+            <div
+              key={p.num}
+              className="p-6 sm:p-7 rounded border border-zinc-800/80 bg-zinc-950/60 hover:border-zinc-700 transition-colors flex flex-col justify-between space-y-4"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+                  <span className="text-zinc-500 font-bold">{p.num}</span>
+                  <span className="text-[11px] text-zinc-400 truncate max-w-[280px]">{p.tag}</span>
                 </div>
+                <h3 className="text-lg sm:text-xl font-bold text-zinc-100 tracking-tight leading-snug">
+                  {p.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                  {p.description}
+                </p>
               </div>
-            );
-          })}
+
+              <div className="pt-3 border-t border-zinc-900 text-[11px] font-mono text-zinc-400 flex items-center gap-1.5">
+                <span className="text-emerald-400">▹</span>
+                <span>{p.detail}</span>
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>

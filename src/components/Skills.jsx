@@ -1,164 +1,156 @@
-import React, { useState } from 'react';
-import {
-  Smartphone,
-  FileCode,
-  Terminal,
-  Compass,
-  Layers,
-  Map,
-  MapPin,
-  Navigation,
-  Radio,
-  Route,
-  Send,
-  Bell,
-  BellRing,
-  Sparkles,
-  Cpu,
-  Zap,
-  Database,
-  RefreshCw,
-  ExternalLink,
-  FileText,
-  Share2,
-  Activity,
-  Palette,
-  Languages,
-  Layout,
-  Box,
-  Cloud,
-  ShieldCheck,
-  Network,
-  GitBranch,
-} from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
-import { useTheme } from '../context/ThemeContext';
-
-const iconMap = {
-  Smartphone,
-  FileCode,
-  Terminal,
-  Compass,
-  Layers,
-  Map,
-  MapPin,
-  Navigation,
-  Radio,
-  Route,
-  Send,
-  Bell,
-  BellRing,
-  Sparkles,
-  Cpu,
-  Zap,
-  Database,
-  RefreshCw,
-  ExternalLink,
-  FileText,
-  Share2,
-  Activity,
-  Palette,
-  Languages,
-  Layout,
-  Box,
-  Cloud,
-  ShieldCheck,
-  Network,
-  GitBranch,
-};
+import React from 'react';
 
 export default function Skills() {
-  const { currentTheme } = useTheme();
-  const [activeCategory, setActiveCategory] = useState('all');
 
-  const categories = [
-    { id: 'all', label: 'All Stack' },
-    { id: 'mobile', label: 'React Native Core' },
-    { id: 'webview', label: 'WebViews & Bridges' },
-    { id: 'maps', label: 'Maps & Telemetry' },
-    { id: 'background', label: 'Push & Background' },
-    { id: 'storage', label: 'Storage & Caching' },
-    { id: 'devops', label: 'Builds & Stores' },
+  const skillGroups = [
+    {
+      groupNum: '01',
+      title: 'Mobile Runtime & Native Toolchains',
+      description: 'Core execution environments, native Android & iOS tooling, and framework upgrades.',
+      items: [
+        {
+          name: 'React Native (0.70 ➔ 0.87.1)',
+          context: 'Bridgeless ReactHost, Hermes engine profiling, Android 15 (API 37) compatibility.',
+          tag: 'CORE_ENGINE',
+        },
+        {
+          name: 'TypeScript & Modern ES6+',
+          context: 'Strictly typed interfaces, custom hooks, typed event buses, and immutable state.',
+          tag: 'LANGUAGE',
+        },
+        {
+          name: 'Android Studio, Gradle & AGP',
+          context: 'Target SDK 35 compliance, ProGuard/R8 byte-code rules, Gradle 9.4 toolchains, release keystores.',
+          tag: 'ANDROID_NDK',
+        },
+        {
+          name: 'Xcode, iOS SDK & CocoaPods',
+          context: 'Certificates, provisioning profiles, TestFlight distribution, PrivacyInfo.xcprivacy compliance.',
+          tag: 'IOS_TOOLCHAIN',
+        },
+      ],
+    },
+    {
+      groupNum: '02',
+      title: 'Maps, Telemetry & Hybrid Bridges',
+      description: 'High-frequency coordinate streaming, live vector maps, and web-native event buses.',
+      items: [
+        {
+          name: 'react-native-maps & Google Maps SDK',
+          context: 'Imperative animateCamera tracking, 60fps bearing rotation, dynamic route polyline rendering.',
+          tag: 'GPS_TELEMETRY',
+        },
+        {
+          name: 'Bidirectional WebView RPC Bridges',
+          context: 'Validated postMessage schema with message IDs, timeouts, and native PDF report downloaders.',
+          tag: 'HYBRID_BRIDGE',
+        },
+        {
+          name: 'Background Geolocation & Geofencing',
+          context: 'Distance-filtered watchPosition, battery drain mitigation, proximity trip triggers.',
+          tag: 'BACKGROUND_GPS',
+        },
+        {
+          name: 'Firebase Cloud Messaging (FCM) & APNs',
+          context: 'High-priority notification channels, heads-up banners, and looping ringtones for dispatch.',
+          tag: 'PUSH_NOTIFICATIONS',
+        },
+      ],
+    },
+    {
+      groupNum: '03',
+      title: 'State, Persistence & Storage',
+      description: 'Zero-overhead local storage, synchronous hydration, and offline-first data structures.',
+      items: [
+        {
+          name: 'MMKV Synchronous Storage',
+          context: 'Direct C++ JSI bindings, sub-millisecond preference reads, zero async bridge jitter.',
+          tag: 'JSI_STORAGE',
+        },
+        {
+          name: 'Redux Toolkit & Context Architecture',
+          context: 'Normalized client caches, typed slices, offline mutation queues, and selector memoization.',
+          tag: 'CLIENT_STATE',
+        },
+        {
+          name: 'SQLite & Local Database Seeding',
+          context: '13-user clinical dataset hydration, 593 gameplay logs, 84-day therapy heatmap calculation.',
+          tag: 'OFFLINE_CACHE',
+        },
+        {
+          name: 'REST APIs & Security Architecture',
+          context: 'JWT Bearer auth tokens, Axios interceptors, multipart PDF/photo upload pipelines.',
+          tag: 'REST_NETWORKING',
+        },
+      ],
+    },
   ];
 
-  const getSkillsToDisplay = () => {
-    if (activeCategory === 'all') {
-      return [
-        ...(portfolioData.skills.mobile || []).map((s) => ({ ...s, cat: 'Core Mobile' })),
-        ...(portfolioData.skills.webview || []).map((s) => ({ ...s, cat: 'WebViews & Bridges' })),
-        ...(portfolioData.skills.maps || []).map((s) => ({ ...s, cat: 'Maps & GPS' })),
-        ...(portfolioData.skills.background || []).map((s) => ({ ...s, cat: 'Push & Background' })),
-        ...(portfolioData.skills.storage || []).map((s) => ({ ...s, cat: 'Storage & Offline' })),
-        ...(portfolioData.skills.devops || []).map((s) => ({ ...s, cat: 'Builds & Releases' })),
-      ];
-    }
-    return (portfolioData.skills[activeCategory] || []).map((s) => ({
-      ...s,
-      cat: categories.find((c) => c.id === activeCategory)?.label || '',
-    }));
-  };
-
-  const displayedSkills = getSkillsToDisplay();
-
   return (
-    <section id="skills" className="py-24 relative bg-[#090d16]/40">
+    <section id="skills" className="py-20 sm:py-28 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-          <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium ${currentTheme.badge}`}>
-            <Cpu className="w-3.5 h-3.5" />
-            <span>TECHNICAL EXPERTISE</span>
+        <div className="max-w-3xl mb-12 sm:mb-16 space-y-3">
+          <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
+            <span className="text-zinc-500">05 //</span>
+            <span>TECHNICAL CAPABILITY MATRIX</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Mobile Tech Stack & Core Competencies
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-100">
+            Systems & Engineering Competencies
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
-            Specialized frameworks, map SDKs, telemetry caching, and release tooling powering production Android and iOS applications.
+          <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+            Practical skills refined through continuous production deployments — focused on performance, native bridge reliability, and runtime stability.
           </p>
         </div>
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                activeCategory === cat.id
-                  ? `${currentTheme.button} shadow-md`
-                  : 'bg-[#0c111e] text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800'
-              }`}
+        {/* 3-Column Engineering Index */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+          {skillGroups.map((group) => (
+            <div
+              key={group.groupNum}
+              className="p-6 sm:p-7 rounded border border-zinc-800/80 bg-zinc-950/60 flex flex-col justify-between space-y-6"
             >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Skills Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5">
-          {displayedSkills.map((skill, index) => {
-            const IconComponent = iconMap[skill.icon] || Smartphone;
-            return (
-              <div
-                key={index}
-                className="group relative p-4 rounded-xl bg-[#0c111e]/90 border border-slate-800 hover:border-slate-700 transition-all duration-200 flex flex-col items-center text-center gap-2.5 shadow-sm"
-              >
-                <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-sky-400 group-hover:text-white group-hover:scale-105 transition-all">
-                  <IconComponent className="w-4 h-4" />
-                </div>
-                <div>
-                  <h3 className="text-xs sm:text-sm font-semibold text-slate-200 group-hover:text-white line-clamp-1">
-                    {skill.name}
-                  </h3>
-                  <div className="mt-1 flex items-center justify-center gap-1 text-[10px] text-slate-400 font-mono">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    <span>{skill.level}</span>
+              <div className="space-y-4">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
+                    <span className="text-zinc-500 font-bold">{group.groupNum}</span>
+                    <span>•</span>
+                    <span className="text-zinc-400">PILLAR</span>
                   </div>
+                  <h3 className="text-xl font-bold tracking-tight text-zinc-100">
+                    {group.title}
+                  </h3>
+                  <p className="text-xs text-zinc-400 leading-relaxed pt-0.5">
+                    {group.description}
+                  </p>
+                </div>
+
+                <div className="divide-y divide-zinc-900 border-t border-zinc-900">
+                  {group.items.map((item, idx) => (
+                    <div key={idx} className="py-3.5 space-y-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-semibold text-sm text-zinc-200">
+                          {item.name}
+                        </span>
+                        <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-900 text-zinc-400 border border-zinc-800/80 shrink-0">
+                          {item.tag}
+                        </span>
+                      </div>
+                      <p className="text-xs text-zinc-400 leading-relaxed">
+                        {item.context}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
-            );
-          })}
+
+              <div className="pt-2 text-[11px] font-mono text-zinc-400 flex items-center gap-1.5">
+                <span className="text-emerald-400">✓</span>
+                <span>Production Tested</span>
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>

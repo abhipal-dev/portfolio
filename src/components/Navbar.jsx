@@ -3,15 +3,6 @@ import {
   Menu,
   X,
   FileText,
-  Sparkles,
-  Smartphone,
-  User,
-  ShieldCheck,
-  Cpu,
-  Terminal,
-  FolderGit2,
-  Briefcase,
-  Mail,
   ChevronRight,
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
@@ -44,121 +35,111 @@ export default function Navbar() {
   }, [isOpen]);
 
   const navLinks = [
-    { name: 'About', href: '#about', icon: User },
-    { name: 'Releases', href: '#releases', icon: ShieldCheck, badge: '100+ Updates' },
-    { name: 'Architecture', href: '#architecture', icon: Cpu },
-    { name: 'Skills', href: '#skills', icon: Terminal },
-    { name: 'Projects', href: '#projects', icon: FolderGit2 },
-    { name: 'Experience', href: '#experience', icon: Briefcase },
-    { name: 'Contact', href: '#contact', icon: Mail },
+    { num: '01', name: 'Work', href: '#projects' },
+    { num: '02', name: 'Philosophy', href: '#about' },
+    { num: '03', name: 'RFCs', href: '#architecture' },
+    { num: '04', name: 'Releases', href: '#releases' },
+    { num: '05', name: 'Stack', href: '#skills' },
+    { num: '06', name: 'Experience', href: '#experience' },
+    { num: '07', name: 'Contact', href: '#contact' },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled || isOpen
-          ? 'bg-[#080c16]/95 backdrop-blur-xl border-b border-slate-800/80 shadow-2xl shadow-black/50 py-3'
-          : 'bg-transparent py-4 sm:py-5'
+          ? 'bg-[#080a0f]/95 backdrop-blur-md border-b border-zinc-800/80 py-3 shadow-sm'
+          : 'bg-transparent py-4 sm:py-5 border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Logo / Brand - Protected from Wrapping */}
+          {/* Brand Identity: Monospaced Engineering Stamp */}
           <a
             href="#"
-            className="flex items-center gap-2.5 group cursor-pointer text-slate-100 hover:text-white transition-colors shrink-0"
+            className="flex items-center gap-3 group text-zinc-100 hover:text-white transition-colors shrink-0"
           >
-            <div className={`w-9 h-9 rounded-xl ${currentTheme.logo || currentTheme.button} flex items-center justify-center font-mono font-black text-xs shadow-md group-hover:scale-105 transition-transform shrink-0`}>
-              &lt;AP/&gt;
+            <div className={`w-8 h-8 rounded border border-zinc-700/80 ${currentTheme.logo} flex items-center justify-center font-mono font-bold text-xs shadow-sm`}>
+              AP
             </div>
-            <div className="whitespace-nowrap shrink-0">
-              <span className="font-extrabold text-base sm:text-lg tracking-tight text-white group-hover:text-slate-200 transition-all block whitespace-nowrap">
+            <div className="flex flex-col">
+              <span className="font-bold text-sm tracking-tight text-zinc-100 group-hover:text-white transition-colors leading-none">
                 {portfolioData.personal.name}
               </span>
-              <span className={`text-[10px] ${currentTheme.accentText} font-mono block -mt-1 font-semibold whitespace-nowrap`}>
-                React Native Lead
+              <span className="text-[10.5px] font-mono text-zinc-400 mt-0.5 tracking-wider">
+                REACT NATIVE • 3.5Y
               </span>
             </div>
           </a>
 
-          {/* Desktop Nav Items - Clean pill design on xl screens */}
-          <nav className="hidden xl:flex items-center gap-1 bg-[#0c111e]/90 p-1.5 rounded-full border border-slate-800 backdrop-blur-md">
+          {/* Desktop Navigation: Editorial Numbered Markers */}
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-full transition-all duration-200 font-mono flex items-center gap-1.5 whitespace-nowrap"
+                className="text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-zinc-100 transition-colors flex items-center gap-1.5 py-1"
               >
-                <span>{link.name}</span>
-                {link.badge && (
-                  <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 font-mono border border-emerald-500/30">
-                    100+
-                  </span>
-                )}
+                <span className="text-zinc-400 text-[10px]">{link.num}</span>
+                <span className="font-sans font-medium text-xs normal-case">{link.name}</span>
               </a>
             ))}
           </nav>
 
-          {/* Desktop Actions: Theme Switcher & Links */}
-          <div className="hidden xl:flex items-center gap-3 shrink-0">
-            {/* Theme Selector Pills */}
-            <div className="flex items-center gap-1 bg-[#0c111e] p-1 rounded-full border border-slate-800" title="Switch Color Palette">
-              {Object.values(themes).map((t) => (
-                <button
-                  key={t.id}
-                  onClick={() => setThemeId(t.id)}
-                  className={`px-2.5 py-1 rounded-full text-xs font-mono transition-all flex items-center gap-1 ${
-                    themeId === t.id
-                      ? `${t.badge} font-bold shadow-sm scale-105`
-                      : 'text-slate-400 hover:text-slate-200'
-                  }`}
-                  title={`Switch to ${t.name}`}
-                >
-                  <span>{t.icon}</span>
-                  <span className="text-[10px] hidden 2xl:inline">{t.name.split(' ')[0]}</span>
-                </button>
-              ))}
-            </div>
-
-            <a
-              href={portfolioData.personal.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Profile"
-              className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition-colors border border-transparent hover:border-slate-700"
-            >
-              <GithubIcon className="w-4 h-4" />
-            </a>
-            <a
-              href={portfolioData.personal.socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn Profile"
-              className="p-2 text-slate-400 hover:text-sky-400 hover:bg-slate-800 rounded-xl transition-colors border border-transparent hover:border-slate-700"
-            >
-              <LinkedinIcon className="w-4 h-4" />
-            </a>
-            
-            <a
-              href={portfolioData.personal.resumeUrl}
-              className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider ${currentTheme.button} transition-all active:scale-95 shadow-md`}
-            >
-              <FileText className="w-3.5 h-3.5" />
-              Resume
-            </a>
-          </div>
-
-          {/* Mobile & Tablet Hamburger Controls */}
-          <div className="flex xl:hidden items-center gap-2">
-            {/* Quick Theme Cycle Button */}
+          {/* Desktop Utility Toolbar */}
+          <div className="hidden md:flex items-center gap-3 shrink-0">
+            {/* Minimalist Theme Cycle */}
             <button
               onClick={() => {
                 const keys = Object.keys(themes);
                 const nextIdx = (keys.indexOf(themeId) + 1) % keys.length;
                 setThemeId(keys[nextIdx]);
               }}
-              className="p-2 text-xs font-mono rounded-xl bg-[#0c111e] border border-slate-800 text-slate-300 hover:text-white active:scale-95 transition-all"
+              className="px-2.5 py-1 rounded border border-zinc-800 bg-zinc-900/60 hover:bg-zinc-800 text-zinc-300 text-[11px] font-mono flex items-center gap-1.5 transition-all"
+              title="Toggle Color System"
+            >
+              <span className="w-2 h-2 rounded-full border border-zinc-600 inline-block bg-current" />
+              <span>{currentTheme.name}</span>
+            </button>
+
+            <a
+              href={portfolioData.personal.socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+              className="p-1.5 text-zinc-400 hover:text-zinc-100 rounded border border-zinc-800/60 hover:border-zinc-700 bg-zinc-900/40 transition-colors"
+            >
+              <GithubIcon className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={portfolioData.personal.socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="p-1.5 text-zinc-400 hover:text-zinc-100 rounded border border-zinc-800/60 hover:border-zinc-700 bg-zinc-900/40 transition-colors"
+            >
+              <LinkedinIcon className="w-3.5 h-3.5" />
+            </a>
+            
+            <a
+              href={portfolioData.personal.resumeUrl}
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono tracking-wider ${currentTheme.button} transition-all`}
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>RESUME</span>
+            </a>
+          </div>
+
+          {/* Mobile Navigation Trigger */}
+          <div className="flex lg:hidden items-center gap-2">
+            <button
+              onClick={() => {
+                const keys = Object.keys(themes);
+                const nextIdx = (keys.indexOf(themeId) + 1) % keys.length;
+                setThemeId(keys[nextIdx]);
+              }}
+              className="p-1.5 text-xs font-mono rounded border border-zinc-800 bg-zinc-900 text-zinc-300"
               title="Cycle Theme"
             >
               {currentTheme.icon}
@@ -166,10 +147,10 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle Navigation Menu"
-              className="p-2 text-slate-300 hover:text-white bg-[#0c111e] hover:bg-slate-800 border border-slate-800 rounded-xl transition-all active:scale-95"
+              aria-label="Toggle Menu"
+              className="p-1.5 text-zinc-300 hover:text-white border border-zinc-800 bg-zinc-900 rounded transition-colors"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
 
@@ -182,55 +163,43 @@ export default function Navbar() {
           onClick={(e) => {
             if (e.target === e.currentTarget) setIsOpen(false);
           }}
-          className="xl:hidden fixed inset-x-0 top-[60px] bottom-0 bg-black/75 backdrop-blur-md z-50 animate-in fade-in duration-200"
+          className="lg:hidden fixed inset-x-0 top-[56px] bottom-0 bg-black/80 backdrop-blur-sm z-50 animate-in fade-in duration-150"
         >
-          <div className="bg-[#0b0f1a] border-b border-slate-800/90 shadow-2xl max-h-[calc(100vh-61px)] overflow-y-auto p-4 sm:p-6 space-y-4">
+          <div className="bg-[#090b10] border-b border-zinc-800 shadow-xl max-h-[calc(100vh-56px)] overflow-y-auto p-4 sm:p-6 space-y-4">
             
-            {/* Navigation Cards Grid */}
-            <nav className="grid grid-cols-1 gap-1.5">
-              {navLinks.map((link) => {
-                const IconComponent = link.icon;
-                return (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-between p-3 rounded-xl bg-[#0e1424]/60 border border-slate-800/80 hover:border-slate-700 hover:bg-[#12192e] text-slate-200 hover:text-white transition-all active:scale-[0.99] group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-sky-400 group-hover:scale-105 transition-transform">
-                        <IconComponent className="w-4 h-4" />
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-semibold tracking-tight">{link.name}</span>
-                        {link.badge && (
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-                            {link.badge}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-slate-300 group-hover:translate-x-0.5 transition-all" />
-                  </a>
-                );
-              })}
+            {/* Clean Monospaced Navigation Links */}
+            <nav className="divide-y divide-zinc-800/60 border border-zinc-800 rounded bg-zinc-950/60">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-between p-3.5 text-zinc-300 hover:text-white hover:bg-zinc-900/50 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono text-xs text-zinc-400">{link.num}</span>
+                    <span className="font-semibold text-sm tracking-tight">{link.name}</span>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-zinc-500" />
+                </a>
+              ))}
             </nav>
             
-            {/* Mobile Segmented Theme Bar */}
-            <div className="p-3.5 rounded-xl bg-[#0e1424]/90 border border-slate-800 space-y-2">
-              <div className="flex items-center justify-between text-xs font-mono text-slate-400">
-                <span>Color Palette:</span>
-                <span className="text-slate-300 font-semibold">{currentTheme.name}</span>
+            {/* Theme Selector Strip */}
+            <div className="p-3 rounded border border-zinc-800 bg-zinc-950/40 space-y-2">
+              <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+                <span>PALETTE_SELECT:</span>
+                <span className="text-zinc-200 font-semibold">{currentTheme.name}</span>
               </div>
-              <div className="grid grid-cols-3 gap-1.5 p-1 rounded-lg bg-slate-950 border border-slate-800/80">
+              <div className="grid grid-cols-3 gap-1.5 p-1 rounded bg-zinc-900 border border-zinc-800/80">
                 {Object.values(themes).map((t) => (
                   <button
                     key={t.id}
                     onClick={() => setThemeId(t.id)}
-                    className={`py-1.5 px-2 rounded-md text-xs font-mono flex items-center justify-center gap-1.5 transition-all ${
+                    className={`py-1.5 px-2 rounded text-xs font-mono flex items-center justify-center gap-1.5 transition-all ${
                       themeId === t.id
                         ? `${t.badge} font-bold shadow-sm`
-                        : 'text-slate-400 hover:text-slate-200'
+                        : 'text-zinc-400 hover:text-zinc-200'
                     }`}
                   >
                     <span>{t.icon}</span>
@@ -240,36 +209,36 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Bottom Actions: Socials & Full-Width Resume Button */}
+            {/* Bottom Actions */}
             <div className="pt-2 flex items-center gap-3">
               <div className="flex items-center gap-2">
                 <a
                   href={portfolioData.personal.socials.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-[#0e1424] border border-slate-800 text-slate-400 hover:text-white transition-colors"
+                  className="p-2.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white"
                   aria-label="GitHub"
                 >
-                  <GithubIcon className="w-5 h-5" />
+                  <GithubIcon className="w-4 h-4" />
                 </a>
                 <a
                   href={portfolioData.personal.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-[#0e1424] border border-slate-800 text-slate-400 hover:text-sky-400 transition-colors"
+                  className="p-2.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-sky-400"
                   aria-label="LinkedIn"
                 >
-                  <LinkedinIcon className="w-5 h-5" />
+                  <LinkedinIcon className="w-4 h-4" />
                 </a>
               </div>
 
               <a
                 href={portfolioData.personal.resumeUrl}
                 onClick={() => setIsOpen(false)}
-                className={`flex-1 p-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider ${currentTheme.button} flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-all`}
+                className={`flex-1 p-2.5 rounded text-center text-xs font-mono font-bold tracking-wider ${currentTheme.button} flex items-center justify-center gap-2 transition-all`}
               >
-                <FileText className="w-4 h-4" />
-                <span>View Full Resume (PDF)</span>
+                <FileText className="w-3.5 h-3.5" />
+                <span>OFFICIAL RESUME (PDF)</span>
               </a>
             </div>
 

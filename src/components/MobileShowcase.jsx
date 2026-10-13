@@ -2,30 +2,12 @@ import React, { useState, useEffect } from 'react';
 import {
   Wifi,
   Battery,
-  MapPin,
   Car,
-  Radio,
-  Navigation,
-  Shield,
-  Clock,
-  Phone,
-  CheckCircle2,
-  ExternalLink,
-  Cpu,
-  Layers,
-  ArrowRight,
-  Sparkles,
-  Zap,
-  Eye,
-  Gamepad2,
   Play,
-  Activity,
-  Award,
+  Eye,
 } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
 
 export default function MobileShowcase() {
-  const { currentTheme } = useTheme();
   const [activeTab, setActiveTab] = useState('rider');
   const [driverAccepted, setDriverAccepted] = useState(false);
   const [speed, setSpeed] = useState(48);
@@ -44,12 +26,7 @@ export default function MobileShowcase() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full max-w-[315px] sm:max-w-[350px]">
-      
-      {/* Ambient Backlight (Sleek, Not Overwhelming) */}
-      <div
-        className={`absolute -inset-2 rounded-[3.5rem] ${currentTheme.glow} blur-2xl opacity-50 pointer-events-none transition-colors duration-500`}
-      />
+    <div className="relative mx-auto w-full max-w-[315px] sm:max-w-[340px]">
 
       {/* Modern High-End Device Chassis */}
       <div className="relative rounded-[2.5rem] sm:rounded-[3rem] bg-[#0c1019] border-[4px] sm:border-[5px] border-slate-800 shadow-2xl shadow-black/80 overflow-hidden backdrop-blur-xl">

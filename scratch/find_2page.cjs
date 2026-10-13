@@ -8,8 +8,8 @@ function testOne(fontSize, lineHeight, marginMm) {
   let html = fs.readFileSync('public/resume.html', 'utf8');
   
   // Replace styles
-  html = html.replace(/font-size:\s*[\d\.]+pt;/g, `font-size: ${fontSize}pt;`);
-  html = html.replace(/line-height:\s*[\d\.]+;/g, `line-height: ${lineHeight};`);
+  html = html.replace(/font-size:\s*[\d.]+pt;/g, `font-size: ${fontSize}pt;`);
+  html = html.replace(/line-height:\s*[\d.]+;/g, `line-height: ${lineHeight};`);
   html = html.replace(/margin:\s*10mm 14mm 10mm 14mm;/g, `margin: ${marginMm}mm 13mm ${marginMm}mm 13mm;`);
   
   fs.writeFileSync('public/test_render.html', html);

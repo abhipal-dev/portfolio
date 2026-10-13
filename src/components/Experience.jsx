@@ -1,135 +1,116 @@
 import React from 'react';
-import { Briefcase, GraduationCap, Calendar, MapPin, CheckCircle2, Sparkles, Building2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-import { useTheme } from '../context/ThemeContext';
 
 export default function Experience() {
-  const { currentTheme } = useTheme();
 
   return (
-    <section id="experience" className="py-24 relative bg-[#090d16]/50">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20 sm:py-28 border-b border-zinc-800/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium ${currentTheme.badge}`}>
-            <Briefcase className="w-3.5 h-3.5" />
-            <span>CAREER PATH & EXPERTISE</span>
+        <div className="max-w-3xl mb-12 sm:mb-16 space-y-3">
+          <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
+            <span className="text-zinc-500">06 //</span>
+            <span>CHRONOLOGY & TRACK RECORD</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Professional Experience & Milestones
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-100">
+            Career Timeline & Production Milestones
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            3.5+ years of production engineering — leading React Native mobile architecture alongside deep experience in web development, bidirectional WebViews, and real-time mobility ecosystems.
+          <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+            3.5+ years of full-time engineering — architecting React Native mobile systems, managing multi-tier fleet ecosystems, and bridging native engines with hybrid web diagnostic canvases.
           </p>
         </div>
 
-        {/* Linear Stacked Career Timeline */}
+        {/* Career Timeline Ledger */}
         <div className="space-y-8">
           {portfolioData.experience.map((exp, index) => (
             <div
               key={index}
-              className="p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-[#0c111e] border border-slate-800 hover:border-slate-700 transition-all duration-300 shadow-xl"
+              className="p-6 sm:p-8 rounded border border-zinc-800/80 bg-zinc-950/60 hover:border-zinc-700 transition-colors"
             >
-              {/* Header Badges */}
-              <div className="flex flex-wrap items-center justify-between gap-2.5 mb-4">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-[11px] sm:text-xs font-mono px-2.5 py-1 rounded-full bg-blue-500/10 text-sky-300 border border-blue-500/20 font-semibold flex items-center gap-1.5">
-                    <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-sky-400" />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                
+                {/* Left Meta Column: Period & Location */}
+                <div className="lg:col-span-4 space-y-1.5 font-mono text-xs">
+                  <div className="text-zinc-200 font-bold tracking-wider">
                     {exp.period}
-                  </span>
+                  </div>
+                  <div className="text-zinc-400">
+                    {exp.location}
+                  </div>
                   {exp.focusBadge && (
-                    <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-medium px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
-                      <Sparkles className="w-3 h-3 text-emerald-400" />
-                      {exp.focusBadge}
-                    </span>
+                    <div className="pt-2">
+                      <span className="inline-block px-2 py-0.5 rounded text-[10.5px] bg-zinc-900 border border-zinc-800 text-zinc-300">
+                        {exp.focusBadge}
+                      </span>
+                    </div>
                   )}
                 </div>
 
-                <span className="flex items-center gap-1 text-[11px] sm:text-xs text-slate-400 font-mono">
-                  <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-500" />
-                  {exp.location}
-                </span>
-              </div>
+                {/* Right Content Column: Role, Company, Accomplishments */}
+                <div className="lg:col-span-8 space-y-4">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-100">
+                      {exp.role}
+                    </h3>
+                    <div className="text-sm font-semibold text-zinc-300 mt-0.5">
+                      {exp.company}
+                    </div>
+                  </div>
 
-              {/* Role Title & Company */}
-              <div className="mb-4">
-                <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight leading-snug">
-                  {exp.role}
-                </h3>
-                <div className="text-sm font-semibold text-sky-400 mt-1 flex items-center gap-1.5">
-                  <Building2 className="w-4 h-4 text-slate-400" />
-                  <span>{exp.company}</span>
+                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                    {exp.description}
+                  </p>
+
+                  <div className="space-y-2 pt-2 border-t border-zinc-900">
+                    <div className="text-[11px] font-mono uppercase tracking-wider text-zinc-400">
+                      Key Technical Accomplishments:
+                    </div>
+                    <ul className="space-y-2 text-xs sm:text-sm text-zinc-300">
+                      {exp.achievements.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2.5">
+                          <span className="text-zinc-500 font-mono mt-0.5">▹</span>
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Skills Tag Strip */}
+                  <div className="flex flex-wrap gap-1.5 pt-3">
+                    {exp.skills?.map((sk) => (
+                      <span
+                        key={sk}
+                        className="px-2 py-0.5 text-[11px] font-mono rounded bg-zinc-900 text-zinc-400 border border-zinc-800/80"
+                      >
+                        {sk}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+
               </div>
-
-              {/* Role Overview */}
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5">
-                {exp.description}
-              </p>
-
-              {/* Key Highlights */}
-              <div className="border-t border-slate-800/80 pt-4 mb-5">
-                <h4 className="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-semibold mb-3">
-                  Key Technical Achievements:
-                </h4>
-                <ul className="space-y-2.5">
-                  {exp.achievements.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                      <span className="leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Tech Skills Pills */}
-              {exp.skills && (
-                <div className="border-t border-slate-800/80 pt-4 flex flex-wrap gap-1.5">
-                  {exp.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-2.5 py-0.5 text-[11px] font-mono rounded bg-slate-800/80 text-sky-300 border border-slate-700/60"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              )}
             </div>
           ))}
         </div>
 
-        {/* Education Section */}
-        <div className="mt-20 pt-16 border-t border-slate-800/80">
-          <div className="flex items-center gap-2.5 mb-8">
-            <div className="p-2 rounded-xl bg-blue-500/10 text-sky-400 border border-blue-500/20">
-              <GraduationCap className="w-5 h-5" />
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-white tracking-tight">Academic Foundations</h3>
-              <p className="text-xs text-slate-400 font-mono">Computer Applications & Software Engineering Degrees</p>
-            </div>
+        {/* Education Sub-Section */}
+        <div className="mt-12 pt-8 border-t border-zinc-850">
+          <div className="text-xs font-mono text-zinc-400 uppercase tracking-wider mb-4">
+            Academic Background
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {portfolioData.education.map((edu, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {portfolioData.education?.map((edu, idx) => (
               <div
                 key={idx}
-                className="p-6 sm:p-7 rounded-2xl bg-[#0c111e] border border-slate-800 hover:border-slate-700 flex flex-col justify-between gap-4 transition-colors"
+                className="p-4 rounded border border-zinc-850 bg-zinc-950/40 space-y-1"
               >
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-slate-800 text-sky-300 border border-slate-700">
-                      {edu.period}
-                    </span>
-                    <span className="text-xs text-slate-400 font-mono">{edu.location}</span>
-                  </div>
-                  <h4 className="text-lg font-bold text-white">{edu.degree}</h4>
-                  <div className="text-sm text-sky-400 font-medium mt-0.5">{edu.institution}</div>
-                  <p className="mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed">
-                    {edu.description}
-                  </p>
+                <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+                  <span className="text-zinc-200 font-semibold">{edu.degree}</span>
+                  <span>{edu.period}</span>
+                </div>
+                <div className="text-xs text-zinc-400">
+                  {edu.institution} • {edu.location}
                 </div>
               </div>
             ))}
