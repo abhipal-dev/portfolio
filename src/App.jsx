@@ -2,12 +2,8 @@ import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import StoreLifecycle from './components/StoreLifecycle';
-import ArchitectureDeepDive from './components/ArchitectureDeepDive';
-import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Experience from './components/Experience';
+import ProvenanceLedger from './components/ProvenanceLedger';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -18,15 +14,11 @@ export default function App() {
         {/* Top Architectural Navbar */}
         <Navbar />
 
-        {/* Main Content Flow: Projects Front and Center */}
+        {/* Cohesive Narrative Flow: Hero ➔ Case Studies ➔ Provenance & Releases ➔ Contact */}
         <main className="relative z-10">
           <Hero />
           <Projects />
-          <About />
-          <ArchitectureDeepDive />
-          <StoreLifecycle />
-          <Skills />
-          <Experience />
+          <ProvenanceLedger />
           <Contact />
         </main>
 

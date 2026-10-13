@@ -36,12 +36,8 @@ export default function Navbar() {
 
   const navLinks = [
     { num: '01', name: 'Work', href: '#projects' },
-    { num: '02', name: 'Philosophy', href: '#about' },
-    { num: '03', name: 'RFCs', href: '#architecture' },
-    { num: '04', name: 'Releases', href: '#releases' },
-    { num: '05', name: 'Stack', href: '#skills' },
-    { num: '06', name: 'Experience', href: '#experience' },
-    { num: '07', name: 'Contact', href: '#contact' },
+    { num: '02', name: 'Provenance', href: '#provenance' },
+    { num: '03', name: 'Contact', href: '#contact' },
   ];
 
   return (
