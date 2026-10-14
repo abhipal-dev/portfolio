@@ -48,7 +48,7 @@ Lead React Native Mobile Engineer with **3.5+ years of production experience** b
 ## KEY PROJECTS
 
 ### 1. Driver, Rider & Kiosk Mobility Ecosystem (Three-Sided Ride-Hailing Platform & Web Portal)
-*Project Lead, React Native | Mar 2024 – Present*  
+*Lead React Native Mobile Engineer | Mar 2024 – Present*  
 *(Tech: React Native, React Native Maps, Reanimated, FCM, Notifee, Axios, Laravel, Kiosk Terminal, Web Dispatch, RTL)*
 - **Three-Sided Platform Architecture:** Lead mobile development across Rider App (on-demand booking & tracking), Driver App (trip requests, active navigation, and telemetry), and Kiosk Terminal App (dedicated tablet/kiosk stations for walk-up bookings at hotels, malls, and airports) — all synchronized with central Web Dispatch & Fleet Management software.
 - **Kiosk Terminal Workflows:** Engineered dedicated tablet kiosk app supporting rapid walk-up ride bookings, automated nearby driver matching, thermal/digital receipts, and kiosk session security.
@@ -59,7 +59,7 @@ Lead React Native Mobile Engineer with **3.5+ years of production experience** b
 - **Reliable Notifications & RTL:** Configured FCM, APNs, and Notifee for high-priority trip alerts across foreground, background, and killed app states. Built dynamic English and Arabic multi-language support with comprehensive RTL and LTR mirroring.
 
 ### 2. TrackingHAWK X3 — Enterprise Fleet Management & GPS Telemetry
-*React Native Developer | Jan 2023 – Present*  
+*Lead React Native Mobile Engineer (Solo Delivery) | Jan 2023 – Present*  
 *(Tech: React Native, Google Maps, SQLite, MMKV, FCM, Background Handlers, Barcode Scanning)*  
 *Verified Store Releases: [Google Play (com.softcruise.application.trackinghawkx3)](https://play.google.com/store/apps/details?id=com.softcruise.application.trackinghawkx3) • [Apple App Store (id6738086577)](https://apps.apple.com/in/app/trackinghawk-x3/id6738086577)*
 - **Dual-Store Production Ownership:** Built, signed, and independently maintained enterprise fleet-tracking application for Android and iOS across multiple major production releases.
@@ -69,7 +69,7 @@ Lead React Native Mobile Engineer with **3.5+ years of production experience** b
 - **Asset Check-In Workflows:** Integrated camera and hardware barcode/QR scanning modules for automated driver-vehicle pairing and physical inventory audits.
 
 ### 3. KBFVTS X3 — Commercial Fleet Telematics & Vehicle Tracking
-*React Native Mobile Engineer | Jan 2024 – Present*  
+*Lead React Native Mobile Engineer | Jan 2024 – Present*  
 *(Tech: React Native, React Native Maps, Google Play Console, App Store Connect, FCM, MMKV)*  
 *Verified Store Releases: [Google Play (com.kbfvts.x3)](https://play.google.com/store/apps/details?id=com.kbfvts.x3) • [Apple App Store (id6739529934)](https://apps.apple.com/in/app/kbfvts-x3/id6739529934)*
 - **Dual-Store Verified Releases:** Published and maintained commercial vehicle tracking system for Android and iOS on both Google Play and Apple App Store.
@@ -78,13 +78,13 @@ Lead React Native Mobile Engineer with **3.5+ years of production experience** b
 - **Hermes Profiling & Performance:** Optimized multi-marker map clusters, eliminating memory leaks and ensuring smooth 60 FPS scrolling across budget Android hardware.
 
 ### 4. Ingecom GPS (Ingecom Pro) & Japjee (Client Mobility & Inventory)
-*React Native Developer | Jan 2024 – Present*  
+*Lead React Native Mobile Engineer | Jan 2024 – Present*  
 *Verified Store Release: [Google Play (com.v3.ingecompro)](https://play.google.com/store/apps/details?id=com.v3.ingecompro)*
 - **Ingecom GPS White-labeling:** Customized and deployed white-labeled international client instances with localized geofence alerts, CANBUS sensor analytics, and scheduled maintenance notifications.
 - **Japjee Inventory:** Independently developed cross-platform warehouse inventory mobile application with Role-Based Access Control (RBAC), real-time order tracking, and barcode scanning for logistics workflows.
 
 ### 5. LazyEye — Digital Dichoptic Vision Therapy & Clinical Assessment Mobile Platform
-*React Native Mobile Engineer & Full-Stack Developer | Jan 2023 – Present*  
+*Lead Mobile & Web Engineer (Team Lead) | Jan 2023 – Jun 2023 (Rebuilt 2026)*  
 *(Tech: Bare React Native 0.87.1 CLI, React 19, MMKV Storage, HTML5 Canvas WebViews, postMessage Bridge, Laravel 8 API, SQLite/MySQL, Android API 37)*  
 *Live Platform: [https://lazyeye.onrender.com](https://lazyeye.onrender.com) (Doctor: `dr_sarah` / `doctor123` | Patient: `abhicoder` / `4567` | Admin: `admin` / `admin123`)*
 - **Production React Native 0.87.1 Architecture:** Engineered cross-platform mobile application targeting modern Android API 37 (Android 15+) and iOS, resolving AGP 9.2 / Gradle 9.4 native toolchain requirements and React 19 compatibility.
