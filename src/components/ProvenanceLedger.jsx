@@ -21,7 +21,7 @@ export default function ProvenanceLedger() {
   const handleCopyPitch = () => {
     const pitchText = `Abhishek Pal — Lead React Native Mobile Engineer (3.5+ Years Exp) • Softcruise Technologies
 • Core Focus: Real-Time GPS Maps, Fleet Telemetry, 3-Sided Mobility (Rider, Driver, Kiosk), High-Priority FCM Push Notifications, MMKV synchronous caching.
-• Production Track Record: 4–5 Apps Published on Google Play & Apple App Store + Dedicated Enterprise Kiosks & Fleet APKs with 100+ releases across RN 0.70 to 0.8x.
+• Production Track Record: 6–7 Apps Published on Google Play & Apple App Store Each + Dedicated Enterprise Kiosks & Fleet APKs with 100+ releases across RN 0.70 to 0.8x.
 • Notice Period: 30 Days (Negotiable) • Open to Remote & Relocation
 • Portfolio: https://abhipal-dev.github.io/portfolio/
 • Contact: abhipal85350@gmail.com | +91-9870962636 | Agra, India`;
@@ -34,7 +34,7 @@ export default function ProvenanceLedger() {
   const releasePillars = [
     {
       title: 'Google Play Store (Android)',
-      badge: '4–5 Apps Published',
+      badge: '6–7 Apps Published',
       platform: 'Android Production',
       icon: Box,
       points: [
@@ -47,7 +47,7 @@ export default function ProvenanceLedger() {
     },
     {
       title: 'Apple App Store (iOS)',
-      badge: '4–5 Apps Published',
+      badge: '6–7 Apps Published',
       platform: 'iOS Production',
       icon: Smartphone,
       points: [

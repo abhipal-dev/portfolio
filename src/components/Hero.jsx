@@ -26,7 +26,7 @@ export default function Hero() {
   const handleCopyPitch = () => {
     const pitchText = `Abhishek Pal — Lead React Native Mobile Engineer (3.5+ Years Exp) • Softcruise Technologies
 • Core Focus: Real-Time GPS Maps, Fleet Telemetry, 3-Sided Mobility (Rider, Driver, Kiosk), High-Priority FCM Push Notifications, MMKV synchronous caching.
-• Production Track Record: 4–5 Apps Published on Google Play & Apple App Store + Dedicated Kiosks & Fleet APKs with 100+ releases across RN 0.70 to 0.8x.
+• Production Track Record: 6–7 Apps Published on Google Play & Apple App Store Each + Dedicated Kiosks & Fleet APKs with 100+ releases across RN 0.70 to 0.8x.
 • Notice Period: 30 Days (Negotiable) • Open to Remote & Relocation
 • Portfolio: https://abhipal-dev.github.io/portfolio/
 • Contact: abhipal85350@gmail.com | +91-9870962636 | Agra, India`;
@@ -73,14 +73,14 @@ export default function Hero() {
 
             {/* Substantive Value Proposition */}
             <p className="text-sm sm:text-base text-zinc-300 max-w-2xl leading-relaxed font-normal">
-              Specialized in high-reliability mobile systems operating under real-world constraints — <strong className="text-zinc-100 font-semibold">60 FPS Google Maps telemetry</strong>, three-sided fleet dispatch platforms (Rider, Driver, Kiosk), high-priority <strong className="text-zinc-100 font-semibold">FCM push notification pipelines</strong>, and sub-millisecond offline caching with MMKV. Shipped 4–5 distinct production apps each on <strong className="text-zinc-100 font-semibold">Google Play & Apple App Store</strong> with 100+ continuous releases across React Native 0.70 to 0.8x.
+              Specialized in high-reliability mobile systems operating under real-world constraints — <strong className="text-zinc-100 font-semibold">60 FPS Google Maps telemetry</strong>, three-sided fleet dispatch platforms (Rider, Driver, Kiosk), high-priority <strong className="text-zinc-100 font-semibold">FCM push notification pipelines</strong>, and sub-millisecond offline caching with MMKV. Shipped 6–7 distinct production apps each on <strong className="text-zinc-100 font-semibold">Google Play & Apple App Store</strong> with 100+ continuous releases across React Native 0.70 to 0.8x.
             </p>
 
             {/* Engineering Metrics Ledger */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 py-3 border-y border-zinc-800/80">
               <div className="space-y-0.5">
                 <div className="text-xl sm:text-2xl font-bold font-mono tracking-tight text-zinc-100">
-                  4–5
+                  6–7
                 </div>
                 <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">
                   Store Apps Each

@@ -8,6 +8,9 @@ import {
   KeyRound,
   Smartphone,
   Box,
+  Copy,
+  Check,
+  Sparkles,
 } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { portfolioData, CONFIG } from '../data/portfolioData';
@@ -18,6 +21,14 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [revealCompanyNames, setRevealCompanyNames] = useState(CONFIG.revealCompanyProjectNames);
   const [flagshipTab, setFlagshipTab] = useState('architecture'); // 'architecture' | 'maps_code' | 'fcm_code'
+  const [lazyEyeTab, setLazyEyeTab] = useState('sandbox'); // 'sandbox' | 'bridge_code'
+  const [copiedCred, setCopiedCred] = useState(null);
+
+  const handleCopyCred = (text, key) => {
+    navigator.clipboard.writeText(text);
+    setCopiedCred(key);
+    setTimeout(() => setCopiedCred(null), 2000);
+  };
 
   const categories = ['All', 'Mobility & Fleet', 'GPS & Telemetry', 'Healthcare & WebViews'];
 
@@ -486,313 +497,490 @@ export const getActiveTrip = () => {
         )}
 
         {/* ========================================================================= */}
-        {/* CASE STUDY 3: COMMERCIAL TELEMATICS — KBFVTS X3 & INGECOM PRO             */}
+        {/* CASE STUDY 3: INTERACTIVE RECRUITER DEMO — LAZYEYE PLATFORM (BARE RN)    */}
         {/* ========================================================================= */}
-        {(filter === 'All' || filter === 'GPS & Telemetry') && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* KBFVTS X3 Card */}
-            {kbfvtsProject && (
-              <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 flex flex-col justify-between space-y-5">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
-                    <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
-                      {kbfvtsProject.category}
-                    </span>
-                    <span className="text-emerald-400 font-semibold flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      DUAL-STORE LIVE
-                    </span>
-                  </div>
+        {(filter === 'All' || filter === 'Healthcare & WebViews') && lazyEyeProject && (
+          <div className="rounded border border-amber-500/30 bg-zinc-950/80 p-6 sm:p-8 lg:p-10 space-y-6 shadow-lg shadow-amber-950/10">
+            {/* Top Meta Strip */}
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-900 pb-4">
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
+                <span className="px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-300 font-semibold flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                  CASE STUDY 03 // INTERACTIVE DEMO & DTx
+                </span>
+                <span className="text-zinc-600">•</span>
+                <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  BARE REACT NATIVE 0.87.1 CLI
+                </span>
+                <span className="text-zinc-600">•</span>
+                <span className="text-zinc-400">Jan 2023 – Jun 2023 (Rebuilt 2026)</span>
+              </div>
 
-                  <div>
-                    <h3 className="text-xl font-bold tracking-tight text-zinc-100 leading-snug">
-                      {getTitle(kbfvtsProject)}
-                    </h3>
-                    <div className="text-xs font-mono text-zinc-400 mt-1">
-                      Google Play (com.kbfvts.x3) • Apple App Store (id6739529934)
-                    </div>
-                  </div>
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded border border-amber-500/30 bg-amber-950/20 text-amber-300 text-xs font-mono font-semibold">
+                  ⚡ RECRUITER EVALUATION DEMO
+                </span>
+              </div>
+            </div>
 
-                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                    Commercial vehicle tracking system and telematics engine built on React Native for Android and iOS. Features real-time GPS coordinates, continuous speed telemetry, geofence breaches, and high-reliability background push notifications.
+            {/* Asymmetric 2-Column Split */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              {/* Left Column: Provenance & Technical Architecture */}
+              <div className="lg:col-span-7 space-y-4">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100 leading-tight">
+                    {getTitle(lazyEyeProject)}
+                  </h3>
+                  <p className="text-xs font-mono text-amber-400/90 mt-1">
+                    Bare React Native 0.87.1 • Android 15 (API 37) & iOS • 11 Canvas Engines • postMessage Bridge
                   </p>
+                </div>
 
-                  {/* Dual-Store Badges */}
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    <a
-                      href={kbfvtsProject.playStoreUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-900/40 text-emerald-300 font-mono text-[11px] font-semibold transition-colors"
-                    >
-                      <Box className="w-3 h-3 text-emerald-400" />
-                      <span>PLAY STORE</span>
-                      <ExternalLink className="w-2.5 h-2.5 text-emerald-500" />
-                    </a>
+                <p className="text-sm text-zinc-300 leading-relaxed font-normal">
+                  <strong className="text-zinc-100">Project Provenance: </strong>
+                  Originally engineered Jan–Jun 2023 at Softcruise Technologies as a clinical pediatric MVP; modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI (Android 15 / API 37 & iOS) as an open-source clinical demonstration. Features 11 responsive HTML5 Canvas vision engines with touch gesture pass-through, red-cyan anaglyph calibration, dual offline/live engine modes, zero-latency MMKV synchronous storage, and seeded evaluation portals for recruiters.
+                </p>
 
-                    <a
-                      href={kbfvtsProject.appStoreUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-sky-500/40 bg-sky-950/30 hover:bg-sky-900/40 text-sky-300 font-mono text-[11px] font-semibold transition-colors"
-                    >
-                      <Smartphone className="w-3 h-3 text-sky-400" />
-                      <span>APP STORE</span>
-                      <ExternalLink className="w-2.5 h-2.5 text-sky-500" />
-                    </a>
+                {/* Direct Action Buttons for Immediate Testing */}
+                <div className="flex flex-wrap items-center gap-2.5 pt-1">
+                  <a
+                    href={lazyEyeProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded border border-emerald-500/40 bg-emerald-950/40 hover:bg-emerald-900/50 text-emerald-300 font-mono text-xs font-bold transition-all shadow-sm"
+                  >
+                    <span>LAUNCH CLOUD DEMO</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
+                  </a>
+
+                  <a
+                    href={lazyEyeProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 font-mono text-xs transition-colors"
+                  >
+                    <GithubIcon className="w-3.5 h-3.5 text-zinc-300" />
+                    <span>BARE RN GITHUB REPO</span>
+                  </a>
+
+                  <button
+                    onClick={() => setSelectedProject(lazyEyeProject)}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded text-xs font-mono border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-300 transition-colors"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-zinc-400" />
+                    <span>FULL ARCHITECTURE</span>
+                  </button>
+                </div>
+
+                {/* Technical Highlights */}
+                <div className="space-y-2 pt-2 border-t border-zinc-900">
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-zinc-400">
+                    Key Technical Highlights:
                   </div>
-
-                  <ul className="space-y-1.5 text-xs text-zinc-300 pt-2 border-t border-zinc-900">
-                    {kbfvtsProject.highlights.slice(0, 2).map((h, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-zinc-500 font-mono mt-0.5">▹</span>
-                        <span className="leading-relaxed">{h}</span>
-                      </li>
-                    ))}
+                  <ul className="space-y-1.5 text-xs text-zinc-300">
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-400 font-mono mt-0.5">▹</span>
+                      <span className="leading-relaxed">
+                        <strong className="text-zinc-100">Modern Bare React Native 0.87.1 CLI:</strong> Compiled for Android API 37 (Android 15+) and iOS with React 19, AGP 9.2, and Gradle 9.4 native toolchain compatibility.
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-400 font-mono mt-0.5">▹</span>
+                      <span className="leading-relaxed">
+                        <strong className="text-zinc-100">11 Clinical HTML5 Canvas Vision Engines:</strong> Responsive vision engines (Tetris, Snake, Menja 3D, Bubble Shooter) with touch gesture pass-through and calibrated red-cyan dichoptic filtering.
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-400 font-mono mt-0.5">▹</span>
+                      <span className="leading-relaxed">
+                        <strong className="text-zinc-100">Bidirectional postMessage Data Bridge:</strong> Secure high-frequency message exchange streaming exercise scores, canvas coordinates, and therapy adherence telemetry between WebViews and native React Native modules.
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-400 font-mono mt-0.5">▹</span>
+                      <span className="leading-relaxed">
+                        <strong className="text-zinc-100">Native Clinical PDF Downloads:</strong> Direct download pipeline enabling doctors and parents to download clinical PDF assessment reports from WebViews into local device storage.
+                      </span>
+                    </li>
                   </ul>
                 </div>
 
-                <div className="space-y-3 pt-3 border-t border-zinc-900">
-                  <div className="flex flex-wrap gap-1">
-                    {kbfvtsProject.technologies.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-1.5 py-0.5 text-[10.5px] font-mono rounded bg-zinc-900 text-zinc-400 border border-zinc-800/60"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between pt-1">
-                    <button
-                      onClick={() => setSelectedProject(kbfvtsProject)}
-                      className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-zinc-300 hover:text-white transition-colors"
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {lazyEyeProject.technologies.map((t) => (
+                    <span
+                      key={t}
+                      className="px-2 py-0.5 text-[11px] font-mono rounded bg-zinc-900 text-zinc-300 border border-zinc-800"
                     >
-                      <Eye className="w-3.5 h-3.5 text-zinc-400" />
-                      <span>TELEMETRY DETAILS</span>
-                    </button>
-
-                    <span className="text-[10px] font-mono text-zinc-500">
-                      AIS-140 GPS Fused
+                      {t}
                     </span>
-                  </div>
+                  ))}
                 </div>
               </div>
-            )}
 
-            {/* Ingecom GPS Card */}
-            {ingecomProject && (
-              <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 flex flex-col justify-between space-y-5">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
-                    <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
-                      {ingecomProject.category}
-                    </span>
-                    <span className="text-emerald-400 font-semibold flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      GOOGLE PLAY LIVE
-                    </span>
+              {/* Right Column: Recruiter Interactive Sandbox & Code Explorer */}
+              <div className="lg:col-span-5 rounded border border-zinc-800 bg-zinc-900/70 p-5 space-y-4">
+                {/* Tabs */}
+                <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
+                  <div className="flex items-center gap-1 bg-zinc-950 p-1 rounded border border-zinc-800">
+                    <button
+                      onClick={() => setLazyEyeTab('sandbox')}
+                      className={`px-2.5 py-1 text-xs font-mono rounded transition-colors flex items-center gap-1.5 ${
+                        lazyEyeTab === 'sandbox'
+                          ? 'bg-zinc-800 text-amber-300 font-semibold'
+                          : 'text-zinc-400 hover:text-zinc-200'
+                      }`}
+                    >
+                      <KeyRound className="w-3.5 h-3.5" />
+                      <span>Sandbox Logins</span>
+                    </button>
+                    <button
+                      onClick={() => setLazyEyeTab('bridge_code')}
+                      className={`px-2.5 py-1 text-xs font-mono rounded transition-colors flex items-center gap-1.5 ${
+                        lazyEyeTab === 'bridge_code'
+                          ? 'bg-zinc-800 text-sky-300 font-semibold'
+                          : 'text-zinc-400 hover:text-zinc-200'
+                      }`}
+                    >
+                      <Code2 className="w-3.5 h-3.5" />
+                      <span>WebViewBridge.js</span>
+                    </button>
                   </div>
+                  <span className="text-[10.5px] font-mono text-zinc-400">Live Demo</span>
+                </div>
 
-                  <div>
-                    <h3 className="text-xl font-bold tracking-tight text-zinc-100 leading-snug">
-                      {getTitle(ingecomProject)}
-                    </h3>
-                    <div className="text-xs font-mono text-zinc-400 mt-1">
-                      Google Play (com.v3.ingecompro) • International Logistics
+                {/* TAB 1: SANDBOX LOGINS */}
+                {lazyEyeTab === 'sandbox' && (
+                  <div className="space-y-3 animate-in fade-in duration-150">
+                    <div className="p-2.5 rounded bg-zinc-950 border border-zinc-800/80 text-[11.5px] text-zinc-300 leading-snug">
+                      <div className="flex items-center gap-2 font-mono text-[10.5px] text-amber-400 font-semibold uppercase mb-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                        <span>Pre-Seeded Evaluation Accounts (Sandbox Data)</span>
+                      </div>
+                      Log in to test role-based clinical views (no real patient data):
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {lazyEyeProject.testCredentials.map((cred, idx) => (
+                        <div
+                          key={idx}
+                          className="p-2.5 rounded border border-zinc-800 bg-zinc-950/80 flex flex-col justify-between gap-1.5"
+                        >
+                          <div>
+                            <div className="flex items-center justify-between text-xs">
+                              <span className="font-semibold text-zinc-200">{cred.role}</span>
+                              <span className="text-[9.5px] font-mono px-1.5 py-0.2 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
+                                {cred.badge}
+                              </span>
+                            </div>
+                            <p className="text-[10px] text-zinc-400 leading-tight mt-0.5 truncate">
+                              {cred.description}
+                            </p>
+                          </div>
+
+                          <div className="flex items-center justify-between pt-1.5 border-t border-zinc-850 font-mono text-[11px]">
+                            <div>
+                              <span className="text-zinc-500 text-[10px]">User: </span>
+                              <span className="text-zinc-200 font-bold">{cred.username}</span>
+                              <span className="text-zinc-600 mx-1">|</span>
+                              <span className="text-zinc-500 text-[10px]">P: </span>
+                              <span className="text-zinc-300">{cred.password}</span>
+                            </div>
+
+                            <button
+                              onClick={() => handleCopyCred(cred.username, `cred-${idx}`)}
+                              className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 text-[10px] transition-colors"
+                              title="Copy username"
+                            >
+                              {copiedCred === `cred-${idx}` ? (
+                                <>
+                                  <Check className="w-3 h-3 text-emerald-400" />
+                                  <span className="text-emerald-400 font-semibold">Copied</span>
+                                </>
+                              ) : (
+                                <>
+                                  <Copy className="w-3 h-3 text-zinc-400" />
+                                  <span>Copy</span>
+                                </>
+                              )}
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="pt-1 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                      <span>Live URL: lazyeye.onrender.com</span>
+                      <a
+                        href={lazyEyeProject.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1"
+                      >
+                        <span>Open & Test</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
                     </div>
                   </div>
+                )}
 
-                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                    International enterprise fleet telematics deployment with bespoke branding, localized geofence alerts, CANBUS sensor analytics, scheduled maintenance reminders, and direct dispatcher-to-driver push notifications.
-                  </p>
+                {/* TAB 2: WEBVIEW BRIDGE CODE */}
+                {lazyEyeTab === 'bridge_code' && (
+                  <div className="space-y-2 animate-in fade-in duration-150">
+                    <div className="text-[11px] font-mono text-zinc-400 flex items-center justify-between">
+                      <span>WebViewBridge.js</span>
+                      <span className="text-emerald-400">Bidirectional Telemetry</span>
+                    </div>
+                    <pre className="p-3.5 rounded bg-[#06080e] border border-zinc-800 text-[11px] font-mono text-zinc-300 overflow-x-auto leading-relaxed">
+{`// Bidirectional WebView Telemetry & Canvas Event Bridge
+const onMessage = (event) => {
+  const { type, score, coordinates, engineId } = JSON.parse(event.nativeEvent.data);
+  if (type === 'CANVAS_SCORE_UPDATE') {
+    // Persist real-time game coordinates synchronously in MMKV
+    storage.set(\`score_\${engineId}\`, score);
+  }
+};
 
-                  {/* Play Store Badge */}
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    <a
-                      href={ingecomProject.playStoreUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-900/40 text-emerald-300 font-mono text-[11px] font-semibold transition-colors"
-                    >
-                      <Box className="w-3 h-3 text-emerald-400" />
-                      <span>GOOGLE PLAY (com.v3.ingecompro)</span>
-                      <ExternalLink className="w-2.5 h-2.5 text-emerald-500" />
-                    </a>
+<WebView
+  ref={webViewRef}
+  source={{ uri: isOffline ? localEngineUri : livePortalUri }}
+  onMessage={onMessage}
+  injectedJavaScript={CALIBRATION_BOOTSTRAP_SCRIPT}
+  javaScriptEnabled={true}
+  domStorageEnabled={true}
+/>`}
+                    </pre>
+                    <div className="text-[11px] font-mono text-zinc-400 flex items-center justify-between pt-1 border-t border-zinc-800">
+                      <span>Engine: HTML5 Canvas + WebViews</span>
+                      <span className="text-emerald-400">Zero Bridge Latency</span>
+                    </div>
                   </div>
+                )}
 
-                  <ul className="space-y-1.5 text-xs text-zinc-300 pt-2 border-t border-zinc-900">
-                    {ingecomProject.highlights.slice(0, 2).map((h, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-zinc-500 font-mono mt-0.5">▹</span>
-                        <span className="leading-relaxed">{h}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="space-y-3 pt-3 border-t border-zinc-900">
-                  <div className="flex flex-wrap gap-1">
-                    {ingecomProject.technologies.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-1.5 py-0.5 text-[10.5px] font-mono rounded bg-zinc-900 text-zinc-400 border border-zinc-800/60"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between pt-1">
-                    <button
-                      onClick={() => setSelectedProject(ingecomProject)}
-                      className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-zinc-300 hover:text-white transition-colors"
-                    >
-                      <Eye className="w-3.5 h-3.5 text-zinc-400" />
-                      <span>CASE STUDY</span>
-                    </button>
-
-                    <span className="text-[10px] font-mono text-zinc-500">
-                      CANBUS & Diagnostics
-                    </span>
-                  </div>
-                </div>
               </div>
-            )}
-
+            </div>
           </div>
         )}
 
         {/* ========================================================================= */}
-        {/* CASE STUDY 4: SUPPORTING SHOWCASES (LAZYEYE & JAPJEE)                     */}
+        {/* CASE STUDY 4: COMMERCIAL TELEMATICS — KBFVTS X3 & INGECOM PRO             */}
         {/* ========================================================================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
-          {/* LazyEye Systems Showcase (Supporting WebViews & Canvas) */}
-          {(filter === 'All' || filter === 'Healthcare & WebViews') && lazyEyeProject && (
-            <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 flex flex-col justify-between space-y-5">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
-                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
-                    {lazyEyeProject.category}
-                  </span>
-                  <span className="text-amber-400 font-mono text-[11px] font-semibold">
-                    SUPPORTING WEBVIEWS DEMO
-                  </span>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold tracking-tight text-zinc-100 leading-snug">
-                    {getTitle(lazyEyeProject)}
-                  </h3>
-                  <div className="text-xs font-mono text-zinc-400 mt-1">
-                    Bare React Native 0.87.1 • Android 15 (API 37) • 11 Canvas Engines
-                  </div>
-                </div>
-
-                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                  Specialized case study demonstrating bidirectional WebView <code className="text-zinc-200 font-mono">postMessage</code> data bridges, HTML5 Canvas synchronization, zero-latency MMKV storage, and seeded evaluation portals for recruiters.
-                </p>
-
-                {/* Seeded Recruiter Accounts Pill */}
-                <div className="p-3 rounded border border-zinc-850 bg-zinc-900/40 space-y-1 font-mono text-xs">
-                  <div className="flex items-center justify-between text-zinc-300">
-                    <span className="font-semibold text-emerald-400 flex items-center gap-1.5">
-                      <KeyRound className="w-3.5 h-3.5" />
-                      <span>Test Logins Seeded:</span>
-                    </span>
-                    <span className="text-[10.5px] text-zinc-400">dr_sarah / admin / abhicoder</span>
-                  </div>
-                  <div className="text-[11px] text-zinc-400">
-                    Pass: doctor123 / admin123 • Full patient therapy heatmap access
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3 pt-3 border-t border-zinc-900">
-                <div className="flex flex-wrap gap-1">
-                  {lazyEyeProject.technologies.slice(0, 5).map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-1.5 py-0.5 text-[10.5px] font-mono rounded bg-zinc-900 text-zinc-400 border border-zinc-800/60"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between pt-1">
-                  <button
-                    onClick={() => setSelectedProject(lazyEyeProject)}
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-zinc-300 hover:text-white transition-colors"
-                  >
-                    <Eye className="w-3.5 h-3.5 text-zinc-400" />
-                    <span>INSPECT CREDENTIALS</span>
-                  </button>
-
-                  <div className="flex items-center gap-3">
-                    <a
-                      href={lazyEyeProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-mono text-zinc-400 hover:text-white flex items-center gap-1"
-                    >
-                      <GithubIcon className="w-3.5 h-3.5" />
-                      <span>REPO</span>
-                    </a>
-                    <a
-                      href={lazyEyeProject.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-mono text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-bold"
-                    >
-                      <span>LIVE DEMO</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
-              </div>
+        {(filter === 'All' || filter === 'GPS & Telemetry') && (
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 text-xs font-mono text-zinc-400 border-b border-zinc-900 pb-3">
+              <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 font-semibold">
+                CASE STUDY 04 // COMMERCIAL FLEET & STORE RELEASES
+              </span>
+              <span className="text-zinc-600">•</span>
+              <span className="text-emerald-400 font-semibold">DUAL-STORE & INTERNATIONAL PRODUCTION</span>
             </div>
-          )}
 
-          {/* Japjee Inventory Platform */}
-          {(filter === 'All' || filter === 'Mobility & Fleet') && japjeeProject && (
-            <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 flex flex-col justify-between space-y-5">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
-                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
-                    {japjeeProject.category}
-                  </span>
-                  <span>{japjeeProject.period}</span>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              {/* KBFVTS X3 Card */}
+              {kbfvtsProject && (
+                <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 flex flex-col justify-between space-y-5">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
+                        {kbfvtsProject.category}
+                      </span>
+                      <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                        DUAL-STORE LIVE
+                      </span>
+                    </div>
 
-                <div>
-                  <h3 className="text-xl font-bold tracking-tight text-zinc-100 leading-snug">
-                    {getTitle(japjeeProject)}
-                  </h3>
-                  <div className="text-xs font-mono text-zinc-400 mt-1">
-                    Role-Based Access Control • Barcode Scanner • Logistics
+                    <div>
+                      <h3 className="text-xl font-bold tracking-tight text-zinc-100 leading-snug">
+                        {getTitle(kbfvtsProject)}
+                      </h3>
+                      <div className="text-xs font-mono text-zinc-400 mt-1">
+                        Google Play (com.kbfvts.x3) • Apple App Store (id6739529934)
+                      </div>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                      Commercial vehicle tracking system and telematics engine built on React Native for Android and iOS. Features real-time GPS coordinates, continuous speed telemetry, geofence breaches, and high-reliability background push notifications.
+                    </p>
+
+                    {/* Dual-Store Badges */}
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      <a
+                        href={kbfvtsProject.playStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-900/40 text-emerald-300 font-mono text-[11px] font-semibold transition-colors"
+                      >
+                        <Box className="w-3 h-3 text-emerald-400" />
+                        <span>PLAY STORE</span>
+                        <ExternalLink className="w-2.5 h-2.5 text-emerald-500" />
+                      </a>
+
+                      <a
+                        href={kbfvtsProject.appStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-sky-500/40 bg-sky-950/30 hover:bg-sky-900/40 text-sky-300 font-mono text-[11px] font-semibold transition-colors"
+                      >
+                        <Smartphone className="w-3 h-3 text-sky-400" />
+                        <span>APP STORE</span>
+                        <ExternalLink className="w-2.5 h-2.5 text-sky-500" />
+                      </a>
+                    </div>
+
+                    <ul className="space-y-1.5 text-xs text-zinc-300 pt-2 border-t border-zinc-900">
+                      {kbfvtsProject.highlights.slice(0, 2).map((h, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-zinc-500 font-mono mt-0.5">▹</span>
+                          <span className="leading-relaxed">{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-3 pt-3 border-t border-zinc-900">
+                    <div className="flex flex-wrap gap-1">
+                      {kbfvtsProject.technologies.slice(0, 4).map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-1.5 py-0.5 text-[10.5px] font-mono rounded bg-zinc-900 text-zinc-400 border border-zinc-800/60"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center justify-between pt-1">
+                      <button
+                        onClick={() => setSelectedProject(kbfvtsProject)}
+                        className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-zinc-300 hover:text-white transition-colors"
+                      >
+                        <Eye className="w-3.5 h-3.5 text-zinc-400" />
+                        <span>TELEMETRY DETAILS</span>
+                      </button>
+
+                      <span className="text-[10px] font-mono text-zinc-500">
+                        AIS-140 GPS Fused
+                      </span>
+                    </div>
                   </div>
                 </div>
+              )}
 
-                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                  Independently developed cross-platform warehouse inventory mobile application featuring Role-Based Access Control (RBAC), real-time order tracking, and camera/hardware barcode scanning for logistics workflows.
-                </p>
+              {/* Ingecom GPS Card */}
+              {ingecomProject && (
+                <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 flex flex-col justify-between space-y-5">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
+                        {ingecomProject.category}
+                      </span>
+                      <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                        GOOGLE PLAY LIVE
+                      </span>
+                    </div>
 
-                <ul className="space-y-1.5 text-xs text-zinc-300 pt-2 border-t border-zinc-900">
-                  {japjeeProject.highlights.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-zinc-500 font-mono mt-0.5">▹</span>
-                      <span className="leading-relaxed">{h}</span>
-                    </li>
-                  ))}
-                </ul>
+                    <div>
+                      <h3 className="text-xl font-bold tracking-tight text-zinc-100 leading-snug">
+                        {getTitle(ingecomProject)}
+                      </h3>
+                      <div className="text-xs font-mono text-zinc-400 mt-1">
+                        Google Play (com.v3.ingecompro) • International Logistics
+                      </div>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                      International enterprise fleet telematics deployment with bespoke branding, localized geofence alerts, CANBUS sensor analytics, scheduled maintenance reminders, and direct dispatcher-to-driver push notifications.
+                    </p>
+
+                    {/* Play Store Badge */}
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      <a
+                        href={ingecomProject.playStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-900/40 text-emerald-300 font-mono text-[11px] font-semibold transition-colors"
+                      >
+                        <Box className="w-3 h-3 text-emerald-400" />
+                        <span>GOOGLE PLAY (com.v3.ingecompro)</span>
+                        <ExternalLink className="w-2.5 h-2.5 text-emerald-500" />
+                      </a>
+                    </div>
+
+                    <ul className="space-y-1.5 text-xs text-zinc-300 pt-2 border-t border-zinc-900">
+                      {ingecomProject.highlights.slice(0, 2).map((h, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-zinc-500 font-mono mt-0.5">▹</span>
+                          <span className="leading-relaxed">{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-3 pt-3 border-t border-zinc-900">
+                    <div className="flex flex-wrap gap-1">
+                      {ingecomProject.technologies.slice(0, 4).map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-1.5 py-0.5 text-[10.5px] font-mono rounded bg-zinc-900 text-zinc-400 border border-zinc-800/60"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center justify-between pt-1">
+                      <button
+                        onClick={() => setSelectedProject(ingecomProject)}
+                        className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-zinc-300 hover:text-white transition-colors"
+                      >
+                        <Eye className="w-3.5 h-3.5 text-zinc-400" />
+                        <span>CASE STUDY</span>
+                      </button>
+
+                      <span className="text-[10px] font-mono text-zinc-500">
+                        CANBUS & Diagnostics
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+            </div>
+          </div>
+        )}
+
+        {/* ========================================================================= */}
+        {/* CASE STUDY 5: WAREHOUSE LOGISTICS & INVENTORY (JAPJEE)                    */}
+        {/* ========================================================================= */}
+        {(filter === 'All' || filter === 'Mobility & Fleet') && japjeeProject && (
+          <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-zinc-400 border-b border-zinc-900 pb-3">
+              <div className="flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 font-semibold">
+                  CASE STUDY 05 // WAREHOUSE LOGISTICS
+                </span>
+                <span className="text-zinc-600">•</span>
+                <span>{japjeeProject.category}</span>
               </div>
+              <span>{japjeeProject.period}</span>
+            </div>
 
-              <div className="space-y-3 pt-3 border-t border-zinc-900">
-                <div className="flex flex-wrap gap-1">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <div className="md:col-span-8 space-y-2">
+                <h3 className="text-xl font-bold tracking-tight text-zinc-100 leading-snug">
+                  {getTitle(japjeeProject)}
+                </h3>
+                <div className="text-xs font-mono text-zinc-400">
+                  Role-Based Access Control • Camera Barcode Scanner • Logistics Release
+                </div>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed pt-1">
+                  Independently developed cross-platform warehouse inventory mobile application featuring Role-Based Access Control (RBAC), real-time order tracking, and camera/hardware barcode scanning for logistics workflows. Handled end-to-end Gradle build configuration and signed release production artifacts.
+                </p>
+                <div className="flex flex-wrap gap-1 pt-2">
                   {japjeeProject.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -802,31 +990,30 @@ export const getActiveTrip = () => {
                     </span>
                   ))}
                 </div>
+              </div>
 
-                <div className="flex items-center justify-between pt-1">
-                  <button
-                    onClick={() => setSelectedProject(japjeeProject)}
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-zinc-300 hover:text-white transition-colors"
-                  >
-                    <Eye className="w-3.5 h-3.5 text-zinc-400" />
-                    <span>CASE STUDY</span>
-                  </button>
+              <div className="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-2 items-start md:items-end justify-center">
+                <button
+                  onClick={() => setSelectedProject(japjeeProject)}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded text-xs font-mono border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-200 transition-colors"
+                >
+                  <Eye className="w-3.5 h-3.5 text-zinc-400" />
+                  <span>CASE STUDY DETAILS</span>
+                </button>
 
-                  <a
-                    href="https://linkedin.com/in/abhishek-pal-a5a497217"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-mono text-zinc-400 hover:text-zinc-100 flex items-center gap-1"
-                  >
-                    <span>LINKEDIN</span>
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
-                </div>
+                <a
+                  href="https://linkedin.com/in/abhishek-pal-a5a497217"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-zinc-400 hover:text-zinc-100 flex items-center gap-1 px-2 py-1"
+                >
+                  <span>CONNECT ON LINKEDIN</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
               </div>
             </div>
-          )}
-
-        </div>
+          </div>
+        )}
 
         {/* Modal for Deep Dive */}
         {selectedProject && (

@@ -15,6 +15,7 @@ import { useTheme } from '../context/ThemeContext';
 export default function ProjectModal({ project, onClose, displayTitle }) {
   const { currentTheme } = useTheme();
   const [copiedKey, setCopiedKey] = useState(null);
+  const [showCredentials, setShowCredentials] = useState(false);
 
   if (!project) return null;
 
@@ -176,87 +177,115 @@ export default function ProjectModal({ project, onClose, displayTitle }) {
         )}
 
         {/* Live Application & Interactive Test Credentials Banner (For LazyEye) */}
+        {/* Live Application & Interactive Test Credentials Banner (For LazyEye) */}
         {project.testCredentials && (
           <div className="mt-6 p-5 rounded border border-zinc-750 bg-zinc-900/60 space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-                  <span className="text-emerald-400 font-bold">● CLOUD HOSTED</span>
+                  <span className="text-emerald-400 font-bold">● CLOUD HOSTED DEMO</span>
                   <span>•</span>
                   <span>RENDER PLATFORM (HTTPS)</span>
                 </div>
                 <h4 className="text-base font-bold text-zinc-100 mt-1 flex items-center gap-2">
                   <KeyRound className="w-4 h-4 text-emerald-400" />
-                  <span>Evaluation Accounts & Credentials</span>
+                  <span>Interactive Recruiter Sandbox</span>
                 </h4>
               </div>
 
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded text-xs font-mono font-bold tracking-wider ${currentTheme.button} transition-all`}
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setShowCredentials(!showCredentials)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono border border-zinc-700 bg-zinc-800 hover:bg-zinc-750 text-zinc-200 transition-colors"
                 >
-                  <span>LAUNCH LIVE PORTAL</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              )}
+                  <KeyRound className="w-3.5 h-3.5 text-amber-400" />
+                  <span>{showCredentials ? 'Hide Sandbox Logins' : 'Show Sandbox Logins'}</span>
+                </button>
+
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded text-xs font-mono font-bold tracking-wider ${currentTheme.button} transition-all`}
+                  >
+                    <span>LAUNCH PORTAL</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+              </div>
             </div>
 
-            <p className="text-xs text-zinc-300 leading-relaxed">
-              Multi-tier role scoping in action: log in as <strong className="text-zinc-100">Doctor</strong> to inspect your assigned patient therapy heatmap, as <strong className="text-zinc-100">Clinic Admin</strong> to manage patient queue, as <strong className="text-zinc-100">Patient</strong> to launch dichoptic games, or as <strong className="text-zinc-100">Superadmin</strong>.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-              {project.testCredentials.map((cred, idx) => (
-                <div
-                  key={idx}
-                  className="p-3 rounded border border-zinc-800 bg-zinc-950/70 flex flex-col justify-between gap-2"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs font-bold text-zinc-200">{cred.role}</span>
-                      <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
-                        {cred.badge}
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-zinc-400 leading-snug">{cred.description}</p>
-                  </div>
-
-                  <div className="flex items-center justify-between gap-2 pt-2 border-t border-zinc-850 font-mono text-xs">
-                    <div className="space-y-0.5">
-                      <div>
-                        <span className="text-zinc-500 text-[10px]">User: </span>
-                        <span className="text-zinc-200 font-bold">{cred.username}</span>
-                      </div>
-                      <div>
-                        <span className="text-zinc-500 text-[10px]">Pass: </span>
-                        <span className="text-zinc-200 font-bold">{cred.password}</span>
-                      </div>
-                    </div>
-
-                    <button
-                      onClick={() => handleCopy(`${cred.username}`, `user-${idx}`)}
-                      className="inline-flex items-center gap-1 px-2 py-1 rounded border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 text-[11px] transition-colors"
-                      title="Copy username"
-                    >
-                      {copiedKey === `user-${idx}` ? (
-                        <>
-                          <Check className="w-3.5 h-3.5 text-emerald-400" />
-                          <span className="text-emerald-400 font-semibold">Copied</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-3.5 h-3.5 text-zinc-400" />
-                          <span>Copy</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              ))}
+            <div className="p-3 rounded bg-zinc-950/80 border border-zinc-800/80 flex items-start justify-between gap-3 text-xs text-zinc-300">
+              <div className="leading-relaxed">
+                <span className="inline-block px-1.5 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[10px] font-mono font-semibold uppercase mr-2">
+                  Demo Data Only
+                </span>
+                <span className="text-zinc-300">
+                  Multi-tier role scoping seeded with mock evaluation records. Safe for public testing (Doctor, Clinic Admin, Patient, Superadmin).
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowCredentials(!showCredentials)}
+                className="text-xs font-mono text-emerald-400 hover:underline shrink-0"
+              >
+                {showCredentials ? 'Collapse' : 'Expand Credentials'}
+              </button>
             </div>
+
+            {showCredentials && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 animate-in fade-in duration-150">
+                {project.testCredentials.map((cred, idx) => (
+                  <div
+                    key={idx}
+                    className="p-3 rounded border border-zinc-800 bg-zinc-950/70 flex flex-col justify-between gap-2"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-xs font-bold text-zinc-200">{cred.role}</span>
+                        <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
+                          {cred.badge}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-zinc-400 leading-snug">{cred.description}</p>
+                    </div>
+
+                    <div className="flex items-center justify-between gap-2 pt-2 border-t border-zinc-850 font-mono text-xs">
+                      <div className="space-y-0.5">
+                        <div>
+                          <span className="text-zinc-500 text-[10px]">User: </span>
+                          <span className="text-zinc-200 font-bold">{cred.username}</span>
+                        </div>
+                        <div>
+                          <span className="text-zinc-500 text-[10px]">Pass: </span>
+                          <span className="text-zinc-200 font-bold">{cred.password}</span>
+                        </div>
+                      </div>
+
+                      <button
+                        onClick={() => handleCopy(`${cred.username}`, `user-${idx}`)}
+                        className="inline-flex items-center gap-1 px-2 py-1 rounded border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 text-[11px] transition-colors"
+                        title="Copy username"
+                      >
+                        {copiedKey === `user-${idx}` ? (
+                          <>
+                            <Check className="w-3.5 h-3.5 text-emerald-400" />
+                            <span className="text-emerald-400 font-semibold">Copied</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3.5 h-3.5 text-zinc-400" />
+                            <span>Copy</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
 

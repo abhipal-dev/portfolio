@@ -1,12 +1,12 @@
 # ABHISHEK PAL
-**React Native Mobile Engineer | 3.5+ Years | 4–5 Apps on Each Store | 100+ Production Updates (RN 0.70 ➔ 0.8x)**  
+**Lead React Native Mobile Engineer | 3.5+ Years | 6–7 Apps on Each Store | 100+ Production Updates (RN 0.70 ➔ 0.8x)**  
 Agra, India (Open to Remote / Relocation) • Notice Period: **30 Days (Negotiable)** • [abhipal85350@gmail.com](mailto:abhipal85350@gmail.com) • [+91-9870962636](tel:+919870962636)  
 [linkedin.com/in/abhishek-pal-a5a497217](https://linkedin.com/in/abhishek-pal-a5a497217) • [github.com/abhipal-dev](https://github.com/abhipal-dev) • [abhipal-dev.github.io/portfolio](https://abhipal-dev.github.io/portfolio/)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-React Native Mobile Engineer with **3.5+ years of production experience** building, maintaining, and scaling high-performance cross-platform Android and iOS applications. Currently focused on **React Native mobile engineering**, specialized in real-time GPS tracking, interactive map architectures, background location telemetry, geofencing, driver dispatch workflows, and push notification systems. Additionally experienced in **Web Development and advanced WebViews** with bidirectional data bridges (`postMessage`). Proven track record taking mobile features end-to-end — from technical requirement analysis and Figma UI translation through REST API integration to Play Store/App Store deployment and post-release support. Currently leading mobile engineering for a three-sided mobility platform comprising Rider, Driver, and Kiosk Terminal applications synchronized with central Web dispatch software.
+Lead React Native Mobile Engineer with **3.5+ years of production experience** building, maintaining, and scaling high-performance cross-platform Android and iOS applications. Specialized in real-time GPS tracking, 60 FPS interactive map architectures, background location telemetry, geofencing, multi-sided driver dispatch workflows, high-priority Firebase Cloud Messaging (FCM), and low-latency local data handling with MMKV and SQLite. Shipped **6–7 distinct production applications each on Google Play and Apple App Store** with 100+ continuous releases across React Native 0.70 to 0.8x. Proven track record leading mobile platform delivery end-to-end — from technical architecture through REST API integration to Play Store/App Store deployment and post-release support. Mainly React Native; occasional full-stack web coordination when needed.
 
 ---
 
@@ -24,17 +24,24 @@ React Native Mobile Engineer with **3.5+ years of production experience** buildi
 
 ## PROFESSIONAL EXPERIENCE
 
-### Softcruise Technology Pvt. Ltd. | Agra, India
-**Lead React Native Mobile Engineer (Core Focus)** | *May 2024 – Present*
-- **Three-Sided Platform Ownership:** Lead end-to-end mobile engineering for production Android and iOS applications across fleet management, logistics, and multi-sided ride-hailing platforms (Rider, Driver, and Kiosk Terminal).
-- **Architecture & Modularity:** Design clean, maintainable mobile architectures with reusable component hierarchies, centralized API service layers, and predictable state management.
-- **Store Releases & Compliance:** Configure Android Gradle builds and iOS Xcode targets, generate signed release artifacts (`.aab` / `.ipa`), and manage submissions, testing tracks, and live releases on Google Play Store and Apple App Store.
-- **Code Reviews & Mentorship:** Conduct regular peer code reviews, enforce coding standards, and mentor developers in debugging native crashes, state handling, and responsive styling.
+### Softcruise Technology Pvt. Ltd. | Agra, India *(Jan 2023 – Present)*
 
-**React Native & Web Developer (Lazyeye Healthcare Platform)** | *Jan 2023 – May 2025*
-- **Dual Web & Mobile Development:** Engineered customized pediatric visual assessment platforms, working actively as both a Web Developer and React Native engineer.
+**Lead React Native Mobile Engineer** | *May 2024 – Present*
+- **Three-Sided Platform Ownership:** Lead mobile engineering for production Android and iOS applications across fleet management, logistics, and multi-sided ride-hailing platforms (TaxiMuscat suite: Rider, Driver, and Walk-up Kiosk Terminal). Mainly React Native; occasional full-stack web coordination when needed.
+- **Architecture & Modularity:** Architect clean, maintainable mobile architectures with reusable component hierarchies, centralized API service layers, and predictable state management.
+- **Store Releases & Compliance:** Configure Android Gradle builds and iOS Xcode targets, generate signed release artifacts (`.aab` / `.ipa`), and manage submissions, testing tracks, and live releases on Google Play Store and Apple App Store.
+- **Code Reviews & Technical Mentorship:** Conduct regular architectural code reviews, enforce coding standards, and mentor developers in debugging native crashes, state handling, Hermes profiling, and responsive styling.
+
+**React Native Mobile Engineer** | *Jun 2023 – Apr 2024*
+- **Fleet & Telemetry Delivery:** Led mobile development and feature rollouts for commercial fleet tracking applications (TrackingHAWK X3, KBFVTS X3, Ingecom Pro, Japjee Inventory) across Android and iOS.
+- **Real-Time GPS & Telematics:** Built live GPS vehicle tracking on maps with speed thresholds, ignition sensing, historical route playback, and geofence boundary alerts.
+- **Sub-Millisecond MMKV Persistence:** Integrated MMKV C++ JSI storage for sub-millisecond local caching of telemetry, achieving instant app launch and offline inspection of historical trips.
+- **Dual-Store Releases:** Configured signed release builds and managed continuous updates deployed to Google Play Store and Apple App Store.
+
+**React Native & Web Developer** | *Jan 2023 – Jun 2023*
+- **Healthcare MVP Delivery:** Project lead for the initial MVP of the LazyEye pediatric visual assessment platform, operating across hybrid React Native and web stacks. (Originally built Jan–Jun 2023; modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI as an interactive public evaluation demo).
 - **High-Frequency WebView Data Communication:** Engineered secure bidirectional message bridges (`postMessage` & native event listeners) to exchange real-time exercise telemetry, canvas coordinates, and test scores between HTML5 web views and native React Native modules.
-- **Native File Handling & Storage:** Built native download pipelines allowing doctors and parents to download clinical PDF assessment reports directly from WebViews to device storage for offline access.
+- **Native Document Handling & Storage:** Built native download pipelines allowing doctors and parents to download clinical PDF assessment reports directly from WebViews to device storage for offline access.
 
 ---
 
