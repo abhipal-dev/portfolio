@@ -59,7 +59,7 @@ export default function MobileShowcase() {
           <div className="h-4 px-2.5 bg-black rounded-full border border-slate-800 flex items-center justify-center gap-1.5 shadow-inner">
             <span className={`w-1.5 h-1.5 rounded-full ${ignitionOn ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
             <span className="text-[9px] text-slate-300 font-sans font-medium tracking-tight">
-              {activeTab === 'fleet' && (ignitionOn ? 'Fleet Telemetry • 60 FPS' : 'Ignition OFF • Idle')}
+              {activeTab === 'fleet' && `${activeVehicle} • ${ignitionOn ? 'Live GPS' : 'Idle'}`}
               {activeTab === 'fcm' && (fcmAlertActive ? '🚨 FCM Heads-Up Alert' : 'FCM Background Active')}
               {activeTab === 'driver' && 'Driver Bearing • NE 42°'}
               {activeTab === 'kiosk' && 'Tablet Lock-Task Mode'}
@@ -145,8 +145,10 @@ export default function MobileShowcase() {
                   }`}>
                     <Car className="w-3.5 h-3.5" />
                   </div>
-                  <div className="px-2 py-0.5 rounded-md bg-[#0f172a]/95 border border-slate-700 text-[9px] font-mono text-emerald-300 shadow">
-                    UP-80-AB-1234
+                  <div className="px-2 py-0.5 rounded-md bg-[#0f172a]/95 border border-slate-700 text-[9px] font-mono text-emerald-300 shadow font-semibold">
+                    {activeVehicle === 'TrackingHAWK X3' && 'TrackingHAWK • UP-80-AB-1234'}
+                    {activeVehicle === 'KBFVTS X3' && 'KBFVTS X3 • DL-01-TC-5678'}
+                    {activeVehicle === 'Ingecom GPS' && 'Ingecom Pro • PE-902-TRK'}
                   </div>
                 </div>
 

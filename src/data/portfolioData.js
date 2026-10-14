@@ -1,8 +1,7 @@
 // CONFIGURATION TOGGLE
-// Set to `true` to reveal proprietary client/company brand names (TaxiMuscat, TrackingHAWK, Ingecom).
-// Set to `false` (default) for clean, professional descriptive titles.
+// Set to `true` (default) to show official production app names (TrackingHAWK X3, KBFVTS X3, Ingecom GPS, TaxiMuscat).
 export const CONFIG = {
-  revealCompanyProjectNames: false,
+  revealCompanyProjectNames: true,
 };
 
 export const portfolioData = {
@@ -83,7 +82,7 @@ export const portfolioData = {
   projects: [
     {
       id: "ride-hailing-ecosystem",
-      title: "Three-Sided On-Demand Ride-Hailing & Kiosk Suite",
+      title: "TaxiMuscat — Three-Sided On-Demand Mobility & Kiosk Suite",
       anonymousTitle: "Three-Sided On-Demand Ride-Hailing & Kiosk Suite",
       companyTitle: "TaxiMuscat — Three-Sided Ride-Hailing & Kiosk Suite",
       category: "Mobility & Fleet",
@@ -121,8 +120,8 @@ export const portfolioData = {
     },
     {
       id: "trackinghawk-x3",
-      title: "Enterprise Fleet Telemetry & Real-Time Tracking System",
-      anonymousTitle: "Enterprise Fleet Telemetry & Real-Time Tracking System",
+      title: "TrackingHAWK X3 — Enterprise Fleet Management & Live GPS Telemetry",
+      anonymousTitle: "TrackingHAWK X3 — Enterprise Fleet Telemetry & Live GPS",
       companyTitle: "TrackingHAWK X3 — Enterprise Fleet Management",
       category: "GPS & Telemetry",
       clientBadge: "Commercial Fleet GPS • Softcruise Technologies",
@@ -161,8 +160,8 @@ export const portfolioData = {
     },
     {
       id: "kbfvts-x3",
-      title: "Commercial Vehicle Tracking & Fleet Telematics Platform",
-      anonymousTitle: "Commercial Vehicle Tracking & Fleet Telematics Platform",
+      title: "KBFVTS X3 — Commercial Fleet Telematics & Vehicle Tracking",
+      anonymousTitle: "KBFVTS X3 — Fleet Telematics & Vehicle Tracking",
       companyTitle: "KBFVTS X3 — Fleet Telematics & Vehicle Tracking",
       category: "GPS & Telemetry",
       clientBadge: "Commercial Fleet GPS • Production Verified",
@@ -198,8 +197,8 @@ export const portfolioData = {
     },
     {
       id: "ingecom-gps",
-      title: "International Fleet Telematics & Diagnostics Suite",
-      anonymousTitle: "International Fleet Telematics & Diagnostics Suite",
+      title: "Ingecom GPS (Ingecom Pro) — International Fleet Management & Telematics",
+      anonymousTitle: "Ingecom GPS (Ingecom Pro) — International Fleet Telematics",
       companyTitle: "Ingecom GPS (Ingecom Pro) — International Fleet Management",
       category: "Client Mobility & Inventory",
       clientBadge: "International Fleet • Google Play Verified",

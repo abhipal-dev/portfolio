@@ -112,8 +112,53 @@ export default function Hero() {
               </div>
             </div>
 
+            {/* Shipped Apps Direct Access Row */}
+            <div className="space-y-1.5 pt-1">
+              <div className="text-[11px] font-mono text-zinc-400 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="font-semibold text-zinc-200 uppercase tracking-wider">Production Apps Shipped:</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <a
+                  href="#projects"
+                  className="px-2.5 py-1 rounded border border-zinc-800 bg-zinc-950/80 hover:border-emerald-500/50 text-xs font-mono text-zinc-200 flex items-center gap-1.5 transition-colors group shadow-sm"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <strong className="text-white group-hover:text-emerald-300 transition-colors">TrackingHAWK X3</strong>
+                  <span className="text-[10px] text-zinc-400 font-normal">Play & App Store</span>
+                </a>
+
+                <a
+                  href="#projects"
+                  className="px-2.5 py-1 rounded border border-zinc-800 bg-zinc-950/80 hover:border-sky-500/50 text-xs font-mono text-zinc-200 flex items-center gap-1.5 transition-colors group shadow-sm"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                  <strong className="text-white group-hover:text-sky-300 transition-colors">KBFVTS X3</strong>
+                  <span className="text-[10px] text-zinc-400 font-normal">Play & App Store</span>
+                </a>
+
+                <a
+                  href="#projects"
+                  className="px-2.5 py-1 rounded border border-zinc-800 bg-zinc-950/80 hover:border-emerald-500/50 text-xs font-mono text-zinc-200 flex items-center gap-1.5 transition-colors group shadow-sm"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <strong className="text-white group-hover:text-emerald-300 transition-colors">Ingecom Pro</strong>
+                  <span className="text-[10px] text-zinc-400 font-normal">Google Play</span>
+                </a>
+
+                <a
+                  href="#projects"
+                  className="px-2.5 py-1 rounded border border-zinc-800 bg-zinc-950/80 hover:border-zinc-700 text-xs font-mono text-zinc-300 flex items-center gap-1.5 transition-colors group shadow-sm"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <strong className="text-zinc-200">TaxiMuscat Suite</strong>
+                  <span className="text-[10px] text-zinc-500 font-normal">Rider/Driver/Kiosk</span>
+                </a>
+              </div>
+            </div>
+
             {/* Quick Actions */}
-            <div className="pt-1 flex flex-wrap items-center gap-3">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
                 href={portfolioData.personal.resumeUrl}
                 className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded text-xs font-mono font-bold tracking-wider ${currentTheme.button} transition-all`}
