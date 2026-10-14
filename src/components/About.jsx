@@ -33,7 +33,7 @@ export default function About() {
       title: 'Production Store Hygiene & Long-Term Upgrade Discipline',
       description:
         'Having upgraded production codebases from React Native 0.70 through to 0.87.1, I navigate major native toolchain breaking changes — Gradle 9.4/AGP 9.2, Android Target SDK 35 edge-to-edge enforcements, Hermes memory profiling, CocoaPods linkage issues, and ProGuard/R8 byte-code stripping for lean APK binaries.',
-      detail: '4–5 apps published on each store • 100+ production updates deployed.',
+      detail: '6–7 apps published on each store • 100+ production updates deployed.',
     },
   ];
 

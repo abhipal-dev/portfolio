@@ -342,26 +342,26 @@ export const portfolioData = {
       role: "Lead React Native Mobile Engineer",
       company: "Softcruise Technologies Pvt. Ltd.",
       location: "Agra, India (Open to Remote / Relocation)",
-      focusBadge: "Stage 3 // Promotion • Architecture & Store Releases",
+      focusBadge: "Mobility Platform Architecture & Dual-Store Releases",
       description:
-        "Promoted to Lead Mobile Engineer to spearhead mobile architecture, sprint execution, and end-to-end release management across Android and iOS platforms. Leading mobile development for the three-sided on-demand mobility platform (TaxiMuscat suite: Rider, Driver, and Walk-up Kiosk Terminal) and enterprise telematics systems. Mainly React Native; occasional full-stack web coordination when needed.",
+        "Spearheading mobile architecture, multi-app synchronization, and release management across Android and iOS platforms. Leading mobile development for the three-sided on-demand mobility ecosystem (TaxiMuscat suite: Rider, Driver, and Walk-up Kiosk Terminal) and enterprise telematics systems. Mainly React Native; occasional full-stack web coordination when needed.",
       achievements: [
         "Three-Sided Platform Ownership: Architected Rider, Driver, and Kiosk Terminal applications with synchronized real-time dispatch state machines.",
         "Real-Time 60 FPS GPS Maps: Built high-performance map architectures with animated driver bearing rotation, distance radius proximity dispatch waves, and dynamic polyline drawing.",
         "Killed-State FCM Wake-Up: Configured high-priority FCM and Notifee foreground services, driving dispatch alert delivery to <0.1% miss rate across killed and doze states.",
-        "Native Store Release Engineering: Configured Android Gradle and iOS Xcode build targets, managing signed release artifacts (.aab / .ipa), testing tracks, and store guidelines compliance across Google Play and Apple App Store.",
+        "Native Store Release Engineering: Configured Android Gradle and iOS Xcode build targets, managing signed release artifacts (.aab / .ipa), testing tracks, and store guidelines compliance for 6–7 apps on each store across 100+ updates.",
         "Architecture & Code Quality: Conducted regular architectural code reviews, enforced modular state handling patterns, and mentored developers on native debugging, memory leak elimination, and Hermes profiling.",
       ],
       skills: ["React Native", "Google Maps Platform", "GPS Telemetry", "FCM / APNs", "MMKV", "SQLite", "Reanimated", "Gradle", "Xcode"],
     },
     {
       period: "Jun 2023 – Apr 2024",
-      role: "React Native Mobile Engineer",
+      role: "Lead React Native Mobile Engineer (Fleet Telematics & Solo Execution)",
       company: "Softcruise Technologies Pvt. Ltd.",
       location: "Agra, India",
-      focusBadge: "Stage 2 // Fleet Telematics & Dual-Store Releases",
+      focusBadge: "Enterprise Fleet Telematics & Dual-Store Releases",
       description:
-        "Spearheaded mobile development for enterprise fleet telemetry and tracking platforms (TrackingHAWK X3, KBFVTS X3, Ingecom Pro, Japjee Inventory) across Android and iOS. Led mobile feature delivery and later drove solo high-velocity execution for 6 months, building real-time GPS tracking, background geofencing, and sub-millisecond local caching.",
+        "Led mobile development and drove solo high-velocity execution for enterprise fleet telemetry and tracking platforms (TrackingHAWK X3, KBFVTS X3, Ingecom Pro, Japjee Inventory) across Android and iOS. Built real-time GPS tracking on maps, background geofencing, sub-millisecond local caching, and signed production releases for Google Play and Apple App Store.",
       achievements: [
         "Dual-Store Production Delivery: Built, signed, and maintained commercial fleet-tracking applications deployed across Google Play Store and Apple App Store.",
         "Live Fleet Telemetry & Geofencing: Engineered live GPS vehicle tracking on maps with speed thresholds, ignition sensing, historical route playback, and geofence boundary alerts.",
@@ -373,13 +373,14 @@ export const portfolioData = {
     },
     {
       period: "Jan 2023 – Jun 2023",
-      role: "React Native & Web Developer",
+      role: "Lead Mobile & Web Engineer (Healthcare Platform MVP)",
       company: "Softcruise Technologies Pvt. Ltd.",
       location: "Agra, India",
-      focusBadge: "Stage 1 // Digital Therapeutics MVP & WebViews",
+      focusBadge: "Digital Therapeutics MVP & WebViews",
       description:
-        "Project lead for the initial MVP of the LazyEye pediatric visual assessment platform, operating across hybrid React Native and web stacks. Deeply specialized in WebViews, bidirectional postMessage data bridges, high-frequency canvas-to-native communication, and clinical document management. (Originally built Jan–Jun 2023; modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI as an interactive public evaluation demo).",
+        "Led the mobile team and full-stack development for the initial MVP of the LazyEye pediatric visual assessment platform, operating across hybrid React Native and web stacks. Deeply specialized in WebViews, bidirectional postMessage data bridges, high-frequency canvas-to-native communication, and clinical document management. (Originally built Jan–Jun 2023; modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI as an interactive public evaluation demo).",
       achievements: [
+        "Team Leadership & MVP Architecture: Led mobile development and technical execution from concept through clinical MVP, establishing core component structures and native modules.",
         "High-Frequency WebView Data Bridge: Engineered secure bidirectional message bridges (postMessage & native listeners) to exchange exercise telemetry and canvas coordinates between web views and native React Native modules.",
         "Clinical Dashboards & Canvases: Developed responsive web interfaces, interactive visual exercise canvases, and clinical dashboards for doctors and parents.",
         "Native File Downloads: Built robust download pipelines enabling doctors and parents to download clinical PDF assessment reports directly from WebViews into local device storage.",
