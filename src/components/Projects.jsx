@@ -4,17 +4,16 @@ import {
   Eye,
   ArrowUpRight,
   Code2,
-  Bell,
   Database,
   KeyRound,
+  Smartphone,
+  Box,
 } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { portfolioData, CONFIG } from '../data/portfolioData';
-import { useTheme } from '../context/ThemeContext';
 import ProjectModal from './ProjectModal';
 
 export default function Projects() {
-  const { currentTheme } = useTheme();
   const [filter, setFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
   const [revealCompanyNames, setRevealCompanyNames] = useState(CONFIG.revealCompanyProjectNames);
@@ -29,8 +28,10 @@ export default function Projects() {
 
   const flagshipProject = portfolioData.projects.find((p) => p.id === 'ride-hailing-ecosystem');
   const trackingProject = portfolioData.projects.find((p) => p.id === 'trackinghawk-x3');
+  const kbfvtsProject = portfolioData.projects.find((p) => p.id === 'kbfvts-x3');
+  const ingecomProject = portfolioData.projects.find((p) => p.id === 'ingecom-gps');
   const lazyEyeProject = portfolioData.projects.find((p) => p.id === 'lazyeye-platform');
-  const ingecomProject = portfolioData.projects.find((p) => p.id === 'ingecom-japjee');
+  const japjeeProject = portfolioData.projects.find((p) => p.id === 'japjee-inventory');
 
   return (
     <section id="projects" className="py-20 sm:py-28 border-b border-zinc-800/80">
@@ -47,7 +48,7 @@ export default function Projects() {
               Production Mobility & Fleet Systems
             </h2>
             <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-              Real-world cross-platform mobile systems built on React Native at Softcruise Technologies — from 3-sided ride-hailing suites and enterprise GPS tracking engines to clinical neuro-vision digital therapeutics.
+              Real-world cross-platform mobile systems built on React Native at Softcruise Technologies — from 3-sided ride-hailing suites and enterprise GPS tracking engines to international fleet telematics and clinical WebViews.
             </p>
           </div>
 
@@ -149,93 +150,90 @@ export default function Projects() {
                     <li className="flex items-start gap-2">
                       <span className="text-emerald-400 font-mono mt-0.5">▹</span>
                       <span className="leading-relaxed">
-                        <strong className="text-zinc-100">Synchronous MMKV Trip Recovery:</strong> Swapped AsyncStorage for <code className="text-zinc-200 font-mono">react-native-mmkv</code> using direct C++ JSI bindings. Stored active trip states and auth tokens with sub-millisecond access (<code className="text-zinc-200 font-mono">0.1ms</code>), ensuring instant state restoration on reboot.
+                        <strong className="text-zinc-100">Walk-Up Kiosk Lock-Task Mode:</strong> Engineered dedicated tablet kiosk app running in Android Lock-Task mode (<code className="text-zinc-200 font-mono">startLockTask</code>) for hotel and airport counter bookings, paired with thermal printers and QR codes.
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-emerald-400 font-mono mt-0.5">▹</span>
                       <span className="leading-relaxed">
-                        <strong className="text-zinc-100">Unattended Tablet Kiosk Mode:</strong> Engineered dedicated counter kiosks for hotel and airport ride bookings using Android Lock-Task Mode (<code className="text-zinc-200 font-mono">startLockTask</code>) to prevent public users from exiting to the OS home screen.
+                        <strong className="text-zinc-100">Dynamic Multi-Tier Fare & Promo Engine:</strong> Programmed multi-component fare computation (base, distance, duration, wait time, surge waves) and client-side voucher validation with usage caps.
                       </span>
                     </li>
                   </ul>
                 </div>
 
-                {/* Tech Pills */}
+                {/* Tech Chips */}
                 <div className="flex flex-wrap gap-1.5 pt-2">
                   {flagshipProject.technologies.map((t) => (
                     <span
                       key={t}
-                      className="px-2 py-0.5 text-[11px] font-mono rounded bg-zinc-900 text-zinc-300 border border-zinc-800"
+                      className="px-2.5 py-0.5 text-xs font-mono rounded bg-zinc-900 text-zinc-300 border border-zinc-800"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                {/* Action Toolbar */}
+                {/* Action Buttons */}
                 <div className="pt-2 flex flex-wrap items-center gap-3">
                   <button
                     onClick={() => setSelectedProject(flagshipProject)}
-                    className={`inline-flex items-center gap-1.5 px-4 py-2 rounded text-xs font-mono font-bold tracking-wider ${currentTheme.button} transition-all`}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded text-xs font-mono border border-zinc-700 bg-zinc-850 hover:bg-zinc-800 text-zinc-100 font-medium transition-colors shadow-sm"
                   >
-                    <Eye className="w-3.5 h-3.5" />
-                    <span>VIEW COMPLETE CASE STUDY SPECS</span>
+                    <Eye className="w-3.5 h-3.5 text-zinc-300" />
+                    <span>INSPECT FULL CASE STUDY</span>
                   </button>
 
                   <a
-                    href={portfolioData.personal.socials.linkedin}
+                    href="https://linkedin.com/in/abhishek-pal-a5a497217"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded text-xs font-mono border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-300 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded text-xs font-mono text-zinc-400 hover:text-zinc-200 transition-colors"
                   >
                     <span>CONNECT ON LINKEDIN</span>
-                    <ArrowUpRight className="w-3 h-3" />
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>
 
-              {/* Right Column: Embedded Interactive Architecture & Code Inspector */}
-              <div className="lg:col-span-5 rounded border border-zinc-800 bg-zinc-900/60 p-5 sm:p-6 space-y-4">
+              {/* Right Column: Code & Architecture Ledger */}
+              <div className="lg:col-span-5 rounded border border-zinc-800 bg-zinc-900/60 p-5 space-y-4">
                 
-                {/* Embedded Sub-Tabs */}
+                {/* Tab Header for Code Switcher */}
                 <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
-                  <div className="flex items-center gap-1.5 p-1 rounded bg-zinc-950 border border-zinc-800 text-xs font-mono">
+                  <div className="flex items-center gap-1">
                     <button
                       onClick={() => setFlagshipTab('architecture')}
-                      className={`px-2.5 py-1 rounded transition-colors ${
+                      className={`px-2.5 py-1 text-xs font-mono rounded transition-colors ${
                         flagshipTab === 'architecture'
-                          ? 'bg-zinc-800 text-white font-bold'
+                          ? 'bg-zinc-800 text-zinc-100 font-semibold'
                           : 'text-zinc-400 hover:text-zinc-200'
                       }`}
                     >
-                      3-Actors
+                      3-Actor Matrix
                     </button>
                     <button
                       onClick={() => setFlagshipTab('maps_code')}
-                      className={`px-2.5 py-1 rounded transition-colors flex items-center gap-1 ${
+                      className={`px-2.5 py-1 text-xs font-mono rounded transition-colors ${
                         flagshipTab === 'maps_code'
-                          ? 'bg-zinc-800 text-white font-bold'
+                          ? 'bg-zinc-800 text-zinc-100 font-semibold'
                           : 'text-zinc-400 hover:text-zinc-200'
                       }`}
                     >
-                      <Code2 className="w-3 h-3" />
-                      <span>Maps Code</span>
+                      Maps (60 FPS)
                     </button>
                     <button
                       onClick={() => setFlagshipTab('fcm_code')}
-                      className={`px-2.5 py-1 rounded transition-colors flex items-center gap-1 ${
+                      className={`px-2.5 py-1 text-xs font-mono rounded transition-colors ${
                         flagshipTab === 'fcm_code'
-                          ? 'bg-zinc-800 text-white font-bold'
+                          ? 'bg-zinc-800 text-zinc-100 font-semibold'
                           : 'text-zinc-400 hover:text-zinc-200'
                       }`}
                     >
-                      <Bell className="w-3 h-3" />
-                      <span>FCM Code</span>
+                      FCM Pipeline
                     </button>
                   </div>
-
-                  <span className="text-[10px] font-mono text-zinc-400">REACT NATIVE</span>
+                  <Code2 className="w-4 h-4 text-zinc-500" />
                 </div>
 
                 {/* TAB CONTENT 1: 3-ACTOR ARCHITECTURE MATRIX */}
@@ -355,7 +353,7 @@ messaging().setBackgroundMessageHandler(async (msg) => {
         )}
 
         {/* ========================================================================= */}
-        {/* CASE STUDY 2: ENTERPRISE FLEET TELEMETRY & TRACKING ENGINE                */}
+        {/* CASE STUDY 2: ENTERPRISE FLEET TELEMETRY — TRACKINGHAWK X3               */}
         {/* ========================================================================= */}
         {(filter === 'All' || filter === 'GPS & Telemetry') && trackingProject && (
           <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-8 lg:p-10 space-y-6">
@@ -369,7 +367,10 @@ messaging().setBackgroundMessageHandler(async (msg) => {
                 <span className="text-zinc-600">•</span>
                 <span className="text-zinc-400">{trackingProject.period}</span>
               </div>
-              <span className="text-xs font-mono text-zinc-400">{trackingProject.clientBadge}</span>
+              <span className="text-xs font-mono text-emerald-400 font-bold flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                VERIFIED STORE RELEASES
+              </span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -379,13 +380,38 @@ messaging().setBackgroundMessageHandler(async (msg) => {
                     {getTitle(trackingProject)}
                   </h3>
                   <p className="text-xs font-mono text-zinc-400 mt-0.5">
-                    Live GPS Asset Tracking • Historical Playback • Geofence Violation Alerts
+                    Live GPS Asset Tracking • Historical Playback • Geofence Boundary Alerts
                   </p>
                 </div>
 
                 <p className="text-sm text-zinc-300 leading-relaxed font-normal">
                   Fleet management systems require continuous tracking across thousands of commercial vehicles. I built and maintained this enterprise application for Android and iOS, implementing real-time GPS tracking on Google Maps, ignition status telemetry, geofence boundary alerts, and camera barcode pairing.
                 </p>
+
+                {/* Direct Verified Store Badges */}
+                <div className="flex flex-wrap gap-2.5 pt-1">
+                  <a
+                    href={trackingProject.playStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-900/40 text-emerald-300 font-mono text-xs font-semibold transition-all group"
+                  >
+                    <Box className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform" />
+                    <span>GOOGLE PLAY</span>
+                    <ExternalLink className="w-3 h-3 text-emerald-500" />
+                  </a>
+
+                  <a
+                    href={trackingProject.appStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-sky-500/40 bg-sky-950/30 hover:bg-sky-900/40 text-sky-300 font-mono text-xs font-semibold transition-all group"
+                  >
+                    <Smartphone className="w-3.5 h-3.5 text-sky-400 group-hover:scale-110 transition-transform" />
+                    <span>APPLE APP STORE</span>
+                    <ExternalLink className="w-3 h-3 text-sky-500" />
+                  </a>
+                </div>
 
                 {/* Bullets */}
                 <ul className="space-y-1.5 text-xs text-zinc-300 pt-2 border-t border-zinc-900">
@@ -408,7 +434,7 @@ messaging().setBackgroundMessageHandler(async (msg) => {
                   ))}
                 </div>
 
-                <div className="pt-2">
+                <div className="pt-2 flex items-center gap-3">
                   <button
                     onClick={() => setSelectedProject(trackingProject)}
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded text-xs font-mono border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-200 transition-colors"
@@ -460,11 +486,191 @@ export const getActiveTrip = () => {
         )}
 
         {/* ========================================================================= */}
-        {/* SYSTEMS SHOWCASE & CLIENT DEPLOYMENTS (LAZYEYE & INGECOM)                  */}
+        {/* CASE STUDY 3: COMMERCIAL TELEMATICS — KBFVTS X3 & INGECOM PRO             */}
+        {/* ========================================================================= */}
+        {(filter === 'All' || filter === 'GPS & Telemetry') && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* KBFVTS X3 Card */}
+            {kbfvtsProject && (
+              <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 flex flex-col justify-between space-y-5">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+                    <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
+                      {kbfvtsProject.category}
+                    </span>
+                    <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      DUAL-STORE LIVE
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold tracking-tight text-zinc-100 leading-snug">
+                      {getTitle(kbfvtsProject)}
+                    </h3>
+                    <div className="text-xs font-mono text-zinc-400 mt-1">
+                      Google Play (com.kbfvts.x3) • Apple App Store (id6739529934)
+                    </div>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                    Commercial vehicle tracking system and telematics engine built on React Native for Android and iOS. Features real-time GPS coordinates, continuous speed telemetry, geofence breaches, and high-reliability background push notifications.
+                  </p>
+
+                  {/* Dual-Store Badges */}
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <a
+                      href={kbfvtsProject.playStoreUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-900/40 text-emerald-300 font-mono text-[11px] font-semibold transition-colors"
+                    >
+                      <Box className="w-3 h-3 text-emerald-400" />
+                      <span>PLAY STORE</span>
+                      <ExternalLink className="w-2.5 h-2.5 text-emerald-500" />
+                    </a>
+
+                    <a
+                      href={kbfvtsProject.appStoreUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-sky-500/40 bg-sky-950/30 hover:bg-sky-900/40 text-sky-300 font-mono text-[11px] font-semibold transition-colors"
+                    >
+                      <Smartphone className="w-3 h-3 text-sky-400" />
+                      <span>APP STORE</span>
+                      <ExternalLink className="w-2.5 h-2.5 text-sky-500" />
+                    </a>
+                  </div>
+
+                  <ul className="space-y-1.5 text-xs text-zinc-300 pt-2 border-t border-zinc-900">
+                    {kbfvtsProject.highlights.slice(0, 2).map((h, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-zinc-500 font-mono mt-0.5">▹</span>
+                        <span className="leading-relaxed">{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="space-y-3 pt-3 border-t border-zinc-900">
+                  <div className="flex flex-wrap gap-1">
+                    {kbfvtsProject.technologies.slice(0, 4).map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-1.5 py-0.5 text-[10.5px] font-mono rounded bg-zinc-900 text-zinc-400 border border-zinc-800/60"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between pt-1">
+                    <button
+                      onClick={() => setSelectedProject(kbfvtsProject)}
+                      className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-zinc-300 hover:text-white transition-colors"
+                    >
+                      <Eye className="w-3.5 h-3.5 text-zinc-400" />
+                      <span>TELEMETRY DETAILS</span>
+                    </button>
+
+                    <span className="text-[10px] font-mono text-zinc-500">
+                      AIS-140 GPS Fused
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Ingecom GPS Card */}
+            {ingecomProject && (
+              <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 flex flex-col justify-between space-y-5">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
+                    <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
+                      {ingecomProject.category}
+                    </span>
+                    <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      GOOGLE PLAY LIVE
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold tracking-tight text-zinc-100 leading-snug">
+                      {getTitle(ingecomProject)}
+                    </h3>
+                    <div className="text-xs font-mono text-zinc-400 mt-1">
+                      Google Play (com.v3.ingecompro) • International Logistics
+                    </div>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                    International enterprise fleet telematics deployment with bespoke branding, localized geofence alerts, CANBUS sensor analytics, scheduled maintenance reminders, and direct dispatcher-to-driver push notifications.
+                  </p>
+
+                  {/* Play Store Badge */}
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <a
+                      href={ingecomProject.playStoreUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-900/40 text-emerald-300 font-mono text-[11px] font-semibold transition-colors"
+                    >
+                      <Box className="w-3 h-3 text-emerald-400" />
+                      <span>GOOGLE PLAY (com.v3.ingecompro)</span>
+                      <ExternalLink className="w-2.5 h-2.5 text-emerald-500" />
+                    </a>
+                  </div>
+
+                  <ul className="space-y-1.5 text-xs text-zinc-300 pt-2 border-t border-zinc-900">
+                    {ingecomProject.highlights.slice(0, 2).map((h, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-zinc-500 font-mono mt-0.5">▹</span>
+                        <span className="leading-relaxed">{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="space-y-3 pt-3 border-t border-zinc-900">
+                  <div className="flex flex-wrap gap-1">
+                    {ingecomProject.technologies.slice(0, 4).map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-1.5 py-0.5 text-[10.5px] font-mono rounded bg-zinc-900 text-zinc-400 border border-zinc-800/60"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between pt-1">
+                    <button
+                      onClick={() => setSelectedProject(ingecomProject)}
+                      className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-zinc-300 hover:text-white transition-colors"
+                    >
+                      <Eye className="w-3.5 h-3.5 text-zinc-400" />
+                      <span>CASE STUDY</span>
+                    </button>
+
+                    <span className="text-[10px] font-mono text-zinc-500">
+                      CANBUS & Diagnostics
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+          </div>
+        )}
+
+        {/* ========================================================================= */}
+        {/* CASE STUDY 4: SUPPORTING SHOWCASES (LAZYEYE & JAPJEE)                     */}
         {/* ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          {/* LazyEye Systems Showcase */}
+          {/* LazyEye Systems Showcase (Supporting WebViews & Canvas) */}
           {(filter === 'All' || filter === 'Healthcare & WebViews') && lazyEyeProject && (
             <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 flex flex-col justify-between space-y-5">
               <div className="space-y-3">
@@ -472,7 +678,9 @@ export const getActiveTrip = () => {
                   <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
                     {lazyEyeProject.category}
                   </span>
-                  <span>{lazyEyeProject.period}</span>
+                  <span className="text-amber-400 font-mono text-[11px] font-semibold">
+                    SUPPORTING WEBVIEWS DEMO
+                  </span>
                 </div>
 
                 <div>
@@ -480,12 +688,12 @@ export const getActiveTrip = () => {
                     {getTitle(lazyEyeProject)}
                   </h3>
                   <div className="text-xs font-mono text-zinc-400 mt-1">
-                    Bare React Native 0.87.1 • Android 15 (API 37) • Gradle 9.4
+                    Bare React Native 0.87.1 • Android 15 (API 37) • 11 Canvas Engines
                   </div>
                 </div>
 
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                  Medical digital therapeutics platform featuring 11 responsive HTML5 Canvas vision engines, bidirectional WebView postMessage bridges, and seeded evaluation portals for recruiters.
+                  Specialized case study demonstrating bidirectional WebView <code className="text-zinc-200 font-mono">postMessage</code> data bridges, HTML5 Canvas synchronization, zero-latency MMKV storage, and seeded evaluation portals for recruiters.
                 </p>
 
                 {/* Seeded Recruiter Accounts Pill */}
@@ -549,32 +757,32 @@ export const getActiveTrip = () => {
             </div>
           )}
 
-          {/* Ingecom GPS Client Deployment */}
-          {(filter === 'All' || filter === 'Mobility & Fleet' || filter === 'GPS & Telemetry') && ingecomProject && (
+          {/* Japjee Inventory Platform */}
+          {(filter === 'All' || filter === 'Mobility & Fleet') && japjeeProject && (
             <div className="rounded border border-zinc-800/80 bg-zinc-950/60 p-6 sm:p-7 flex flex-col justify-between space-y-5">
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
                   <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
-                    {ingecomProject.category}
+                    {japjeeProject.category}
                   </span>
-                  <span>{ingecomProject.period}</span>
+                  <span>{japjeeProject.period}</span>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-bold tracking-tight text-zinc-100 leading-snug">
-                    {getTitle(ingecomProject)}
+                    {getTitle(japjeeProject)}
                   </h3>
                   <div className="text-xs font-mono text-zinc-400 mt-1">
-                    White-Label Deployments • Barcode Inventory • Softcruise Technologies
+                    Role-Based Access Control • Barcode Scanner • Logistics
                   </div>
                 </div>
 
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                  International client fleet instances with custom branding and payment gateways, alongside a cross-platform warehouse inventory app featuring Role-Based Access Control and barcode scanning.
+                  Independently developed cross-platform warehouse inventory mobile application featuring Role-Based Access Control (RBAC), real-time order tracking, and camera/hardware barcode scanning for logistics workflows.
                 </p>
 
                 <ul className="space-y-1.5 text-xs text-zinc-300 pt-2 border-t border-zinc-900">
-                  {ingecomProject.highlights.map((h, i) => (
+                  {japjeeProject.highlights.map((h, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-zinc-500 font-mono mt-0.5">▹</span>
                       <span className="leading-relaxed">{h}</span>
@@ -585,7 +793,7 @@ export const getActiveTrip = () => {
 
               <div className="space-y-3 pt-3 border-t border-zinc-900">
                 <div className="flex flex-wrap gap-1">
-                  {ingecomProject.technologies.map((tech) => (
+                  {japjeeProject.technologies.map((tech) => (
                     <span
                       key={tech}
                       className="px-1.5 py-0.5 text-[10.5px] font-mono rounded bg-zinc-900 text-zinc-400 border border-zinc-800/60"
@@ -597,7 +805,7 @@ export const getActiveTrip = () => {
 
                 <div className="flex items-center justify-between pt-1">
                   <button
-                    onClick={() => setSelectedProject(ingecomProject)}
+                    onClick={() => setSelectedProject(japjeeProject)}
                     className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-zinc-300 hover:text-white transition-colors"
                   >
                     <Eye className="w-3.5 h-3.5 text-zinc-400" />
@@ -605,7 +813,7 @@ export const getActiveTrip = () => {
                   </button>
 
                   <a
-                    href={portfolioData.personal.socials.linkedin}
+                    href="https://linkedin.com/in/abhishek-pal-a5a497217"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs font-mono text-zinc-400 hover:text-zinc-100 flex items-center gap-1"

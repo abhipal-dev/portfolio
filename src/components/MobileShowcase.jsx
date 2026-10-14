@@ -3,46 +3,66 @@ import {
   Wifi,
   Battery,
   Car,
-  Play,
-  Eye,
+  Bell,
+  Navigation,
+  AlertTriangle,
+  CheckCircle2,
+  Zap,
+  Radio,
+  RotateCcw,
 } from 'lucide-react';
 
 export default function MobileShowcase() {
-  const [activeTab, setActiveTab] = useState('rider');
-  const [driverAccepted, setDriverAccepted] = useState(false);
-  const [speed, setSpeed] = useState(48);
-  const [livePings, setLivePings] = useState(24);
-  const [lazyEyeEngineMode, setLazyEyeEngineMode] = useState('offline'); // 'offline' | 'live'
-  const [lazyEyeScore, setLazyEyeScore] = useState(127);
-  const [sessionStarted, setSessionStarted] = useState(false);
+  const [activeTab, setActiveTab] = useState('fleet'); // 'fleet' | 'fcm' | 'driver' | 'kiosk'
+  const [speed, setSpeed] = useState(52);
+  const [livePings, setLivePings] = useState(25);
+  const [ignitionOn, setIgnitionOn] = useState(true);
+  const [geofenceBreach, setGeofenceBreach] = useState(false);
+  const [fcmAlertActive, setFcmAlertActive] = useState(false);
+  const [tripAccepted, setTripAccepted] = useState(false);
+  const [activeVehicle, setActiveVehicle] = useState('TrackingHAWK X3');
 
-  // Subtle telemetry jitter for realistic live feel
+  // Subtle telemetry jitter for realistic live GPS telemetry
   useEffect(() => {
     const interval = setInterval(() => {
-      setSpeed((prev) => Math.min(64, Math.max(38, prev + Math.floor(Math.random() * 5) - 2)));
-      setLivePings((prev) => (prev === 24 ? 25 : 24));
+      if (ignitionOn) {
+        setSpeed((prev) => Math.min(68, Math.max(42, prev + Math.floor(Math.random() * 5) - 2)));
+      } else {
+        setSpeed(0);
+      }
+      setLivePings((prev) => (prev === 25 ? 24 : 25));
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [ignitionOn]);
+
+  const triggerFcmAlert = () => {
+    setFcmAlertActive(true);
+    setTripAccepted(false);
+  };
+
+  const triggerGeofenceBreach = () => {
+    setGeofenceBreach(true);
+    setTimeout(() => setGeofenceBreach(false), 3500);
+  };
 
   return (
-    <div className="relative mx-auto w-full max-w-[315px] sm:max-w-[340px]">
+    <div className="relative mx-auto w-full max-w-[325px] sm:max-w-[350px]">
 
       {/* Modern High-End Device Chassis */}
       <div className="relative rounded-[2.5rem] sm:rounded-[3rem] bg-[#0c1019] border-[4px] sm:border-[5px] border-slate-800 shadow-2xl shadow-black/80 overflow-hidden backdrop-blur-xl">
         
         {/* iOS Dynamic Island & Status Bar */}
-        <div className="relative bg-[#090d16] px-6 pt-3 pb-2 flex items-center justify-between text-[11px] font-mono text-slate-400 select-none border-b border-slate-800/60">
+        <div className="relative bg-[#090d16] px-5 pt-3 pb-2 flex items-center justify-between text-[11px] font-mono text-slate-400 select-none border-b border-slate-800/60 z-30">
           <span className="font-semibold text-slate-300">09:41</span>
           
           {/* Dynamic Island Pill */}
           <div className="h-4 px-2.5 bg-black rounded-full border border-slate-800 flex items-center justify-center gap-1.5 shadow-inner">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className={`w-1.5 h-1.5 rounded-full ${ignitionOn ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
             <span className="text-[9px] text-slate-300 font-sans font-medium tracking-tight">
-              {activeTab === 'rider' && 'Rider GPS Active'}
-              {activeTab === 'driver' && 'Driver Telemetry'}
-              {activeTab === 'kiosk' && 'Terminal Mode'}
-              {activeTab === 'lazyeye' && 'LazyEye Mobile • RN 0.87.1'}
+              {activeTab === 'fleet' && (ignitionOn ? 'Fleet Telemetry • 60 FPS' : 'Ignition OFF • Idle')}
+              {activeTab === 'fcm' && (fcmAlertActive ? '🚨 FCM Heads-Up Alert' : 'FCM Background Active')}
+              {activeTab === 'driver' && 'Driver Bearing • NE 42°'}
+              {activeTab === 'kiosk' && 'Tablet Lock-Task Mode'}
             </span>
           </div>
 
@@ -54,180 +74,330 @@ export default function MobileShowcase() {
         </div>
 
         {/* Viewport Screen Content */}
-        <div className="h-[440px] bg-[#070a12] overflow-hidden flex flex-col justify-between relative select-none">
+        <div className="h-[460px] bg-[#070a12] overflow-hidden flex flex-col justify-between relative select-none">
           
-          {/* TAB 1: RIDER APPLICATION PREVIEW */}
-          {activeTab === 'rider' && (
-            <div className="flex-1 p-3.5 flex flex-col justify-between animate-in fade-in duration-200">
-              {/* Realistic Map Viewport */}
-              <div className="relative h-[240px] rounded-2xl bg-[#0b101c] border border-slate-800/80 overflow-hidden shadow-inner">
-                {/* Vector Map Arterial Roads */}
+          {/* ========================================================================= */}
+          {/* TAB 1: ENTERPRISE FLEET TELEMETRY (TrackingHAWK / KBFVTS / Ingecom)      */}
+          {/* ========================================================================= */}
+          {activeTab === 'fleet' && (
+            <div className="flex-1 p-3.5 flex flex-col justify-between animate-in fade-in duration-200 text-slate-100">
+              
+              {/* Vehicle Selector Pills */}
+              <div className="grid grid-cols-3 gap-1 bg-[#090e1a] p-1 rounded-xl border border-slate-800/90 text-center text-[9px] font-mono">
+                {[
+                  { id: 'TrackingHAWK X3', label: 'TrackingHAWK' },
+                  { id: 'KBFVTS X3', label: 'KBFVTS X3' },
+                  { id: 'Ingecom GPS', label: 'Ingecom Pro' },
+                ].map((v) => (
+                  <button
+                    key={v.id}
+                    onClick={() => setActiveVehicle(v.id)}
+                    className={`py-1 rounded-lg transition-all ${
+                      activeVehicle === v.id
+                        ? 'bg-sky-600 text-white font-bold shadow-sm'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    {v.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Vector Map Viewport */}
+              <div className="relative h-[210px] rounded-2xl bg-[#0b101c] border border-slate-800/80 overflow-hidden shadow-inner mt-2">
+                {/* SVG Vector Map */}
                 <svg className="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
                   <defs>
-                    <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient id="fleetRouteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#38bdf8" />
-                      <stop offset="100%" stopColor="#2563eb" />
+                      <stop offset="100%" stopColor="#22c55e" />
                     </linearGradient>
                   </defs>
-                  {/* Grid of secondary roads */}
-                  <path d="M-20 45 L380 45 M-20 120 L380 120 M-20 195 L380 195" stroke="#1e293b" strokeWidth="4" />
-                  <path d="M70 -20 L70 260 M165 -20 L165 260 M260 -20 L260 260" stroke="#1e293b" strokeWidth="4" />
-                  {/* Highway */}
-                  <path d="M-10 80 Q 150 110 370 60" stroke="#334155" strokeWidth="8" fill="none" />
-                  {/* Real-time Dynamic Route Polyline */}
+                  {/* Road Grid */}
+                  <path d="M-20 40 L380 40 M-20 110 L380 110 M-20 180 L380 180" stroke="#1e293b" strokeWidth="4" />
+                  <path d="M60 -20 L60 260 M160 -20 L160 260 M260 -20 L260 260" stroke="#1e293b" strokeWidth="4" />
+                  {/* Arterial Highway */}
+                  <path d="M-10 70 Q 150 100 370 50" stroke="#334155" strokeWidth="7" fill="none" />
+                  {/* Dynamic Route Polyline */}
                   <path
-                    d="M 60 170 C 110 160, 140 100, 240 55"
+                    d="M 50 160 C 100 150, 130 90, 230 50"
                     fill="none"
-                    stroke="url(#routeGrad)"
-                    strokeWidth="4.5"
+                    stroke="url(#fleetRouteGrad)"
+                    strokeWidth="4"
                     strokeLinecap="round"
-                    strokeDasharray="8 4"
+                    strokeDasharray="6 3"
                   />
                 </svg>
 
-                {/* Pickup Location Marker */}
-                <div className="absolute left-[52px] top-[152px] flex items-center gap-1.5">
-                  <div className="relative">
-                    <span className="w-4 h-4 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-[8px] text-white font-extrabold shadow-lg">
-                      P
-                    </span>
-                  </div>
-                  <div className="px-2 py-0.5 rounded-md bg-[#0f172a]/95 border border-slate-700 text-[9px] font-mono text-emerald-300 shadow">
-                    Agra Cantt
-                  </div>
-                </div>
+                {/* Geofence Boundary Circle */}
+                <div
+                  className={`absolute left-[30px] top-[40px] w-36 h-36 rounded-full border-2 border-dashed transition-all duration-300 pointer-events-none ${
+                    geofenceBreach
+                      ? 'border-amber-400 bg-amber-500/20 animate-pulse'
+                      : 'border-emerald-500/30 bg-emerald-500/5'
+                  }`}
+                />
 
-                {/* Approaching Driver Marker */}
-                <div className="absolute right-[65px] top-[42px] flex items-center gap-1.5">
-                  <div className="p-1 rounded-full bg-blue-600 text-white border-2 border-white shadow-lg animate-pulse">
+                {/* Live Vehicle Marker */}
+                <div className="absolute right-[85px] top-[45px] flex items-center gap-1.5 z-10">
+                  <div className={`p-1.5 rounded-full text-white border-2 border-white shadow-xl transition-all ${
+                    ignitionOn ? 'bg-emerald-600 animate-pulse' : 'bg-slate-700'
+                  }`}>
                     <Car className="w-3.5 h-3.5" />
                   </div>
-                  <div className="px-2 py-0.5 rounded-md bg-[#0f172a]/95 border border-slate-700 text-[9px] font-mono text-sky-300 shadow">
-                    2m away (850m)
+                  <div className="px-2 py-0.5 rounded-md bg-[#0f172a]/95 border border-slate-700 text-[9px] font-mono text-emerald-300 shadow">
+                    UP-80-AB-1234
                   </div>
                 </div>
 
-                {/* Live Floating Status Header */}
-                <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between">
-                  <div className="px-2.5 py-1 rounded-lg bg-[#0c1220]/90 border border-slate-800 text-[10px] font-mono flex items-center gap-1.5 shadow">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-white font-semibold">Driver Dispatched</span>
-                  </div>
-                  <div className="px-2 py-1 rounded-lg bg-[#0c1220]/90 border border-slate-800 text-[10px] font-mono text-slate-300">
-                    GPS: {livePings} Hz
-                  </div>
-                </div>
-              </div>
-
-              {/* Ride Details Bottom Sheet */}
-              <div className="p-3 rounded-xl bg-[#0c111e] border border-slate-800 space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-white border border-slate-700">
-                      VS
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white flex items-center gap-1">
-                        Vikram Singh
-                        <span className="text-[10px] text-amber-400 font-mono">★ 4.9</span>
-                      </div>
-                      <div className="text-[9.5px] font-mono text-slate-400">Toyota Camry • UP-80-AB-1234</div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-xs font-bold text-emerald-400 font-mono">₹280.00</div>
-                    <div className="text-[9px] text-slate-400 font-mono">Paid via UPI</div>
-                  </div>
-                </div>
-
-                <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[10px] font-mono">
-                  <span className="text-slate-400">Start Ride Verification OTP:</span>
-                  <span className="px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-bold tracking-widest">
-                    4 9 2 1
+                {/* Geofence Status Pill */}
+                <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#0b1324]/90 border border-slate-800 text-[9px] font-mono">
+                  <span className={`w-1.5 h-1.5 rounded-full ${geofenceBreach ? 'bg-amber-400 animate-ping' : 'bg-emerald-400'}`} />
+                  <span className="text-slate-200">
+                    {geofenceBreach ? '⚠️ BREACH: Zone Alpha' : 'Geofence: Inside Depot A'}
                   </span>
                 </div>
+
+                {/* GPS Stream Rate Badge */}
+                <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-[#0b1324]/90 border border-slate-800 text-[9px] font-mono text-sky-300">
+                  Fused GPS: {livePings} Hz
+                </div>
               </div>
+
+              {/* Live Gauges Strip */}
+              <div className="grid grid-cols-3 gap-1.5 mt-2">
+                <div className="p-2 rounded-xl bg-[#0c111e] border border-slate-800 text-center">
+                  <div className="text-[8.5px] font-mono text-slate-400 uppercase">GPS Speed</div>
+                  <div className="text-base font-bold text-white font-mono mt-0.5">
+                    {speed} <span className="text-[8.5px] font-normal text-slate-500">km/h</span>
+                  </div>
+                </div>
+                <div className="p-2 rounded-xl bg-[#0c111e] border border-slate-800 text-center">
+                  <div className="text-[8.5px] font-mono text-slate-400 uppercase">Ignition</div>
+                  <button
+                    onClick={() => setIgnitionOn(!ignitionOn)}
+                    className={`mt-0.5 px-2 py-0.5 rounded text-[9px] font-mono font-bold transition-all border ${
+                      ignitionOn
+                        ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                        : 'bg-rose-500/15 text-rose-400 border-rose-500/30'
+                    }`}
+                    title="Click to toggle engine ignition state"
+                  >
+                    {ignitionOn ? 'ON • RUNNING' : 'OFF • IDLE'}
+                  </button>
+                </div>
+                <div className="p-2 rounded-xl bg-[#0c111e] border border-slate-800 text-center">
+                  <div className="text-[8.5px] font-mono text-slate-400 uppercase">MMKV Latency</div>
+                  <div className="text-base font-bold text-sky-400 font-mono mt-0.5">0.1ms</div>
+                </div>
+              </div>
+
+              {/* Interactive Telemetry Action Strip */}
+              <div className="mt-2 pt-2 border-t border-slate-800/80 flex items-center justify-between gap-2">
+                <button
+                  onClick={triggerGeofenceBreach}
+                  className="flex-1 py-1.5 px-2 rounded-lg bg-amber-500/15 border border-amber-500/30 hover:bg-amber-500/25 text-amber-300 font-mono text-[9.5px] font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-all"
+                >
+                  <AlertTriangle className="w-3 h-3 text-amber-400" />
+                  <span>Simulate Geofence Alert</span>
+                </button>
+                <div className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[8.5px] font-mono text-slate-400">
+                  AIS-140 Compliant
+                </div>
+              </div>
+
             </div>
           )}
 
-          {/* TAB 2: DRIVER PARTNER CONSOLE */}
-          {activeTab === 'driver' && (
-            <div className="flex-1 p-3.5 flex flex-col justify-between animate-in fade-in duration-200">
-              {/* Telemetry Metric Gauges */}
-              <div className="grid grid-cols-3 gap-2">
-                <div className="p-2 rounded-xl bg-[#0c111e] border border-slate-800 text-center">
-                  <div className="text-[9px] font-mono text-slate-400 uppercase">GPS Speed</div>
-                  <div className="text-lg font-bold text-white font-mono mt-0.5">{speed} <span className="text-[9px] font-normal text-slate-500">km/h</span></div>
+          {/* ========================================================================= */}
+          {/* TAB 2: HIGH-PRIORITY FCM DISPATCH SIMULATOR (KILLED-STATE WAKE-UP)        */}
+          {/* ========================================================================= */}
+          {activeTab === 'fcm' && (
+            <div className="flex-1 p-3.5 flex flex-col justify-between animate-in fade-in duration-200 text-slate-100 relative">
+              
+              {/* Simulated Dropping Heads-Up Banner */}
+              {fcmAlertActive ? (
+                <div className="p-3 rounded-2xl bg-gradient-to-b from-[#141d33] to-[#0c1222] border-2 border-sky-400/80 shadow-2xl shadow-sky-500/20 space-y-2.5 animate-in slide-in-from-top duration-300">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <span className="p-1 rounded bg-sky-500/20 text-sky-300 border border-sky-400/30">
+                        <Bell className="w-3.5 h-3.5 animate-bounce" />
+                      </span>
+                      <div>
+                        <div className="text-xs font-bold text-white flex items-center gap-1">
+                          High-Priority Ride Dispatch
+                        </div>
+                        <div className="text-[9px] font-mono text-sky-300">
+                          Channel: dispatch_high_priority • Sound Looped
+                        </div>
+                      </div>
+                    </div>
+                    <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">
+                      WAKE DEVICE
+                    </span>
+                  </div>
+
+                  <div className="p-2 rounded-xl bg-[#080d1a] border border-slate-800 space-y-1 font-mono text-[10px]">
+                    <div className="flex justify-between text-slate-300">
+                      <span>Pickup: <strong className="text-white">Agra Cantt</strong></span>
+                      <span className="text-emerald-400 font-bold">₹320.00</span>
+                    </div>
+                    <div className="flex justify-between text-slate-400 text-[9px]">
+                      <span>Destination: Taj East Gate</span>
+                      <span>ETA: 1.2 km</span>
+                    </div>
+                  </div>
+
+                  {tripAccepted ? (
+                    <div className="p-2 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-center font-mono text-xs font-bold flex items-center justify-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                      <span>Trip Accepted • Start OTP: 4921</span>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-2 gap-2">
+                      <button
+                        onClick={() => setFcmAlertActive(false)}
+                        className="py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-mono text-xs transition-colors"
+                      >
+                        Decline
+                      </button>
+                      <button
+                        onClick={() => setTripAccepted(true)}
+                        className="py-1.5 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-mono text-xs font-bold shadow-md shadow-emerald-600/30 active:scale-95 transition-all"
+                      >
+                        Accept Ride
+                      </button>
+                    </div>
+                  )}
                 </div>
-                <div className="p-2 rounded-xl bg-[#0c111e] border border-slate-800 text-center">
-                  <div className="text-[9px] font-mono text-slate-400 uppercase">Heading</div>
-                  <div className="text-lg font-bold text-sky-400 font-mono mt-0.5">NE 42°</div>
+              ) : (
+                /* Idle FCM Listening State */
+                <div className="p-4 rounded-2xl bg-[#0c111e] border border-slate-800 space-y-3 text-center">
+                  <div className="w-12 h-12 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 mx-auto flex items-center justify-center">
+                    <Radio className="w-6 h-6 animate-pulse" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-white">FCM Background Service Active</div>
+                    <p className="text-[10px] text-slate-400 font-mono mt-1 leading-snug">
+                      Listening on Firebase Cloud Messaging & Notifee headless task handler. Tested across killed, background & doze states.
+                    </p>
+                  </div>
+                  <button
+                    onClick={triggerFcmAlert}
+                    className="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-mono text-xs font-bold shadow-lg shadow-sky-600/30 flex items-center justify-center gap-2 active:scale-95 transition-all"
+                  >
+                    <Zap className="w-3.5 h-3.5 fill-current" />
+                    <span>⚡ Simulate Incoming FCM Dispatch</span>
+                  </button>
                 </div>
-                <div className="p-2 rounded-xl bg-[#0c111e] border border-slate-800 text-center">
-                  <div className="text-[9px] font-mono text-slate-400 uppercase">Shift Total</div>
-                  <div className="text-lg font-bold text-emerald-400 font-mono mt-0.5">₹2,480</div>
+              )}
+
+              {/* FCM Architecture Diagram / Specs */}
+              <div className="p-2.5 rounded-xl bg-[#090e1a] border border-slate-800/90 space-y-1.5 font-mono text-[9px] text-slate-400">
+                <div className="text-slate-300 font-bold uppercase tracking-wider text-[8.5px] border-b border-slate-800 pb-1">
+                  Killed-State Pipeline Specs:
+                </div>
+                <div className="flex justify-between">
+                  <span>Android Channel:</span>
+                  <span className="text-sky-300">Importance.HIGH</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>FullScreenAction:</span>
+                  <span className="text-emerald-400">Enabled (Wakes Screen)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Background Handler:</span>
+                  <span className="text-slate-200">Headless JS / Notifee</span>
                 </div>
               </div>
 
-              {/* Live Telemetry Map Tracker */}
-              <div className="relative h-[170px] rounded-2xl bg-[#0b101c] border border-slate-800 flex flex-col justify-between p-3 overflow-hidden">
-                <div className="flex items-center justify-between text-[10px] font-mono z-10">
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              {fcmAlertActive && (
+                <button
+                  onClick={() => { setFcmAlertActive(false); setTripAccepted(false); }}
+                  className="py-1 text-[9px] font-mono text-slate-400 hover:text-white flex items-center justify-center gap-1"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  <span>Reset FCM Simulator</span>
+                </button>
+              )}
+
+            </div>
+          )}
+
+          {/* ========================================================================= */}
+          {/* TAB 3: DRIVER BEARING & 60 FPS MAP CAMERA                                 */}
+          {/* ========================================================================= */}
+          {activeTab === 'driver' && (
+            <div className="flex-1 p-3.5 flex flex-col justify-between animate-in fade-in duration-200 text-slate-100">
+              
+              {/* Telemetry Metric Gauges */}
+              <div className="grid grid-cols-3 gap-1.5">
+                <div className="p-2 rounded-xl bg-[#0c111e] border border-slate-800 text-center">
+                  <div className="text-[8.5px] font-mono text-slate-400 uppercase">Camera Pitch</div>
+                  <div className="text-base font-bold text-white font-mono mt-0.5">40°</div>
+                </div>
+                <div className="p-2 rounded-xl bg-[#0c111e] border border-slate-800 text-center">
+                  <div className="text-[8.5px] font-mono text-slate-400 uppercase">Bearing</div>
+                  <div className="text-base font-bold text-sky-400 font-mono mt-0.5">NE 42°</div>
+                </div>
+                <div className="p-2 rounded-xl bg-[#0c111e] border border-slate-800 text-center">
+                  <div className="text-[8.5px] font-mono text-slate-400 uppercase">Shift Total</div>
+                  <div className="text-base font-bold text-emerald-400 font-mono mt-0.5">₹2,480</div>
+                </div>
+              </div>
+
+              {/* Turn-by-Turn Instruction Pill */}
+              <div className="p-2.5 rounded-xl bg-blue-950/40 border border-blue-500/30 flex items-center justify-between text-xs font-mono mt-2">
+                <div className="flex items-center gap-2">
+                  <Navigation className="w-4 h-4 text-sky-400 transform rotate-45" />
+                  <div>
+                    <div className="text-white font-bold text-[11px]">In 250m, Turn Right</div>
+                    <div className="text-[9px] text-slate-400">onto Fatehabad Road</div>
+                  </div>
+                </div>
+                <span className="text-[10px] font-bold text-emerald-400">2 mins</span>
+              </div>
+
+              {/* Radar Simulation */}
+              <div className="relative h-[150px] rounded-2xl bg-[#0b101c] border border-slate-800 flex flex-col justify-between p-3 overflow-hidden mt-2">
+                <div className="flex items-center justify-between text-[9px] font-mono z-10">
+                  <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    ONLINE & DISPATCHING
+                    DISPATCHING WAVE #1
                   </span>
                   <span className="text-slate-400">Lat: 27.1751° N</span>
                 </div>
 
-                {/* Subtle Radar Concentric Rings */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-25">
                   <div className="w-28 h-28 rounded-full border border-sky-400" />
                   <div className="w-16 h-16 rounded-full border border-sky-400" />
                 </div>
 
-                <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 z-10 border-t border-slate-800/80 pt-2">
-                  <span>Accuracy: ±1.8m (Fused)</span>
-                  <span className="text-sky-300">MMKV Cache: 0.1ms</span>
+                <div className="flex items-center justify-between text-[9px] font-mono text-slate-400 z-10 border-t border-slate-800/80 pt-1.5">
+                  <span>Radius: &lt; 1.5 km</span>
+                  <span className="text-emerald-400">Imperative animateCamera</span>
                 </div>
               </div>
 
-              {/* Incoming Ride Dispatch Card */}
-              <div className="p-3 rounded-xl bg-[#0c111e] border border-slate-800 space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                    <span className="text-xs font-bold text-white">Ride Dispatch Alert</span>
-                  </div>
-                  <span className="text-[10px] font-mono text-amber-400 font-bold">1.2 km pickup</span>
-                </div>
-                <div className="text-[10px] font-mono text-slate-300 flex items-center justify-between">
-                  <span>Agra Cantt ➔ Taj East Gate</span>
-                  <span className="text-emerald-400 font-bold">Fare: ₹320</span>
-                </div>
-                <button
-                  onClick={() => setDriverAccepted(!driverAccepted)}
-                  className={`w-full py-2 rounded-lg text-xs font-bold transition-all ${
-                    driverAccepted
-                      ? 'bg-emerald-600 text-white'
-                      : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white active:scale-95'
-                  }`}
-                >
-                  {driverAccepted ? '✓ Trip Accepted — Navigating Route' : 'Accept Ride Request'}
-                </button>
+              <div className="text-[9px] font-mono text-slate-400 text-center mt-1">
+                Zero JavaScript Thread Lag • Mutable Coordinates
               </div>
+
             </div>
           )}
 
-          {/* TAB 3: WALK-UP KIOSK TERMINAL */}
+          {/* ========================================================================= */}
+          {/* TAB 4: WALK-UP KIOSK TABLET TERMINAL                                      */}
+          {/* ========================================================================= */}
           {activeTab === 'kiosk' && (
-            <div className="flex-1 p-3.5 flex flex-col justify-between animate-in fade-in duration-200">
+            <div className="flex-1 p-3.5 flex flex-col justify-between animate-in fade-in duration-200 text-slate-100">
               <div className="space-y-2">
                 <div className="p-2.5 rounded-xl bg-blue-950/30 border border-blue-500/20 text-center">
                   <div className="text-xs font-bold text-sky-300">WALK-UP KIOSK TERMINAL</div>
-                  <div className="text-[9.5px] text-slate-400 font-mono">Hotel Radisson Blu • Station #02</div>
+                  <div className="text-[9px] text-slate-400 font-mono">Hotel Radisson Blu • Station #02</div>
                 </div>
 
-                <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400 pt-1">
+                <div className="text-[9.5px] font-mono uppercase tracking-wider text-slate-400 pt-0.5">
                   Instant Booking Hubs:
                 </div>
 
@@ -242,137 +412,18 @@ export default function MobileShowcase() {
                   >
                     <div>
                       <div className="text-xs font-medium text-white">{station.name}</div>
-                      <div className="text-[9.5px] font-mono text-emerald-400">Driver Bay ETA: {station.eta}</div>
+                      <div className="text-[9px] font-mono text-emerald-400">Driver Bay ETA: {station.eta}</div>
                     </div>
                     <div className="text-right">
                       <div className="text-xs font-bold font-mono text-sky-400">{station.fare}</div>
-                      <div className="text-[9px] text-slate-400 font-mono">Book ➔</div>
+                      <div className="text-[8.5px] text-slate-400 font-mono">Book ➔</div>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="p-2.5 rounded-xl bg-[#0c111e] border border-slate-800 text-center text-[10px] font-mono text-slate-400">
-                Tablet Kiosk Mode (Locked Task) • Thermal Ticket / QR Support
-              </div>
-            </div>
-          )}
-
-          {/* TAB 4: LAZYEYE MOBILE DIGITAL THERAPEUTICS PREVIEW */}
-          {activeTab === 'lazyeye' && (
-            <div className="flex-1 p-3 flex flex-col justify-between animate-in fade-in duration-200 text-slate-100 select-none">
-              {/* App Top Bar */}
-              <div className="flex items-center justify-between pb-2 border-b border-slate-800">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-5 h-5 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center relative overflow-hidden">
-                    <span className="w-2 h-4 bg-rose-500 rounded-l-full" />
-                    <span className="w-2 h-4 bg-sky-500 rounded-r-full" />
-                  </div>
-                  <div>
-                    <div className="text-[11px] font-bold text-white leading-none">LazyEye Therapy</div>
-                    <div className="text-[8.5px] text-sky-400 font-mono mt-0.5">Vision Patient • Abhishek</div>
-                  </div>
-                </div>
-
-                {/* Dual Engine Switcher Button */}
-                <button
-                  onClick={() => setLazyEyeEngineMode((m) => (m === 'offline' ? 'live' : 'offline'))}
-                  className={`px-2 py-0.5 rounded-full text-[8.5px] font-mono font-bold transition-all border ${
-                    lazyEyeEngineMode === 'offline'
-                      ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
-                      : 'bg-sky-500/15 text-sky-300 border-sky-400/30'
-                  }`}
-                  title="Toggle between offline local HTML5 canvas engines and live Render web portal"
-                >
-                  {lazyEyeEngineMode === 'offline' ? '⚡ OFFLINE ENGINE' : '● LIVE CLOUD'}
-                </button>
-              </div>
-
-              {/* Patient Banner & Streak */}
-              <div className="flex items-center justify-between my-1.5 p-2 rounded-xl bg-[#0c111e] border border-slate-800/80">
-                <div className="flex items-center gap-2">
-                  <div className="relative">
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center font-bold text-xs text-white shadow-sm">
-                      AP
-                    </div>
-                    <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-400 ring-1 ring-black" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-white">Abhishek Pal</div>
-                    <div className="text-[9px] text-slate-400 font-mono">Active Clinical Rx</div>
-                  </div>
-                </div>
-
-                <div className="px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] font-bold font-mono flex items-center gap-1">
-                  <span>🔥</span>
-                  <span>4d streak</span>
-                </div>
-              </div>
-
-              {/* Daily Regimen Card (Real SQLite Metrics) */}
-              <div className="p-2.5 rounded-xl bg-gradient-to-b from-[#0c1324] to-[#070b16] border border-sky-500/30 shadow-md space-y-2">
-                <div className="flex items-center justify-between text-[10px]">
-                  <span className="font-mono text-slate-400 font-bold tracking-wider">TODAY'S REGIMEN</span>
-                  <span className="font-mono text-sky-400 font-bold">25 / 25 mins (100%)</span>
-                </div>
-
-                <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-sky-500 to-blue-500 rounded-full w-full" />
-                </div>
-
-                {/* 3 Real Metrics */}
-                <div className="grid grid-cols-3 gap-1 pt-1 border-t border-slate-800/60 text-center font-mono">
-                  <div>
-                    <div className="text-xs font-bold text-white">20</div>
-                    <div className="text-[8px] text-slate-400">Sessions</div>
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-emerald-400">395m</div>
-                    <div className="text-[8px] text-slate-400">Total Time</div>
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-sky-400">{lazyEyeScore}</div>
-                    <div className="text-[8px] text-slate-400">High Score</div>
-                  </div>
-                </div>
-
-                {/* Primary Action Button */}
-                <button
-                  onClick={() => {
-                    setSessionStarted(true);
-                    setLazyEyeScore((s) => s + 5);
-                    setTimeout(() => setSessionStarted(false), 1800);
-                  }}
-                  className="w-full py-1.5 px-2 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-[10.5px] flex items-center justify-center gap-1.5 shadow-md shadow-sky-500/20 active:scale-95 transition-all"
-                >
-                  <Play className="w-3 h-3 fill-current" />
-                  <span>
-                    {sessionStarted ? '✓ +5 Pts! Telemetry Recorded' : 'Start Session • Snake Macular'}
-                  </span>
-                </button>
-              </div>
-
-              {/* Anaglyph Lens Status & Clinical Evidence Card */}
-              <div className="p-2 rounded-lg bg-[#0c111e] border border-slate-800/80 flex items-center justify-between text-[9px] font-mono">
-                <div className="flex items-center gap-1.5 text-slate-300">
-                  <span className="w-2 h-2 rounded-full bg-rose-500" />
-                  <span>OS Red</span>
-                  <span className="text-slate-600">•</span>
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span>OD Green</span>
-                </div>
-                <span className="text-sky-400 font-semibold">NEI-NIH 2.4x Study</span>
-              </div>
-
-              {/* TaxiMuscat-Style Floating Bottom Tab Bar Preview */}
-              <div className="p-1 rounded-2xl bg-[#0e1628] border border-slate-700/80 shadow-lg flex items-center justify-around text-[9px] font-mono">
-                <div className="px-2.5 py-1 rounded-xl bg-sky-500/20 text-sky-300 font-bold border border-sky-400/40 flex flex-col items-center">
-                  <span>Overview</span>
-                  <span className="w-1 h-1 rounded-full bg-sky-400 mt-0.5" />
-                </div>
-                <div className="px-2 py-1 text-slate-400">Games (11)</div>
-                <div className="px-2 py-1 text-slate-400">84d Map</div>
-                <div className="px-2 py-1 text-slate-400">Profile</div>
+              <div className="p-2 rounded-xl bg-[#0c111e] border border-slate-800 text-center text-[9px] font-mono text-slate-400">
+                Tablet Screen Pinning • startLockTask • Thermal QR Print
               </div>
             </div>
           )}
@@ -380,45 +431,45 @@ export default function MobileShowcase() {
           {/* Bottom Screen Navigation Tab Bar */}
           <div className="bg-[#090d16] px-2 py-2 border-t border-slate-800/80 grid grid-cols-4 gap-1">
             <button
-              onClick={() => setActiveTab('rider')}
-              className={`py-1.5 px-1 rounded-lg text-[10px] font-mono transition-all text-center ${
-                activeTab === 'rider'
-                  ? 'bg-blue-600/20 text-sky-300 font-bold border border-blue-500/40 shadow-sm'
+              onClick={() => setActiveTab('fleet')}
+              className={`py-1.5 px-1 rounded-lg text-[9.5px] font-mono transition-all text-center ${
+                activeTab === 'fleet'
+                  ? 'bg-blue-600/25 text-sky-300 font-bold border border-blue-500/40 shadow-sm'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Rider
+              Fleet GPS
+            </button>
+            <button
+              onClick={() => setActiveTab('fcm')}
+              className={`py-1.5 px-1 rounded-lg text-[9.5px] font-mono transition-all text-center flex items-center justify-center gap-1 ${
+                activeTab === 'fcm'
+                  ? 'bg-blue-600/25 text-sky-300 font-bold border border-blue-500/40 shadow-sm'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <Bell className="w-2.5 h-2.5 text-sky-400" />
+              <span>FCM Alert</span>
             </button>
             <button
               onClick={() => setActiveTab('driver')}
-              className={`py-1.5 px-1 rounded-lg text-[10px] font-mono transition-all text-center ${
+              className={`py-1.5 px-1 rounded-lg text-[9.5px] font-mono transition-all text-center ${
                 activeTab === 'driver'
-                  ? 'bg-blue-600/20 text-sky-300 font-bold border border-blue-500/40 shadow-sm'
+                  ? 'bg-blue-600/25 text-sky-300 font-bold border border-blue-500/40 shadow-sm'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Driver
+              Driver 60fps
             </button>
             <button
               onClick={() => setActiveTab('kiosk')}
-              className={`py-1.5 px-1 rounded-lg text-[10px] font-mono transition-all text-center ${
+              className={`py-1.5 px-1 rounded-lg text-[9.5px] font-mono transition-all text-center ${
                 activeTab === 'kiosk'
-                  ? 'bg-blue-600/20 text-sky-300 font-bold border border-blue-500/40 shadow-sm'
+                  ? 'bg-blue-600/25 text-sky-300 font-bold border border-blue-500/40 shadow-sm'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
               Kiosk
-            </button>
-            <button
-              onClick={() => setActiveTab('lazyeye')}
-              className={`py-1.5 px-1 rounded-lg text-[10px] font-mono transition-all text-center flex items-center justify-center gap-1 ${
-                activeTab === 'lazyeye'
-                  ? 'bg-blue-600/20 text-sky-300 font-bold border border-blue-500/40 shadow-sm'
-                  : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              <Eye className="w-2.5 h-2.5 text-sky-400" />
-              <span>LazyEye</span>
             </button>
           </div>
 
@@ -433,4 +484,3 @@ export default function MobileShowcase() {
     </div>
   );
 }
-

@@ -8,6 +8,7 @@ import {
   Check,
   ChevronDown,
   ChevronUp,
+  ExternalLink,
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
@@ -234,6 +235,110 @@ export default function ProvenanceLedger() {
 • Contact: abhipal85350@gmail.com | +91-9870962636 | Agra, India`}
             </pre>
           )}
+        </div>
+
+        {/* Verified Store Releases Directory Strip */}
+        <div className="p-5 rounded border border-zinc-800 bg-zinc-950/80 space-y-4 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-900 pb-3">
+            <div className="flex items-center gap-2 text-xs font-mono">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="font-bold text-zinc-100 uppercase tracking-wider">Verified Production Store Releases</span>
+            </div>
+            <span className="text-[11px] font-mono text-zinc-400">Direct Links to Google Play & Apple App Store</span>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {/* TrackingHAWK X3 */}
+            <div className="p-3.5 rounded bg-zinc-900/60 border border-zinc-800 space-y-2 hover:border-zinc-700 transition-colors">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-zinc-100">TrackingHAWK X3</span>
+                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+                  Dual-Store
+                </span>
+              </div>
+              <p className="text-[11px] text-zinc-400 font-mono">Softcruise Flagship Fleet GPS</p>
+              <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-zinc-850">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.softcruise.application.trackinghawkx3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-mono text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-semibold"
+                >
+                  <Box className="w-3 h-3" />
+                  <span>Google Play</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
+                </a>
+                <span className="text-zinc-600">•</span>
+                <a
+                  href="https://apps.apple.com/in/app/trackinghawk-x3/id6738086577"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1 font-semibold"
+                >
+                  <Smartphone className="w-3 h-3" />
+                  <span>App Store</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
+                </a>
+              </div>
+            </div>
+
+            {/* KBFVTS X3 */}
+            <div className="p-3.5 rounded bg-zinc-900/60 border border-zinc-800 space-y-2 hover:border-zinc-700 transition-colors">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-zinc-100">KBFVTS X3</span>
+                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+                  Dual-Store
+                </span>
+              </div>
+              <p className="text-[11px] text-zinc-400 font-mono">Commercial Vehicle Tracking</p>
+              <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-zinc-850">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.kbfvts.x3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-mono text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-semibold"
+                >
+                  <Box className="w-3 h-3" />
+                  <span>Google Play</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
+                </a>
+                <span className="text-zinc-600">•</span>
+                <a
+                  href="https://apps.apple.com/in/app/kbfvts-x3/id6739529934"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1 font-semibold"
+                >
+                  <Smartphone className="w-3 h-3" />
+                  <span>App Store</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Ingecom GPS */}
+            <div className="p-3.5 rounded bg-zinc-900/60 border border-zinc-800 space-y-2 hover:border-zinc-700 transition-colors">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-zinc-100">Ingecom GPS (Pro)</span>
+                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+                  Play Store
+                </span>
+              </div>
+              <p className="text-[11px] text-zinc-400 font-mono">International Fleet Telematics</p>
+              <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-zinc-850">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.v3.ingecompro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-mono text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-semibold"
+                >
+                  <Box className="w-3 h-3" />
+                  <span>Google Play (com.v3.ingecompro)</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* 2. 4 Release Pillars Grid */}
