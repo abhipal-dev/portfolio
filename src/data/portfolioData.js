@@ -89,7 +89,7 @@ export const portfolioData = {
       clientBadge: "Commercial Production • Softcruise Technologies",
       isCommercial: true,
       tagline: "Rider App, Driver App, and Walk-up Kiosk Terminal synchronized with central Web Dispatch.",
-      period: "Mar 2024 – Present",
+      period: "Mar 2026 – Present",
       role: "Lead React Native Mobile Engineer",
       outcome: "Stabilized 60 FPS camera tracking without UI thread stalls and achieved <0.1% dispatch alert miss rate across killed app states.",
       description:
@@ -128,7 +128,7 @@ export const portfolioData = {
       clientBadge: "Commercial Fleet GPS • Softcruise Technologies",
       isCommercial: true,
       tagline: "Enterprise GPS vehicle tracking, live telemetry, and geofence alerting system.",
-      period: "Jan 2023 – Present",
+      period: "Jun 2023 – Present",
       role: "Lead React Native Mobile Engineer (Solo Delivery)",
       playStoreUrl: "https://play.google.com/store/apps/details?id=com.softcruise.application.trackinghawkx3",
       appStoreUrl: "https://apps.apple.com/in/app/trackinghawk-x3/id6738086577",
@@ -315,7 +315,7 @@ export const portfolioData = {
       clientBadge: "Commercial Deployment • Logistics",
       isCommercial: true,
       tagline: "Cross-platform mobile application with RBAC, real-time inventory tracking, and barcode scanning.",
-      period: "Jan 2024 – Present",
+      period: "Jan 2025 – Jul 2025",
       role: "Lead React Native Mobile Engineer",
       description:
         "Independently developed cross-platform warehouse inventory mobile application featuring Role-Based Access Control (RBAC), real-time order tracking, and camera/hardware barcode scanning for logistics workflows.",
@@ -338,38 +338,22 @@ export const portfolioData = {
 
   experience: [
     {
-      period: "May 2024 – Present",
+      period: "Jun 2023 – Present",
       role: "Lead React Native Mobile Engineer",
       company: "Softcruise Technologies Pvt. Ltd.",
       location: "Agra, India (Open to Remote / Relocation)",
-      focusBadge: "Mobility Platform Architecture & Dual-Store Releases",
+      focusBadge: "Fleet Telematics, Mobility Suite & Dual-Store Releases",
       description:
-        "Spearheading mobile architecture, multi-app synchronization, and release management across Android and iOS platforms. Leading mobile development for the three-sided on-demand mobility ecosystem (TaxiMuscat suite: Rider, Driver, and Walk-up Kiosk Terminal) and enterprise telematics systems. Mainly React Native; occasional full-stack web coordination when needed.",
+        "Spearheading mobile platform architecture, multi-app synchronization, and release management across Android and iOS platforms. Leading mobile development for enterprise fleet telematics platforms (TrackingHAWK X3, KBFVTS X3, Ingecom Pro), the three-sided on-demand mobility ecosystem (TaxiMuscat suite: Rider, Driver, and Walk-up Kiosk Terminal), and warehouse logistics systems (Japjee Inventory). Driving both platform leadership and solo high-velocity delivery. Mainly React Native; occasional full-stack web coordination when needed.",
       achievements: [
-        "Three-Sided Platform Ownership: Architected Rider, Driver, and Kiosk Terminal applications with synchronized real-time dispatch state machines.",
-        "Real-Time 60 FPS GPS Maps: Built high-performance map architectures with animated driver bearing rotation, distance radius proximity dispatch waves, and dynamic polyline drawing.",
-        "Killed-State FCM Wake-Up: Configured high-priority FCM and Notifee foreground services, driving dispatch alert delivery to <0.1% miss rate across killed and doze states.",
-        "Native Store Release Engineering: Configured Android Gradle and iOS Xcode build targets, managing signed release artifacts (.aab / .ipa), testing tracks, and store guidelines compliance for 6–7 apps on each store across 100+ updates.",
-        "Architecture & Code Quality: Conducted regular architectural code reviews, enforced modular state handling patterns, and mentored developers on native debugging, memory leak elimination, and Hermes profiling.",
+        "Dual-Store Production Release Engineering: Configured Android Gradle and iOS Xcode build targets, managing signed release artifacts (.aab / .ipa), testing tracks, and store guidelines compliance for 6–7 apps on each store across 100+ continuous updates.",
+        "Three-Sided Platform Ownership: Architected Rider, Driver, and Kiosk Terminal applications with synchronized real-time dispatch state machines, proximity driver matching, and automated fare engines.",
+        "Real-Time 60 FPS GPS Maps & Telemetry: Built high-performance map architectures with live vehicle tracking, animated driver bearing rotation, historical route playback, speed thresholds, and geofence entry/exit alerts.",
+        "Sub-Millisecond MMKV Persistence: Integrated MMKV C++ JSI storage for sub-millisecond local telemetry and trip caching, eliminating AsyncStorage serialization bridge lag and enabling instant app launches.",
+        "High-Priority Killed-State FCM Wake-Up: Configured high-priority FCM and Notifee foreground services, driving dispatch alert delivery to <0.1% miss rate across killed and doze states.",
+        "Architecture & Code Quality: Conducted regular architectural code reviews, enforced modular state handling patterns, and led native debugging, memory leak elimination, and Hermes engine profiling.",
       ],
-      skills: ["React Native", "Google Maps Platform", "GPS Telemetry", "FCM / APNs", "MMKV", "SQLite", "Reanimated", "Gradle", "Xcode"],
-    },
-    {
-      period: "Jun 2023 – Apr 2024",
-      role: "Lead React Native Mobile Engineer (Fleet Telematics & Solo Execution)",
-      company: "Softcruise Technologies Pvt. Ltd.",
-      location: "Agra, India",
-      focusBadge: "Enterprise Fleet Telematics & Dual-Store Releases",
-      description:
-        "Led mobile development and drove solo high-velocity execution for enterprise fleet telemetry and tracking platforms (TrackingHAWK X3, KBFVTS X3, Ingecom Pro, Japjee Inventory) across Android and iOS. Built real-time GPS tracking on maps, background geofencing, sub-millisecond local caching, and signed production releases for Google Play and Apple App Store.",
-      achievements: [
-        "Dual-Store Production Delivery: Built, signed, and maintained commercial fleet-tracking applications deployed across Google Play Store and Apple App Store.",
-        "Live Fleet Telemetry & Geofencing: Engineered live GPS vehicle tracking on maps with speed thresholds, ignition sensing, historical route playback, and geofence boundary alerts.",
-        "Sub-Millisecond MMKV Persistence: Integrated MMKV C++ JSI storage for sub-millisecond telemetry caching, achieving instant app launch without AsyncStorage serialization bridge lag.",
-        "Background Telemetry Handlers: Configured native background task handlers alerting fleet managers to critical vehicle speed violations and ignition state changes.",
-        "Asset Check-In Workflows: Built camera barcode and hardware QR scanning modules for automated driver-vehicle pairing and warehouse inventory intake.",
-      ],
-      skills: ["React Native", "React Native Maps", "MMKV Storage", "SQLite", "Background Geolocation", "FCM Alerts", "Barcode Scanning"],
+      skills: ["React Native", "Google Maps Platform", "GPS Telemetry", "FCM / APNs", "Notifee", "MMKV", "SQLite", "Reanimated", "Gradle", "Xcode", "Arabic RTL"],
     },
     {
       period: "Jan 2023 – Jun 2023",
@@ -378,15 +362,15 @@ export const portfolioData = {
       location: "Agra, India",
       focusBadge: "Digital Therapeutics MVP & WebViews",
       description:
-        "Led the mobile team and full-stack development for the initial MVP of the LazyEye pediatric visual assessment platform, operating across hybrid React Native and web stacks. Deeply specialized in WebViews, bidirectional postMessage data bridges, high-frequency canvas-to-native communication, and clinical document management. (Originally built Jan–Jun 2023; modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI as an interactive public evaluation demo).",
+        "Led mobile development and full-stack technical execution for the initial clinical MVP of the LazyEye pediatric visual assessment platform, operating across hybrid React Native and web stacks. Deeply specialized in WebViews, bidirectional postMessage data bridges, high-frequency canvas-to-native communication, and clinical document management. (Originally built Jan–Jun 2023; modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI as an interactive public evaluation demo).",
       achievements: [
-        "Team Leadership & MVP Architecture: Led mobile development and technical execution from concept through clinical MVP, establishing core component structures and native modules.",
+        "MVP Leadership & Cross-Platform Architecture: Led mobile development and technical execution from concept through clinical MVP, establishing core component structures, WebView containers, and native bridge modules.",
         "High-Frequency WebView Data Bridge: Engineered secure bidirectional message bridges (postMessage & native listeners) to exchange exercise telemetry and canvas coordinates between web views and native React Native modules.",
         "Clinical Dashboards & Canvases: Developed responsive web interfaces, interactive visual exercise canvases, and clinical dashboards for doctors and parents.",
         "Native File Downloads: Built robust download pipelines enabling doctors and parents to download clinical PDF assessment reports directly from WebViews into local device storage.",
         "Offline-First State Sync: Synchronized HTML5 canvas gameplay state, local caches, and centralized RESTful APIs.",
       ],
-      skills: ["WebViews", "postMessage Bridge", "React Native", "JavaScript (ES6+)", "HTML5 Canvas", "PDF Downloads", "REST APIs"],
+      skills: ["WebViews", "postMessage Bridge", "React Native", "JavaScript (ES6+)", "HTML5 Canvas", "PDF Downloads", "REST APIs", "Laravel API"],
     },
   ],
 

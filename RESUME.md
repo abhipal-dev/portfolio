@@ -26,20 +26,15 @@ Lead React Native Mobile Engineer with **3.5+ years of production experience** b
 
 ### Softcruise Technology Pvt. Ltd. | Agra, India *(Jan 2023 – Present)*
 
-**Lead React Native Mobile Engineer (Mobility Platform & Architecture)** | *May 2024 – Present*
-- **Three-Sided Platform Ownership:** Lead mobile engineering for production Android and iOS applications across fleet management, logistics, and multi-sided ride-hailing platforms (TaxiMuscat suite: Rider, Driver, and Walk-up Kiosk Terminal). Mainly React Native; occasional full-stack web coordination when needed.
-- **Architecture & Modularity:** Architect clean, maintainable mobile architectures with reusable component hierarchies, centralized API service layers, and predictable state management.
-- **Store Releases & Compliance:** Configure Android Gradle builds and iOS Xcode targets, generate signed release artifacts (`.aab` / `.ipa`), and manage submissions, testing tracks, and live releases for 6–7 apps on each store across 100+ updates.
-- **Code Reviews & Technical Mentorship:** Conduct regular architectural code reviews, enforce coding standards, and mentor developers in debugging native crashes, state handling, Hermes profiling, and responsive styling.
-
-**Lead React Native Mobile Engineer (Fleet Telematics & Solo Execution)** | *Jun 2023 – Apr 2024*
-- **Fleet & Telemetry Delivery:** Led mobile development and drove solo high-velocity execution for commercial fleet tracking applications (TrackingHAWK X3, KBFVTS X3, Ingecom Pro, Japjee Inventory) across Android and iOS.
-- **Real-Time GPS & Telematics:** Built live GPS vehicle tracking on maps with speed thresholds, ignition sensing, historical route playback, and geofence boundary alerts.
-- **Sub-Millisecond MMKV Persistence:** Integrated MMKV C++ JSI storage for sub-millisecond local caching of telemetry, achieving instant app launch and offline inspection of historical trips.
-- **Dual-Store Releases:** Configured signed release builds and managed continuous updates deployed to Google Play Store and Apple App Store.
+**Lead React Native Mobile Engineer** | *Jun 2023 – Present*
+- **Platform Architecture & Solo Execution:** Lead mobile engineering across enterprise fleet management platforms (TrackingHAWK X3, KBFVTS X3, Ingecom Pro), the three-sided ride-hailing suite (TaxiMuscat: Rider, Driver, Walk-up Kiosk Terminal), and warehouse logistics systems (Japjee Inventory). Driving both platform architecture and solo high-velocity execution. Mainly React Native; occasional full-stack web coordination when needed.
+- **Dual-Store Release Management:** Configure Android Gradle builds and iOS Xcode targets, generating signed release artifacts (`.aab` / `.ipa`), managing testing tracks, and ensuring store guidelines compliance for 6–7 apps on each store across 100+ continuous updates.
+- **Real-Time GPS Telemetry & Maps:** Engineer high-performance map architectures with live GPS vehicle tracking, animated driver bearing rotation, historical route playback, speed thresholds, and geofence alerts.
+- **Sub-Millisecond Persistence & Killed-State FCM:** Integrated MMKV C++ JSI storage for sub-millisecond local telemetry and trip caching; configured high-priority FCM and Notifee foreground services, driving dispatch alert delivery to <0.1% miss rate across killed and doze states.
+- **Architecture & Technical Leadership:** Conduct regular architectural code reviews, enforce modular state hierarchies, and guide native debugging, memory leak elimination, and Hermes engine profiling.
 
 **Lead Mobile & Web Engineer (Healthcare Platform MVP)** | *Jan 2023 – Jun 2023*
-- **Team Leadership & Healthcare MVP:** Led the mobile team and full-stack execution for the initial MVP of the LazyEye pediatric visual assessment platform across hybrid React Native and web stacks. (Originally built Jan–Jun 2023; modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI as an interactive public evaluation demo).
+- **MVP Leadership & Healthcare Platform:** Led mobile development and technical execution for the initial clinical MVP of the LazyEye pediatric visual assessment platform across hybrid React Native and web stacks. (Originally built Jan–Jun 2023; modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI as an interactive public evaluation demo).
 - **High-Frequency WebView Data Communication:** Engineered secure bidirectional message bridges (`postMessage` & native event listeners) to exchange real-time exercise telemetry, canvas coordinates, and test scores between HTML5 web views and native React Native modules.
 - **Native Document Handling & Storage:** Built native download pipelines allowing doctors and parents to download clinical PDF assessment reports directly from WebViews to device storage for offline access.
 
@@ -48,7 +43,7 @@ Lead React Native Mobile Engineer with **3.5+ years of production experience** b
 ## KEY PROJECTS
 
 ### 1. Driver, Rider & Kiosk Mobility Ecosystem (Three-Sided Ride-Hailing Platform & Web Portal)
-*Lead React Native Mobile Engineer | Mar 2024 – Present*  
+*Lead React Native Mobile Engineer | Mar 2026 – Present*  
 *(Tech: React Native, React Native Maps, Reanimated, FCM, Notifee, Axios, Laravel, Kiosk Terminal, Web Dispatch, RTL)*
 - **Three-Sided Platform Architecture:** Lead mobile development across Rider App (on-demand booking & tracking), Driver App (trip requests, active navigation, and telemetry), and Kiosk Terminal App (dedicated tablet/kiosk stations for walk-up bookings at hotels, malls, and airports) — all synchronized with central Web Dispatch & Fleet Management software.
 - **Kiosk Terminal Workflows:** Engineered dedicated tablet kiosk app supporting rapid walk-up ride bookings, automated nearby driver matching, thermal/digital receipts, and kiosk session security.
@@ -59,7 +54,7 @@ Lead React Native Mobile Engineer with **3.5+ years of production experience** b
 - **Reliable Notifications & RTL:** Configured FCM, APNs, and Notifee for high-priority trip alerts across foreground, background, and killed app states. Built dynamic English and Arabic multi-language support with comprehensive RTL and LTR mirroring.
 
 ### 2. TrackingHAWK X3 — Enterprise Fleet Management & GPS Telemetry
-*Lead React Native Mobile Engineer (Solo Delivery) | Jan 2023 – Present*  
+*Lead React Native Mobile Engineer (Solo Delivery) | Jun 2023 – Present*  
 *(Tech: React Native, Google Maps, SQLite, MMKV, FCM, Background Handlers, Barcode Scanning)*  
 *Verified Store Releases: [Google Play (com.softcruise.application.trackinghawkx3)](https://play.google.com/store/apps/details?id=com.softcruise.application.trackinghawkx3) • [Apple App Store (id6738086577)](https://apps.apple.com/in/app/trackinghawk-x3/id6738086577)*
 - **Dual-Store Production Ownership:** Built, signed, and independently maintained enterprise fleet-tracking application for Android and iOS across multiple major production releases.
@@ -78,7 +73,7 @@ Lead React Native Mobile Engineer with **3.5+ years of production experience** b
 - **Hermes Profiling & Performance:** Optimized multi-marker map clusters, eliminating memory leaks and ensuring smooth 60 FPS scrolling across budget Android hardware.
 
 ### 4. Ingecom GPS (Ingecom Pro) & Japjee (Client Mobility & Inventory)
-*Lead React Native Mobile Engineer | Jan 2024 – Present*  
+*Lead React Native Mobile Engineer | Jan 2024 – Present (Ingecom GPS) • Jan 2025 – Jul 2025 (Japjee)*  
 *Verified Store Release: [Google Play (com.v3.ingecompro)](https://play.google.com/store/apps/details?id=com.v3.ingecompro)*
 - **Ingecom GPS White-labeling:** Customized and deployed white-labeled international client instances with localized geofence alerts, CANBUS sensor analytics, and scheduled maintenance notifications.
 - **Japjee Inventory:** Independently developed cross-platform warehouse inventory mobile application with Role-Based Access Control (RBAC), real-time order tracking, and barcode scanning for logistics workflows.

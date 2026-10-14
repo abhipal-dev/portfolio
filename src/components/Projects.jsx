@@ -514,7 +514,7 @@ export const getActiveTrip = () => {
                   BARE REACT NATIVE 0.87.1 CLI
                 </span>
                 <span className="text-zinc-600">•</span>
-                <span className="text-zinc-400">Jan 2023 – Jun 2023 (Rebuilt 2026)</span>
+                <span className="text-zinc-400">{lazyEyeProject.period}</span>
               </div>
 
               <div className="flex items-center gap-2">
