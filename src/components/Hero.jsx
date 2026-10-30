@@ -7,10 +7,11 @@ import {
   MapPin,
   Copy,
   Check,
+  Layers,
+  Terminal,
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
-import MobileShowcase from './MobileShowcase';
 
 export default function Hero() {
   const { currentTheme } = useTheme();
@@ -26,9 +27,9 @@ export default function Hero() {
   const handleCopyPitch = () => {
     const pitchText = `Abhishek Pal — Lead React Native Mobile Engineer (3.5+ Years Exp) • Softcruise Technologies
 • Core Focus: Real-Time GPS Maps, Fleet Telemetry, 3-Sided Mobility (Rider, Driver, Kiosk), High-Priority FCM Push Notifications, MMKV synchronous caching.
-• Production Track Record: 6–7 Apps Published on Google Play & Apple App Store Each + Dedicated Kiosks & Fleet APKs with 100+ releases across RN 0.70 to 0.8x.
+• Production Track Record: 6–7 Apps Published on Google Play & Apple App Store Each + Dedicated Kiosks & Fleet APKs with 120+ releases across RN 0.70 to 0.8x.
 • Notice Period: 30 Days (Negotiable) • Open to Remote & Relocation
-• Portfolio: https://abhipal-dev.github.io/portfolio/
+• Portfolio: https://abhipal-dev.github.io/Portfolio/
 • Contact: abhipal85350@gmail.com | +91-9870962636 | Agra, India`;
 
     navigator.clipboard.writeText(pitchText);
@@ -73,7 +74,7 @@ export default function Hero() {
 
             {/* Substantive Value Proposition */}
             <p className="text-sm sm:text-base text-zinc-300 max-w-2xl leading-relaxed font-normal">
-              Specialized in high-reliability mobile systems operating under real-world constraints — <strong className="text-zinc-100 font-semibold">60 FPS Google Maps telemetry</strong>, three-sided fleet dispatch platforms (Rider, Driver, Kiosk), high-priority <strong className="text-zinc-100 font-semibold">FCM push notification pipelines</strong>, and sub-millisecond offline caching with MMKV. Shipped 6–7 distinct production apps each on <strong className="text-zinc-100 font-semibold">Google Play & Apple App Store</strong> with 100+ continuous releases across React Native 0.70 to 0.8x.
+              Specialized in high-reliability mobile systems operating under real-world constraints — <strong className="text-zinc-100 font-semibold">60 FPS Google Maps telemetry</strong>, three-sided fleet dispatch platforms (Rider, Driver, Kiosk), high-priority <strong className="text-zinc-100 font-semibold">FCM push notification pipelines</strong>, and sub-millisecond offline caching with MMKV. Shipped 6–7 distinct production apps each on <strong className="text-zinc-100 font-semibold">Google Play & Apple App Store</strong> with 120+ continuous releases across React Native 0.70 to 0.8x.
             </p>
 
             {/* Engineering Metrics Ledger */}
@@ -88,7 +89,7 @@ export default function Hero() {
               </div>
               <div className="space-y-0.5">
                 <div className="text-xl sm:text-2xl font-bold font-mono tracking-tight text-zinc-100">
-                  100+
+                  120+
                 </div>
                 <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">
                   Production Releases
@@ -220,13 +221,62 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Column: Live Mobile System Workbench */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="w-full max-w-[340px] mb-2 px-1 flex items-center justify-between text-[11px] font-mono text-zinc-400">
-              <span>// LIVE DEVICE WORKBENCH</span>
-              <span className="text-zinc-400">INTERACTIVE SIMULATOR</span>
+          {/* Right Column: Production Mobile Architecture Specification */}
+          <div className="lg:col-span-5">
+            <div className="rounded-xl border border-zinc-800/90 bg-[#0c1017] p-6 shadow-2xl space-y-5">
+              
+              <div className="flex items-center justify-between pb-3 border-b border-zinc-800/80 text-[11px] font-mono">
+                <span className="text-zinc-200 font-semibold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  // PRODUCTION ARCHITECTURE
+                </span>
+                <span className="text-zinc-500">RN 0.70 ➔ 0.8x</span>
+              </div>
+
+              <div className="space-y-4 text-xs font-mono">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wider text-zinc-500 font-semibold mb-1">
+                    Core Platform & Toolchain
+                  </div>
+                  <div className="text-zinc-200 font-medium">React Native • TypeScript • Hermes JIT</div>
+                  <div className="text-zinc-400 text-[11px]">Android Gradle 8/9 • Proguard/R8 • CocoaPods</div>
+                </div>
+
+                <div>
+                  <div className="text-[10px] uppercase tracking-wider text-zinc-500 font-semibold mb-1">
+                    Real-Time Mobility & Telemetry
+                  </div>
+                  <div className="text-zinc-200 font-medium">60 FPS Map Telemetry • Fused GPS Provider</div>
+                  <div className="text-zinc-400 text-[11px]">Bearing Interpolation • Zero Re-Render Mutable Refs</div>
+                </div>
+
+                <div>
+                  <div className="text-[10px] uppercase tracking-wider text-zinc-500 font-semibold mb-1">
+                    Persistence & Low-Latency State
+                  </div>
+                  <div className="text-zinc-200 font-medium">MMKV Synchronous JSI (0.1ms) • SQLite</div>
+                  <div className="text-zinc-400 text-[11px]">First-Frame Hydration • Offline Sync Queues</div>
+                </div>
+
+                <div>
+                  <div className="text-[10px] uppercase tracking-wider text-zinc-500 font-semibold mb-1">
+                    Store Releases & Lifecycle Hygiene
+                  </div>
+                  <div className="text-zinc-200 font-medium">120+ Deployments • 6+ Commercial Apps</div>
+                  <div className="text-zinc-400 text-[11px]">Google Play Console (.aab) • App Store Connect (.ipa)</div>
+                </div>
+              </div>
+
+              <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between text-[11px] font-mono">
+                <span className="text-emerald-400 flex items-center gap-1.5 font-medium">
+                  <span>✓</span> Production Proven
+                </span>
+                <a href="#projects" className="text-zinc-400 hover:text-zinc-200 transition-colors">
+                  View App Deep-Dives →
+                </a>
+              </div>
+
             </div>
-            <MobileShowcase />
           </div>
 
         </div>

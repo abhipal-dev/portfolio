@@ -26,7 +26,7 @@ export const portfolioData = {
   stats: [
     { label: "Production Experience", value: "3.5+ Yrs", detail: "Continuous career progression" },
     { label: "Apps Published", value: "6–7 Each", detail: "Google Play & Apple App Store" },
-    { label: "Production Updates", value: "100+ Releases", detail: "Component & feature scaling" },
+    { label: "Production Updates", value: "120+ Releases", detail: "Component & feature scaling" },
     { label: "Framework Upgrades", value: "RN 0.70 ➔ 0.8x", detail: "Gradle, Xcode & Hermes" },
   ],
 
