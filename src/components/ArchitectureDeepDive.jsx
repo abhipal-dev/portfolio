@@ -62,7 +62,7 @@ useEffect(() => {
       problem:
         'On the Lazyeye platform, the medical diagnostic exercise canvas was built in HTML5. When a child completed visual tests, the test scores and PDF report links needed to be sent to React Native native storage.',
       solution:
-        'Engineered a postMessage bridge using react-native-webview. The web app calls window.ReactNativeWebView.postMessage(JSON.stringify(data)), and React Native listens via the onMessage handler to parse results, update state, and trigger offline PDF downloads.',
+        'Engineered a postMessage bridge using react-native-webview paired with an MMKV offline session queue. The web app calls window.ReactNativeWebView.postMessage(JSON.stringify(data)), and React Native listens via onMessage to enqueue completed therapy sessions locally and flush to the cloud via exponential backoff upon reconnection.',
       metrics: [
         { label: 'Bridge Latency', value: '< 1 ms Speed' },
         { label: 'Data Delivery', value: '100% Reliable' },
