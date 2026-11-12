@@ -216,6 +216,8 @@ export const portfolioData = {
         "Dual-Engine Architecture: Instant persistent switcher between offline local HTML5 canvas engines (zero latency, calibrated touch controls) and the cloud-hosted Render web portal (https://lazyeye.onrender.com).",
         "Tactile Floating Bottom Navigation Bar: Modeled on mobility apps with liquid sliding pill indicators, Apple-like spring physics (Animated.spring, damping: 18, stiffness: 220), and touch jelly squish.",
         "MMKV Synchronous Storage & Reactive Settings Handler: Zero-latency local storage engine (mmkvStorage) and typed settings manager with pub/sub architecture for real-time preferences.",
+        "Offline Therapy Session Queue & Backoff Sync: Fault-tolerant queue engine with exponential retry backoff, persisting completed dichoptic exercises in MMKV during network drops and flushing telemetry upon reconnection.",
+        "Clinical Theme System: Multi-theme engine (Calm Dark slate mode and Daytime Clinic light mode) with real-time UI contrast adaptation.",
         "Authentic Clinical Dataset & Real Metrics: Integrated authentic SQLite database records dynamically computing daily dosage compliance, streak counters, and an interactive 84-day therapy heatmap.",
         "Bidirectional WebView Telemetry & PDF Downloads: Secure high-frequency postMessage event bridge to exchange real-time exercise telemetry, canvas coordinates, and test scores, alongside native PDF assessment report downloads.",
       ],
