@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhishek Pal - React Native Mobile Engineer</title>
+  <title>Abhishek Pal - Lead React Native Mobile Engineer</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
     :root {
-      --primary: #1e40af;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --border-color: #111827;
+      --primary: #1d4ed8;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #0f172a;
       --bg-page: #f1f5f9;
     }
 
@@ -25,8 +25,8 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: var(--text-main);
       background: var(--bg-page);
-      line-height: 1.28;
-      font-size: 8.4pt;
+      line-height: 1.25;
+      font-size: 8.15pt;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -98,10 +98,6 @@
       padding: 7px 14px;
     }
 
-    .btn-print:hover {
-      background: #1d4ed8;
-    }
-
     .btn-download {
       background: #059669;
       color: white;
@@ -109,62 +105,56 @@
       padding: 7px 14px;
     }
 
-    .btn-download:hover {
-      background: #047857;
-    }
-
     .btn-back {
+      background: rgba(255,255,255,0.08);
       color: #cbd5e1;
-      padding: 7px 12px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      padding: 7px 14px;
     }
 
-    .btn-back:hover {
-      color: #fff;
-      background: rgba(255,255,255,0.12);
-    }
-
-    /* Resume Document Wrapper (Calibrated for A4) */
     .resume-wrapper {
-      max-width: 210mm;
-      margin: 20px auto 40px auto;
-      background: #ffffff;
-      padding: 12mm 15mm 12mm 15mm;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.08);
-      box-sizing: border-box;
+      background: white;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 18px auto 40px auto;
+      padding: 7mm 11mm;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      border-radius: 4px;
     }
 
-    /* Centered Header matching original PDF */
+    /* Header */
     .header {
       text-align: center;
-      margin-bottom: 9px;
+      margin-bottom: 5px;
+      padding-bottom: 4px;
+      border-bottom: 1.4px solid #0f172a;
     }
 
-    .header h1 { font-size: 19pt;
+    .header h1 {
+      font-size: 18pt;
       font-weight: 800;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
       color: #0f172a;
-      text-transform: uppercase;
+      line-height: 1.1;
       margin-bottom: 2px;
-      line-height: 1.28;
+      text-transform: uppercase;
     }
 
-    .header .subtitle { font-size: 9.8pt;
-      font-weight: 600;
+    .header .subtitle {
+      font-size: 9.2pt;
+      font-weight: 700;
       color: #1d4ed8;
-      margin-bottom: 4px;
-      letter-spacing: 0.2px;
+      margin-bottom: 3px;
     }
 
     .contact-bar {
-      font-size: 8.4pt;
-      color: #374151;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 3px 6px;
-      line-height: 1.28;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px 8px;
+      font-size: 8pt;
+      color: #334155;
     }
 
     .contact-bar a {
@@ -178,29 +168,30 @@
     }
 
     .sep {
-      color: #9ca3af;
+      color: #94a3b8;
       margin: 0 1px;
     }
 
     /* Section styling */
     .section {
-      margin-bottom: 8.5px;
+      margin-bottom: 6px;
     }
 
-    .section-title { font-size: 9.8pt;
+    .section-title {
+      font-size: 9.4pt;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.4px;
       color: #0f172a;
       border-bottom: 1.2px solid #0f172a;
-      padding-bottom: 2px;
-      margin-bottom: 4px;
+      padding-bottom: 1.5px;
+      margin-bottom: 3.5px;
     }
 
     p.summary {
-      font-size: 8.4pt;
-      line-height: 1.28;
-      color: #1f2937;
+      font-size: 8.15pt;
+      line-height: 1.27;
+      color: #1e293b;
       text-align: justify;
     }
 
@@ -208,10 +199,10 @@
     .skills-list {
       display: flex;
       flex-direction: column;
-      gap: 2.5px;
-      font-size: 8.4pt;
-      line-height: 1.28;
-      color: #1f2937;
+      gap: 1.8px;
+      font-size: 8.1pt;
+      line-height: 1.24;
+      color: #1e293b;
     }
 
     .skills-list strong {
@@ -221,64 +212,66 @@
 
     /* Job and Project Rows */
     .job, .project {
-      margin-bottom: 7.5px;
+      margin-bottom: 5px;
     }
 
     .job-header, .project-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
 
-    .job-title, .project-title { font-size: 9.2pt;
+    .job-title, .project-title {
+      font-size: 9pt;
       font-weight: 700;
       color: #0f172a;
     }
 
     .company, .role-badge {
-      font-size: 8.4pt;
+      font-size: 8.2pt;
       font-weight: 700;
       color: #1d4ed8;
     }
 
     .date, .location {
-      font-size: 8.4pt;
-      color: #4b5563;
+      font-size: 8pt;
+      color: #475569;
       font-style: italic;
     }
 
     .tech-stack-tag {
-      font-size: 8.4pt;
+      font-size: 7.9pt;
       font-style: italic;
-      color: #4b5563;
-      margin-bottom: 2px;
+      color: #475569;
+      font-weight: 400;
     }
 
     /* Bullet items */
     ul.bullets {
       list-style-type: none;
       padding-left: 0;
-      margin-top: 2px;
+      margin-top: 1.5px;
     }
 
     ul.bullets li {
       position: relative;
-      padding-left: 12px;
-      margin-bottom: 2.8px;
-      font-size: 8.4pt;
-      line-height: 1.28;
-      color: #1f2937;
+      padding-left: 11px;
+      margin-bottom: 1.8px;
+      font-size: 8.05pt;
+      line-height: 1.25;
+      color: #1e293b;
       text-align: justify;
     }
 
     ul.bullets li::before {
       content: "•";
       position: absolute;
-      left: 1px;
-      color: #0f172a;
-      font-weight: 700;
-      font-size: 8.4pt;
+      left: 2px;
+      top: -0.5px;
+      color: #1d4ed8;
+      font-weight: 900;
+      font-size: 8.5pt;
     }
 
     ul.bullets li strong {
@@ -286,11 +279,23 @@
       font-weight: 700;
     }
 
+    .store-badge-row {
+      font-size: 7.8pt;
+      margin: 1px 0 2px 0;
+      color: #334155;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .store-badge-row a {
+      color: #1d4ed8;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
     /* Education */
     .edu-item {
-      margin-bottom: 4.5px;
-      font-size: 8.4pt;
-      line-height: 1.28;
+      margin-bottom: 3.5px;
+      font-size: 8.1pt;
     }
 
     .edu-name {
@@ -299,7 +304,7 @@
     }
 
     .edu-inst {
-      color: #4b5563;
+      color: #475569;
       font-style: italic;
     }
 
@@ -313,168 +318,14 @@
 
     @page {
       size: A4 portrait;
-      margin: 8mm 13mm 8mm 13mm;
-    }
-
-    /* Responsive styles for screens (eliminates collapsed buttons & oversized 15mm padding) */
-    @media screen and (max-width: 768px) {
-      body {
-        background: #0f172a;
-      }
-
-      .no-print-bar {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-        padding: 10px 14px;
-      }
-
-      .bar-info {
-        justify-content: space-between;
-        width: 100%;
-      }
-
-      .bar-actions {
-        display: flex;
-        width: 100%;
-        gap: 8px;
-      }
-
-      .btn-back {
-        flex: 0 0 auto;
-        padding: 8px 12px;
-        font-size: 12px;
-      }
-
-      .btn-download {
-        flex: 1 1 auto;
-        justify-content: center;
-        padding: 8px 12px;
-        font-size: 12px;
-      }
-
-      .btn-print {
-        flex: 0 0 auto;
-        padding: 8px 12px;
-        font-size: 12px;
-      }
-
-      /* Compact, responsive padding replacing bloated 15mm (57px) margins */
-      .resume-wrapper {
-        margin: 12px auto 30px auto;
-        padding: 18px 14px;
-        border-radius: 12px;
-        width: calc(100% - 16px);
-        max-width: calc(100% - 16px);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      }
-
-      .header h1 {
-        font-size: 16pt;
-        letter-spacing: 0.3px;
-      }
-
-      .header .subtitle {
-        font-size: 9pt;
-      }
-
-      .job-header, .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1px;
-      }
-
-      .date, .location {
-        font-size: 8pt;
-      }
-
-      p.summary, .skills-list, ul.bullets li, .edu-item {
-        font-size: 8.5pt;
-        line-height: 1.34;
-      }
-
-      /* On mobile screens, don't show artificial empty gap for print page breaks */
-      .page-break {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .no-print-bar {
-        padding: 8px 10px;
-        gap: 6px;
-      }
-
-      .bar-info {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2px;
-      }
-
-      .bar-title {
-        font-size: 12px;
-      }
-
-      .bar-badge {
-        font-size: 9.5px;
-        padding: 1px 6px;
-      }
-
-      .bar-actions {
-        gap: 6px;
-      }
-
-      .btn-back {
-        padding: 7px 10px;
-        font-size: 11px;
-      }
-
-      .btn-download {
-        padding: 7px 10px;
-        font-size: 11px;
-      }
-
-      .btn-print {
-        padding: 7px 10px;
-        font-size: 11px;
-      }
-
-      /* Ultra-clean padding for phones */
-      .resume-wrapper {
-        margin: 8px auto 20px auto;
-        padding: 14px 10px;
-        border-radius: 8px;
-        width: calc(100% - 10px);
-        max-width: calc(100% - 10px);
-      }
-
-      .header h1 {
-        font-size: 14pt;
-      }
-
-      .header .subtitle {
-        font-size: 8.5pt;
-      }
-
-      .section-title {
-        font-size: 9pt;
-      }
-
-      ul.bullets li {
-        padding-left: 10px;
-        text-align: left;
-      }
-
-      ul.bullets li::before {
-        left: 0;
-      }
+      margin: 7mm 11mm 7mm 11mm;
     }
 
     @media print {
       body {
         background: #ffffff !important;
         color: #000000 !important;
-        font-size: 8.4pt !important;
+        font-size: 8.15pt !important;
       }
 
       .no-print-bar {
@@ -532,12 +383,12 @@
 
   <div class="resume-wrapper">
 
-    <!-- PAGE 1 CONTENT -->
+    <!-- ================= PAGE 1 ================= -->
 
-    <!-- Header matching original user PDF exactly -->
+    <!-- Header -->
     <header class="header">
       <h1>ABHISHEK PAL</h1>
-      <div class="subtitle">Lead React Native Mobile Engineer | 3.5+ Years | 6–7 Apps on Each Store | 100+ Production Updates (RN 0.70 ➔ 0.8x)</div>
+      <div class="subtitle">Lead React Native Mobile Engineer | 3.5+ Years | 6–7 Apps on Each Store | 200+ Production Updates (RN 0.70 ➔ 0.8x)</div>
       <div class="contact-bar">
         <span>Agra, India (Open to Remote / Relocation)</span>
         <span class="sep">•</span>
@@ -560,7 +411,7 @@
     <section class="section">
       <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
       <p class="summary">
-        Lead React Native Mobile Engineer with <strong>3.5+ years of production experience</strong> building, maintaining, and scaling high-performance cross-platform Android and iOS applications. Built and published <strong>6–7 distinct production applications on each store</strong> (Google Play Store & Apple App Store), as well as purpose-built enterprise tablet kiosks and internal fleet APKs, delivering <strong>100+ continuous production updates</strong>, component enhancements, and framework migrations across <strong>React Native 0.70 to 0.8x</strong> with Gradle, CocoaPods, and targetSdkVersion 34/35 compliance. Specialized in real-time GPS tracking, 60 FPS interactive map architectures, background location telemetry, geofencing, driver dispatch workflows, push notification systems, and bidirectional WebView data bridges (postMessage). Currently leading mobile engineering for a three-sided mobility platform comprising Rider, Driver, and Kiosk Terminal applications synchronized with central Web dispatch software. Mainly React Native; occasional full-stack web coordination when needed.
+        Lead React Native Mobile Engineer with <strong>3.5+ years of production experience</strong> architecting, scaling, and maintaining high-performance cross-platform Android and iOS applications. Built and published <strong>6–7 distinct production applications on each store</strong> (Google Play Store & Apple App Store), as well as enterprise tablet kiosk stations and internal fleet APKs, delivering <strong>200+ continuous production updates</strong>, feature iterations, and framework migrations across <strong>React Native 0.70 to 0.8x</strong> with Gradle, CocoaPods, and targetSdkVersion 34/35 compliance. Specialized in real-time GPS tracking, 60 FPS interactive map architectures, background location telemetry, geofencing, driver dispatch workflows, push notification pipelines (FCM/Notifee), and bidirectional WebView data bridges (postMessage). Currently leading mobile engineering across a three-sided mobility platform (Rider, Driver, Kiosk) synchronized with central Web dispatch software. Mainly React Native; occasional full-stack web coordination.
       </p>
     </section>
 
@@ -572,7 +423,7 @@
         <div><strong>• Maps, GPS & Mobility (Core Specialization):</strong> React Native Maps, Google Maps Platform, Real-time GPS Tracking, Location Telemetry, Geofencing, Polyline Routes, ETA Calculation, Driver Dispatch & Proximity Matching, Walk-up Kiosk Workflows</div>
         <div><strong>• Push Notifications & Background Processing:</strong> Firebase Cloud Messaging (FCM), APNs, Notifee, Headless JS, Background Task Handlers, Notification-driven Deep Navigation</div>
         <div><strong>• WebViews & File Handling:</strong> WebView Integration, Bidirectional WebView-to-App Communication (postMessage bridge), Native File Downloads & Local Document Storage</div>
-        <div><strong>• Storage & Offline Architecture:</strong> MMKV Storage, SQLite, High-frequency Telemetry Caching, Offline Synchronization Strategies</div>
+        <div><strong>• Storage & Offline Architecture:</strong> MMKV Storage, SQLite, High-frequency Telemetry Caching, Offline Synchronization Strategies, Exponential Backoff Sync</div>
         <div><strong>• UI, Animation & Localization:</strong> UI Kitten, React Native Paper, React Native Reanimated, Responsive Layouts, Dynamic Arabic/English RTL and LTR Mirroring</div>
         <div><strong>• Backend & Integrations:</strong> RESTful APIs, Axios, Laravel/PHP APIs, MySQL, Redis, Web App Synchronization, Payment Gateways</div>
         <div><strong>• Builds & Release Management:</strong> Android Studio (Gradle), Xcode, Google Play Console, Apple App Store Connect, Production Artifacts (.aab/.ipa), Enterprise APK & Kiosk Deployments, Git</div>
@@ -582,67 +433,59 @@
     <!-- Professional Experience -->
     <section class="section">
       <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
-      <div class="job" style="margin-bottom: 5px;">
+      <div class="job">
         <div class="job-header">
           <span class="job-title">Softcruise Technology Pvt. Ltd. | Agra, India</span>
           <span class="date">Jan 2023 – Present</span>
         </div>
 
-        <div style="margin-top: 2px;">
+        <div style="margin-top: 1.5px;">
           <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <span class="company" style="font-size: 8.7pt;">Lead React Native Mobile Engineer</span>
-            <span class="date" style="font-size: 8pt;">Jun 2023 – Present</span>
+            <span class="company">Lead React Native Mobile Engineer</span>
+            <span class="date">Jun 2023 – Present</span>
           </div>
-          <ul class="bullets" style="margin-top: 1px;">
-            <li><strong>Platform Ownership & Solo Delivery:</strong> Lead mobile architecture across commercial fleet management platforms (TrackingHAWK X3, KBFVTS X3, Ingecom Pro), the 3-sided ride-hailing suite (TaxiMuscat: Rider, Driver, Kiosk), and logistics inventory systems (Japjee Inventory). Driving both platform architecture and solo execution. Mainly React Native; occasional full-stack web coordination.</li>
-            <li><strong>Store Releases & Compliance:</strong> Configured signed Gradle (.aab) and Xcode (.ipa) production builds, managing dual-store compliance for 6–7 apps on each store across 100+ updates.</li>
-            <li><strong>Real-Time GPS Maps & Telemetry:</strong> Engineered high-performance map architectures with live vehicle tracking, animated driver bearing rotation, route playback, speed thresholds, and geofence alerts.</li>
-            <li><strong>Sub-Millisecond MMKV & FCM:</strong> Integrated MMKV C++ JSI storage for sub-millisecond local telemetry caching; configured high-priority FCM and Notifee foreground services, driving dispatch alert delivery to &lt;0.1% miss rate across killed and doze states.</li>
-            <li><strong>Architecture & Mentorship:</strong> Conduct architectural code reviews, enforce modular state hierarchies, and mentor developers on native debugging, state handling, and Hermes profiling.</li>
+          <ul class="bullets">
+            <li><strong>Full-Lifecycle Platform Ownership:</strong> Lead end-to-end mobile architecture and solo execution across commercial fleet tracking suites (TrackingHAWK X3, KBFVTS X3, Ingecom Pro), the 3-sided ride-hailing ecosystem (TaxiMuscat Rider, Driver, Kiosk), and logistics inventory systems (Japjee Inventory). Driving technical roadmap, architecture, and production delivery.</li>
+            <li><strong>Store Releases & Compliance (200+ Updates):</strong> Configure Android Gradle builds and iOS Xcode targets, generate signed release artifacts (.aab / .ipa), and manage release tracks, store reviews, and live rollouts for 6–7 apps on each store across 200+ production updates with targetSdkVersion 34/35 compliance.</li>
+            <li><strong>Real-Time GPS Maps & Telemetry:</strong> Engineered 60 FPS interactive map architectures using react-native-maps with live vehicle speed, ignition sensing, historical route playback, animated driver bearing rotation, and geofence boundary crossing alerts.</li>
+            <li><strong>Sub-Millisecond MMKV & Push Delivery:</strong> Implemented MMKV C++ JSI storage for sub-millisecond local caching of telemetry and offline session states; configured high-priority FCM and Notifee foreground services, ensuring &lt;0.1% notification miss rate across killed and doze states.</li>
+            <li><strong>Architecture & Mentorship:</strong> Enforce clean modular state hierarchies, establish standardized API client layers, conduct architectural code reviews, and mentor developers on native crash debugging and Hermes memory profiling.</li>
           </ul>
         </div>
 
-        <div style="margin-top: 4px;">
+        <div style="margin-top: 3.5px;">
           <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <span class="company" style="font-size: 8.7pt; color: #0f172a;">Lead Mobile & Web Engineer (Healthcare Platform MVP)</span>
-            <span class="date" style="font-size: 8pt;">Jan 2023 – Jun 2023</span>
+            <span class="company" style="color: #0f172a;">Lead Mobile & Web Engineer (Healthcare Platform MVP)</span>
+            <span class="date">Jan 2023 – Jun 2023</span>
           </div>
-          <ul class="bullets" style="margin-top: 1px;">
-            <li><strong>Team Leadership & Healthcare MVP:</strong> Led mobile development and technical execution for the LazyEye pediatric clinical MVP; engineered bidirectional WebView postMessage bridges, clinical dashboards, and native PDF report downloads. (Modernized 2026 on Bare RN 0.87.1).</li>
+          <ul class="bullets">
+            <li><strong>Healthcare MVP Leadership:</strong> Led mobile development and technical execution for the LazyEye pediatric visual assessment MVP; engineered bidirectional WebView postMessage bridges, responsive clinical dashboards, and native PDF download pipelines. (Modernized 2026 on Bare RN 0.87.1).</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Key Projects (Part 1 on Page 1) -->
-    <section class="section">
+    <!-- ================= PAGE BREAK TO PAGE 2 ================= -->
+    <div class="page-break"></div>
+
+    <!-- ================= PAGE 2 ================= -->
+    <section class="section" style="padding-top: 1mm;">
       <h2 class="section-title">KEY PROJECTS</h2>
 
+      <!-- Project 1 -->
       <div class="project">
         <div class="project-header">
           <span class="project-title">1. Driver, Rider & Kiosk Mobility Ecosystem (Three-Sided Ride-Hailing Platform & Web Portal)</span>
         </div>
-        <div class="role-badge">Lead React Native Mobile Engineer | Mar 2026 – Present <span class="tech-stack-tag">(Tech: React Native, React Native Maps, Reanimated, FCM, Notifee, Axios, Laravel, Kiosk Terminal, Web Dispatch, RTL)</span></div>
+        <div class="role-badge">Lead React Native Mobile Engineer | Mar 2024 – Present <span class="tech-stack-tag">(Tech: React Native, React Native Maps, Reanimated, FCM, Notifee, Axios, Laravel, Kiosk Terminal, Web Dispatch, RTL)</span></div>
         <ul class="bullets">
-          <li><strong>Three-Sided Platform Architecture:</strong> Lead mobile development across the complete three-sided mobility platform — Rider App (on-demand booking & tracking), Driver App (trip requests, active navigation, and telemetry), and Kiosk Terminal App (dedicated tablet/kiosk stations for walk-up bookings at hotels, malls, and airports) — all synchronized with central Web Dispatch & Fleet Management software.</li>
-          <li><strong>Kiosk Terminal Workflows:</strong> Engineered the Kiosk Terminal application tailored for tablet kiosks and counter operators, supporting rapid walk-up ride creation, automated driver matching, thermal/digital receipts, and kiosk session security.</li>
+          <li><strong>Three-Sided Platform Architecture:</strong> Lead mobile development across the complete three-sided mobility platform — Rider App (on-demand booking & live tracking), Driver App (trip requests, active turn-by-turn navigation, and telemetry), and Kiosk Terminal App (dedicated tablet stations for walk-up bookings at hotels, malls, and airports) — all synchronized with central Web Dispatch software.</li>
+          <li><strong>Kiosk Terminal Workflows:</strong> Engineered the Kiosk Terminal application tailored for tablet kiosks and counter operators, supporting rapid walk-up ride creation, automated driver matching, thermal/digital receipts, and secure kiosk session management.</li>
           <li><strong>Interactive Map & Driver Tracking:</strong> Built real-time map interfaces across rider and driver apps using react-native-maps with smooth animated driver marker movement, bearing rotation, and dynamic polyline route drawing powered by React Native Reanimated.</li>
           <li><strong>Dispatch & Proximity Matching:</strong> Implemented real-time GPS dispatch workflows matching incoming rider and kiosk requests with eligible nearby drivers based on distance radius waves, vehicle category, and active status.</li>
-          <li><strong>Complete Ride Lifecycle:</strong> Engineered the end-to-end trip state machine: pickup/drop selection → fare calculation & estimate → dispatching → driver acceptance → driver arrival → start ride with OTP → in-transit navigation → ride completion & rating.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PAGE BREAK TO PAGE 2 (EXACTLY MATCHING USER'S ORIGINAL PDF) -->
-    <div class="page-break"></div>
-
-    <!-- PAGE 2 CONTENT -->
-    <section class="section" style="padding-top: 1mm;">
-      <div class="project" style="margin-top: 0;">
-        <ul class="bullets">
+          <li><strong>Complete Ride Lifecycle:</strong> Engineered end-to-end trip state machine: pickup/drop selection → fare calculation & estimate → dispatching → driver acceptance → driver arrival → start ride with OTP → in-transit navigation → ride completion & rating.</li>
           <li><strong>Fare Engine & Promo Caps:</strong> Integrated multi-tier fare calculation (base fare, distance, time, wait time, peak surge) and client-side promo code validation, handling percentage/fixed discounts, eligibility thresholds, global usage caps, and per-user limits.</li>
-          <li><strong>Notification Delivery Across All App States:</strong> Configured FCM, APNs, and Notifee to reliably deliver high-priority trip alerts and sound notifications across foreground, background, and killed application states.</li>
-          <li><strong>MENA Localization & RTL:</strong> Built dynamic English and Arabic multi-language support with comprehensive Right-to-Left (RTL) and Left-to-Right (LTR) layout mirroring across all screens and interactive sheets.</li>
+          <li><strong>Notification Delivery & MENA RTL:</strong> Configured FCM, APNs, and Notifee to reliably deliver high-priority trip alerts across foreground, background, and killed application states; built dynamic Arabic/English multi-language support with full Right-to-Left (RTL) layout mirroring.</li>
         </ul>
       </div>
 
@@ -652,8 +495,8 @@
           <span class="project-title">2. TrackingHAWK X3 — Enterprise Fleet Management & GPS Telemetry</span>
         </div>
         <div class="role-badge">Lead React Native Mobile Engineer (Solo Delivery) | Jun 2023 – Present <span class="tech-stack-tag">(Tech: React Native, Google Maps, SQLite, MMKV, FCM, Background Handlers, Barcode)</span></div>
-        <div style="font-size: 8pt; margin-top: 2px; color: #1d4ed8; font-family: monospace;">
-          Verified Store Releases: <a href="https://play.google.com/store/apps/details?id=com.softcruise.application.trackinghawkx3" target="_blank" style="color: #16a34a; text-decoration: underline;">Google Play (com.softcruise.application.trackinghawkx3)</a> • <a href="https://apps.apple.com/in/app/trackinghawk-x3/id6738086577" target="_blank" style="color: #0284c7; text-decoration: underline;">App Store (id6738086577)</a>
+        <div class="store-badge-row">
+          Verified Store Releases: <a href="https://play.google.com/store/apps/details?id=com.softcruise.application.trackinghawkx3" target="_blank">Google Play (com.softcruise.application.trackinghawkx3)</a> • <a href="https://apps.apple.com/in/app/trackinghawk-x3/id6738086577" target="_blank">App Store (id6738086577)</a>
         </div>
         <ul class="bullets">
           <li><strong>Dual-Store Production Ownership:</strong> Built, signed, and independently maintained enterprise fleet-tracking application for Android and iOS across multiple major production releases.</li>
@@ -670,14 +513,13 @@
           <span class="project-title">3. KBFVTS X3 — Commercial Fleet Telematics & Vehicle Tracking Platform</span>
         </div>
         <div class="role-badge">Lead React Native Mobile Engineer | Jan 2024 – Present <span class="tech-stack-tag">(Tech: React Native, React Native Maps, Play Console, App Store Connect, FCM, MMKV)</span></div>
-        <div style="font-size: 8pt; margin-top: 2px; color: #1d4ed8; font-family: monospace;">
-          Verified Store Releases: <a href="https://play.google.com/store/apps/details?id=com.kbfvts.x3" target="_blank" style="color: #16a34a; text-decoration: underline;">Google Play (com.kbfvts.x3)</a> • <a href="https://apps.apple.com/in/app/kbfvts-x3/id6739529934" target="_blank" style="color: #0284c7; text-decoration: underline;">App Store (id6739529934)</a>
+        <div class="store-badge-row">
+          Verified Store Releases: <a href="https://play.google.com/store/apps/details?id=com.kbfvts.x3" target="_blank">Google Play (com.kbfvts.x3)</a> • <a href="https://apps.apple.com/in/app/kbfvts-x3/id6739529934" target="_blank">App Store (id6739529934)</a>
         </div>
         <ul class="bullets">
           <li><strong>Dual-Store Verified Releases:</strong> Independently compiled, tested, and published commercial vehicle tracking suite on Google Play and Apple App Store.</li>
           <li><strong>Fleet Telematics & Speed Logging:</strong> Continuous GPS vehicle tracking with speed threshold alerts, ignition sensing, idle duration monitoring, and geofence entry/exit detection.</li>
-          <li><strong>High-Reliability Background FCM:</strong> Configured FCM and APNs background services to deliver mission-critical alerts for unauthorized movement and emergency triggers.</li>
-          <li><strong>Hermes Profiling & Performance:</strong> Optimized multi-marker map clusters, eliminating memory leaks and ensuring smooth 60 FPS scrolling across budget Android hardware.</li>
+          <li><strong>Hermes Profiling & Background FCM:</strong> Optimized multi-marker map clusters, eliminating memory leaks and ensuring smooth 60 FPS scrolling across budget Android hardware; configured FCM and APNs background services for instant emergency triggers.</li>
         </ul>
       </div>
 
@@ -686,13 +528,13 @@
         <div class="project-header">
           <span class="project-title">4. Ingecom GPS (Ingecom Pro) & Japjee Inventory Platform</span>
         </div>
-        <div class="role-badge">Lead React Native Mobile Engineer | Jan 2024 – Present (Ingecom GPS) • Jan 2025 – Jul 2025 (Japjee) <span class="tech-stack-tag">(Tech: React Native, Google Play, RBAC, Barcode Scanning, CANBUS)</span></div>
-        <div style="font-size: 8pt; margin-top: 2px; color: #1d4ed8; font-family: monospace;">
-          Verified Store Release: <a href="https://play.google.com/store/apps/details?id=com.v3.ingecompro" target="_blank" style="color: #16a34a; text-decoration: underline;">Google Play (com.v3.ingecompro)</a>
+        <div class="role-badge">Lead React Native Mobile Engineer | Jan 2024 – Present <span class="tech-stack-tag">(Tech: React Native, Google Play, RBAC, Barcode Scanning, CANBUS)</span></div>
+        <div class="store-badge-row">
+          Verified Store Release: <a href="https://play.google.com/store/apps/details?id=com.v3.ingecompro" target="_blank">Google Play (com.v3.ingecompro)</a>
         </div>
         <ul class="bullets">
           <li><strong>Ingecom GPS White-labeling:</strong> Customized and deployed white-labeled international client instances with localized geofence alerts, CANBUS sensor analytics, and scheduled maintenance notifications.</li>
-          <li><strong>Japjee Inventory:</strong> Independently developed a cross-platform inventory management application with Role-Based Access Control (RBAC), real-time order tracking, and barcode scanning for warehouse workflows.</li>
+          <li><strong>Japjee Inventory:</strong> Independently developed cross-platform inventory management application with Role-Based Access Control (RBAC), real-time order tracking, and barcode scanning for warehouse workflows.</li>
         </ul>
       </div>
 
@@ -702,14 +544,12 @@
           <span class="project-title">5. LazyEye — Digital Dichoptic Vision Therapy & Clinical Assessment Mobile Platform</span>
         </div>
         <div class="role-badge">Lead Mobile & Web Engineer (Team Lead) | Jan 2023 – Jun 2023 (Rebuilt 2026) <span class="tech-stack-tag">(Tech: Bare RN 0.87.1 CLI, React 19, MMKV, HTML5 Canvas WebViews, postMessage, Laravel API, Android API 37)</span></div>
-        <div style="font-size: 7.8pt; margin-top: 2px; color: #0284c7; font-family: monospace;">
-          Live Platform: <a href="https://lazyeye.onrender.com" target="_blank" style="color: #0284c7; text-decoration: underline;">https://lazyeye.onrender.com</a> | Sandbox Logins: Doctor (<code>dr_sarah</code> / <code>doctor123</code>), Patient (<code>abhicoder</code> / <code>4567</code>)
+        <div class="store-badge-row">
+          Live Platform: <a href="https://lazyeye.onrender.com" target="_blank">https://lazyeye.onrender.com</a> | Recruiter Sandbox: Doctor (dr_sarah / doctor123), Patient (abhicoder / 4567)
         </div>
         <ul class="bullets">
-          <li><strong>Modernized Bare React Native 0.87.1 Showcase:</strong> Originally built Jan–Jun 2023 at Softcruise; modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI (Android 15 / API 37 & iOS) with React 19 and AGP 9.2 as an open-source clinical demonstration.</li>
-          <li><strong>11 Clinical Vision Engines & Gestures:</strong> Built 11 responsive HTML5 canvas vision engines (Tetris, Snake, Menja 3D, Bubble Shooter, Ping-Pong, Maze, etc.) with touch gesture pass-through and red-cyan anaglyph calibration.</li>
-          <li><strong>Dual Engine & MMKV Storage:</strong> Built instant switcher between offline local HTML5 canvas engines and live Render cloud portal, backed by a zero-latency synchronous MMKV storage layer (<code>mmkvStorage</code>).</li>
-          <li><strong>Bidirectional WebView Telemetry & PDF Reports:</strong> Implemented secure <code>postMessage</code> bridge for real-time exercise score sync and native download pipeline for clinical PDF assessment reports.</li>
+          <li><strong>Modernized Bare React Native 0.87.1 Showcase:</strong> Modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI (Android 15 / API 37 & iOS) with React 19 and AGP 9.2 as an open-source clinical demonstration.</li>
+          <li><strong>11 Clinical Vision Engines & Offline MMKV Queue:</strong> Built 11 responsive HTML5 canvas vision engines with red-cyan filtering, backed by zero-latency MMKV storage, exponential backoff sync, and bidirectional postMessage bridge for real-time score logging and native PDF report downloads.</li>
         </ul>
       </div>
     </section>
@@ -718,11 +558,11 @@
     <section class="section">
       <h2 class="section-title">EDUCATION</h2>
       <div class="edu-item">
-        <div class="edu-name">Master of Computer Applications (MCA) <span style="font-weight: 400; color: #4b5563;">| 2021 – 2023</span></div>
+        <div class="edu-name">Master of Computer Applications (MCA) <span style="font-weight: 400; color: #475569;">| 2021 – 2023</span></div>
         <div class="edu-inst">Hindustan Institute of Management and Computer Science, Mathura</div>
       </div>
       <div class="edu-item">
-        <div class="edu-name">Bachelor of Computer Applications (BCA) <span style="font-weight: 400; color: #4b5563;">| 2018 – 2021</span></div>
+        <div class="edu-name">Bachelor of Computer Applications (BCA) <span style="font-weight: 400; color: #475569;">| 2018 – 2021</span></div>
         <div class="edu-inst">Uttam Institute of Technology and Management, Agra</div>
       </div>
     </section>
