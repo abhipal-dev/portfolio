@@ -1,12 +1,12 @@
 # ABHISHEK PAL
-**Lead React Native Mobile Engineer | 3.5+ Years | 6–7 Apps on Each Store | 100+ Production Updates (RN 0.70 ➔ 0.8x)**  
+**Lead React Native Mobile Engineer | 3.5+ Years | 6–7 Apps on Each Store | 200+ Production Updates (RN 0.70 ➔ 0.8x)**  
 Agra, India (Open to Remote / Relocation) • Notice Period: **30 Days (Negotiable)** • [abhipal85350@gmail.com](mailto:abhipal85350@gmail.com) • [+91-9870962636](tel:+919870962636)  
 [linkedin.com/in/abhishek-pal-a5a497217](https://linkedin.com/in/abhishek-pal-a5a497217) • [github.com/abhipal-dev](https://github.com/abhipal-dev) • [abhipal-dev.github.io/portfolio](https://abhipal-dev.github.io/portfolio/)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-Lead React Native Mobile Engineer with **3.5+ years of production experience** building, maintaining, and scaling high-performance cross-platform Android and iOS applications. Specialized in real-time GPS tracking, 60 FPS interactive map architectures, background location telemetry, geofencing, multi-sided driver dispatch workflows, high-priority Firebase Cloud Messaging (FCM), and low-latency local data handling with MMKV and SQLite. Shipped **6–7 distinct production applications each on Google Play and Apple App Store** with 100+ continuous releases across React Native 0.70 to 0.8x. Proven track record leading mobile platform delivery end-to-end — from technical architecture through REST API integration to Play Store/App Store deployment and post-release support. Mainly React Native; occasional full-stack web coordination when needed.
+Lead React Native Mobile Engineer with **3.5+ years of production experience** building, maintaining, and scaling high-performance cross-platform Android and iOS applications. Specialized in real-time GPS tracking, 60 FPS interactive map architectures, background location telemetry, geofencing, multi-sided driver dispatch workflows, high-priority Firebase Cloud Messaging (FCM), and low-latency local data handling with MMKV and SQLite. Shipped **6–7 distinct production applications each on Google Play and Apple App Store** with 200+ continuous releases across React Native 0.70 to 0.8x. Proven track record leading mobile platform delivery end-to-end — from technical architecture through REST API integration to Play Store/App Store deployment and post-release support. Mainly React Native; occasional full-stack web coordination when needed.
 
 ---
 
@@ -28,7 +28,7 @@ Lead React Native Mobile Engineer with **3.5+ years of production experience** b
 
 **Lead React Native Mobile Engineer** | *Jun 2023 – Present*
 - **Platform Architecture & Solo Execution:** Lead mobile engineering across enterprise fleet management platforms (TrackingHAWK X3, KBFVTS X3, Ingecom Pro), the three-sided ride-hailing suite (TaxiMuscat: Rider, Driver, Walk-up Kiosk Terminal), and warehouse logistics systems (Japjee Inventory). Driving both platform architecture and solo high-velocity execution. Mainly React Native; occasional full-stack web coordination when needed.
-- **Dual-Store Release Management:** Configure Android Gradle builds and iOS Xcode targets, generating signed release artifacts (`.aab` / `.ipa`), managing testing tracks, and ensuring store guidelines compliance for 6–7 apps on each store across 100+ continuous updates.
+- **Dual-Store Release Management:** Configure Android Gradle builds and iOS Xcode targets, generating signed release artifacts (`.aab` / `.ipa`), managing testing tracks, and ensuring store guidelines compliance for 6–7 apps on each store across 200+ continuous updates.
 - **Real-Time GPS Telemetry & Maps:** Engineer high-performance map architectures with live GPS vehicle tracking, animated driver bearing rotation, historical route playback, speed thresholds, and geofence alerts.
 - **Sub-Millisecond Persistence & Killed-State FCM:** Integrated MMKV C++ JSI storage for sub-millisecond local telemetry and trip caching; configured high-priority FCM and Notifee foreground services, driving dispatch alert delivery to <0.1% miss rate across killed and doze states.
 - **Architecture & Technical Leadership:** Conduct regular architectural code reviews, enforce modular state hierarchies, and guide native debugging, memory leak elimination, and Hermes engine profiling.
