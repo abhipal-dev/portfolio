@@ -1,12 +1,12 @@
 # ABHISHEK PAL
-**Lead React Native Mobile Engineer | 3.5+ Years | 6–7 Apps on Each Store | 200+ Production Updates (RN 0.70 ➔ 0.8x)**  
+**Lead React Native Mobile Engineer | 3.5+ Years | 6–7 Apps on Each Store | 200+ Production Updates (RN 0.70 ➔ 0.8x • SDK 32 ➔ 35)**  
 Agra, India (Open to Remote / Relocation) • Notice Period: **30 Days (Negotiable)** • [abhipal85350@gmail.com](mailto:abhipal85350@gmail.com) • [+91-9870962636](tel:+919870962636)  
 [linkedin.com/in/abhishek-pal-a5a497217](https://linkedin.com/in/abhishek-pal-a5a497217) • [github.com/abhipal-dev](https://github.com/abhipal-dev) • [abhipal-dev.github.io/portfolio](https://abhipal-dev.github.io/portfolio/)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-Lead React Native Mobile Engineer with **3.5+ years of production experience** building, maintaining, and scaling high-performance cross-platform Android and iOS applications. Specialized in real-time GPS tracking, 60 FPS interactive map architectures, background location telemetry, geofencing, multi-sided driver dispatch workflows, high-priority Firebase Cloud Messaging (FCM), and low-latency local data handling with MMKV and SQLite. Shipped **6–7 distinct production applications each on Google Play and Apple App Store** with 200+ continuous releases across React Native 0.70 to 0.8x. Proven track record leading mobile platform delivery end-to-end — from technical architecture through REST API integration to Play Store/App Store deployment and post-release support. Mainly React Native; occasional full-stack web coordination when needed.
+Lead React Native Mobile Engineer with **3.5+ years of production experience** building, maintaining, and scaling high-performance cross-platform Android and iOS applications. Specialized in real-time GPS tracking, 60 FPS interactive map architectures, background location telemetry, geofencing, multi-sided driver dispatch workflows, high-priority Firebase Cloud Messaging (FCM), and low-latency local data handling with MMKV and SQLite. Shipped **6–7 distinct production applications each on Google Play and Apple App Store** with 200+ continuous releases across React Native 0.70 to 0.8x with **targetSdkVersion 32 to 35 compliance (Android 12L ➔ 15)** since Jan 2023. Proven track record leading mobile platform delivery end-to-end — from technical architecture through REST API integration to Play Store/App Store deployment and post-release support. Mainly React Native; occasional full-stack web coordination when needed.
 
 ---
 
