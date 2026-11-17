@@ -482,10 +482,8 @@
           <li><strong>Three-Sided Platform Architecture:</strong> Lead mobile development across the complete three-sided mobility platform — Rider App (on-demand booking & live tracking), Driver App (trip requests, active turn-by-turn navigation, and telemetry), and Kiosk Terminal App (dedicated tablet stations for walk-up bookings at hotels, malls, and airports) — all synchronized with central Web Dispatch software.</li>
           <li><strong>Kiosk Terminal Workflows:</strong> Engineered the Kiosk Terminal application tailored for tablet kiosks and counter operators, supporting rapid walk-up ride creation, automated driver matching, thermal/digital receipts, and secure kiosk session management.</li>
           <li><strong>Interactive Map & Driver Tracking:</strong> Built real-time map interfaces across rider and driver apps using react-native-maps with smooth animated driver marker movement, bearing rotation, and dynamic polyline route drawing powered by React Native Reanimated.</li>
-          <li><strong>Dispatch & Proximity Matching:</strong> Implemented real-time GPS dispatch workflows matching incoming rider and kiosk requests with eligible nearby drivers based on distance radius waves, vehicle category, and active status.</li>
-          <li><strong>Complete Ride Lifecycle:</strong> Engineered end-to-end trip state machine: pickup/drop selection → fare calculation & estimate → dispatching → driver acceptance → driver arrival → start ride with OTP → in-transit navigation → ride completion & rating.</li>
-          <li><strong>Fare Engine & Promo Caps:</strong> Integrated multi-tier fare calculation (base fare, distance, time, wait time, peak surge) and client-side promo code validation, handling percentage/fixed discounts, eligibility thresholds, global usage caps, and per-user limits.</li>
-          <li><strong>Notification Delivery & MENA RTL:</strong> Configured FCM, APNs, and Notifee to reliably deliver high-priority trip alerts across foreground, background, and killed application states; built dynamic Arabic/English multi-language support with full Right-to-Left (RTL) layout mirroring.</li>
+          <li><strong>Dispatch & Complete Ride Lifecycle:</strong> Implemented real-time GPS dispatch workflows matching requests with nearby drivers via distance radius waves; engineered full trip state machine: pickup/drop selection → fare calculation → dispatching → driver acceptance → OTP ride start → in-transit navigation → ride completion & rating.</li>
+          <li><strong>Fare Engine, FCM Alerts & MENA RTL:</strong> Integrated multi-tier fare engine with promo code caps; configured FCM, APNs, and Notifee for high-priority alerts across foreground, background, and killed states; built dynamic Arabic/English multi-language support with full Right-to-Left (RTL) layout mirroring.</li>
         </ul>
       </div>
 
@@ -501,9 +499,8 @@
         <ul class="bullets">
           <li><strong>Dual-Store Production Ownership:</strong> Built, signed, and independently maintained enterprise fleet-tracking application for Android and iOS across multiple major production releases.</li>
           <li><strong>Real-Time Vehicle Tracking:</strong> Engineered live GPS vehicle tracking on maps, displaying real-time vehicle speed, ignition status, historical route playback, and geofence boundary crossing alerts.</li>
-          <li><strong>Offline Caching & Persistence:</strong> Implemented SQLite and MMKV storage for sub-millisecond local caching of vehicle telemetry, enabling rapid app launch and offline inspection of historical vehicle reports.</li>
-          <li><strong>Background Telemetry Alerts:</strong> Configured background notification handlers to alert fleet managers to critical vehicle events (speed violations, geofence breaches, ignition changes) when the application is minimized or closed.</li>
-          <li><strong>Asset Check-In Workflows:</strong> Integrated camera and hardware barcode/QR scanning modules for automated driver-vehicle pairing and physical vehicle inventory audits.</li>
+          <li><strong>Offline Caching & Background Alerts:</strong> Implemented SQLite and MMKV storage for sub-millisecond local caching of vehicle telemetry; configured background notification handlers to alert fleet managers to critical vehicle events (speeding, geofence breaches, ignition changes) when app is closed.</li>
+          <li><strong>Asset Check-In & In-App WebViews:</strong> Integrated camera and hardware barcode/QR scanning modules for driver-vehicle pairing; implemented customized in-app WebViews with local caching for offline document and historical report inspection.</li>
         </ul>
       </div>
 
@@ -548,8 +545,10 @@
           Live Platform: <a href="https://lazyeye.onrender.com" target="_blank">https://lazyeye.onrender.com</a> | Recruiter Sandbox: Doctor (dr_sarah / doctor123), Patient (abhicoder / 4567)
         </div>
         <ul class="bullets">
-          <li><strong>Modernized Bare React Native 0.87.1 Showcase:</strong> Modernized and rebuilt in 2026 on Bare React Native 0.87.1 CLI (Android 15 / API 37 & iOS) with React 19 and AGP 9.2 as an open-source clinical demonstration.</li>
-          <li><strong>11 Clinical Vision Engines & Offline MMKV Queue:</strong> Built 11 responsive HTML5 canvas vision engines with red-cyan filtering, backed by zero-latency MMKV storage, exponential backoff sync, and bidirectional postMessage bridge for real-time score logging and native PDF report downloads.</li>
+          <li><strong>Clinical DTx Architecture & Dual-Engine Mode:</strong> Rebuilt on modern Bare React Native 0.87.1 CLI (Android API 37 / iOS) with React 19 and AGP 9.2 toolchain alignment; features instant persistent switcher between zero-latency offline HTML5 canvas engines and the live cloud portal (https://lazyeye.onrender.com).</li>
+          <li><strong>11 Dichoptic Canvas Engines & Lens Calibration:</strong> Built 11 responsive HTML5 canvas vision engines (Tetris, Snake, Menja 3D, Bubble Shooter, Ping-Pong, Maze) with touch gesture pass-through, red-cyan anaglyph color filtering, and chromatic lens crosstalk verification.</li>
+          <li><strong>Bidirectional WebView Bridge & Native PDF Reports:</strong> Built high-frequency postMessage bridge streaming real-time exercise telemetry and coordinates between canvas and native layer; engineered background PDF download pipeline for clinical assessment reports.</li>
+          <li><strong>Offline MMKV Queue & 84-Day Heatmap:</strong> Implemented fault-tolerant MMKV session queue with exponential backoff retry for network drops; integrated authentic clinical SQLite records to render real-time daily compliance tracking, streak counter, and an 84-day therapy heatmap.</li>
         </ul>
       </div>
     </section>
