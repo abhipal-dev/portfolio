@@ -211,8 +211,9 @@ export const portfolioData = {
         },
       ],
       highlights: [
+        "Autonomous Clinical AI Copilot ('Iris'): Integrated Google Gemini 3.5 Flash Lite with real-time tool calling (function calling) across Web and Mobile; executes database tools (get_cohort_compliance_radar, get_patient_clinical_profile, recommend_contrast_adjustment, generate_soap_clinical_note) with cryptographic thought-signature preservation to audit compliance and auto-generate structured SOAP clinical reports.",
         "Bare React Native 0.87.1 Mobile App: Modern production CLI architecture compiled for Android API 37 (Android 15+) and iOS with React 19, AGP 9.2, and Gradle 9.4 native toolchain compatibility.",
-        "11 Clinical Dichoptic Vision Engines: Responsive HTML5 canvas vision engines (Tetris, Snake, Menja 3D, Bubble Shooter, Ping-Pong, Maze, etc.) with red-cyan anaglyph color filtering and touch gesture pass-through.",
+        "11 Clinical Dichoptic Vision Engines: Responsive HTML5 canvas vision engines (Tetris, Snake, Menja 3D, Bubble Shooter, Ping-Pong, Maze, etc.) with red-cyan anaglyph color filtering, touch gesture pass-through, and dynamic contrast attenuation based on agentic suppression scotoma tracking.",
         "Dual-Engine Architecture: Instant persistent switcher between offline local HTML5 canvas engines (zero latency, calibrated touch controls) and the cloud-hosted Render web portal (https://lazyeye.onrender.com).",
         "Tactile Floating Bottom Navigation Bar: Modeled on mobility apps with liquid sliding pill indicators, Apple-like spring physics (Animated.spring, damping: 18, stiffness: 220), and touch jelly squish.",
         "MMKV Synchronous Storage & Reactive Settings Handler: Zero-latency local storage engine (mmkvStorage) and typed settings manager with pub/sub architecture for real-time preferences.",
@@ -224,6 +225,8 @@ export const portfolioData = {
       technologies: [
         "React Native 0.87.1",
         "React 19",
+        "Gemini AI Tool Calling",
+        "Autonomous Clinical Agent",
         "MMKV Storage",
         "Custom Tab Bar",
         "WebViews & postMessage",
